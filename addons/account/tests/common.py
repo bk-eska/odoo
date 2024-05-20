@@ -53,7 +53,7 @@ class AccountTestInvoicingCommon(TransactionCase):
         })
         user.partner_id.email = 'accountman@test.com'
 
-        # Shadow the current environment/cursor with one having the report user.
+        # Shadow the current environment/cursor with one having the reports user.
         # This is mandatory to test access rights.
         cls.env = cls.env(user=user)
         cls.cr = cls.env.cr

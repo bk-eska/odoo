@@ -1,0 +1,248 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr_account_einvoice_export
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-04 11:20+0000\n"
+"PO-Revision-Date: 2024-01-04 11:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__4
+msgid "Air transport"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,help:l10n_tr_account_einvoice_export.field_product_product__l10n_tr_einvoice_insurance_cost
+#: model:ir.model.fields,help:l10n_tr_account_einvoice_export.field_product_product__l10n_tr_einvoice_shipment_cost
+#: model:ir.model.fields,help:l10n_tr_account_einvoice_export.field_product_template__l10n_tr_einvoice_insurance_cost
+#: model:ir.model.fields,help:l10n_tr_account_einvoice_export.field_product_template__l10n_tr_einvoice_shipment_cost
+msgid "An line with this product will be hidden in export invoices."
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model,name:l10n_tr_account_einvoice_export.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model,name:l10n_tr_account_einvoice_export.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/res_partner.py:0
+#, python-format
+msgid "Customer doesn't have a passport!"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/res_partner.py:0
+#, python-format
+msgid "Customer doesn't have natioanality!"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_fiscal_position__l10n_tr_default_export_type
+msgid "Default Export Type"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_res_partner__l10n_tr_default_einvoice_profile
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_res_users__l10n_tr_default_einvoice_profile
+msgid "Default Profile"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_bank_statement_line__l10n_tr_einvoice_profile
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_move__l10n_tr_einvoice_profile
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_payment__l10n_tr_einvoice_profile
+msgid "E-Invoice Profile"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#, python-format
+msgid "Export Address"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#, python-format
+msgid "Export Fiscal Position (301) is required with this profile!"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#, python-format
+msgid "Export Fiscal Position (501) is required with this profile!"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#, python-format
+msgid "Export invoice requires transport mode!"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#, python-format
+msgid "Export invoices require incoterms!"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#, python-format
+msgid "Export invoices require shipping address!"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#, python-format
+msgid "Export product %s require hs code!"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model,name:l10n_tr_account_einvoice_export.model_account_fiscal_position
+msgid "Fiscal Position"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__7
+msgid "Fixed transport installations"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_bank_statement_line__l10n_tr_einvoice_gtb_gcb_tescilno
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_move__l10n_tr_einvoice_gtb_gcb_tescilno
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_payment__l10n_tr_einvoice_gtb_gcb_tescilno
+msgid "GCB Tescil No"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_bank_statement_line__l10n_tr_einvoice_gtb_export_date
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_move__l10n_tr_einvoice_gtb_export_date
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_payment__l10n_tr_einvoice_gtb_export_date
+msgid "GTB Export Date"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_bank_statement_line__l10n_tr_einvoice_gtb_refno
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_move__l10n_tr_einvoice_gtb_refno
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_payment__l10n_tr_einvoice_gtb_refno
+msgid "GTB Ref No"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__8
+msgid "Inland water transport"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_product_product__l10n_tr_einvoice_insurance_cost
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_product_template__l10n_tr_einvoice_insurance_cost
+msgid "Insurance Cost"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model,name:l10n_tr_account_einvoice_export.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model,name:l10n_tr_account_einvoice_export.model_account_move_line
+msgid "Journal Item"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__5
+msgid "Mail"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__1
+msgid "Maritime transport"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_fiscal_position__l10n_tr_default_export_type__temelfatura
+msgid "Mikro İhracat (E-Arşiv)"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__6
+msgid "Multimodal transport"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_move_line__l10n_tr_package_quantity
+msgid "Package Quantity"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_move_line__l10n_tr_package_type_id
+msgid "Package Type"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model,name:l10n_tr_account_einvoice_export.model_product_template
+msgid "Product"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__2
+msgid "Rail transport"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__3
+msgid "Road transport"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_product_product__l10n_tr_einvoice_shipment_cost
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_product_template__l10n_tr_einvoice_shipment_cost
+msgid "Shipping Cost"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_bank_statement_line__l10n_tr_transport_mode_code
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_move__l10n_tr_transport_mode_code
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_payment__l10n_tr_transport_mode_code
+msgid "Transport Mode"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_einvoice_profile__yolcuberaberfatura
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__res_partner__l10n_tr_default_einvoice_profile__yolcuberaberfatura
+msgid "Yolcu Beraberinde Fatura"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_einvoice_profile__ihracat
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__res_partner__l10n_tr_default_einvoice_profile__ihracat
+msgid "İhracat"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_fiscal_position__l10n_tr_default_export_type__ihracat
+msgid "İhracat (E-Fatura)"
+msgstr ""

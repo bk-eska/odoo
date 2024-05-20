@@ -44,7 +44,7 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
         move.line_ids[0].date_maturity = fields.Date.from_string('2023-01-02')
 
     def test_account_move_hash_integrity_report(self):
-        """Test the hash integrity report"""
+        """Test the hash integrity reports"""
         moves = (
             self.init_invoice("out_invoice", self.partner_a, "2023-01-01", amounts=[1000, 2000])
             | self.init_invoice("out_invoice", self.partner_b, "2023-01-02", amounts=[1000, 2000])
@@ -75,7 +75,7 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
         self.assertEqual(integrity_check['first_move_date'], format_date(self.env, fields.Date.to_string(moves[2].date)))
         self.assertEqual(integrity_check['last_move_date'], format_date(self.env, fields.Date.to_string(moves[-1].date)))
 
-        # Let's change one of the fields used by the hash. It should be detected by the integrity report.
+        # Let's change one of the fields used by the hash. It should be detected by the integrity reports.
         # We need to bypass the write method of account.move to do so.
         Model.write(moves[4], {'date': fields.Date.from_string('2023-01-07')})
         integrity_check = moves.company_id._check_hash_integrity()['results'][0]
@@ -98,7 +98,7 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
         self.assertEqual(integrity_check['msg_cover'], f'Corrupted data on journal entry with id {moves[-1].id}.')
 
     def test_account_move_hash_versioning_1(self):
-        """We are updating the hash algorithm. We want to make sure that we do not break the integrity report.
+        """We are updating the hash algorithm. We want to make sure that we do not break the integrity reports.
         This test focuses on the case where the user has only moves with the old hash algorithm."""
         self.init_invoice("out_invoice", self.partner_a, "2023-01-01", amounts=[1000, 2000], post=True)  # Not hashed
         self.company_data['default_journal_sale'].restrict_mode_hash_table = True
@@ -113,7 +113,7 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
         self.assertEqual(integrity_check['first_move_date'], format_date(self.env, fields.Date.to_string(moves[0].date)))
         self.assertEqual(integrity_check['last_move_date'], format_date(self.env, fields.Date.to_string(moves[-1].date)))
 
-        # Let's change one of the fields used by the hash. It should be detected by the integrity report
+        # Let's change one of the fields used by the hash. It should be detected by the integrity reports
         # independently of the hash version used. I.e. we first try the v1 hash, then the v2 hash and neither should work.
         # We need to bypass the write method of account.move to do so.
         Model.write(moves[1], {'date': fields.Date.from_string('2023-01-07')})
@@ -121,7 +121,7 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
         self.assertEqual(integrity_check['msg_cover'], f'Corrupted data on journal entry with id {moves[1].id}.')
 
     def test_account_move_hash_versioning_2(self):
-        """We are updating the hash algorithm. We want to make sure that we do not break the integrity report.
+        """We are updating the hash algorithm. We want to make sure that we do not break the integrity reports.
         This test focuses on the case where the user has only moves with the new hash algorithm."""
         self.init_invoice("out_invoice", self.partner_a, "2023-01-01", amounts=[1000, 2000], post=True)  # Not hashed
         self.company_data['default_journal_sale'].restrict_mode_hash_table = True
@@ -136,7 +136,7 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
         self.assertEqual(integrity_check['first_move_date'], format_date(self.env, fields.Date.to_string(moves[0].date)))
         self.assertEqual(integrity_check['last_move_date'], format_date(self.env, fields.Date.to_string(moves[-1].date)))
 
-        # Let's change one of the fields used by the hash. It should be detected by the integrity report
+        # Let's change one of the fields used by the hash. It should be detected by the integrity reports
         # independently of the hash version used. I.e. we first try the v1 hash, then the v2 hash and neither should work.
         # We need to bypass the write method of account.move to do so.
         Model.write(moves[1], {'date': fields.Date.from_string('2023-01-07')})
@@ -144,7 +144,7 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
         self.assertEqual(integrity_check['msg_cover'], f'Corrupted data on journal entry with id {moves[1].id}.')
 
     def test_account_move_hash_versioning_v1_to_v2(self):
-        """We are updating the hash algorithm. We want to make sure that we do not break the integrity report.
+        """We are updating the hash algorithm. We want to make sure that we do not break the integrity reports.
         This test focuses on the case where the user has moves with both hash algorithms."""
         self.init_invoice("out_invoice", self.partner_a, "2023-01-01", amounts=[1000, 2000], post=True)  # Not hashed
         self.company_data['default_journal_sale'].restrict_mode_hash_table = True
@@ -170,7 +170,7 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
         self.assertEqual(integrity_check['first_move_date'], format_date(self.env, fields.Date.to_string(moves[0].date)))
         self.assertEqual(integrity_check['last_move_date'], format_date(self.env, fields.Date.to_string(moves[-1].date)))
 
-        # Let's change one of the fields used by the hash. It should be detected by the integrity report
+        # Let's change one of the fields used by the hash. It should be detected by the integrity reports
         # independently of the hash version used. I.e. we first try the v1 hash, then the v2 hash and neither should work.
         # We need to bypass the write method of account.move to do so.
         Model.write(moves[4], {'date': fields.Date.from_string('2023-01-07')})
@@ -213,7 +213,7 @@ class TestAccountMoveInalterableHash(AccountTestInvoicingCommon):
 
     def test_account_move_hash_versioning_v2_to_v3(self):
         """
-        We are updating the hash algorithm. We want to make sure that we do not break the integrity report.
+        We are updating the hash algorithm. We want to make sure that we do not break the integrity reports.
         This test focuses on the case with version 2 and version 3.
         """
         self.init_invoice("out_invoice", self.partner_a, "2023-01-01", amounts=[1000, 2000],

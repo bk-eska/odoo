@@ -1,0 +1,132 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* maintenance_assignment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-02 06:17+0000\n"
+"PO-Revision-Date: 2024-05-02 06:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: maintenance_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_assignment.view_maintenance_equipment_assign_form
+msgid "Assign"
+msgstr "Zimmetle"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields.selection,name:maintenance_assignment.selection__maintenance_equipment_assign__state__assigned
+msgid "Assigned"
+msgstr "Zimmetlendi"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields,field_description:maintenance_assignment.field_maintenance_equipment_assign__employee_id
+msgid "Assigned Employee"
+msgstr "Personel"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields,field_description:maintenance_assignment.field_maintenance_equipment_assign__date
+msgid "Assignment Date"
+msgstr "Tarih"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields,field_description:maintenance_assignment.field_maintenance_equipment_assign__company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields,field_description:maintenance_assignment.field_maintenance_equipment_assign__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields,field_description:maintenance_assignment.field_maintenance_equipment_assign__create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields,field_description:maintenance_assignment.field_maintenance_equipment_assign__user_id
+msgid "Deliverer"
+msgstr "Teslim Eden"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields,field_description:maintenance_assignment.field_maintenance_equipment_assign__description
+#: model_terms:ir.ui.view,arch_db:maintenance_assignment.view_maintenance_equipment_assign_form
+msgid "Description"
+msgstr "Açıklama"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields,field_description:maintenance_assignment.field_maintenance_equipment_assign__display_name
+msgid "Display Name"
+msgstr "Görünen Ad"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields.selection,name:maintenance_assignment.selection__maintenance_equipment_assign__state__draft
+msgid "Draft"
+msgstr "Taslak"
+
+#. module: maintenance_assignment
+#: model:ir.actions.act_window,name:maintenance_assignment.action_maintenance_equipment_assign_kanban
+msgid "Equipment Assignments"
+msgstr "Ekipman Atamaları"
+
+#. module: maintenance_assignment
+#: model:ir.ui.menu,name:maintenance_assignment.menu_maintenance_equipment_assignments_kanban
+msgid "Assignments"
+msgstr "Atamalar"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields,field_description:maintenance_assignment.field_maintenance_equipment_assign__equipment_ids
+msgid "Equipments"
+msgstr "Ekipmanlar"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields,field_description:maintenance_assignment.field_maintenance_equipment_assign__id
+msgid "ID"
+msgstr ""
+
+#. module: maintenance_assignment
+#: model:ir.model.fields,field_description:maintenance_assignment.field_maintenance_equipment_assign____last_update
+msgid "Last Modified on"
+msgstr "Son Değiştirme"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields,field_description:maintenance_assignment.field_maintenance_equipment_assign__write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields,field_description:maintenance_assignment.field_maintenance_equipment_assign__write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: maintenance_assignment
+#: model:ir.model,name:maintenance_assignment.model_maintenance_equipment_assign
+msgid "Maintenance Equipment Assign"
+msgstr "Bakım Ekipmanı Ataması"
+
+#. module: maintenance_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_assignment.view_maintenance_equipment_assign_form
+msgid "Maintenance Equipment Assignment"
+msgstr "Bakım Ekipmanı Ataması"
+
+#. module: maintenance_assignment
+#: model_terms:ir.ui.view,arch_db:maintenance_assignment.view_maintenance_equipment_assign_form
+msgid "Return"
+msgstr "İade Et"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields.selection,name:maintenance_assignment.selection__maintenance_equipment_assign__state__returned
+msgid "Returned"
+msgstr "İade Edildi"
+
+#. module: maintenance_assignment
+#: model:ir.model.fields,field_description:maintenance_assignment.field_maintenance_equipment_assign__state
+msgid "State"
+msgstr "Durum"

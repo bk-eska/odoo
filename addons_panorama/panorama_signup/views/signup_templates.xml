@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="signup_customisation" inherit_id="auth_signup.fields">
+        <xpath expr="//div[hasclass('field-confirm_password')]" position="after">
+            <div class="information" id="data">
+                <div class="mb-3 field-phone">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control form-control-sm"
+                           name="phone" id="phone" required="required"/>
+                </div>
+                <div class="mb-3 field-city">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control form-control-sm"
+                           name="city" id="city" required="required"/>
+                </div>
+                <div class="mb-3 field-address">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control form-control-sm"
+                           name="address" id="address" required="required"/>
+                </div>
+                <div class="mb-3 field-country">
+                    <label for="country">Country</label>
+                    <select class="form-control s_website_form_input" name="country" id="country" required="required">
+                        <t t-foreach="request.env['res.country'].sudo().search([])" t-as="countries" t-key="countries.id">
+                            <option t-att-value="countries.id">
+                                <t t-esc="countries.name"/>
+                            </option>
+                        </t>
+                    </select>
+                </div>
+                <div class="mb-3 field-sales-permit">
+                    <label for="sales_permit_file">Sales Permit File</label>
+                    <input type="file" class="o_input_file" name="sales_permit_file" id="sales_permit_file" required="required"/>
+                </div>
+                <div class="mb-3 field-tobacco-license">
+                    <label for="tobacco_license_file">Tobacco License File</label>
+                    <input type="file" class="o_input_file" name="tobacco_license_file" id="tobacco_license_file" required="required"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="signup_form" inherit_id="auth_signup.signup">
+        <xpath expr="//form[hasclass('oe_signup_form')]" position="attributes">
+            <attribute name="enctype">multipart/form-data</attribute>
+        </xpath>
+    </template>
+
+</odoo>

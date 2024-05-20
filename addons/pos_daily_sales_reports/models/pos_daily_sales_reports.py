@@ -11,7 +11,7 @@ import pytz
 
 class ReportSaleDetails(models.AbstractModel):
 
-    _inherit = 'report.point_of_sale.report_saledetails'
+    _inherit = 'reports.point_of_sale.report_saledetails'
 
     @api.model
     def get_sale_details(self, date_start=False, date_stop=False, config_ids=False, session_ids=False):

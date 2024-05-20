@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_stock_valuation_layer_reporting_value" model="ir.ui.view">
+        <field name="name">stock.valuation.layer.tree.reporting.value</field>
+        <field name="model">stock.valuation.layer</field>
+        <field name="inherit_id" ref="stock_account.stock_valuation_layer_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='value']" position="after">
+                <field name="report_currency_id" invisible="1"/>
+                <field name="report_currency_value"
+                       sum="Total Reporting Value"
+                       widget="monetary"
+                       options="{'currency_field': 'report_currency_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

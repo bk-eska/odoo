@@ -54,7 +54,7 @@ class TestCIIUS(TestUBLCommon):
                 },
             ],
         )
-        collected_streams = self.env['ir.actions.report']._render_qweb_pdf_prepare_streams(
+        collected_streams = self.env['ir.actions.reports']._render_qweb_pdf_prepare_streams(
             report_ref='account.report_invoice_with_payments',
             data=None,
             res_ids=invoice.ids,

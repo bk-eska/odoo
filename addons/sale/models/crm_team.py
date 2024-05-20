@@ -108,7 +108,7 @@ class CrmTeam(models.Model):
 
     def _graph_get_model(self):
         if self._in_sale_scope():
-            return 'sale.report'
+            return 'sale.reports'
         return super()._graph_get_model()
 
     def _graph_date_column(self):
@@ -120,7 +120,7 @@ class CrmTeam(models.Model):
         if self._in_sale_scope():
             # For a team not shared between company, we make sure the amounts are expressed
             # in the currency of the team company and not converted to the current company currency,
-            # as the amounts of the sale report are converted in the currency
+            # as the amounts of the sale reports are converted in the currency
             # of the current company (for multi-company reporting, see #83550)
             GraphModel = GraphModel.with_company(self.company_id)
             return f"({GraphModel._table_query}) AS {GraphModel._table}"

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2015 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).-->
+<odoo>
+    <record id="view_currency_form_rate_type" model="ir.ui.view">
+        <field name="name">res.currency.form.type</field>
+        <field name="model">res.currency</field>
+        <field name="inherit_id" ref="base.view_currency_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='rate_ids']//field[@name='name']"
+                   position="after">
+                <field name="currency_rate_type_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

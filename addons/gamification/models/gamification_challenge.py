@@ -127,7 +127,7 @@ class Challenge(models.Model):
             ('yearly', "Yearly")
         ], default='never',
         string="Report Frequency", required=True)
-    report_message_group_id = fields.Many2one('mail.channel', string="Send a copy to", help="Group that will receive a copy of the report in addition to the user")
+    report_message_group_id = fields.Many2one('mail.channel', string="Send a copy to", help="Group that will receive a copy of the reports in addition to the user")
     report_template_id = fields.Many2one('mail.template', default=lambda self: self._get_report_template(), string="Report Template", required=True)
     remind_update_delay = fields.Integer("Non-updated manual goals will be reminded after", help="Never reminded if no value or zero is specified.")
     last_report_date = fields.Date("Last Report Date", default=fields.Date.today)
@@ -167,8 +167,8 @@ class Challenge(models.Model):
     }
     @api.depends('last_report_date', 'report_message_frequency')
     def _get_next_report_date(self):
-        """ Return the next report date based on the last report date and
-        report period.
+        """ Return the next reports date based on the last reports date and
+        reports period.
         """
         for challenge in self:
             last = challenge.last_report_date
@@ -294,14 +294,14 @@ class Challenge(models.Model):
                 if challenge.next_report_date and fields.Date.today() >= challenge.next_report_date:
                     challenge.report_progress()
                 else:
-                    # goals closed but still opened at the last report date
+                    # goals closed but still opened at the last reports date
                     closed_goals_to_report = Goals.search([
                         ('challenge_id', '=', challenge.id),
                         ('start_date', '>=', challenge.last_report_date),
                         ('end_date', '<=', challenge.last_report_date)
                     ])
                     if closed_goals_to_report:
-                        # some goals need a final report
+                        # some goals need a final reports
                         challenge.report_progress(subset_goals=closed_goals_to_report)
 
         self._check_challenge_reward()
@@ -339,7 +339,7 @@ class Challenge(models.Model):
         return self._update_all()
 
     def action_report_progress(self):
-        """Manual report of a goal, does not influence automatic report frequency"""
+        """Manual reports of a goal, does not influence automatic reports frequency"""
         for challenge in self:
             challenge.report_progress()
         return True
@@ -574,13 +574,13 @@ class Challenge(models.Model):
     ##### Reporting #####
 
     def report_progress(self, users=(), subset_goals=False):
-        """Post report about the progress of the goals
+        """Post reports about the progress of the goals
 
-        :param users: users that are concerned by the report. If False, will
-                      send the report to every user concerned (goal users and
+        :param users: users that are concerned by the reports. If False, will
+                      send the reports to every user concerned (goal users and
                       group that receive a copy). Only used for challenge with
                       a visibility mode set to 'personal'.
-        :param subset_goals: goals to restrict the report
+        :param subset_goals: goals to restrict the reports
         """
 
         challenge = self

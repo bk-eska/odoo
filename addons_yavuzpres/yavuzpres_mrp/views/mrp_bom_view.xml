@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="mrp_bom_filter_message_ids" model="ir.ui.view">
+        <field name="name">mrp.bom.select.equipment</field>
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.view_mrp_bom_filter"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="message_ids" string="Chatter"
+                       filter_domain="[('message_ids.body','ilike',self)]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mrp_bom_view_form_inherit_yavuzpres" model="ir.ui.view">
+        <field name="name">mrp.bom.view.form.inherit.yavuzpres</field>
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="before">
+                <div>
+                    <field name="image_1920" widget="image" class="float-end oe_avatar bg-view"/>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="is_bom_locked"/>
+            </xpath>
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <field name="is_bom_locked" invisible="1"/>
+                    <button string="Lock Bom"
+                            type="object"
+                            name="action_lock_bom"
+                            attrs="{'invisible': [('is_bom_locked', '=', True)]}"
+                            groups="yavuzpres_mrp.group_bom_lock"
+                            class="oe_highlight"/>
+                    <button string="Unlock Bom"
+                            type="object"
+                            name="action_unlock_bom"
+                            attrs="{'invisible': [('is_bom_locked', '=', False)]}"
+                            groups="yavuzpres_mrp.group_bom_lock"
+                            class="oe_highlight"/>
+                </header>
+            </xpath>
+        </field>
+    </record>
+</odoo>

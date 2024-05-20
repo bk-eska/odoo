@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 Eska Technology LLC (www.eskaweb.com)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record id="view_partner_form_passport_tab" model="ir.ui.view">
+        <field name="name">res.partner.passport.tab</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='internal_notes']" position="after">
+                <page string="Passport"
+                      attrs="{'invisible': [('is_company','=',True)]}">
+                    <group col="4">
+                        <field name='passport_ids'>
+                            <tree name="passport_tree">
+                                <field name="name"/>
+                                <field name="country_id"/>
+                                <field name="expire_date"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

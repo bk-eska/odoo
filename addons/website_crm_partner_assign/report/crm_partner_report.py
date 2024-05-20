@@ -6,7 +6,7 @@ from odoo import fields, models
 
 class CrmPartnerReportAssign(models.Model):
     """ CRM Lead Report """
-    _name = "crm.partner.report.assign"
+    _name = "crm.partner.reports.assign"
     _auto = False
     _description = "CRM Partnership Analysis"
 
@@ -23,7 +23,7 @@ class CrmPartnerReportAssign(models.Model):
     date = fields.Date('Invoice Account Date', readonly=True)
 
     _depends = {
-        'account.invoice.report': ['invoice_date', 'partner_id', 'price_subtotal', 'state', 'move_type'],
+        'account.invoice.reports': ['invoice_date', 'partner_id', 'price_subtotal', 'state', 'move_type'],
         'crm.lead': ['partner_assigned_id'],
         'res.partner': ['activation', 'country_id', 'date_partnership', 'date_review',
                         'grade_id', 'parent_id', 'team_id', 'user_id'],
@@ -54,5 +54,5 @@ class CrmPartnerReportAssign(models.Model):
                     left join ({account_invoice_report}) i
                         on (i.partner_id=p.id and i.move_type in ('out_invoice','out_refund') and i.state='posted')
             """.format(
-                account_invoice_report=self.env['account.invoice.report']._table_query
+                account_invoice_report=self.env['account.invoice.reports']._table_query
             )

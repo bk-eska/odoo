@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_invoice_add_sale_line_wizard_user,access.add.sale.line.wizard.user,model_invoice_add_sale_line_wizard,base.group_user,1,0,0,0
+access_invoice_add_sale_line_wizard_manager,access.add.sale.line.wizard.manager,model_invoice_add_sale_line_wizard,account.group_account_manager,1,1,1,1
+

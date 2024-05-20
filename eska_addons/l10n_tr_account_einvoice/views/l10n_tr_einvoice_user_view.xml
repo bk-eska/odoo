@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2015 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record model="ir.ui.view" id="view_registered_user_tree">
+        <field name="name">l10n_tr.einvoice.user.tree</field>
+        <field name="model">l10n_tr.einvoice.user</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <tree string="Registered Users" create="0" edit="0">
+                <field name="identifier"/>
+                <field name="alias"/>
+                <field name="title"/>
+                <field name="type"/>
+                <field name="first_created"/>
+                <field name="alias_created"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_registered_user_search">
+        <field name="name">l10n_tr.einvoice.user.search</field>
+        <field name="model">l10n_tr.einvoice.user</field>
+        <field name="arch" type="xml">
+            <search string="Registered Users">
+                <field name="identifier"/>
+                <field name="alias"/>
+                <field name="title"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_registered_user">
+        <field name="name">E-Invoice Registered Users</field>
+        <field name="res_model">l10n_tr.einvoice.user</field>
+        <field name="view_mode">tree</field>
+        <field name="search_view_id" ref="view_registered_user_search"/>
+        <field name="view_id" ref="view_registered_user_tree"/>
+        <field name="context">{'search_default_state':'active'}</field>
+    </record>
+
+    <menuitem id="menu_finance_l10n_tr_einvoice_user"
+              action="action_registered_user"
+              parent="account.account_account_menu"
+              sequence="3"/>
+
+</odoo>

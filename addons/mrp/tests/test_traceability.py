@@ -115,13 +115,13 @@ class TestTraceability(TestMrpCommon):
                 'active_id': mo.id,
                 'model': 'mrp.production',
             })
-            lines = self.env['stock.traceability.report'].with_context(context).get_lines()
+            lines = self.env['stock.traceability.reports'].with_context(context).get_lines()
             self.assertEqual(len(lines), 1, "Should always return 1 line : the final product")
             final_product = lines[0]
             self.assertEqual(final_product['unfoldable'], True, "Final product should always be unfoldable")
 
             # Find parts of the final products
-            lines = self.env['stock.traceability.report'].get_lines(final_product['id'], **{
+            lines = self.env['stock.traceability.reports'].get_lines(final_product['id'], **{
                 'level': final_product['level'],
                 'model_id': final_product['model_id'],
                 'model_name': final_product['model'],

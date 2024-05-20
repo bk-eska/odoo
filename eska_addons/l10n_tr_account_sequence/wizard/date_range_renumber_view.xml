@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_date_range_renumber_form" model="ir.ui.view">
+        <field name="name">date.range.renumber.form</field>
+        <field name="model">date.range.renumber</field>
+        <field name="arch" type="xml">
+            <form string="Renumber Journal Entries">
+                <p>This wizard will help you renumber move and line sequence numbers in a period.</p>
+                <p>Posted moves in that period will be sorted by date and then assigned sequential numbers.</p>
+                <group>
+                    <field name="l10n_tr_next_move_sequence"/>
+                    <field name="l10n_tr_next_line_sequence"/>
+                    <field name="l10n_tr_ignore_zero_amount"/>
+                </group>
+                <footer>
+                    <div>
+                        <button name="renumber"
+                                string="Renumber"
+                                type="object"
+                                class="oe_highlight"/>
+                        or
+                        <button special="cancel"
+                                string="Cancel"
+                                class="oe_link"/>
+                    </div>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_date_range_renumber" model="ir.actions.act_window">
+        <field name="name">Renumber Journal Entries</field>
+        <field name="res_model">date.range.renumber</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_date_range_renumber_form"/>
+        <field name="binding_model_id" ref="date_range.model_date_range"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

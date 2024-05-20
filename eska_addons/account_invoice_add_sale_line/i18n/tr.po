@@ -1,0 +1,100 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_invoice_add_sale_line
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-30 20:09+0000\n"
+"PO-Revision-Date: 2023-08-30 20:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_invoice_add_sale_line
+#. odoo-python
+#: code:addons/account_invoice_add_sale_line/models/account_move.py:0
+#: code:addons/account_invoice_add_sale_line/wizard/invoice_add_sale_line_wizard.py:0
+#: model:ir.actions.act_window,name:account_invoice_add_sale_line.invoice_add_sale_line_action
+#, python-format
+msgid "Add Sale Line"
+msgstr "Sipariş Satırı Ekle"
+
+#. module: account_invoice_add_sale_line
+#: model_terms:ir.ui.view,arch_db:account_invoice_add_sale_line.view_move_form_add_sale_line
+msgid "Add Sale Lines"
+msgstr "Sipariş Satırları Ekle"
+
+#. module: account_invoice_add_sale_line
+#: model_terms:ir.ui.view,arch_db:account_invoice_add_sale_line.invoice_add_sale_line_view_form
+msgid "Close"
+msgstr "Kapat"
+
+#. module: account_invoice_add_sale_line
+#: model:ir.model.fields,field_description:account_invoice_add_sale_line.field_invoice_add_sale_line_wizard__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: account_invoice_add_sale_line
+#: model:ir.model.fields,field_description:account_invoice_add_sale_line.field_invoice_add_sale_line_wizard__create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: account_invoice_add_sale_line
+#: model:ir.model.fields,field_description:account_invoice_add_sale_line.field_invoice_add_sale_line_wizard__partner_id
+msgid "Customer"
+msgstr "Müşteri"
+
+#. module: account_invoice_add_sale_line
+#: model:ir.model.fields,field_description:account_invoice_add_sale_line.field_invoice_add_sale_line_wizard__display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: account_invoice_add_sale_line
+#: model_terms:ir.ui.view,arch_db:account_invoice_add_sale_line.invoice_add_sale_line_view_form
+msgid "Generate"
+msgstr "Oluştur"
+
+#. module: account_invoice_add_sale_line
+#: model_terms:ir.ui.view,arch_db:account_invoice_add_sale_line.invoice_add_sale_line_view_form
+msgid "Generate & New"
+msgstr "Oluştur & Yeni"
+
+#. module: account_invoice_add_sale_line
+#: model:ir.model.fields,field_description:account_invoice_add_sale_line.field_invoice_add_sale_line_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: account_invoice_add_sale_line
+#: model:ir.model,name:account_invoice_add_sale_line.model_invoice_add_sale_line_wizard
+msgid "Invoice Add Sale Line"
+msgstr "Fatura Sipariş Satırı Ekleme"
+
+#. module: account_invoice_add_sale_line
+#: model:ir.model,name:account_invoice_add_sale_line.model_account_move
+msgid "Journal Entry"
+msgstr "Yevmiye Kaydı"
+
+#. module: account_invoice_add_sale_line
+#: model:ir.model.fields,field_description:account_invoice_add_sale_line.field_invoice_add_sale_line_wizard____last_update
+msgid "Last Modified on"
+msgstr "Son Düzenleme"
+
+#. module: account_invoice_add_sale_line
+#: model:ir.model.fields,field_description:account_invoice_add_sale_line.field_invoice_add_sale_line_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: account_invoice_add_sale_line
+#: model:ir.model.fields,field_description:account_invoice_add_sale_line.field_invoice_add_sale_line_wizard__write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: account_invoice_add_sale_line
+#: model:ir.model.fields,field_description:account_invoice_add_sale_line.field_invoice_add_sale_line_wizard__sale_line_ids
+msgid "Sale Lines"
+msgstr "Satış Satırları"

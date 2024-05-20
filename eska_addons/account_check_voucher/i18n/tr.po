@@ -1,0 +1,116 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_check_voucher
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-04 10:12+0000\n"
+"PO-Revision-Date: 2022-10-04 10:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "<strong>Tarih :</strong>"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "<strong>Toplam :</strong>"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "ALACAK"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "BORÇ"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "Banka"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "Cari Hesabınıza"
+msgstr ""
+
+#. module: account_check_voucher
+#: model:ir.actions.report,name:account_check_voucher.action_report_check_voucher
+msgid "Check Voucher"
+msgstr "Çek Bordrosu"
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "Hesap No"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "Saygılarımızla,"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "Tarafınıza CİRO Edilmiş"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "Tarafınıza Verilmiş"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "Tarafınızdan ALINMIŞ"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "Tutar"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "Vade"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "Yukarıda muhteviyatı yazılı 1 adet Çek,"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "kaydedilmiştir."
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "ÇEK GİRİŞ BORDROSU"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "ÇEK ÇIKIŞ BORDROSU"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "Çek No"
+msgstr ""
+
+#. module: account_check_voucher
+#: model_terms:ir.ui.view,arch_db:account_check_voucher.report_check_voucher
+msgid "Şube"
+msgstr ""

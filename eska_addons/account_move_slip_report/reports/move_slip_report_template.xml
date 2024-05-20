@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="report_account_move_slip">
+        <t t-call="web.basic_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.company_id.partner_id.lang)"/>
+            <div class="page" style="font-size:12px;">
+                <div class="row">
+                    <div class="col-3 float-left">
+                        <strong>
+                            <p t-field="doc.company_id"/>
+                        </strong>
+                    </div>
+                    <div class="col-4"/>
+                    <div class="col-5">
+                        <table class="table table-sm">
+                            <tbody>
+                                <tr>
+                                    <td>Journal Date</td>
+                                    <td>:
+                                        <span t-field="doc.date"
+                                              t-field-options="{&quot;format&quot;: &quot;dd.MM.yyyy&quot;}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Journal Number</td>
+                                    <td>:
+                                        <span t-field="doc.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Journal Type</td>
+                                    <td>:
+                                        <span t-field="doc.journal_id.name"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br/>
+                <div class="oe_structure"/>
+                <h4 class="text-center">
+                    <b>Move Slip</b>
+                </h4>
+                <br/>
+                <table class="table table-bordered table-sm o_main_table">
+                    <thead>
+                        <tr>
+                            <th>Account</th>
+                            <th>Partner</th>
+                            <th>Description</th>
+                            <th>Debit</th>
+                            <th>Credit</th>
+                        </tr>
+                    </thead>
+                    <tbody class="invoice_tbody">
+                        <t t-set="current_subtotal" t-value="0"/>
+                        <t t-set="lines"
+                           t-value="doc.line_ids.sorted(key=lambda l: (-l.sequence, l.date, l.move_name, -l.id), reverse=True)"/>
+
+                        <tr t-foreach="lines" t-as="line">
+                            <td>
+                                <span t-esc="line.account_id.code"/>
+                                <span t-esc="line.account_id.name"/>
+                            </td>
+                            <td>
+                                <span t-esc="line.partner_id.name"/>
+                            </td>
+                            <td>
+                                <span t-esc="line.name"/>
+                            </td>
+                            <td>
+                                <span t-esc="line.debit"
+                                      t-options='{"widget": "monetary", "display_currency": doc.company_id.currency_id}'/>
+                            </td>
+                            <td>
+                                <span t-esc="line.credit"
+                                      t-options='{"widget": "monetary", "display_currency": doc.company_id.currency_id}'/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align:right;">
+                                <b>Total:</b>
+                            </td>
+                            <td>
+                                <span t-esc="sum(line.debit for line in lines if line.debit > 0)"
+                                      t-options='{"widget": "monetary", "display_currency": doc.company_id.currency_id}'/>
+                            </td>
+                            <td>
+                                <span t-esc="sum(line.credit for line in lines if line.credit > 0)"
+                                      t-options='{"widget": "monetary", "display_currency": doc.company_id.currency_id}'/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br/>
+                <table class="table table-bordered table-sm o_main_table">
+                    <thead>
+                        <tr>
+                            <th>Created By</th>
+                            <th>Modified By</th>
+                            <th>Approved By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span t-esc="doc.create_uid.name"/>
+                            </td>
+                            <td>
+                                <span t-esc="doc.write_uid.name"/>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br/>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_move_slip">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="account_move_slip_report.report_account_move_slip"
+                   t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_move_slip" model="ir.actions.report">
+        <field name="name">Move Slip</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">account_move_slip_report.report_move_slip</field>
+        <field name="report_file">account_move_slip_report.report_move_slip</field>
+        <field name="print_report_name">'Move Slip'</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

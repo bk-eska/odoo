@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* analytic_reporting_currency
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-22 22:01+0000\n"
+"PO-Revision-Date: 2023-12-22 22:01+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: analytic_reporting_currency
+#: model:ir.model,name:analytic_reporting_currency.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Analitik Hesap"
+
+#. module: analytic_reporting_currency
+#: model:ir.model,name:analytic_reporting_currency.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Analitik Satır"
+
+#. module: analytic_reporting_currency
+#: model:ir.model.fields,field_description:analytic_reporting_currency.field_account_analytic_account__reporting_currency_balance
+msgid "Balance"
+msgstr "Bakiye"
+
+#. module: analytic_reporting_currency
+#: model:ir.model.fields,field_description:analytic_reporting_currency.field_account_analytic_account__reporting_currency_credit
+msgid "Credit"
+msgstr "Kredi"
+
+#. module: analytic_reporting_currency
+#: model:ir.model.fields,field_description:analytic_reporting_currency.field_account_analytic_line__reporting_currency_amount
+msgid "Currency Amount"
+msgstr "Para Birimi Tutar"
+
+#. module: analytic_reporting_currency
+#: model:ir.model.fields,field_description:analytic_reporting_currency.field_account_analytic_account__reporting_currency_debit
+msgid "Debit"
+msgstr "Borç Bakiyesi"
+
+#. module: analytic_reporting_currency
+#: model:ir.model.fields,field_description:analytic_reporting_currency.field_account_analytic_account__report_currency_id
+#: model:ir.model.fields,field_description:analytic_reporting_currency.field_account_analytic_line__report_currency_id
+msgid "Reporting Currency"
+msgstr "Raporlama Para Birimi"

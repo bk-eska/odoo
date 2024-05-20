@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_invoice_add_sale_line_tree_inherit" model="ir.ui.view">
+        <field name="name">sale.order.line.add.sale.line.tree.inherit</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="account_invoice_add_sale_line.view_invoice_add_sale_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='qty_to_invoice']" position="after">
+                <field name="date_order"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

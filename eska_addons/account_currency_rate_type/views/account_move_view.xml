@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record model="ir.ui.view" id="view_move_form_currency_fixed_rate">
+        <field name="name">account.move.form.currency.fixed.rate</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='currency_rate_method']"
+                   position="after">
+                <span class="oe_inline o_form_label mx-3 oe_read_only"
+                      groups="base.group_multi_currency"> </span>
+                <span class="oe_inline o_form_label mr-3 ml-5 oe_edit_only"
+                      groups="base.group_multi_currency"> </span>
+                <field name="currency_rate_type_id"
+                       options="{'no_create': True, 'no_edit': True}"
+                       attrs="{'readonly':['|',
+                       ('currency_rate_method','!=', 'rate_type'),
+                       ('state','!=','draft')],
+                       'required':[
+                       ('currency_rate_method','=', 'rate_type')],
+                       'invisible':[
+                       ('currency_rate_method','!=', 'rate_type')]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

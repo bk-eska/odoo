@@ -1055,7 +1055,7 @@ class TestExpenses(TestExpenseCommon):
 
     def test_reset_move_to_draft(self):
         """
-        Test the state of an expense and its report
+        Test the state of an expense and its reports
         after resetting the paid move to draft
         """
         expense_sheet = self.env['hr.expense.sheet'].create({
@@ -1077,13 +1077,13 @@ class TestExpenses(TestExpenseCommon):
         self.assertEqual(expense.state, 'draft', 'Expense state must be draft before sheet submission')
         self.assertEqual(expense_sheet.state, 'draft', 'Sheet state must be draft before submission')
 
-        # Submit report
+        # Submit reports
         expense_sheet.action_submit_sheet()
 
         self.assertEqual(expense.state, 'reported', 'Expense state must be reported after sheet submission')
         self.assertEqual(expense_sheet.state, 'submit', 'Sheet state must be submit after submission')
 
-        # Approve report
+        # Approve reports
         expense_sheet.approve_expense_sheets()
 
         self.assertEqual(expense.state, 'approved', 'Expense state must be draft after sheet approval')
@@ -1272,7 +1272,7 @@ class TestExpenses(TestExpenseCommon):
 
     def test_create_report_name(self):
         """
-            When an expense sheet is created from one or more expense, the report name is generated through the expense name or date.
+            When an expense sheet is created from one or more expense, the reports name is generated through the expense name or date.
             As the expense sheet is created directly from the hr.expense._get_default_expense_sheet_values method,
             we only need to test the method.
         """
@@ -1289,14 +1289,14 @@ class TestExpenses(TestExpenseCommon):
 
         # CASE 1: only one expense with or without date -> expense name
         sheet_name = expense_with_date_1._get_default_expense_sheet_values()[0]['name']
-        self.assertEqual(expense_with_date_1.name, sheet_name, "The report name should be the same as the expense name")
+        self.assertEqual(expense_with_date_1.name, sheet_name, "The reports name should be the same as the expense name")
         sheet_name = expense_without_date._get_default_expense_sheet_values()[0]['name']
-        self.assertEqual(expense_without_date.name, sheet_name, "The report name should be the same as the expense name")
+        self.assertEqual(expense_without_date.name, sheet_name, "The reports name should be the same as the expense name")
 
         # CASE 2: two expenses with the same date -> expense date
         expenses = expense_with_date_1 | expense_with_date_2
         sheet_name = expenses._get_default_expense_sheet_values()[0]['name']
-        self.assertEqual(format_date(self.env, expense_with_date_1.date), sheet_name, "The report name should be the same as the expense date")
+        self.assertEqual(format_date(self.env, expense_with_date_1.date), sheet_name, "The reports name should be the same as the expense date")
 
         # CASE 3: two expenses with different dates -> date range
         expense_with_date_2.date = '2021-01-02'
@@ -1304,7 +1304,7 @@ class TestExpenses(TestExpenseCommon):
         self.assertEqual(
             f"{format_date(self.env, expense_with_date_1.date)} - {format_date(self.env, expense_with_date_2.date)}",
             sheet_name,
-            "The report name should be the date range of the expenses",
+            "The reports name should be the date range of the expenses",
         )
 
         # CASE 4: One or more expense doesn't have a date (single sheet) -> No fallback name
@@ -1312,11 +1312,11 @@ class TestExpenses(TestExpenseCommon):
         sheet_name = expenses._get_default_expense_sheet_values()[0]['name']
         self.assertFalse(
             sheet_name,
-            "The report (with the empty expense date) name should be empty as a fallback when several reports are created",
+            "The reports (with the empty expense date) name should be empty as a fallback when several reports are created",
         )
         expenses.date = False
         sheet_name = expenses._get_default_expense_sheet_values()[0]['name']
-        self.assertFalse(sheet_name, "The report name should be empty as a fallback")
+        self.assertFalse(sheet_name, "The reports name should be empty as a fallback")
 
         # CASE 5: One or more expense doesn't have a date (multiple sheets) -> Fallback name
         expenses |= self.env['hr.expense'].create([{
@@ -1333,7 +1333,7 @@ class TestExpenses(TestExpenseCommon):
         self.assertSequenceEqual(
             ("New Expense Report, paid by employee", format_date(self.env, expenses[-1].date)),
             sheet_names,
-            "The report name should be 'New Expense Report, paid by (employee|company)' as a fallback",
+            "The reports name should be 'New Expense Report, paid by (employee|company)' as a fallback",
         )
 
     def test_expense_product_update(self):

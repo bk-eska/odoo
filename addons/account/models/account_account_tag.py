@@ -12,7 +12,7 @@ class AccountAccountTag(models.Model):
     applicability = fields.Selection([('accounts', 'Accounts'), ('taxes', 'Taxes'), ('products', 'Products')], required=True, default='accounts')
     color = fields.Integer('Color Index')
     active = fields.Boolean(default=True, help="Set active to false to hide the Account Tag without removing it.")
-    tax_negate = fields.Boolean(string="Negate Tax Balance", help="Check this box to negate the absolute value of the balance of the lines associated with this tag in tax report computation.")
+    tax_negate = fields.Boolean(string="Negate Tax Balance", help="Check this box to negate the absolute value of the balance of the lines associated with this tag in tax reports computation.")
     country_id = fields.Many2one(string="Country", comodel_name='res.country', help="Country for which this tag is available, when applied on taxes.")
 
     def name_get(self):
@@ -50,7 +50,7 @@ class AccountAccountTag(models.Model):
 
     def _get_related_tax_report_expressions(self):
         if not self:
-            return self.env['account.report.expression']
+            return self.env['account.reports.expression']
 
         or_domains = []
         for record in self:
@@ -62,7 +62,7 @@ class AccountAccountTag(models.Model):
             or_domains.append(expr_domain)
 
         domain = osv.expression.AND([[('engine', '=', 'tax_tags')], osv.expression.OR(or_domains)])
-        return self.env['account.report.expression'].search(domain)
+        return self.env['account.reports.expression'].search(domain)
 
     @api.ondelete(at_uninstall=False)
     def _unlink_except_master_tags(self):

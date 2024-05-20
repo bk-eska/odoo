@@ -13,7 +13,7 @@ class AccountTax(models.Model):
         ],
         string='KMD INF Code',
         default=False,
-        help='This field is used for the comments/special code column in the KMD INF report.'
+        help='This field is used for the comments/special code column in the KMD INF reports.'
     )
 
 
@@ -29,7 +29,7 @@ class AccountTaxTemplate(models.Model):
         ],
         string='KMD INF Code',
         default=False,
-        help='This field is used for the comments/special code column in the KMD INF report.'
+        help='This field is used for the comments/special code column in the KMD INF reports.'
     )
 
     def _get_tax_vals(self, company, tax_template_to_tax):

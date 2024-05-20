@@ -2458,7 +2458,7 @@ class AccountMove(models.Model):
                                               will have a 'base' caba treatment, as we only want to treat its base
                                               part in the caba entry (the tax part is already exigible on the invoice)
 
-                                            - line is an account.move.line record being not exigible on the tax report.
+                                            - line is an account.move.line record being not exigible on the tax reports.
             * currency:                 The currency on which the percentage has been computed.
             * total_balance:            sum(payment_term_lines.mapped('balance').
             * total_residual:           sum(payment_term_lines.mapped('amount_residual').
@@ -2819,7 +2819,7 @@ class AccountMove(models.Model):
     # -------------------------------------------------------------------------
 
     def _get_integrity_hash_fields(self):
-        # Use the latest hash version by default, but keep the old one for backward compatibility when generating the integrity report.
+        # Use the latest hash version by default, but keep the old one for backward compatibility when generating the integrity reports.
         hash_version = self._context.get('hash_version', MAX_HASH_VERSION)
         if hash_version == 1:
             return ['date', 'journal_id', 'company_id']
@@ -3817,7 +3817,7 @@ class AccountMove(models.Model):
         }
 
         if self.env.is_admin() and not self.env.company.external_report_layout_id and not self.env.context.get('discard_logo_check'):
-            return self.env['ir.actions.report']._action_configure_external_report_layout(report_action)
+            return self.env['ir.actions.reports']._action_configure_external_report_layout(report_action)
 
         return report_action
 
@@ -4461,7 +4461,7 @@ class AccountMove(models.Model):
         return 'paid'
 
     def _get_name_invoice_report(self):
-        """ This method need to be inherit by the localizations if they want to print a custom invoice report instead of
+        """ This method need to be inherit by the localizations if they want to print a custom invoice reports instead of
         the default one. For example please review the l10n_ar module """
         self.ensure_one()
         return 'account.report_invoice_document'

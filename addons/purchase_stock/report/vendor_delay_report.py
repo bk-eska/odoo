@@ -7,7 +7,7 @@ from odoo.osv.expression import expression
 
 
 class VendorDelayReport(models.Model):
-    _name = "vendor.delay.report"
+    _name = "vendor.delay.reports"
     _description = "Vendor Delay Report"
     _auto = False
 

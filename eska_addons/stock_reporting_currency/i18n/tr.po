@@ -1,0 +1,119 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_reporting_currency
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-28 16:03+0000\n"
+"PO-Revision-Date: 2023-03-28 16:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_reporting_currency
+#: model:ir.model.fields,field_description:stock_reporting_currency.field_product_product__report_currency_standard_price
+#: model:ir.model.fields,field_description:stock_reporting_currency.field_product_template__report_currency_standard_price
+msgid "Currency Cost"
+msgstr "Döviz Maliyet"
+
+#. module: stock_reporting_currency
+#: model:ir.model.fields,field_description:stock_reporting_currency.field_stock_valuation_layer__report_currency_remaining_value
+msgid "Currency Remaining Value"
+msgstr "Döviz Envanter"
+
+#. module: stock_reporting_currency
+#: model:ir.model.fields,field_description:stock_reporting_currency.field_stock_valuation_layer__report_currency_unit_cost
+msgid "Currency Unit Cost"
+msgstr "Döviz Maliyet"
+
+#. module: stock_reporting_currency
+#: model:ir.model.fields,field_description:stock_reporting_currency.field_stock_quant__report_currency_value
+msgid "Currency Value"
+msgstr "Döviz Değer"
+
+#. module: stock_reporting_currency
+#: model:ir.model,name:stock_reporting_currency.model_product_template
+msgid "Product"
+msgstr "Ürün"
+
+#. module: stock_reporting_currency
+#: model:ir.model,name:stock_reporting_currency.model_product_product
+msgid "Product Variant"
+msgstr "Ürün Varyantı"
+
+#. module: stock_reporting_currency
+#: model:ir.model,name:stock_reporting_currency.model_stock_quant
+msgid "Quants"
+msgstr "Stoklar"
+
+#. module: stock_reporting_currency
+#: model:ir.model.fields,field_description:stock_reporting_currency.field_product_product__report_currency_avg_cost
+msgid "Currency Average Cost"
+msgstr "Ortalama Döviz Maliyet"
+
+#. module: stock_reporting_currency
+#: model:ir.model.fields,field_description:stock_reporting_currency.field_product_product__report_currency_total_value
+msgid "Currency Total Value"
+msgstr "Toplam Döviz Değer"
+
+#. module: stock_reporting_currency
+#: model:ir.model.fields,help:stock_reporting_currency.field_stock_valuation_layer__report_currency_remaining_value
+msgid "Remaining Value In Report Currency"
+msgstr "Raporlama Para Biriminde Envanter"
+
+#. module: stock_reporting_currency
+#: model:ir.model.fields,field_description:stock_reporting_currency.field_product_product__report_currency_id
+#: model:ir.model.fields,field_description:stock_reporting_currency.field_product_template__report_currency_id
+msgid "Report Currency"
+msgstr "Raporlama Para Birimi"
+
+#. module: stock_reporting_currency
+#: model:ir.model.fields,field_description:stock_reporting_currency.field_product_product__report_currency_value_svl
+msgid "Report Currency Value Svl"
+msgstr "Raporlama Para Birimi Svl Değer"
+
+#. module: stock_reporting_currency
+#: model:ir.model.fields,field_description:stock_reporting_currency.field_stock_quant__report_currency_id
+#: model:ir.model.fields,field_description:stock_reporting_currency.field_stock_valuation_layer__report_currency_id
+msgid "Reporting Currency"
+msgstr "Raporlama Para Birimi"
+
+#. module: stock_reporting_currency
+#: model:ir.model,name:stock_reporting_currency.model_stock_move
+msgid "Stock Move"
+msgstr "Stok Hareketi"
+
+#. module: stock_reporting_currency
+#: model:ir.model,name:stock_reporting_currency.model_stock_valuation_layer
+msgid "Stock Valuation Layer"
+msgstr "Stok Değerleme Katmanı"
+
+#. module: stock_reporting_currency
+#: model:ir.model.fields,field_description:stock_reporting_currency.field_stock_valuation_layer__report_currency_value
+msgid "Total Currency Value"
+msgstr "Toplam Döviz Değer"
+
+#. module: stock_reporting_currency
+#: model_terms:ir.ui.view,arch_db:stock_reporting_currency.view_stock_valuation_layer_reporting_value
+msgid "Total Reporting Value"
+msgstr "Toplam Raporlama Değeri"
+
+#. module: stock_reporting_currency
+#: model:ir.model.fields,help:stock_reporting_currency.field_stock_valuation_layer__report_currency_value
+msgid "Total Value In Report Currency"
+msgstr "Raporlama Para Biriminde Toplam Değer"
+
+#. module: stock_reporting_currency
+#: model:ir.model.fields,help:stock_reporting_currency.field_stock_valuation_layer__report_currency_unit_cost
+msgid "Unit Cost In Report Currency"
+msgstr "Raporlama Para Biriminde Birim Maliyet"
+
+#. module: stock_reporting_currency
+#: model_terms:ir.ui.view,arch_db:stock_reporting_currency.product_template_form_view_report_currency
+msgid "per"
+msgstr "başına"

@@ -1,0 +1,58 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* report_xslt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-26 11:06+0000\n"
+"PO-Revision-Date: 2022-05-26 11:06+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: report_xslt
+#: model:ir.model.fields,field_description:report_xslt.field_ir_actions_report__attach_xml
+msgid "Attach XML"
+msgstr "XML'i ekle"
+
+#. module: report_xslt
+#: model:ir.model.fields,field_description:report_xslt.field_ir_actions_report__display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: report_xslt
+#: model:ir.model.fields,field_description:report_xslt.field_ir_actions_report__id
+msgid "ID"
+msgstr ""
+
+#. module: report_xslt
+#: model:ir.model.fields,field_description:report_xslt.field_ir_actions_report____last_update
+msgid "Last Modified on"
+msgstr "Son Düzenleme"
+
+#. module: report_xslt
+#: model:ir.model,name:report_xslt.model_ir_actions_report
+msgid "Report Action"
+msgstr "Rapor İşlemi"
+
+#. module: report_xslt
+#: code:addons/report_xslt/models/ir_actions_report.py:0
+#: code:addons/report_xslt/models/ir_actions_report.py:0
+#, python-format
+msgid "This model does not support XSLT reports"
+msgstr "Bu model, XSLT raporlarını desteklemez"
+
+#. module: report_xslt
+#: model:ir.model.fields,field_description:report_xslt.field_ir_actions_report__xslt
+msgid "XSLT"
+msgstr ""
+
+#. module: report_xslt
+#: model:ir.model.fields,field_description:report_xslt.field_ir_actions_report__xslt_transform
+msgid "XSLT Transform"
+msgstr "XSLT Dönüşümü"

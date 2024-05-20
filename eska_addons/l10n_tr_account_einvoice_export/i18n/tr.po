@@ -1,0 +1,248 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr_account_einvoice_export
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-04 11:18+0000\n"
+"PO-Revision-Date: 2024-01-04 11:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__4
+msgid "Air transport"
+msgstr "Havayolu"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,help:l10n_tr_account_einvoice_export.field_product_product__l10n_tr_einvoice_insurance_cost
+#: model:ir.model.fields,help:l10n_tr_account_einvoice_export.field_product_product__l10n_tr_einvoice_shipment_cost
+#: model:ir.model.fields,help:l10n_tr_account_einvoice_export.field_product_template__l10n_tr_einvoice_insurance_cost
+#: model:ir.model.fields,help:l10n_tr_account_einvoice_export.field_product_template__l10n_tr_einvoice_shipment_cost
+msgid "An line with this product will be hidden in export invoices."
+msgstr "Bu ürünü içeren satır ihracat faturalarında gösterilmeyecektir."
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model,name:l10n_tr_account_einvoice_export.model_res_company
+msgid "Companies"
+msgstr "Şirketler"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model,name:l10n_tr_account_einvoice_export.model_res_partner
+msgid "Contact"
+msgstr "Kontak"
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/res_partner.py:0
+#, python-format
+msgid "Customer doesn't have a passport!"
+msgstr "Müşteri pasaportu yok!"
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/res_partner.py:0
+#, python-format
+msgid "Customer doesn't have natioanality!"
+msgstr "Müşteri uyruğu yok!"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_fiscal_position__l10n_tr_default_export_type
+msgid "Default Export Type"
+msgstr "Varsayılan İhracat Türü"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_res_partner__l10n_tr_default_einvoice_profile
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_res_users__l10n_tr_default_einvoice_profile
+msgid "Default Profile"
+msgstr "Varsayılan Senaryo"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_bank_statement_line__l10n_tr_einvoice_profile
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_move__l10n_tr_einvoice_profile
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_payment__l10n_tr_einvoice_profile
+msgid "E-Invoice Profile"
+msgstr "E-Fatura Senaryosu"
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#, python-format
+msgid "Export Address"
+msgstr "İhracat Adresi"
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#, python-format
+msgid "Export Fiscal Position (301) is required with this profile!"
+msgstr "Bu senaryoda İhracat Mali Koşulu (301) gerekli!"
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#, python-format
+msgid "Export Fiscal Position (501) is required with this profile!"
+msgstr "Bu senaryoda İhracat Mali Koşulu (501) gerekli!"
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#, python-format
+msgid "Export invoice requires transport mode!"
+msgstr "İhracat faturası taşıma gönderim şekli gerektiriyor!"
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#, python-format
+msgid "Export invoices require incoterms!"
+msgstr "İhracat faturaları incoterm (teslim şartı) gerektiriyor!"
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#, python-format
+msgid "Export invoices require shipping address!"
+msgstr "İhracat faturaları nakliye adresi gerektiriyor!"
+
+#. module: l10n_tr_account_einvoice_export
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice_export/models/account_move.py:0
+#, python-format
+msgid "Export product %s require hs code!"
+msgstr "%s ihracat ürünü hs kodu gerektiriyor!"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model,name:l10n_tr_account_einvoice_export.model_account_fiscal_position
+msgid "Fiscal Position"
+msgstr "Mali Koşul"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__7
+msgid "Fixed transport installations"
+msgstr "Sabit taşıma tesisleri"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_bank_statement_line__l10n_tr_einvoice_gtb_gcb_tescilno
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_move__l10n_tr_einvoice_gtb_gcb_tescilno
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_payment__l10n_tr_einvoice_gtb_gcb_tescilno
+msgid "GCB Tescil No"
+msgstr "GCB Tescil No"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_bank_statement_line__l10n_tr_einvoice_gtb_export_date
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_move__l10n_tr_einvoice_gtb_export_date
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_payment__l10n_tr_einvoice_gtb_export_date
+msgid "GTB Export Date"
+msgstr "GTB İhracat Tarihi"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_bank_statement_line__l10n_tr_einvoice_gtb_refno
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_move__l10n_tr_einvoice_gtb_refno
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_payment__l10n_tr_einvoice_gtb_refno
+msgid "GTB Ref No"
+msgstr "GTB Ref No"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__8
+msgid "Inland water transport"
+msgstr "İç su taşımacılığı"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_product_product__l10n_tr_einvoice_insurance_cost
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_product_template__l10n_tr_einvoice_insurance_cost
+msgid "Insurance Cost"
+msgstr "Sigorta Maliyeti"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model,name:l10n_tr_account_einvoice_export.model_account_move
+msgid "Journal Entry"
+msgstr "Yevmiye Kaydı"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model,name:l10n_tr_account_einvoice_export.model_account_move_line
+msgid "Journal Item"
+msgstr "Yevmiye Kalemi"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__5
+msgid "Mail"
+msgstr "Posta"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__1
+msgid "Maritime transport"
+msgstr "Denizyolu"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_fiscal_position__l10n_tr_default_export_type__temelfatura
+msgid "Mikro İhracat (E-Arşiv)"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__6
+msgid "Multimodal transport"
+msgstr "Çok araçlı"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_move_line__l10n_tr_package_quantity
+msgid "Package Quantity"
+msgstr "Paket Miktarı"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_move_line__l10n_tr_package_type_id
+msgid "Package Type"
+msgstr "Paket Türü"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model,name:l10n_tr_account_einvoice_export.model_product_template
+msgid "Product"
+msgstr "Ürün"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__2
+msgid "Rail transport"
+msgstr "Demiryolu"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_transport_mode_code__3
+msgid "Road transport"
+msgstr "Karayolu"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_product_product__l10n_tr_einvoice_shipment_cost
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_product_template__l10n_tr_einvoice_shipment_cost
+msgid "Shipping Cost"
+msgstr "Navlun Maliyeti"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_bank_statement_line__l10n_tr_transport_mode_code
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_move__l10n_tr_transport_mode_code
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice_export.field_account_payment__l10n_tr_transport_mode_code
+msgid "Transport Mode"
+msgstr "Taşıma Gönderim Şekli"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_einvoice_profile__yolcuberaberfatura
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__res_partner__l10n_tr_default_einvoice_profile__yolcuberaberfatura
+msgid "Yolcu Beraberinde Fatura"
+msgstr "Yolcu Beraberinde Fatura"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_move__l10n_tr_einvoice_profile__ihracat
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__res_partner__l10n_tr_default_einvoice_profile__ihracat
+msgid "İhracat"
+msgstr "İhracat"
+
+#. module: l10n_tr_account_einvoice_export
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice_export.selection__account_fiscal_position__l10n_tr_default_export_type__ihracat
+msgid "İhracat (E-Fatura)"
+msgstr "İhracat (E-Fatura)"

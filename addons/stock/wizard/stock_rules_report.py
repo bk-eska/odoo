@@ -5,8 +5,8 @@ from odoo import api, fields, models
 
 
 class StockRulesReport(models.TransientModel):
-    _name = 'stock.rules.report'
-    _description = 'Stock Rules report'
+    _name = 'stock.rules.reports'
+    _description = 'Stock Rules reports'
 
     product_id = fields.Many2one('product.product', string='Product', required=True)
     product_tmpl_id = fields.Many2one('product.template', string='Product Template', required=True)

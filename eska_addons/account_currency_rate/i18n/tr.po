@@ -1,0 +1,267 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_currency_rate
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-03 15:39+0000\n"
+"PO-Revision-Date: 2024-01-03 15:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_currency_rate
+#: model_terms:ir.ui.view,arch_db:account_currency_rate.view_move_form_currency_rate
+msgid "(convert)"
+msgstr "(çevir)"
+
+#. module: account_currency_rate
+#: model_terms:ir.ui.view,arch_db:account_currency_rate.view_account_convert_currency
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: account_currency_rate
+#: model:ir.model,name:account_currency_rate.model_account_convert_currency
+msgid "Change Currency"
+msgstr "Para Birimini Değiştir"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__company_currency_id
+msgid "Company Currency"
+msgstr "Şirket Para Birimi"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment__amount_company_currency
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment_register__amount_company_currency
+msgid "Company Currency Amount"
+msgstr "Şirket Para Birimi Tutar"
+
+#. module: account_currency_rate
+#: model:ir.model,name:account_currency_rate.model_res_config_settings
+msgid "Config Settings"
+msgstr "Yapılandırma Ayarları"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_bank_statement_line__currency_rate_method
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__currency_rate_method
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_move__currency_rate_method
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment__currency_rate_method
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment_register__currency_rate_method
+#: model:ir.model.fields,field_description:account_currency_rate.field_currency_rate_mixin__currency_rate_method
+msgid "Conversion Method"
+msgstr "Çevrim Yöntemi"
+
+#. module: account_currency_rate
+#: model_terms:ir.ui.view,arch_db:account_currency_rate.view_account_convert_currency
+msgid "Convert"
+msgstr "Çevir"
+
+#. module: account_currency_rate
+#: model:ir.actions.act_window,name:account_currency_rate.action_account_convert_currency
+#: model_terms:ir.ui.view,arch_db:account_currency_rate.view_account_convert_currency
+msgid "Convert Currency"
+msgstr "Para Birimini Çevir"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_bank_statement_line__currency_date
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__currency_date
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_move__currency_date
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment__currency_date
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment_register__currency_date
+#: model:ir.model.fields,field_description:account_currency_rate.field_currency_rate_mixin__currency_date
+msgid "Currency Date"
+msgstr "Kur Tarihi"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_bank_statement_line__currency_inverse_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__currency_inverse_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_move__currency_inverse_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment__currency_inverse_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment_register__currency_inverse_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_currency_rate_mixin__currency_inverse_rate
+msgid "Currency Inverse Rate"
+msgstr "Para Birimi Kur"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_bank_statement_line__currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_move__currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment__currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment_register__currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_currency_rate_mixin__currency_rate
+msgid "Currency Rate"
+msgstr "Para Birimi Çevrim Oranı"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_res_config_settings__show_currency_rate_selection
+msgid "Currency Rate Display"
+msgstr "Para Birimi Kur Görünümü"
+
+#. module: account_currency_rate
+#: model:ir.model,name:account_currency_rate.model_currency_rate_mixin
+msgid "Currency Rate Mixin"
+msgstr "Para Birimi Çevrim Oranı Mixin"
+
+#. module: account_currency_rate
+#: model:res.groups,name:account_currency_rate.group_show_currency_rate_inverse
+msgid "Currency rate inverse"
+msgstr "Para Birimi Ters Kur"
+
+#. module: account_currency_rate
+#: model:res.groups,name:account_currency_rate.group_show_currency_rate_normal
+msgid "Currency rate normal"
+msgstr "Para Birimi Normal Kur"
+
+#. module: account_currency_rate
+#: model:ir.model.fields.selection,name:account_currency_rate.selection__account_convert_currency__currency_rate_method__default
+#: model:ir.model.fields.selection,name:account_currency_rate.selection__account_move__currency_rate_method__default
+#: model:ir.model.fields.selection,name:account_currency_rate.selection__account_payment__currency_rate_method__default
+#: model:ir.model.fields.selection,name:account_currency_rate.selection__account_payment_register__currency_rate_method__default
+#: model:ir.model.fields.selection,name:account_currency_rate.selection__currency_rate_mixin__currency_rate_method__default
+msgid "Default Rate"
+msgstr "Varsayılan Kur"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__currency_id
+msgid "Destination Currency"
+msgstr "Hedef Para Birimi"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__id
+msgid "ID"
+msgstr ""
+
+#. module: account_currency_rate
+#: model:ir.model.fields.selection,name:account_currency_rate.selection__res_config_settings__show_currency_rate_selection__inverse
+msgid "Inverted"
+msgstr "Ters"
+
+#. module: account_currency_rate
+#: model:ir.model,name:account_currency_rate.model_account_move
+msgid "Journal Entry"
+msgstr "Yevmiye Kaydı"
+
+#. module: account_currency_rate
+#: model:ir.model,name:account_currency_rate.model_account_move_line
+msgid "Journal Item"
+msgstr "Yevmiye Kalemi"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency____last_update
+msgid "Last Modified on"
+msgstr "Son Düzenleme"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: account_currency_rate
+#: model:ir.model.fields.selection,name:account_currency_rate.selection__res_config_settings__show_currency_rate_selection__normal
+msgid "Normal"
+msgstr ""
+
+#. module: account_currency_rate
+#: model:ir.model,name:account_currency_rate.model_account_payment
+msgid "Payments"
+msgstr "Ödemeler"
+
+#. module: account_currency_rate
+#: model:ir.model,name:account_currency_rate.model_account_payment_register
+msgid "Register Payment"
+msgstr "Ödeme Kaydet"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,help:account_currency_rate.field_account_convert_currency__currency_id
+msgid "Select a currency to apply"
+msgstr "Uygulanacak para birimini seçiniz"
+
+#. module: account_currency_rate
+#: model_terms:ir.ui.view,arch_db:account_currency_rate.res_config_settings_view_form_currency_rate
+msgid "Show Currency rate"
+msgstr "Para Birimi Gösterimi"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_res_config_settings__group_show_currency_rate_inverse
+#: model:res.groups,comment:account_currency_rate.group_show_currency_rate_inverse
+msgid "Show currency rate inverse"
+msgstr "Para birimi kurunu ters göster"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_res_config_settings__group_show_currency_rate_normal
+#: model:res.groups,comment:account_currency_rate.group_show_currency_rate_normal
+msgid "Show currency rate normal"
+msgstr "Para birimi kurunu normal göster"
+
+#. module: account_currency_rate
+#: model_terms:ir.ui.view,arch_db:account_currency_rate.view_move_form_currency_rate
+msgid "Total"
+msgstr "Toplam"
+
+#. module: account_currency_rate
+#: model_terms:ir.ui.view,arch_db:account_currency_rate.view_move_form_currency_rate
+msgid "Total (Company Currency)"
+msgstr "Toplam (Şirket Para Birimi)"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_bank_statement_line__use_currency_rate_method
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__use_currency_rate_method
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_move__use_currency_rate_method
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment__use_currency_rate_method
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment_register__use_currency_rate_method
+#: model:ir.model.fields,field_description:account_currency_rate.field_currency_rate_mixin__use_currency_rate_method
+msgid "Use Conversion Method"
+msgstr "Çevrim Metodu Kullan"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__use_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_move__use_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment__use_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment_register__use_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_currency_rate_mixin__use_currency_rate
+msgid "Use Currency Rate"
+msgstr "Para Birimi Kuru Kullan"
+
+#. module: account_currency_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_convert_currency__use_inverse_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_move__use_inverse_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment__use_inverse_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_account_payment_register__use_inverse_rate
+#: model:ir.model.fields,field_description:account_currency_rate.field_currency_rate_mixin__use_inverse_rate
+msgid "Use Inverse Rate"
+msgstr "Ters Kur Kullan"
+
+#. module: account_currency_rate
+#: model_terms:ir.ui.view,arch_db:account_currency_rate.view_account_convert_currency
+msgid "or"
+msgstr "veya"

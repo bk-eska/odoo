@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2024 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+	<data noupdate="1">
+		<record model='hr.holidays.allocate.rule' id='tr_allocate_rule_1_5'>
+			<field name='name'>Yıllık İzin Tahsisi (1-5 Yıl Kıdem)</field>
+			<field name='priority'>10</field>
+			<field name='seniority_years'>1</field>
+			<field name='leave_type_id' eval="ref('hr_holidays.holiday_status_cl')"/>
+			<field name='number_of_days'>14</field>
+			<field name='auto_approve' eval="True"/>
+		</record>
+		<record model='hr.holidays.allocate.rule' id='tr_allocate_rule_18'>
+			<field name='name'>Yıllık İzin Tahsisi (18 Yaş Altı)</field>
+			<field name='priority'>20</field>
+			<field name='seniority_years'>1</field>
+			<field name='younger_than'>18</field>
+			<field name='leave_type_id' eval="ref('hr_holidays.holiday_status_cl')"/>
+			<field name='number_of_days'>20</field>
+			<field name='auto_approve' eval="True"/>
+		</record>
+		<record model='hr.holidays.allocate.rule' id='tr_allocate_rule_50'>
+			<field name='name'>Yıllık İzin Tahsisi (50 Yaş Üstü)</field>
+			<field name='priority'>30</field>
+			<field name='seniority_years'>1</field>
+			<field name='older_than'>50</field>
+			<field name='leave_type_id' eval="ref('hr_holidays.holiday_status_cl')"/>
+			<field name='number_of_days'>20</field>
+			<field name='auto_approve' eval="True"/>
+		</record>
+		<record model='hr.holidays.allocate.rule' id='tr_allocate_rule_6_14'>
+			<field name='name'>Yıllık İzin Tahsisi (6-14 Yıl Kıdem)</field>
+			<field name='priority'>40</field>
+			<field name='seniority_years'>6</field>
+			<field name='leave_type_id' eval="ref('hr_holidays.holiday_status_cl')"/>
+			<field name='number_of_days'>20</field>
+			<field name='auto_approve' eval="True"/>
+		</record>
+		<record model='hr.holidays.allocate.rule' id='tr_allocate_rule_15'>
+			<field name='name'>Yıllık İzin Tahsisi (15+ Yıl Kıdem)</field>
+			<field name='priority'>50</field>
+			<field name='seniority_years'>15</field>
+			<field name='leave_type_id' eval="ref('hr_holidays.holiday_status_cl')"/>
+			<field name='number_of_days'>26</field>
+			<field name='auto_approve' eval="True"/>
+		</record>
+    </data>
+</odoo>

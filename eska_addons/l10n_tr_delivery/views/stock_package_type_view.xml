@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="stock_package_type_form_l10n_tr_delivery">
+        <field name="name">stock.package.type.form.l10n_tr.delivery</field>
+        <field name="model">stock.package.type</field>
+        <field name="inherit_id" ref="stock.stock_package_type_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='shipper_package_code']" position="after">
+                <field name="l10n_tr_unece_code"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

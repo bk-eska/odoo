@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="mrp_production_tree_view_tlab" model="ir.ui.view">
+        <field name="name">mrp.production.tree.view.tlab</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_planned_start']" position="attributes">
+                <attribute name="widget">date</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mrp_production_workorder_tree_editable_view_tlab" model="ir.ui.view">
+        <field name="name">mrp.production.work.order.tree.editable.tlab</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_editable_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='working_state']" position="after">
+                <field name="x_workcenterkod"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

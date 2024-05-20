@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record id="view_account_convert_currency" model="ir.ui.view">
+        <field name="name">account.convert.currency.form</field>
+        <field name="model">account.convert.currency</field>
+        <field name="arch" type="xml">
+            <form string="Convert Currency">
+                <group>
+                    <field name="currency_id"/>
+                    <field name="currency_date" invisible="1"/>
+                    <field name="company_currency_id" invisible="1"/>
+                    <field name="use_currency_rate" invisible="1"/>
+                    <field name="use_currency_rate_method" invisible="1"/>
+                    <label for="currency_rate"
+                           groups="base.group_multi_currency"
+                           attrs="{'invisible':[('use_currency_rate','=',False)]}"/>
+                    <div groups="base.group_multi_currency"
+                         class="d-flex"
+                         attrs="{'invisible':[('use_currency_rate','=',False)]}">
+                        <field name="currency_rate_method"
+                               groups="base.group_multi_currency"
+                               attrs="{'invisible':['|',
+                               ('use_currency_rate','=',False),
+                               ('use_currency_rate_method','=',False)]}"/>
+                        <span class="oe_inline o_form_label mr-3 ml-5"
+                              attrs="{'invisible':['|',
+                               ('use_currency_rate','=',False),
+                               ('use_currency_rate_method','=',False)]}"
+                              groups="base.group_multi_currency"> </span>
+                        <field name="use_inverse_rate" invisible="1"/>
+                        <field name="currency_rate"
+                               nolabel="1"
+                               class="oe_inline"
+                               attrs="{'invisible':[('use_inverse_rate','=',True)]}"/>
+                        <field name="currency_inverse_rate"
+                               nolabel="1"
+                               class="oe_inline"
+                               attrs="{'invisible':[('use_inverse_rate','=',False)]}"/>
+                    </div>
+                </group>
+                <footer>
+                    <button name="convert_currency"
+                            string="Convert"
+                            type="object"
+                            class="oe_highlight"/>
+                    or
+                    <button string="Cancel"
+                            class="oe_link"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_account_convert_currency"
+            model="ir.actions.act_window">
+        <field name="name">Convert Currency</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.convert.currency</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_account_convert_currency"/>
+        <field name="target">new</field>
+    </record>
+</odoo>
+

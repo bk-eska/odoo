@@ -2533,7 +2533,7 @@ class Model(models.AbstractModel):
                 view['toolbar'] = {}
 
             bindings = self.env['ir.actions.actions'].get_bindings(self._name)
-            for action_type, key in (('report', 'print'), ('action', 'action')):
+            for action_type, key in (('reports', 'print'), ('action', 'action')):
                 for action in bindings.get(action_type, []):
                     view_types = (
                         action['binding_view_types'].split(',')

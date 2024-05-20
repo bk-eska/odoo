@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="view_partner_tree_last_order" model="ir.ui.view">
+        <field name="name">res.partner.last.order</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='email']" position="after">
+                <field name="last_order" optional="hide"
+                       groups="sales_team.group_sale_salesman"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

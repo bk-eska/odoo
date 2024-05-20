@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2015 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record id="view_partner_form_edi" model="ir.ui.view">
+        <field name="name">res.partner.form.edi</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='sales_purchases']" position="after">
+                <page string="Party Identifiers">
+                    <field name="l10n_tr_party_identifiers"
+                           nolabel="1">
+                        <tree editable="bottom">
+                            <field name="side"/>
+                            <field name="party_identification"/>
+                            <field name="identifier"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

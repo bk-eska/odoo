@@ -6,7 +6,7 @@ from odoo.tools import format_date
 
 
 class ReceptionReport(models.AbstractModel):
-    _inherit = 'report.stock.report_reception'
+    _inherit = 'reports.stock.report_reception'
 
     def _get_docs(self, docids):
         if self.env.context.get('default_production_ids'):

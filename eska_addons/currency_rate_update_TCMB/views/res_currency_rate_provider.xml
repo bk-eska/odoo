@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).-->
+<odoo>
+    <record model="ir.ui.view" id="res_currency_rate_provider_form_view_tcmb">
+        <field name="name">res.currency.rate.provider.form.tcmb</field>
+        <field name="model">res.currency.rate.provider</field>
+        <field name="inherit_id"
+               ref="currency_rate_update.res_currency_rate_provider_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='options']" position="inside">
+                <group string="Rate Type Mapping"
+                       attrs="{'invisible': [('service','!=','TCMB')]}">
+                    <field name="rate_type_ids" colspan="2" nolabel="1">
+                        <tree string="Rate Type Mapping" editable="bottom">
+                            <field name="rate_type"/>
+                            <field name="currency_rate_type_id"/>
+                        </tree>
+                    </field>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -27,8 +27,8 @@
             <field name="attachment">'ISR-' + object.name + '.pdf'</field>
             <field name="attachment_use">True</field>
         </record>
-        <!--No additional condition in report name on invoice state or type as this
-            report is only available to be printed for out invoices after
+        <!--No additional condition in reports name on invoice state or type as this
+            reports is only available to be printed for out invoices after
             'draft' state, if the fields required by the ISR have been set.-->
 
         <template id="l10n_ch_isr_report_template">

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+    <record id="view_move_form_production" model="ir.ui.view">
+        <field name="name">stock.production.lot.inherit.form.production</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form" />
+        <field name="arch" type="xml">
+        <xpath expr="//group[@name='main_group']//field[@name='company_id']" position="after">
+                <field name="production_date" />
+        </xpath>
+        </field>
+    </record>
+
+    <record id="view_production_lot_view_tree_production" model="ir.ui.view">
+        <field name="name">stock.production.lot.tree.inherit.product.product</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='create_date']" position="after">
+                <field name="production_date" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

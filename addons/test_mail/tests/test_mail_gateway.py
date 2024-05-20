@@ -1104,7 +1104,7 @@ class TestMailgateway(TestMailCommon):
 
     @mute_logger('odoo.addons.mail.models.mail_thread')
     def test_message_process_bounce_alias(self):
-        """ Writing to bounce alias is considered as a bounce even if not multipart/report bounce structure """
+        """ Writing to bounce alias is considered as a bounce even if not multipart/reports bounce structure """
         self.assertEqual(self.partner_1.message_bounce, 0)
         self.assertEqual(self.test_record.message_bounce, 0)
 
@@ -1130,7 +1130,7 @@ class TestMailgateway(TestMailCommon):
 
     @mute_logger('odoo.addons.mail.models.mail_thread')
     def test_message_process_bounce_multipart_alias(self):
-        """ Multipart/report bounce correctly make related partner bounce """
+        """ Multipart/reports bounce correctly make related partner bounce """
         self.assertEqual(self.partner_1.message_bounce, 0)
         self.assertEqual(self.test_record.message_bounce, 0)
 
@@ -1144,7 +1144,7 @@ class TestMailgateway(TestMailCommon):
 
     @mute_logger('odoo.addons.mail.models.mail_thread')
     def test_message_process_bounce_multipart_alias_reply(self):
-        """ Multipart/report bounce correctly make related partner and record found in bounce email bounce """
+        """ Multipart/reports bounce correctly make related partner and record found in bounce email bounce """
         self.assertEqual(self.partner_1.message_bounce, 0)
         self.assertEqual(self.test_record.message_bounce, 0)
 
@@ -1158,7 +1158,7 @@ class TestMailgateway(TestMailCommon):
 
     @mute_logger('odoo.addons.mail.models.mail_thread')
     def test_message_process_bounce_multipart_alias_whatever_from(self):
-        """ Multipart/report bounce correctly make related record found in bounce email bounce """
+        """ Multipart/reports bounce correctly make related record found in bounce email bounce """
         self.assertEqual(self.partner_1.message_bounce, 0)
         self.assertEqual(self.test_record.message_bounce, 0)
 
@@ -1172,7 +1172,7 @@ class TestMailgateway(TestMailCommon):
 
     @mute_logger('odoo.addons.mail.models.mail_thread')
     def test_message_process_bounce_multipart_whatever_to_and_from(self):
-        """ Multipart/report bounce correctly make related record found in bounce email bounce """
+        """ Multipart/reports bounce correctly make related record found in bounce email bounce """
         self.assertEqual(self.partner_1.message_bounce, 0)
         self.assertEqual(self.test_record.message_bounce, 0)
 

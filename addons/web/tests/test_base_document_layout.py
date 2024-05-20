@@ -82,7 +82,7 @@ class TestBaseDocumentLayoutHelpers(TransactionCase):
             'primary_color': '#000000',
             'secondary_color': '#000000',
         }
-        self.report_layout1 = self.env['report.layout'].create({
+        self.report_layout1 = self.env['reports.layout'].create({
             'view_id': self.layout_template1.id,
             'name': 'report_%s' % self.layout_template1.name,
         })
@@ -98,7 +98,7 @@ class TestBaseDocumentLayoutHelpers(TransactionCase):
             'module': 'web',
             'res_id': self.layout_template2.id,
         })
-        self.report_layout2 = self.env['report.layout'].create({
+        self.report_layout2 = self.env['reports.layout'].create({
             'view_id': self.layout_template2.id,
             'name': 'report_%s' % self.layout_template2.name,
         })
@@ -109,7 +109,7 @@ class TestBaseDocumentLayout(TestBaseDocumentLayoutHelpers):
     # Logo change Tests
     def test_company_no_color_change_logo(self):
         """When neither a logo nor the colors are set
-        The wizard displays the colors of the report layout
+        The wizard displays the colors of the reports layout
         Changing logo means the colors on the wizard change too
         Emptying the logo works and doesn't change the colors"""
         self.company.write({

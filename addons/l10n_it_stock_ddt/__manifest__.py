@@ -25,7 +25,7 @@ invoice line to export in the FatturaPA XML.
     """,
     'depends': ['l10n_it_edi', 'delivery', 'stock_account'],
     'data': [
-        'report/l10n_it_ddt_report.xml',
+        'reports/l10n_it_ddt_report.xml',
         'views/stock_picking_views.xml',
         'views/account_invoice_views.xml',
         'data/l10n_it_ddt_template.xml',

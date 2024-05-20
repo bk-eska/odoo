@@ -549,7 +549,7 @@ class StockMove(models.Model):
             _logger.info("Validate %d of pickings" % len(picking_to_validate))
             picking_to_validate.with_context(skip_backorder=True, skip_sms=True).button_validate()
 
-        # (Un)comment to test a DB with a lot of outgoing/incoming/internal confirmed moves, e.g. for testing of forecasted report
+        # (Un)comment to test a DB with a lot of outgoing/incoming/internal confirmed moves, e.g. for testing of forecasted reports
         # pickings = confirm_pickings(0.8)
 
         # (Un)comment to test a DB with a lot of outgoing/incoming/internal finished moves

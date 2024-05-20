@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_check_voucher">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <t t-set="doc" t-value="doc.with_context(lang=tr_TR)" />
+                    <t t-set="address">
+                        <div t-field="doc.partner_id"
+                            t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                        <p t-if="doc.partner_id.vat"><t t-esc="doc.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="doc.partner_id.vat"/></p>
+                    </t>
+                    <div class="page">
+                        <div class="oe_structure"/>
+
+                        <h2 style="margin-top:16px;">
+                            <span t-if="doc.payment_type == 'outbound'">ÇEK ÇIKIŞ BORDROSU</span>
+                            <span t-if="doc.payment_type == 'inbound'">ÇEK GİRİŞ BORDROSU</span>
+                        </h2>
+
+                        <div class="row" style="margin-top:32px; margin-bottom:32px;" id="informations">
+                            <div t-if="doc.date" class="col-auto col-3 mw-100 mb-2">
+                                <strong>Tarih :</strong>
+                                <p class="m-0" t-field="doc.date"/>
+                            </div>
+                        </div>
+                        <table class="table table-sm o_main_table">
+                            <thead style="display: table-row-group">
+                                <tr>
+                                    <th name="th_bank">Banka</th>
+                                    <th name="th_branch">Şube</th>
+                                    <th name="th_account">Hesap No</th>
+                                    <th name="th_check">Çek No</th>
+                                    <th name="th_due_date">Vade</th>
+                                    <th name="th_amount">Tutar</th>
+                                </tr>
+                            </thead>
+                            <tbody class="sale_tbody">
+                                <tr>
+                                    <td name="td_bank">
+                                        <t t-if="doc.l10n_latam_check_bank_id">
+                                            <span t-field="doc.l10n_latam_check_bank_id.name"/>
+                                        </t>
+                                        <t t-elif="doc.l10n_latam_check_id">
+                                            <span t-field="doc.l10n_latam_check_id.l10n_latam_check_bank_id.name"/>
+                                        </t>
+                                    </td>
+                                    <td name="td_branch">
+                                        <span/>
+                                    </td>
+                                    <td name="td_account">
+                                        <span/>
+                                    </td>
+                                    <td name="td_check">
+                                        <t t-if="doc.l10n_latam_check_number">
+                                            <span t-field="doc.l10n_latam_check_number"/>
+                                        </t>
+                                        <t t-elif="doc.l10n_latam_check_id">
+                                            <span t-field="doc.l10n_latam_check_id.l10n_latam_check_number"/>
+                                        </t>
+                                    </td>
+                                    <td name="td_due_date">
+                                        <t t-if="doc.l10n_latam_check_payment_date">
+                                            <span t-field="doc.l10n_latam_check_payment_date"/>
+                                        </t>
+                                        <t t-elif="doc.l10n_latam_check_id">
+                                            <span t-field="doc.l10n_latam_check_id.l10n_latam_check_payment_date"/>
+                                        </t>
+                                    </td>
+                                    <td name="td_amount">
+                                        <t t-if="doc.amount">
+                                            <span t-field="doc.amount" t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                        </t>
+                                        <t t-elif="doc.l10n_latam_check_id">
+                                            <span t-field="doc.l10n_latam_check_id.amount" t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="clearfix">
+                            <div id="total" class="row" name="total">
+                                <div t-attf-class="col-4 ml-auto">
+                                    <table class="table table-sm">
+                                        <tr class="border-black o_total">
+                                            <td name="td_amount_total_label">
+                                                <strong>Toplam :</strong>
+                                            </td>
+                                            <td name="td_amount_total" class="text-right">
+                                                <span t-field="doc.amount"
+                                                      t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <br/><br/>
+                        <div class="oe_structure"/>
+                        <p>Yukarıda muhteviyatı yazılı 1 adet Çek,
+                            <t t-if="doc.payment_method_id.code == 'check_printing'">
+                                 Tarafınıza Verilmiş
+                            </t>
+                            <t t-elif="doc.payment_method_id.code == 'out_third_party_checks'">
+                                 Tarafınıza CİRO Edilmiş
+                            </t>
+                            <t t-elif="doc.payment_method_id.code in ('new_third_party_checks', 'in_third_party_checks')">
+                                 Tarafınızdan ALINMIŞ
+                            </t> Cari Hesabınıza
+                            <span t-field="doc.amount" t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                            <t t-if="doc.payment_type == 'inbound'">
+                                 ALACAK
+                            </t>
+                            <t t-elif="doc.payment_type == 'outbound'">
+                                 BORÇ
+                            </t>
+                            kaydedilmiştir.
+                        </p>
+                        <p>Saygılarımızla,</p>
+                        <div t-if="doc.ref">
+                            <p>Not: <span t-field="doc.ref"/></p>
+                        </div>
+                    </div>
+                </t>
+                <p style="page-break-after:always;"/>
+            </t>
+        </t>
+    </template>
+</odoo>

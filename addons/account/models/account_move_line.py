@@ -784,7 +784,7 @@ class AccountMoveLine(models.Model):
                 tag_amount = (record.tax_tag_invert and -1 or 1) * (tag.tax_negate and -1 or 1) * record.balance
 
                 if tag.applicability == 'taxes' and tag.name[0] in {'+', '-'}:
-                    # Then, the tag comes from a report expression, and hence has a + or - sign (also in its name)
+                    # Then, the tag comes from a reports expression, and hence has a + or - sign (also in its name)
                     tag_name = tag.name[1:]
                 else:
                     # Then, it's a financial tag (sign is always +, and never shown in tag name)
@@ -1554,7 +1554,7 @@ class AccountMoveLine(models.Model):
             for line in self:
                 if line.display_type == 'tax' and line.move_id.line_ids.tax_ids:
                     raise ValidationError(_(
-                        "You cannot delete a tax line as it would impact the tax report"
+                        "You cannot delete a tax line as it would impact the tax reports"
                     ))
                 elif line.display_type == 'payment_term':
                     raise ValidationError(_(
@@ -2166,7 +2166,7 @@ class AccountMoveLine(models.Model):
         journal items in a foreign currency. In that specific case, we need to
         generate extra journal items at the generation of the exchange difference
         journal entry to ensure this balance is reset to zero and then, will not
-        appear on the tax report leading to erroneous tax base amount / tax amount.
+        appear on the tax reports leading to erroneous tax base amount / tax amount.
         :param exchange_diff_vals:  The current vals of the exchange difference journal entry created by the
                                     '_prepare_exchange_difference_move_vals' method.
         """
@@ -2608,7 +2608,7 @@ class AccountMoveLine(models.Model):
     # -------------------------------------------------------------------------
 
     def _get_integrity_hash_fields(self):
-        # Use the new hash version by default, but keep the old one for backward compatibility when generating the integrity report.
+        # Use the new hash version by default, but keep the old one for backward compatibility when generating the integrity reports.
         hash_version = self._context.get('hash_version', MAX_HASH_VERSION)
         if hash_version == 1:
             return ['debit', 'credit', 'account_id', 'partner_id']
@@ -2645,7 +2645,7 @@ class AccountMoveLine(models.Model):
     @api.model
     def _get_tax_exigible_domain(self):
         """ Returns a domain to be used to identify the move lines that are allowed
-        to be taken into account in the tax report.
+        to be taken into account in the tax reports.
         """
         return [
             # Lines on moves without any payable or receivable line are always exigible

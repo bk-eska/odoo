@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record id="view_partner_form_sales_permit" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority" eval="10"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='sales_purchases']" position="after">
+                 <page
+                    name="tobacco"
+                    string="Tobacco"
+                    attrs="{'invisible': [('company_type','!=','company')]}"
+                >
+                    <group>
+                        <group string="Sales Permit">
+                            <field name="sales_permit_number"/>
+                            <field name="sales_permit_file"
+                                   filename="sales_permit_filename"/>
+                            <field name="sales_permit_filename"
+                                   invisible="1"/>
+                        </group>
+                        <group string="Tobacco License">
+                            <field name="tobacco_license_number"/>
+                            <field name="tobacco_license_expiry_date"/>
+                            <field name="tobacco_license_file"
+                                   filename="tobacco_license_filename"/>
+                            <field name="tobacco_license_filename"
+                                   invisible="1"/>
+                        </group>
+                        <group string="Excise Tax">
+                            <field name="excise_tax_number"/>
+                            <field name="excise_tax_expiry_date"/>
+                            <field name="excise_tax_file"
+                                   filename="excise_tax_filename"/>
+                            <field name="excise_tax_filename"
+                                   invisible="1"/>
+                        </group>
+                    </group>
+                 </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

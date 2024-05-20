@@ -472,9 +472,9 @@ class CustomerPortal(Controller):
 
     def _show_report(self, model, report_type, report_ref, download=False):
         if report_type not in ('html', 'pdf', 'text'):
-            raise UserError(_("Invalid report type: %s", report_type))
+            raise UserError(_("Invalid reports type: %s", report_type))
 
-        ReportAction = request.env['ir.actions.report'].sudo()
+        ReportAction = request.env['ir.actions.reports'].sudo()
 
         if hasattr(model, 'company_id'):
             if len(model.company_id) > 1:

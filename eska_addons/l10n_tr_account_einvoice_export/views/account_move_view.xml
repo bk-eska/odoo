@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="move_form_einvoice_line_export" model="ir.ui.view">
+        <field name="name">account.move.form.einvoice.export.line</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='einvoice']" position="inside">
+                <group name="einvoice_export">
+                    <field name="l10n_tr_einvoice_gtb_refno"
+                           attrs="{'invisible':[('l10n_tr_einvoice_gtb_refno','=',False)]}"/>
+                    <field name="l10n_tr_einvoice_gtb_gcb_tescilno"
+                           attrs="{'invisible':[('l10n_tr_einvoice_gtb_gcb_tescilno','=',False)]}"/>
+                    <field name="l10n_tr_einvoice_gtb_export_date"
+                           attrs="{'invisible':[('l10n_tr_einvoice_gtb_export_date','=',False)]}"/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='invoice_incoterm_id']" position="after">
+                <field name="l10n_tr_transport_mode_code"
+                       attrs="{'invisible':[('l10n_tr_einvoice_profile','!=','IHRACAT')],
+                       'required': [('l10n_tr_einvoice_profile', '=', 'IHRACAT')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']"
+                   position="before">
+                <field name="l10n_tr_package_quantity" groups="stock.group_stock_user" optional="hide"/>
+                <field name="l10n_tr_package_type_id" groups="stock.group_stock_user" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

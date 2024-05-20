@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_picking_form_inherit_route" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit.partner.route</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="partner_route_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_picking_search_inherit_route" model="ir.ui.view">
+        <field name="name">stock.picking.search.partner.route</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='picking_type_id']" position="after">
+                <field name="partner_route_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='status']" position="after">
+                <filter string="Route"
+                        name="route"
+                        context="{'group_by':'partner_route_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

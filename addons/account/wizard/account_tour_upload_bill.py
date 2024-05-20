@@ -108,8 +108,8 @@ class AccountTourUploadBill(models.TransientModel):
             if tools.config['test_enable'] or tools.config['test_file']:
                 bill.with_context(no_new_invoice=True).message_post()
             else:
-                bodies = self.env['ir.actions.report']._prepare_html(self.preview_invoice)[0]
-                content = self.env['ir.actions.report']._run_wkhtmltopdf(bodies)
+                bodies = self.env['ir.actions.reports']._prepare_html(self.preview_invoice)[0]
+                content = self.env['ir.actions.reports']._run_wkhtmltopdf(bodies)
                 attachment = self.env['ir.attachment'].create({
                     'type': 'binary',
                     'name': 'INV-%s-0001.pdf' % invoice_date.strftime('%Y-%m'),

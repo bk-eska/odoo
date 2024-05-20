@@ -1,0 +1,86 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr_partner_contact_kimlik
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-09 07:32+0000\n"
+"PO-Revision-Date: 2023-08-09 07:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr_partner_contact_kimlik
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_partner__kimlik_cilt_no
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_users__kimlik_cilt_no
+msgid "Cilt No"
+msgstr ""
+
+#. module: l10n_tr_partner_contact_kimlik
+#: model:ir.model,name:l10n_tr_partner_contact_kimlik.model_res_partner
+msgid "Contact"
+msgstr "Kontak"
+
+#. module: l10n_tr_partner_contact_kimlik
+#: model_terms:ir.ui.view,arch_db:l10n_tr_partner_contact_kimlik.view_personal_information_kimlik
+msgid "Kimlik Bilgileri"
+msgstr ""
+
+#. module: l10n_tr_partner_contact_kimlik
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_partner__kimlik_kutuk_no
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_users__kimlik_kutuk_no
+msgid "Kütük No"
+msgstr ""
+
+#. module: l10n_tr_partner_contact_kimlik
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_partner__kimlik_mahalle
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_users__kimlik_mahalle
+msgid "Mahalle/Köy"
+msgstr ""
+
+#. module: l10n_tr_partner_contact_kimlik
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_partner__kimlik_sayfa_no
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_users__kimlik_sayfa_no
+msgid "Sayfa No"
+msgstr ""
+
+#. module: l10n_tr_partner_contact_kimlik
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_partner__kimlik_seri_no
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_users__kimlik_seri_no
+msgid "Seri No"
+msgstr ""
+
+#. module: l10n_tr_partner_contact_kimlik
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_partner__kimlik_tckn
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_users__kimlik_tckn
+msgid "TCKN"
+msgstr ""
+
+#. module: l10n_tr_partner_contact_kimlik
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_partner__kimlik_verildigi_tarih
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_users__kimlik_verildigi_tarih
+msgid "Verildiği Tarih"
+msgstr ""
+
+#. module: l10n_tr_partner_contact_kimlik
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_partner__kimlik_verildigi_yer
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_users__kimlik_verildigi_yer
+msgid "Verildiği Yer"
+msgstr ""
+
+#. module: l10n_tr_partner_contact_kimlik
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_partner__kimlik_il
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_users__kimlik_il
+msgid "İl"
+msgstr ""
+
+#. module: l10n_tr_partner_contact_kimlik
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_partner__kimlik_ilce
+#: model:ir.model.fields,field_description:l10n_tr_partner_contact_kimlik.field_res_users__kimlik_ilce
+msgid "İlçe"
+msgstr ""

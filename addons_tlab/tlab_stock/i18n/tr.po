@@ -1,0 +1,92 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* tlab_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-12 13:44+0000\n"
+"PO-Revision-Date: 2024-02-12 13:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tlab_stock
+#: model:res.groups,name:tlab_stock.group_stock_adjustment
+msgid "Allow Stock Adjustments"
+msgstr "Stok Düzeltmelerine İzin Ver"
+
+#. module: tlab_stock
+#: model:ir.model.fields,field_description:tlab_stock.field_stock_move__x_analitiktag
+msgid "Analytic Tag"
+msgstr "Analitik Etiket"
+
+#. module: tlab_stock
+#: model:ir.model.fields,field_description:tlab_stock.field_stock_move_line__product_barcode
+#: model_terms:ir.ui.view,arch_db:tlab_stock.report_stock_body_print_tlab
+#: model_terms:ir.ui.view,arch_db:tlab_stock.report_stock_inventory_tlab
+msgid "Barcode"
+msgstr "Kod"
+
+#. module: tlab_stock
+#: model:ir.model.fields,field_description:tlab_stock.field_stock_move_line__qty_done
+msgid "Done"
+msgstr "Biten"
+
+#. module: tlab_stock
+#: model:ir.model.fields,help:tlab_stock.field_stock_move_line__product_barcode
+msgid "International Article Number used for product identification."
+msgstr ""
+
+#. module: tlab_stock
+#: model:ir.model,name:tlab_stock.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "Ürün Hareketleri (Stok Hareket Satırları)"
+
+#. module: tlab_stock
+#: model:ir.model,name:tlab_stock.model_stock_quant
+msgid "Quants"
+msgstr "Stoklar"
+
+#. module: tlab_stock
+#: model:ir.model,name:tlab_stock.model_stock_scrap
+msgid "Scrap"
+msgstr "Hurda"
+
+#. module: tlab_stock
+#: model_terms:ir.ui.view,arch_db:tlab_stock.view_move_line_tree_tlab
+msgid "Toplam Miktar"
+msgstr ""
+
+#. module: tlab_stock
+#: model:ir.model,name:tlab_stock.model_stock_traceability_report
+msgid "Traceability Report"
+msgstr "İzlenebilirlik Raporu"
+
+#. module: tlab_stock
+#: model:ir.model,name:tlab_stock.model_stock_picking
+msgid "Transfer"
+msgstr ""
+
+#. module: tlab_stock
+#: model:ir.model.fields,field_description:tlab_stock.field_stock_scrap__uts_description
+msgid "UTS Description"
+msgstr "Hurda Bildirimi Açıklaması"
+
+#. module: tlab_stock
+#. odoo-python
+#: code:addons/tlab_stock/models/stock_quant.py:0
+#, python-format
+msgid "You are not allowed to apply inventory adjustments."
+msgstr "Stok düzeltmesi yapmak için izniniz bulunmuyor."
+
+#. module: tlab_stock
+#. odoo-python
+#: code:addons/tlab_stock/models/stock_picking.py:0
+#, python-format
+msgid "You cannot transfer more quantity than demanded!"
+msgstr "Talep edilen miktardan fazlasını sevk edemezsiniz!"

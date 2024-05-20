@@ -13,7 +13,7 @@ class LoyaltyProgram(models.Model):
     pos_config_ids = fields.Many2many('pos.config', compute="_compute_pos_config_ids", store=True, readonly=False, string="Point of Sales", help="Restrict publishing to those shops.")
     pos_order_count = fields.Integer("PoS Order Count", compute='_compute_pos_order_count')
     pos_ok = fields.Boolean("Point of Sale", default=True)
-    pos_report_print_id = fields.Many2one('ir.actions.report', string="Print Report", domain=[('model', '=', 'loyalty.card')], compute='_compute_pos_report_print_id', inverse='_inverse_pos_report_print_id', readonly=False,
+    pos_report_print_id = fields.Many2one('ir.actions.reports', string="Print Report", domain=[('model', '=', 'loyalty.card')], compute='_compute_pos_report_print_id', inverse='_inverse_pos_report_print_id', readonly=False,
         help="This is used to print the generated gift cards from PoS.")
 
     @api.depends("communication_plan_ids.pos_report_print_id")

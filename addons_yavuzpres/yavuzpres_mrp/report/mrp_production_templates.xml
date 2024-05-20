@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_mrporder_yavuzpres">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-if="not o" t-set="o" t-value="doc"/>
+                <div class="article" style="margin:0px;" t-att-data-oe-model="o and o._name"
+                     t-att-data-oe-id="o and o.id"
+                     t-att-data-oe-lang="o and o.env.context.get('lang')">
+                    <t t-out="0"/>
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <table class="table">
+                            <tr>
+                                <th style="border: 2px solid;">
+                                    <strong>Üretim MO:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-field="o.name"/>
+                                </td>
+                                <td style="border: 2px solid;" rowspan="6">
+                                    <img t-if="o.image_1920" t-att-src="image_data_uri(o.image_1920)"
+                                         style="max-height:175px;max-width:100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th style="border: 2px solid;">
+                                    <strong>Adı:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-field="o.product_id"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th style="border: 2px solid;">
+                                    <strong>Kategori:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-field="o.product_id.categ_id"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th style="border: 2px solid;">
+                                    <strong>Müşteri:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-field="o.parent_client"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th style="border: 2px solid;">
+                                    <strong>Miktar:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-esc="int(o.product_qty)"/>
+                                    <span t-field="o.product_uom_id"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th style="border: 2px solid;">
+                                    <strong>Birim Ağırlık:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-esc="'{:.1f}'.format(o.product_id.weight)"/>
+                                    <span t-field="o.product_id.weight_uom_name"/>
+                                </td>
+                            </tr>
+                            <table class="table">
+                                <th style="border: 2px solid;">
+                                    <strong>Operasyon Türü:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-field="o.picking_type_id"/>
+                                </td>
+                                <th style="border: 2px solid;">
+                                    <strong>Kaynak S. Siparişi:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-field="o.sale_order_ref"/>
+                                </td>
+                                <th style="border: 2px solid;">
+                                    <strong>Planlanan Tarih:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-field="o.date_planned_start"/>
+                                </td>
+                            </table>
+                        </table>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td style="border: 2px solid;">
+                                        <strong>Üretilen Miktar:</strong>
+                                    </td>
+                                    <td style="border: 2px solid;">
+                                        <strong>Hurda/Fire Miktarı:</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 2px solid;">
+                                        <strong>Operatör Adı:</strong>
+                                    </td>
+                                    <td style="border: 2px solid;">
+                                        <strong>Makinesi:</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 2px solid;">
+                                        <strong>Tarih:</strong>
+                                    </td>
+                                    <td style="border: 2px solid;">
+                                        <strong>İmza:</strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <t t-call="yavuzpres_mrp.report_mrp_production_components_yavuzpres" t-if="o.move_raw_ids"/>
+                        <div class="oe_structure"/>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_mrp_production_components_yavuzpres">
+        <table class="table">
+            <t t-set="has_product_barcode" t-value="any(m.product_id.barcode for m in o.move_raw_ids)"/>
+            <thead>
+                <tr>
+                    <th style="border: 2px solid;">Görsel</th>
+                    <th style="border: 2px solid;">Bileşen</th>
+                    <th style="border: 2px solid;">Miktar</th>
+                    <th style="border: 2px solid;">Birim</th>
+                    <th style="border: 2px solid;">Birim Ağırlık</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr t-foreach="o.move_raw_ids" t-as="raw_line">
+                    <td style="border: 2px solid;">
+                        <img t-if="raw_line.image_1920" t-att-src="image_data_uri(raw_line.image_1920)"
+                             style="max-width: 100px; max-height: 75px;"/>
+                    </td>
+                    <td style="border: 2px solid;">
+                        <span t-field="raw_line.product_id"/>
+                    </td>
+                    <td style="border: 2px solid;">
+                        <span t-esc="'{:.1f}'.format(raw_line.product_uom_qty)"/>
+                    </td>
+                    <td style="border: 2px solid;">
+                        <span t-field="raw_line.product_uom" groups="uom.group_uom"/>
+                    </td>
+                    <td style="border: 2px solid;">
+                        <span t-esc="'{:.1f}'.format(raw_line.product_id.weight)"/>
+                        <span t-esc="raw_line.product_id.weight_uom_name"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </template>
+
+    <template id="report_mrporder_yavuzpres_no_customer">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-if="not o" t-set="o" t-value="doc"/>
+                <div class="article" style="margin:0px;" t-att-data-oe-model="o and o._name"
+                     t-att-data-oe-id="o and o.id"
+                     t-att-data-oe-lang="o and o.env.context.get('lang')">
+                    <t t-out="0"/>
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <table class="table">
+                            <tr>
+                                <th style="border: 2px solid;">
+                                    <strong>Üretim MO:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-field="o.name"/>
+                                </td>
+                                <td style="border: 2px solid;" rowspan="5">
+                                    <img t-if="o.image_1920" t-att-src="image_data_uri(o.image_1920)"
+                                         style="max-height:150px;max-width:100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th style="border: 2px solid;">
+                                    <strong>Adı:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-field="o.product_id"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th style="border: 2px solid;">
+                                    <strong>Kategori:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-field="o.product_id.categ_id"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th style="border: 2px solid;">
+                                    <strong>Miktar:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-field="o.product_qty"/>
+                                    <span t-field="o.product_uom_id"/>
+                                </td>
+                            </tr>
+                            <table class="table">
+                                <th style="border: 2px solid;">
+                                    <strong>Operasyon Türü:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-field="o.picking_type_id"/>
+                                </td>
+                                <th style="border: 2px solid;">
+                                    <strong>Kaynak S. Siparişi:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-field="o.sale_order_ref"/>
+                                </td>
+                                <th style="border: 2px solid;">
+                                    <strong>Planlanan Tarih:</strong>
+                                </th>
+                                <td style="border: 2px solid;">
+                                    <span t-field="o.date_planned_start"/>
+                                </td>
+                            </table>
+                        </table>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td style="border: 2px solid;">
+                                        <strong>Üretilen Miktar:</strong>
+                                    </td>
+                                    <td style="border: 2px solid;">
+                                        <strong>Hurda/Fire Miktarı:</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 2px solid;">
+                                        <strong>Operatör Adı:</strong>
+                                    </td>
+                                    <td style="border: 2px solid;">
+                                        <strong>Makinesi:</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 2px solid;">
+                                        <strong>Tarih:</strong>
+                                    </td>
+                                    <td style="border: 2px solid;">
+                                        <strong>İmza:</strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <t t-call="yavuzpres_mrp.report_mrp_production_components_yavuzpres_no_customer"
+                           t-if="o.move_raw_ids"/>
+                        <div class="oe_structure"/>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_mrp_production_components_yavuzpres_no_customer">
+        <table class="table">
+            <t t-set="has_product_barcode" t-value="any(m.product_id.barcode for m in o.move_raw_ids)"/>
+            <thead>
+                <tr>
+                    <th style="border: 2px solid;">Görsel</th>
+                    <th style="border: 2px solid;">Bileşen</th>
+                    <th style="border: 2px solid;">Miktar</th>
+                    <th style="border: 2px solid;">Birim</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr t-foreach="o.move_raw_ids" t-as="raw_line">
+                    <td style="border: 2px solid;">
+                        <img t-if="raw_line.image_1920" t-att-src="image_data_uri(raw_line.image_1920)"
+                             style="max-width: 100px; max-height: 75px;"/>
+                    </td>
+                    <td style="border: 2px solid;">
+                        <span t-field="raw_line.product_id"/>
+                    </td>
+                    <td style="border: 2px solid;">
+                        <span t-field="raw_line.product_uom_qty"/>
+                    </td>
+                    <td style="border: 2px solid;">
+                        <span t-field="raw_line.product_uom" groups="uom.group_uom"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </template>
+
+    <record id="action_report_production_order_yavuzpres" model="ir.actions.report">
+        <field name="name">Yavuzpres Production Order</field>
+        <field name="model">mrp.production</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">yavuzpres_mrp.report_mrporder_yavuzpres</field>
+        <field name="report_file">yavuzpres_mrp.report_mrporder_yavuzpres</field>
+        <field name="print_report_name">'Yavuzpres Production Order - %s' % object.name</field>
+        <field name="binding_model_id" ref="model_mrp_production"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_production_order_yavuzpres_no_customer" model="ir.actions.report">
+        <field name="name">Yavuzpres Production Order 2</field>
+        <field name="model">mrp.production</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">yavuzpres_mrp.report_mrporder_yavuzpres_no_customer</field>
+        <field name="report_file">yavuzpres_mrp.report_mrporder_yavuzpres_no_customer</field>
+        <field name="print_report_name">'Yavuzpres Production Order 2 - %s' % object.name</field>
+        <field name="binding_model_id" ref="model_mrp_production"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

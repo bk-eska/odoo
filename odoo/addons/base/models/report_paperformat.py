@@ -164,7 +164,7 @@ PAPER_SIZES = [
 
 
 class report_paperformat(models.Model):
-    _name = "report.paperformat"
+    _name = "reports.paperformat"
     _description = "Paper Format Config"
 
     name = fields.Char('Name', required=True)
@@ -184,7 +184,7 @@ class report_paperformat(models.Model):
     header_spacing = fields.Integer('Header spacing', default=35)
     disable_shrinking = fields.Boolean('Disable smart shrinking')
     dpi = fields.Integer('Output DPI', required=True, default=90)
-    report_ids = fields.One2many('ir.actions.report', 'paperformat_id', 'Associated reports', help="Explicitly associated reports")
+    report_ids = fields.One2many('ir.actions.reports', 'paperformat_id', 'Associated reports', help="Explicitly associated reports")
     print_page_width = fields.Float('Print page width (mm)', compute='_compute_print_page_size')
     print_page_height = fields.Float('Print page height (mm)', compute='_compute_print_page_size')
 

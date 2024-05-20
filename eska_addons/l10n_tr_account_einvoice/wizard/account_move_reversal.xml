@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2015 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record id="view_account_move_reversal_einvoice" model="ir.ui.view">
+        <field name="name">account.move.reversal.form.einvoice</field>
+        <field name="model">account.move.reversal</field>
+        <field name="inherit_id" ref="account.view_account_move_reversal"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='refund_method']" position="after">
+                <field name="partner_id" invisible="1"/>
+                <p attrs="{'invisible':[('refund_method','&lt;&gt;','link')]}" class="oe_grey">
+                    You can link this refund to an existing E-Invoice refund with this option.
+                </p>
+            </xpath>
+            <xpath expr="//field[@name='journal_id']/.." position="after">
+                <group>
+                    <field name="l10n_tr_link_invoice_id"
+                           attrs="{'invisible': [('refund_method','!=','link')], 'required': [('refund_method','=','link')]}"
+                           domain="[('partner_id', '=', partner_id), ('move_type', '=', 'out_refund'), ('state', '=', 'draft')]"
+                           options="{'no_create': 1, 'no_create_edit': 1}"/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='reason']/.." position="attributes">
+                <attribute name="attrs">{'invisible': [('refund_method','=','link')]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='journal_id']/.." position="attributes">
+                <attribute name="attrs">{'invisible': [('refund_method','=','link')]}</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

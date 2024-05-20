@@ -705,7 +705,7 @@ class BarcodeConverter(models.AbstractModel):
         if not value:
             return ''
         barcode_symbology = options.get('symbology', 'Code128')
-        barcode = self.env['ir.actions.report'].barcode(
+        barcode = self.env['ir.actions.reports'].barcode(
             barcode_symbology,
             value,
             **{key: value for key, value in options.items() if key in ['width', 'height', 'humanreadable', 'quiet', 'mask']})

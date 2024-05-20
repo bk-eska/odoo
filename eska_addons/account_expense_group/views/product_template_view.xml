@@ -1,0 +1,16 @@
+<!-- Copyright 2023 ESKA Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).-->
+<odoo>
+    <record model="ir.ui.view" id="product_template_form_view_expense_group">
+        <field name="name">product.template.form.expense.group</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="account.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='accounting']" position="inside">
+                <group>
+                    <field name="expense_group_id"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -5,7 +5,7 @@ from odoo import api, fields, models, tools
 
 
 class HRAttendanceReport(models.Model):
-    _name = "hr.attendance.report"
+    _name = "hr.attendance.reports"
     _description = "Attendance Statistics"
     _auto = False
 

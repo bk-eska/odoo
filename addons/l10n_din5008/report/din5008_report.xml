@@ -2,7 +2,7 @@
 <odoo>
     <data>
 
-        <!-- New report paperformat for din5008 format -->
+        <!-- New reports paperformat for din5008 format -->
         <record id="paperformat_euro_din_a" model="report.paperformat">
             <field name="name">European A4 for DIN5008 Type A</field>
             <field name="default" eval="False" />
@@ -31,7 +31,7 @@
             <field name="header_spacing">45</field>
         </record>
 
-        <!-- New report layout for din5008 format -->
+        <!-- New reports layout for din5008 format -->
         <template id="external_layout_din5008">
             <div>
                 <div t-attf-class="header din_page o_company_#{company.id}_layout #{'din_page_pdf' if report_type == 'pdf' else ''}">

@@ -21,16 +21,16 @@ FIGURE_TYPE_SELECTION_VALUES = [
 DOMAIN_REGEX = re.compile(r'(-?sum)\((.*)\)')
 
 class AccountReport(models.Model):
-    _name = "account.report"
+    _name = "account.reports"
     _description = "Accounting Report"
 
     #  CORE ==========================================================================================================================================
 
     name = fields.Char(string="Name", required=True, translate=True)
-    line_ids = fields.One2many(string="Lines", comodel_name='account.report.line', inverse_name='report_id')
-    column_ids = fields.One2many(string="Columns", comodel_name='account.report.column', inverse_name='report_id')
-    root_report_id = fields.Many2one(string="Root Report", comodel_name='account.report', help="The report this report is a variant of.")
-    variant_report_ids = fields.One2many(string="Variants", comodel_name='account.report', inverse_name='root_report_id')
+    line_ids = fields.One2many(string="Lines", comodel_name='account.reports.line', inverse_name='report_id')
+    column_ids = fields.One2many(string="Columns", comodel_name='account.reports.column', inverse_name='report_id')
+    root_report_id = fields.Many2one(string="Root Report", comodel_name='account.reports', help="The reports this reports is a variant of.")
+    variant_report_ids = fields.One2many(string="Variants", comodel_name='account.reports', inverse_name='root_report_id')
     chart_template_id = fields.Many2one(string="Chart of Accounts", comodel_name='account.chart.template')
     country_id = fields.Many2one(string="Country", comodel_name='res.country')
     only_tax_exigible = fields.Boolean(
@@ -61,7 +61,7 @@ class AccountReport(models.Model):
     )
 
     #  FILTERS =======================================================================================================================================
-    # Those fields control the display of menus on the report
+    # Those fields control the display of menus on the reports
 
     filter_multi_company = fields.Selection(
         string="Multi-Company",
@@ -119,8 +119,8 @@ class AccountReport(models.Model):
     )
 
     def _compute_report_option_filter(self, field_name, default_value=False):
-        # We don't depend on the different filter fields on the root report, as we don't want a manual change on it to be reflected on all the reports
-        # using it as their root (would create confusion). The root report filters are only used as some kind of default values.
+        # We don't depend on the different filter fields on the root reports, as we don't want a manual change on it to be reflected on all the reports
+        # using it as their root (would create confusion). The root reports filters are only used as some kind of default values.
         for report in self:
             if report.root_report_id:
                 report[field_name] = report.root_report_id[field_name]
@@ -139,15 +139,15 @@ class AccountReport(models.Model):
     def _validate_root_report_id(self):
         for report in self:
             if report.root_report_id.root_report_id:
-                raise ValidationError(_("Only a report without a root report of its own can be selected as root report."))
+                raise ValidationError(_("Only a reports without a root reports of its own can be selected as root reports."))
 
     @api.constrains('line_ids')
     def _validate_parent_sequence(self):
-        previous_lines = self.env['account.report.line']
+        previous_lines = self.env['account.reports.line']
         for line in self.line_ids:
             if line.parent_id and line.parent_id not in previous_lines:
                 raise ValidationError(
-                    _('Line "%s" defines line "%s" as its parent, but appears before it in the report. '
+                    _('Line "%s" defines line "%s" as its parent, but appears before it in the reports. '
                       'The parent must always come first.', line.name, line.parent_id.name))
             previous_lines |= line
 
@@ -157,8 +157,8 @@ class AccountReport(models.Model):
             self.country_id = None
 
     def write(self, vals):
-        # Overridden so that changing the country of a report also creates new tax tags if necessary, or updates the country
-        # of existing tags, if they aren't shared with another report.
+        # Overridden so that changing the country of a reports also creates new tax tags if necessary, or updates the country
+        # of existing tags, if they aren't shared with another reports.
         if 'country_id' in vals:
             impacted_reports = self.filtered(lambda x: x.country_id.id != vals['country_id'])
             tax_tags_expressions = impacted_reports.line_ids.expression_ids.filtered(lambda x: x.engine == 'tax_tags')
@@ -171,20 +171,20 @@ class AccountReport(models.Model):
                     # Only reports in self are using these tags; let's change their country
                     tax_tags.write({'country_id': vals['country_id']})
                 else:
-                    # Another report uses these tags as well; let's keep them and create new tags in the target country
+                    # Another reports uses these tags as well; let's keep them and create new tags in the target country
                     # if they don't exist yet.
                     existing_tax_tags = self.env['account.account.tag']._get_tax_tags(expression.formula, vals['country_id'])
                     if not existing_tax_tags:
-                        tag_vals = self.env['account.report.expression']._get_tags_create_vals(expression.formula, vals['country_id'])
+                        tag_vals = self.env['account.reports.expression']._get_tags_create_vals(expression.formula, vals['country_id'])
                         self.env['account.account.tag'].create(tag_vals)
 
         return super().write(vals)
 
     def copy(self, default=None):
-        '''Copy the whole financial report hierarchy by duplicating each line recursively.
+        '''Copy the whole financial reports hierarchy by duplicating each line recursively.
 
         :param default: Default values.
-        :return: The copied account.report record.
+        :return: The copied account.reports record.
         '''
         self.ensure_one()
         if default is None:
@@ -211,13 +211,13 @@ class AccountReport(models.Model):
     @api.ondelete(at_uninstall=False)
     def _unlink_if_no_variant(self):
         if self.variant_report_ids:
-            raise UserError(_("You can't delete a report that has variants."))
+            raise UserError(_("You can't delete a reports that has variants."))
 
     def _get_copied_name(self):
-        '''Return a copied name of the account.report record by adding the suffix (copy) at the end
+        '''Return a copied name of the account.reports record by adding the suffix (copy) at the end
         until the name is unique.
 
-        :return: an unique name for the copied account.report
+        :return: an unique name for the copied account.reports
         '''
         self.ensure_one()
         name = self.name + ' ' + _('(copy)')
@@ -234,15 +234,15 @@ class AccountReport(models.Model):
 
 
 class AccountReportLine(models.Model):
-    _name = "account.report.line"
+    _name = "account.reports.line"
     _description = "Accounting Report Line"
     _order = 'sequence, id'
 
     name = fields.Char(string="Name", translate=True, required=True)
-    expression_ids = fields.One2many(string="Expressions", comodel_name='account.report.expression', inverse_name='report_line_id')
+    expression_ids = fields.One2many(string="Expressions", comodel_name='account.reports.expression', inverse_name='report_line_id')
     report_id = fields.Many2one(
         string="Parent Report",
-        comodel_name='account.report',
+        comodel_name='account.reports',
         compute='_compute_report_id',
         store=True,
         readonly=False,
@@ -260,8 +260,8 @@ class AccountReportLine(models.Model):
         required=True,
         precompute=True,
     )
-    parent_id = fields.Many2one(string="Parent Line", comodel_name='account.report.line', ondelete='set null')
-    children_ids = fields.One2many(string="Child Lines", comodel_name='account.report.line', inverse_name='parent_id')
+    parent_id = fields.Many2one(string="Parent Line", comodel_name='account.reports.line', ondelete='set null')
+    children_ids = fields.One2many(string="Child Lines", comodel_name='account.reports.line', inverse_name='parent_id')
     groupby = fields.Char(string="Group By", help="Comma-separated list of fields from account.move.line (Journal Item). When set, this line will generate sublines grouped by those keys.")
     sequence = fields.Integer(string="Sequence")
     code = fields.Char(string="Code", help="Unique identifier for this line.")
@@ -274,7 +274,7 @@ class AccountReportLine(models.Model):
     aggregation_formula = fields.Char(string="Aggregation Formula Shortcut", help="Internal field to shorten expression_ids creation for the aggregation engine", inverse='_inverse_aggregation_formula', store=False)
 
     _sql_constraints = [
-        ('code_uniq', 'unique (code)', "A report line with the same code already exists."),
+        ('code_uniq', 'unique (code)', "A reports line with the same code already exists."),
     ]
 
     @api.depends('parent_id.hierarchy_level')
@@ -315,7 +315,7 @@ class AccountReportLine(models.Model):
         ''' Copy the whole hierarchy from this line by copying each line children recursively and adapting the
         formulas with the new copied codes.
 
-        :param copied_report: The copy of the report.
+        :param copied_report: The copy of the reports.
         :param parent: The parent line in the hierarchy (a copy of the original parent line).
         :param code_mapping: A dictionary keeping track of mapping old_code -> new_code
         '''
@@ -345,7 +345,7 @@ class AccountReportLine(models.Model):
     def _get_copied_code(self):
         '''Look for an unique copied code.
 
-        :return: an unique code for the copied account.report.line
+        :return: an unique code for the copied account.reports.line
         '''
         self.ensure_one()
         if not self.code:
@@ -365,7 +365,7 @@ class AccountReportLine(models.Model):
         self._create_report_expression(engine='account_codes')
 
     def _create_report_expression(self, engine):
-        # create account.report.expression for each report line based on the formula provided to each
+        # create account.reports.expression for each reports line based on the formula provided to each
         # engine-related field. This makes xmls a bit shorter
         vals_list = []
         xml_ids = self.expression_ids.filtered(lambda exp: exp.label == 'balance').get_external_id()
@@ -411,7 +411,7 @@ class AccountReportLine(models.Model):
                 vals_list.append(vals)
 
         if vals_list:
-            self.env['account.report.expression'].create(vals_list)
+            self.env['account.reports.expression'].create(vals_list)
 
     @api.ondelete(at_uninstall=False)
     def _unlink_child_expressions(self):
@@ -425,11 +425,11 @@ class AccountReportLine(models.Model):
 
 
 class AccountReportExpression(models.Model):
-    _name = "account.report.expression"
+    _name = "account.reports.expression"
     _description = "Accounting Report Expression"
     _rec_name = 'report_line_name'
 
-    report_line_id = fields.Many2one(string="Report Line", comodel_name='account.report.line', required=True, ondelete='cascade')
+    report_line_id = fields.Many2one(string="Report Line", comodel_name='account.reports.line', required=True, ondelete='cascade')
     report_line_name = fields.Char(string="Report Line Name", related="report_line_id.name")
     label = fields.Char(string="Label", required=True)
     engine = fields.Selection(
@@ -554,7 +554,7 @@ class AccountReportExpression(models.Model):
                         positive_tags.name, negative_tags.name = f"+{vals['formula']}", f"-{vals['formula']}"
                     else:
                         # Else, create a new tag. Its the compute functions will make sure it is properly linked to the expressions
-                        tag_vals = self.env['account.report.expression']._get_tags_create_vals(vals['formula'], country.id)
+                        tag_vals = self.env['account.reports.expression']._get_tags_create_vals(vals['formula'], country.id)
                         self.env['account.account.tag'].create(tag_vals)
 
         return result
@@ -562,14 +562,14 @@ class AccountReportExpression(models.Model):
     @api.ondelete(at_uninstall=False)
     def _unlink_archive_used_tags(self):
         """
-        Manages unlink or archive of tax_tags when account.report.expression are deleted.
+        Manages unlink or archive of tax_tags when account.reports.expression are deleted.
         If a tag is still in use on amls, we archive it.
         """
         expressions_tags = self._get_matching_tags()
         tags_to_archive = self.env['account.account.tag']
         tags_to_unlink = self.env['account.account.tag']
         for tag in expressions_tags:
-            other_expression_using_tag = self.env['account.report.expression'].sudo().search([
+            other_expression_using_tag = self.env['account.reports.expression'].sudo().search([
                 ('engine', '=', 'tax_tags'),
                 ('formula', '=', tag.name[1:]),  # we escape the +/- sign
                 ('report_line_id.report_id.country_id.id', '=', tag.country_id.id),
@@ -598,7 +598,7 @@ class AccountReportExpression(models.Model):
         to_expand = self.filtered(lambda x: x.engine == 'aggregation')
         while to_expand:
             domains = []
-            sub_expressions = self.env['account.report.expression']
+            sub_expressions = self.env['account.reports.expression']
 
             for candidate_expr in to_expand:
                 if candidate_expr.formula == 'sum_children':
@@ -615,7 +615,7 @@ class AccountReportExpression(models.Model):
                         domains.append(dependency_domain)
 
             if domains:
-                sub_expressions |= self.env['account.report.expression'].search(osv.expression.OR(domains))
+                sub_expressions |= self.env['account.reports.expression'].search(osv.expression.OR(domains))
 
             to_expand = sub_expressions.filtered(lambda x: x.engine == 'aggregation' and x not in result)
             result |= sub_expressions
@@ -692,7 +692,7 @@ class AccountReportExpression(models.Model):
 
         if self.carryover_target:
             line_code, expr_label = self.carryover_target.split('.')
-            return self.env['account.report.expression'].search([
+            return self.env['account.reports.expression'].search([
                 ('report_line_id.code', '=', line_code),
                 ('label', '=', expr_label),
                 ('report_line_id.report_id', '=', self.report_line_id.report_id.id),
@@ -716,7 +716,7 @@ class AccountReportExpression(models.Model):
         return {
             'type': 'ir.actions.act_window',
             'name': _('Carryover lines for: %s', self.report_line_name),
-            'res_model': 'account.report.external.value',
+            'res_model': 'account.reports.external.value',
             'views': [(self.env.ref('account_reports.account_report_external_value_tree').id, 'list')],
             'domain': [
                 ('target_report_expression_id', '=', self.id),
@@ -727,14 +727,14 @@ class AccountReportExpression(models.Model):
 
 
 class AccountReportColumn(models.Model):
-    _name = "account.report.column"
+    _name = "account.reports.column"
     _description = "Accounting Report Column"
     _order = 'sequence, id'
 
     name = fields.Char(string="Name", translate=True, required=True)
     expression_label = fields.Char(string="Expression Label", required=True)
     sequence = fields.Integer(string="Sequence")
-    report_id = fields.Many2one(string="Report", comodel_name='account.report')
+    report_id = fields.Many2one(string="Report", comodel_name='account.reports')
     sortable = fields.Boolean(string="Sortable")
     figure_type = fields.Selection(string="Figure Type", selection=FIGURE_TYPE_SELECTION_VALUES, default="monetary", required=True)
     blank_if_zero = fields.Boolean(string="Blank if Zero", default=True, help="When checked, 0 values will not show in this column.")
@@ -742,7 +742,7 @@ class AccountReportColumn(models.Model):
 
 
 class AccountReportExternalValue(models.Model):
-    _name = "account.report.external.value"
+    _name = "account.reports.external.value"
     _description = 'Accounting Report External Value'
     _check_company_auto = True
     _order = 'date, id'
@@ -751,7 +751,7 @@ class AccountReportExternalValue(models.Model):
     value = fields.Float(required=True)
     date = fields.Date(required=True)
 
-    target_report_expression_id = fields.Many2one(string="Target Expression", comodel_name="account.report.expression", required=True, ondelete="cascade")
+    target_report_expression_id = fields.Many2one(string="Target Expression", comodel_name="account.reports.expression", required=True, ondelete="cascade")
     target_report_line_id = fields.Many2one(string="Target Line", related="target_report_expression_id.report_line_id")
     target_report_expression_label = fields.Char(string="Target Expression Label", related="target_report_expression_id.label")
     report_country_id = fields.Many2one(string="Country", related='target_report_line_id.report_id.country_id')
@@ -768,10 +768,10 @@ class AccountReportExternalValue(models.Model):
 
     # Carryover fields
     carryover_origin_expression_label = fields.Char(string="Origin Expression Label")
-    carryover_origin_report_line_id = fields.Many2one(string="Origin Line", comodel_name='account.report.line')
+    carryover_origin_report_line_id = fields.Many2one(string="Origin Line", comodel_name='account.reports.line')
 
     @api.constrains('foreign_vat_fiscal_position_id', 'target_report_expression_id')
     def _check_fiscal_position(self):
         for record in self:
             if record.foreign_vat_fiscal_position_id and record.foreign_vat_fiscal_position_id.country_id != record.report_country_id:
-                raise ValidationError(_("The country set on the foreign VAT fiscal position must match the one set on the report."))
+                raise ValidationError(_("The country set on the foreign VAT fiscal position must match the one set on the reports."))

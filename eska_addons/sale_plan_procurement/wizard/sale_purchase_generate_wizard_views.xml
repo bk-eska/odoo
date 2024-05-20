@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="sale_purchase_generate_wizard_form" model="ir.ui.view">
+        <field name="name">sale.purchase.generate.wizard.form</field>
+        <field name="model">sale.purchase.generate.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Purchase Generate">
+                <group>
+                    <field name="generate_type" widget="radio"/>
+                    <field name="partner_id"
+                           attrs="{'invisible': [('generate_type', '!=', 'manual')],
+                                   'required': [('generate_type', '=', 'manual')]}"/>
+                </group>
+                <footer>
+                    <button name="generate_purchase"
+                            string="Generate"
+                            class="oe_highlight"
+                            type="object"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="sale_purchase_generate_wizard_action" model="ir.actions.act_window">
+        <field name="name">Generate Purchase</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.purchase.generate.wizard</field>
+        <field name="binding_model_id" ref="sale.model_sale_order_line" />
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="sale_purchase_generate_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

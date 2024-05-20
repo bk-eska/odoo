@@ -1,0 +1,226 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_ledger_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-07 14:46+0000\n"
+"PO-Revision-Date: 2023-07-07 14:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "All Locations"
+msgstr "Tüm Lokasyonlar"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Amount"
+msgstr "Tutar"
+
+#. module: stock_ledger_report
+#: model_terms:ir.ui.view,arch_db:stock_ledger_report.view_stock_ledger_report_wizard
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: stock_ledger_report
+#: model:ir.model.fields,field_description:stock_ledger_report.field_stock_ledger_report_wizard__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: stock_ledger_report
+#: model:ir.model.fields,field_description:stock_ledger_report.field_stock_ledger_report_wizard__create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Date"
+msgstr "Tarih"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Date:"
+msgstr "Tarih:"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Description"
+msgstr "Açıklama"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Destination Location"
+msgstr "Hedef Konumu"
+
+#. module: stock_ledger_report
+#: model:ir.model.fields,field_description:stock_ledger_report.field_stock_ledger_report_wizard__display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: stock_ledger_report
+#: model_terms:ir.ui.view,arch_db:stock_ledger_report.view_stock_ledger_report_wizard
+msgid "Export Report"
+msgstr "Dışarı Aktar"
+
+#. module: stock_ledger_report
+#: model:ir.model.fields,field_description:stock_ledger_report.field_stock_ledger_report_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "In/Qty"
+msgstr "Giriş Miktarı"
+
+#. module: stock_ledger_report
+#: model:ir.model.fields,field_description:stock_ledger_report.field_stock_ledger_report_wizard____last_update
+msgid "Last Modified on"
+msgstr "Son Düzenleme"
+
+#. module: stock_ledger_report
+#: model:ir.model.fields,field_description:stock_ledger_report.field_stock_ledger_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: stock_ledger_report
+#: model:ir.model.fields,field_description:stock_ledger_report.field_stock_ledger_report_wizard__write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: stock_ledger_report
+#: model:ir.model.fields,field_description:stock_ledger_report.field_stock_ledger_report_wizard__location_id
+msgid "Location"
+msgstr "Konum"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Location: "
+msgstr "Lokasyon: "
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Origin"
+msgstr "Menşei"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Out/Qty"
+msgstr "Çıkış Miktarı"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Partner"
+msgstr "İş Ortağı"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Price Unit"
+msgstr "Birim Fiyat"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Print Date:"
+msgstr "Yazdırma Tarihi:"
+
+#. module: stock_ledger_report
+#: model:ir.model.fields,field_description:stock_ledger_report.field_stock_ledger_report_wizard__product_ids
+msgid "Products"
+msgstr "Ürünler"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Reference"
+msgstr "Referans"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Remaining Amount"
+msgstr "Envanter Tutarı"
+
+#. module: stock_ledger_report
+#: model:ir.model.fields,field_description:stock_ledger_report.field_stock_ledger_report_wizard__show_price
+msgid "Show Price"
+msgstr "Fiyatı Göster"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Source Location"
+msgstr "Kaynak Konumu"
+
+#. module: stock_ledger_report
+#: model:ir.model.fields,field_description:stock_ledger_report.field_stock_ledger_report_wizard__end_date
+#: model:ir.model.fields,field_description:stock_ledger_report.field_stock_ledger_report_wizard__start_date
+msgid "Start Date"
+msgstr "Başlangıç Tarihi"
+
+#. module: stock_ledger_report
+#: model:ir.model,name:stock_ledger_report.model_report_stock_ledger_report_stock_ledger_report_xlsx
+#: model:ir.ui.menu,name:stock_ledger_report.menu_action_invoice_report
+msgid "Stock Ledger Report"
+msgstr "Stok Ekstresi"
+
+#. module: stock_ledger_report
+#: model:ir.model,name:stock_ledger_report.model_stock_ledger_report_wizard
+#: model_terms:ir.ui.view,arch_db:stock_ledger_report.view_stock_ledger_report_wizard
+msgid "Stock Ledger Report Wizard"
+msgstr "Stok Ekstresi Raporu Sihirbazı"
+
+#. module: stock_ledger_report
+#: model:ir.actions.act_window,name:stock_ledger_report.stock_ledger_report_wizard_action
+#: model:ir.actions.report,name:stock_ledger_report.stock_ledger_report_xlsx
+msgid "Stock Ledger Report XLSX"
+msgstr "Stok Ekstresi Raporu XLSX"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Total/Qty"
+msgstr "Toplam Miktar"
+
+#. module: stock_ledger_report
+#. odoo-python
+#: code:addons/stock_ledger_report/reports/report_stock_ledger_xlsx.py:0
+#, python-format
+msgid "Total:"
+msgstr "Toplam:"

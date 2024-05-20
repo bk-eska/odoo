@@ -22,7 +22,7 @@ This module introduces skills and resume management for employees.
         'views/hr_employee_skill_log_views.xml',
         'data/hr_resume_data.xml',
         'data/ir_actions_server_data.xml',
-        'report/hr_employee_skill_report_views.xml',
+        'reports/hr_employee_skill_report_views.xml',
         'views/hr_department_views.xml',
     ],
     'demo': [

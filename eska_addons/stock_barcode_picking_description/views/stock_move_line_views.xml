@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="stock_move_line_product_selector_barcode" model="ir.ui.view">
+        <field name="name">stock.product.selector.inherit.barcode</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock_barcode.stock_move_line_product_selector"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']/parent::div" position="after">
+                <div class="col-12 d-flex align-items-baseline">
+                    <field name="description_picking"
+                           readonly="1"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

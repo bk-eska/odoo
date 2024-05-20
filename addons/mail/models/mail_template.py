@@ -62,9 +62,9 @@ class MailTemplate(models.Model):
                                       help="You may attach files to this template, to be added to all "
                                            "emails created from this template")
     report_name = fields.Char('Report Filename', translate=True, prefetch=True,
-                              help="Name to use for the generated report file (may contain placeholders)\n"
-                                   "The extension can be omitted and will then come from the report type.")
-    report_template = fields.Many2one('ir.actions.report', 'Optional report to print and attach')
+                              help="Name to use for the generated reports file (may contain placeholders)\n"
+                                   "The extension can be omitted and will then come from the reports type.")
+    report_template = fields.Many2one('ir.actions.reports', 'Optional reports to print and attach')
     # options
     mail_server_id = fields.Many2one('ir.mail_server', 'Outgoing Mail Server', readonly=False,
                                      help="Optional preferred server for outgoing mails. If not set, the highest "
@@ -274,7 +274,7 @@ class MailTemplate(models.Model):
                     attachment_ids=[attach.id for attach in template.attachment_ids],
                 )
 
-            # Add report in attachments: generate once for all template_res_ids
+            # Add reports in attachments: generate once for all template_res_ids
             if template.report_template:
                 for res_id in template_res_ids:
                     attachments = []
@@ -283,17 +283,17 @@ class MailTemplate(models.Model):
                     report_service = report.report_name
 
                     if report.report_type in ['qweb-html', 'qweb-pdf']:
-                        result, report_format = self.env['ir.actions.report']._render_qweb_pdf(report, [res_id])
+                        result, report_format = self.env['ir.actions.reports']._render_qweb_pdf(report, [res_id])
                     else:
-                        res = self.env['ir.actions.report']._render(report, [res_id])
+                        res = self.env['ir.actions.reports']._render(report, [res_id])
                         if not res:
-                            raise UserError(_('Unsupported report type %s found.', report.report_type))
+                            raise UserError(_('Unsupported reports type %s found.', report.report_type))
                         result, report_format = res
 
                     # TODO in trunk, change return format to binary to match message_post expected format
                     result = base64.b64encode(result)
                     if not report_name:
-                        report_name = 'report.' + report_service
+                        report_name = 'reports.' + report_service
                     ext = "." + report_format
                     if not report_name.endswith(ext):
                         report_name += ext

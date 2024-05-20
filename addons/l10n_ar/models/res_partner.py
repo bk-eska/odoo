@@ -76,7 +76,7 @@ class ResPartner(models.Model):
         """ This method is a helper that returns the VAT number is this one is defined if not raise an UserError.
 
         VAT is not mandatory field but for some Argentinean operations the VAT is required, for eg  validate an
-        electronic invoice, build a report, etc.
+        electronic invoice, build a reports, etc.
 
         This method can be used to validate is the VAT is proper defined in the partner """
         self.ensure_one()

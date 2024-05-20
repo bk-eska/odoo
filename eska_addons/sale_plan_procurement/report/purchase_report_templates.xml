@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="purchase_report_plan_procurement" inherit_id="purchase.report_purchaseorder_document">
+        <xpath expr="//t[@t-foreach='o.order_line']/tr" position="attributes">
+            <attribute name="t-if">line.product_qty</attribute>
+        </xpath>
+    </template>
+
+    <template id="purchasequotation_report_plan_procurement" inherit_id="purchase.report_purchasequotation_document">
+        <xpath expr="//t[@t-foreach='o.order_line']/tr" position="attributes">
+            <attribute name="t-if">order_line.product_qty</attribute>
+        </xpath>
+    </template>
+</odoo>

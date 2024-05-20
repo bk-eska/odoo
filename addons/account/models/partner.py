@@ -398,7 +398,7 @@ class ResPartner(models.Model):
             ('state', 'not in', ['draft', 'cancel']),
             ('move_type', 'in', ('out_invoice', 'out_refund')),
         ]
-        price_totals = self.env['account.invoice.report'].read_group(domain, ['price_subtotal'], ['partner_id'])
+        price_totals = self.env['account.invoice.reports'].read_group(domain, ['price_subtotal'], ['partner_id'])
         for partner, child_ids in all_partners_and_children.items():
             partner.total_invoiced = sum(price['price_subtotal'] for price in price_totals if price['partner_id'][0] in child_ids)
 

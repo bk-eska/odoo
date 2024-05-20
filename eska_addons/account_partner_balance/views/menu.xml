@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem
+        parent="account_financial_report.menu_oca_reports"
+        action="action_partner_balance_wizard"
+        id="menu_partner_balance_wizard"
+        sequence="35"
+    />
+</odoo>

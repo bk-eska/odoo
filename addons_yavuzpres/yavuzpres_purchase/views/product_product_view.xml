@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_stock_product_tree_yavuzpres" model="ir.ui.view">
+        <field name="name">product.stock.tree.inherit.yavuzpres</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='virtual_available']" position="after">
+                <field name="purchase_ok" invisible="1"/>
+                <field name="rfq_count"
+                       attrs="{'invisible':[('type', '=', 'service'),('purchase_ok', '=', True)]}"
+                       optional="show"/>
+                <field name="product_rfq_qty"
+                       attrs="{'invisible':[('type', '=', 'service'),('purchase_ok', '=', True)]}"
+                       optional="show"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

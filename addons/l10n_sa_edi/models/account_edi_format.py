@@ -17,7 +17,7 @@ class AccountEdiFormat(models.Model):
     _inherit = 'account.edi.format'
 
     """
-        Once the journal has been successfully onboarded, we can clear/report invoices through the ZATCA API:
+        Once the journal has been successfully onboarded, we can clear/reports invoices through the ZATCA API:
             A) STANDARD Invoice:
                 Make a call to the Clearance API '/invoices/clearance/single'.
                 This will validate the invoice, sign it and apply a QR code then return the result.

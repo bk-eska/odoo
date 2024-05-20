@@ -102,7 +102,7 @@ Master Data:
         'views/l10n_latam_document_type_view.xml',
         'views/report_invoice.xml',
         'views/res_config_settings_view.xml',
-        'report/invoice_report_view.xml',
+        'reports/invoice_report_view.xml',
         'data/account_chart_template_configure_data.xml',
     ],
     'demo': [

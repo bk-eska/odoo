@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright 2015 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record id="view_stock_return_picking_form_edespatch" model="ir.ui.view">
+        <field name="name">stock.return.picking.form.edespatch</field>
+        <field name="model">stock.return.picking</field>
+        <field name="inherit_id" ref="stock.view_stock_return_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='move_dest_exists']" position="after">
+                 <group>
+                     <field name="l10n_tr_return_method" widget="radio"/>
+                     <field name="l10m_tr_partner_id" invisible="1"/>
+                 </group>
+            </xpath>
+            <xpath expr="//field[@name='location_id']" position="after">
+                <field name="l10n_tr_link_picking_id"
+                       attrs="{'invisible': [('l10n_tr_return_method','!=','link')],
+                       'required': [('l10n_tr_return_method','=','link')]}"
+                       domain="[('partner_id', '=', l10m_tr_partner_id),
+                       ('picking_type_code', '=', 'incoming'),
+                       ('state', '=', 'draft')]"
+                       options="{'no_open': True,
+                       'no_create': 1, 'no_create_edit': 1}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

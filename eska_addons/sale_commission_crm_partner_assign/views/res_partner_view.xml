@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="view_partner_form_agent_info" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="commission.view_partner_form_agent"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='agent']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//group[@name='group_partner_activation_review']" position="after">
+                <separator string="Agent Information" colspan="2"/>
+                <xpath expr="//page[@name='agent_information']/group" position="move"/>
+            </xpath>
+            <xpath expr="//page[@name='agent_information']" position="replace"/>
+        </field>
+    </record>
+</odoo>

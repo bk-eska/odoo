@@ -1,0 +1,88 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* base_automation_contract_email
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-28 16:40+0000\n"
+"PO-Revision-Date: 2023-09-28 16:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_automation_contract_email
+#: model:mail.template,body_html:base_automation_contract_email.email_contract_ending_reminder_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                    Dear <t t-out=\"object.partner_id.name or ''\"></t>,\n"
+"                    <br>\n"
+"                </p>\n"
+"                <p>\n"
+"                    We would like to remind you that the contract between us is about to expire in 7 days.\n"
+"                    Do not hesitate to contact us.\n"
+"                </p>\n"
+"                <p>\n"
+"                    Best Regards,\n"
+"                    <t t-if=\"not is_html_empty(object.user_id.signature)\">\n"
+"                        <br>\n"
+"                        <t t-out=\"object.user_id.signature\"></t>\n"
+"                    </t>\n"
+"                    <t t-else=\"\">\n"
+"                        <br>\n"
+"                        --\n"
+"                        <br>\n"
+"                        <t t-out=\"object.user_id.name\"></t>\n"
+"                    </t>\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                    Sayın <t t-out=\"object.partner_id.name or ''\"></t>,\n"
+"                    <br>\n"
+"                </p>\n"
+"                <p>\n"
+"                    Sözleşmemizin 7 gün içerisinde sonlanacağını hatırlatmak isteriz.\n"
+"                    Lütfen bizimle iletişime geçmekten çekinmeyin.\n"
+"                </p>\n"
+"                <p>\n"
+"                    Saygılarımızla,\n"
+"                    <t t-if=\"not is_html_empty(object.user_id.signature)\">\n"
+"                        <br>\n"
+"                        <t t-out=\"object.user_id.signature\"></t>\n"
+"                    </t>\n"
+"                    <t t-else=\"\">\n"
+"                        <br>\n"
+"                        --\n"
+"                        <br>\n"
+"                        <t t-out=\"object.user_id.name\"></t>\n"
+"                    </t>\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+
+#. module: base_automation_contract_email
+#: model:ir.actions.server,name:base_automation_contract_email.contract_crm_automated_action_ir_actions_server
+msgid "Contract Email Reminder"
+msgstr "Sözleşme E-Posta Hatırlatması"
+
+#. module: base_automation_contract_email
+#: model:mail.template,name:base_automation_contract_email.email_contract_ending_reminder_template
+msgid "Contract Ending Reminder"
+msgstr "Sözleşme Bitiş Hatırlatması"
+
+#. module: base_automation_contract_email
+#: model:mail.template,subject:base_automation_contract_email.email_contract_ending_reminder_template
+msgid ""
+"{{ object.company_id.name }} Contract Reminder - {{ object.name }} / {{ "
+"object.partner_id.commercial_company_name }}"
+msgstr ""
+"{{ object.company_id.name }} Sözleşme hatırlatma - {{ object.name }} / {{ "
+"object.partner_id.commercial_company_name }}"

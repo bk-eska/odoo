@@ -1,0 +1,193 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr_account_babs_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-23 06:14+0000\n"
+"PO-Revision-Date: 2023-11-23 06:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields.selection,name:l10n_tr_account_babs_report.selection__babs_report_wizard__target_move__all
+msgid "All Entries"
+msgstr "Tüm Girişler"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields.selection,name:l10n_tr_account_babs_report.selection__babs_report_wizard__target_move__posted
+msgid "All Posted Entries"
+msgstr "Tüm İşlenmiş Girişler"
+
+#. module: l10n_tr_account_babs_report
+#. odoo-python
+#: code:addons/l10n_tr_account_babs_report/report/account_babs_xls.py:0
+#, python-format
+msgid "All entries"
+msgstr "Tüm girişler"
+
+#. module: l10n_tr_account_babs_report
+#. odoo-python
+#: code:addons/l10n_tr_account_babs_report/report/account_babs_xls.py:0
+#, python-format
+msgid "All posted entries"
+msgstr "Tüm işlenmiş girişler"
+
+#. module: l10n_tr_account_babs_report
+#. odoo-python
+#: code:addons/l10n_tr_account_babs_report/report/account_babs.py:0
+#, python-format
+msgid "BA"
+msgstr "BA"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model,name:l10n_tr_account_babs_report.model_report_l10n_tr_account_babs_report_report_babs
+msgid "BA BS Report"
+msgstr "BA BS Raporu"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model,name:l10n_tr_account_babs_report.model_report_l10n_tr_account_babs_report_report_babs_xlsx
+msgid "BA BS XLSX Report"
+msgstr "BA BS XLSX Rapor"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.actions.act_window,name:l10n_tr_account_babs_report.babs_report_wizard_action
+#: model:ir.ui.menu,name:l10n_tr_account_babs_report.menu_babs_report_wizard
+msgid "BA/BS Report"
+msgstr "BA/BS Raporu"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.actions.report,name:l10n_tr_account_babs_report.action_print_report_partner_ledger_qweb
+msgid "BA/BS Report Qweb"
+msgstr "BA/BS Raporu Qweb"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.actions.report,name:l10n_tr_account_babs_report.action_print_report_partner_ledger_xlsx
+msgid "BA/BS Report XLSX"
+msgstr "BA/BS Raporu XLSX"
+
+#. module: l10n_tr_account_babs_report
+#. odoo-python
+#: code:addons/l10n_tr_account_babs_report/report/account_babs.py:0
+#, python-format
+msgid "BS"
+msgstr "BS"
+
+#. module: l10n_tr_account_babs_report
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_babs_report.babs_report_wizard_form
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields,field_description:l10n_tr_account_babs_report.field_babs_report_wizard__company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields,field_description:l10n_tr_account_babs_report.field_babs_report_wizard__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields,field_description:l10n_tr_account_babs_report.field_babs_report_wizard__create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields,field_description:l10n_tr_account_babs_report.field_babs_report_wizard__date_range_id
+msgid "Date Range"
+msgstr "Tarih Aralığı"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields,field_description:l10n_tr_account_babs_report.field_babs_report_wizard__declaration_type
+msgid "Declaration"
+msgstr "Bildirim"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields,field_description:l10n_tr_account_babs_report.field_babs_report_wizard__display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields,field_description:l10n_tr_account_babs_report.field_babs_report_wizard__date_to
+msgid "End Date"
+msgstr "Bitiş Tarihi"
+
+#. module: l10n_tr_account_babs_report
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_babs_report.babs_report_wizard_form
+msgid "Export XLSX"
+msgstr "XLSX Dışarı Aktar"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields,field_description:l10n_tr_account_babs_report.field_babs_report_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields,field_description:l10n_tr_account_babs_report.field_babs_report_wizard____last_update
+msgid "Last Modified on"
+msgstr "Son Düzenleme"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields,field_description:l10n_tr_account_babs_report.field_babs_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields,field_description:l10n_tr_account_babs_report.field_babs_report_wizard__write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: l10n_tr_account_babs_report
+#. odoo-python
+#: code:addons/l10n_tr_account_babs_report/report/account_babs.py:0
+#, python-format
+msgid "Period"
+msgstr "Dönem"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model,name:l10n_tr_account_babs_report.model_babs_report_wizard
+msgid "Print BA-BS Report by Period"
+msgstr "Dönem Dönem BA-BS Raporu Yazdır"
+
+#. module: l10n_tr_account_babs_report
+#. odoo-python
+#: code:addons/l10n_tr_account_babs_report/report/account_babs.py:0
+#: model:ir.model.fields.selection,name:l10n_tr_account_babs_report.selection__babs_report_wizard__declaration_type__purchase
+#, python-format
+msgid "Purchase Declaration"
+msgstr "Alım Bildirimi"
+
+#. module: l10n_tr_account_babs_report
+#. odoo-python
+#: code:addons/l10n_tr_account_babs_report/report/account_babs.py:0
+#: model:ir.model.fields.selection,name:l10n_tr_account_babs_report.selection__babs_report_wizard__declaration_type__sale
+#, python-format
+msgid "Sale Declaration"
+msgstr "Satış Bildirimi"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields.selection,name:l10n_tr_account_babs_report.selection__babs_report_wizard__declaration_type__sale_purchase
+msgid "Sale and Purchase Declaration"
+msgstr "Satış ve Alım Bildirimi"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields,field_description:l10n_tr_account_babs_report.field_babs_report_wizard__date_from
+msgid "Start Date"
+msgstr "Başlangıç Tarihi"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields,field_description:l10n_tr_account_babs_report.field_babs_report_wizard__target_move
+msgid "Target Moves"
+msgstr "Hedef Hareketler"
+
+#. module: l10n_tr_account_babs_report
+#: model:ir.model.fields,field_description:l10n_tr_account_babs_report.field_babs_report_wizard__threshold
+msgid "Theshold"
+msgstr "Eşik"

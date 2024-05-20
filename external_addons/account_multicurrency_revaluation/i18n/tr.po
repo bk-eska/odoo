@@ -1,0 +1,530 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_multicurrency_revaluation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-09 11:04+0000\n"
+"PO-Revision-Date: 2023-07-09 11:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_currency_revaluation_wizard
+msgid "%(account)s : Account code for which the revaluation is applied\""
+msgstr "%(account)s : Yeniden değerlemenin uygulandığı hesap kodu\""
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_currency_revaluation_wizard
+msgid "%(account_name)s : Account name for which the revaluation is applied\""
+msgstr "%(account_name)s : Yeniden değerlemenin uygulandığı hesap adı\""
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_currency_revaluation_wizard
+msgid "%(currency)s : Currency to be revaluated"
+msgstr "%(currency)s : Yeniden değerlenecek para birimi"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_currency_revaluation_wizard
+msgid "%(rate)s : Value of rate applied during revaluation"
+msgstr "%(rate)s : Yeniden değerleme sırasında uygulanan oranın değeri"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized_report
+msgid "0.0"
+msgstr ""
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_config_settings
+msgid "<b>Analytic account</b>"
+msgstr "Analitik Hesap"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_config_settings
+msgid ""
+"<b>Default revaluation journal</b>\n"
+"                            <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" groups=\"base.group_multi_company\"/>"
+msgstr ""
+"<b>Varsayılan yeniden değerleme yevmiyesi</b>\n"
+"                            <span class=\"fa fa-lg fa-building-o\" title=\"Burada ayarlanan değerler şirkete özeldir..\" groups=\"base.group_multi_company\"/>"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_config_settings
+msgid "<b>Gain</b>"
+msgstr "<b>Kazanç</b>"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_config_settings
+msgid "<b>Loss</b>"
+msgstr "<b>Kayıp</b>"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_config_settings
+msgid ""
+"<b>Provision B.S accounts</b>\n"
+"                                        <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" groups=\"base.group_multi_company\"/>"
+msgstr ""
+"<b>Provizyon B.S hesapları</b>\n"
+"                                        <span class=\"fa fa-lg fa-building-o\" title=\"Burada ayarlanan değerler şirkete özgüdür.\" groups=\"base.group_multi_company\"/>"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_config_settings
+msgid ""
+"<b>Provision P&amp;L accounts</b>\n"
+"                                        <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" groups=\"base.group_multi_company\"/>"
+msgstr ""
+"<b>Provision P&amp;L accounts</b>\n"
+"                                        <span class=\"fa fa-lg fa-building-o\" title=\"Burada ayarlanan değerler şirkete özgüdür.\" groups=\"base.group_multi_company\"/>"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_config_settings
+msgid ""
+"<b>Revaluation accounts</b>\n"
+"                                        <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" groups=\"base.group_multi_company\"/>"
+msgstr ""
+"<b>Yeniden değerleme hesapları</b>\n"
+"                                        <span class=\"fa fa-lg fa-building-o\" title=\"Burada ayarlanan değerler şirkete özgüdür.\" groups=\"base.group_multi_company\"/>"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized_report
+msgid "<b>TOTAL</b>"
+msgstr "<b>TOPLAM</b>"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_config_settings
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" groups=\"base.group_multi_company\"/>"
+msgstr ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Burada ayarlanan değerler "
+"şirkete özgüdür.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model,name:account_multicurrency_revaluation.model_account_account
+msgid "Account"
+msgstr "Hesap"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_unrealized_report_printer__account_ids
+msgid "Accounts"
+msgstr "Hesaplar"
+
+#. module: account_multicurrency_revaluation
+#: model:res.groups,name:account_multicurrency_revaluation.group_revaluation_additional
+msgid "Additional provisioning entries posting"
+msgstr "Ek provizyon kayıtlarını gönderme"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_account_move_line__gl_balance
+msgid "Aggregated Amount"
+msgstr "Toplu Miktar"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_account_move_line__gl_foreign_balance
+msgid "Aggregated Amount currency"
+msgstr "Toplu Miktar para birimi"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_account_account__currency_revaluation
+msgid "Allow currency revaluation"
+msgstr "Para Birimi Yeniden Değerlemeye İzin Ver"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_company__auto_post_entries
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_config_settings__auto_post_entries
+msgid "Auto Post Created Entries"
+msgstr "Oluşturulan Girişleri Otomatik Gönder"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized_report
+msgid "Balance YTD"
+msgstr "Bakiye YTD"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.currency_urealized_report_launcher_wizard
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_currency_revaluation_wizard
+msgid "Cancel"
+msgstr "İptal Et"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.ui.menu,name:account_multicurrency_revaluation.menu_view_account_currency_revaluation_closing
+msgid "Closing"
+msgstr "Kapanış"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.ui.menu,name:account_multicurrency_revaluation.currency_unrealized_report_report_closing_entries_menu
+msgid "Closing Entries"
+msgstr "Kapanış Kayıtları"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model,name:account_multicurrency_revaluation.model_res_company
+msgid "Companies"
+msgstr "Şirketler"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized_report
+msgid "Company"
+msgstr "Şirket"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized_report
+msgid "Company currency"
+msgstr "Şirket parabirimi"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model,name:account_multicurrency_revaluation.model_res_config_settings
+msgid "Config Settings"
+msgstr "Yapılandırma Ayarları"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_unrealized_report_printer__create_uid
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_unrealized_report_printer__create_date
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation__create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: account_multicurrency_revaluation
+#. odoo-python
+#: code:addons/account_multicurrency_revaluation/wizard/wizard_currency_revaluation.py:0
+#, python-format
+msgid "Created revaluation lines"
+msgstr "Oluşturulan yeniden değerleme satırları"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized_report
+msgid "Curr. Balance YTD"
+msgstr "Para birimi Bakiye YTD"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized_report
+msgid "Currency Gain and Loss"
+msgstr "Para birimi Kazanç ve Kayıp"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_currency_revaluation_wizard
+msgid "Currency Revaluation"
+msgstr "Para Birimi Yeniden Değerleme"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.actions.report,name:account_multicurrency_revaluation.action_report_currency_unrealized
+#: model:ir.ui.menu,name:account_multicurrency_revaluation.currency_unrealized_report_wizard_menu
+msgid "Currency Revaluation Report"
+msgstr "Para Birimi Yeniden Değerleme Raporu"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model,name:account_multicurrency_revaluation.model_wizard_currency_revaluation
+msgid "Currency Revaluation Wizard"
+msgstr "Para Birimi Yeniden Değerleme Sihirbazı"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model,name:account_multicurrency_revaluation.model_report_account_multicurrency_revaluation_curr_unrealized_report
+msgid "Currency Unrealized Report"
+msgstr "Para Birimi Gerçekleşmemiş Rapor"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_company__currency_reval_journal_id
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_config_settings__default_currency_reval_journal_id
+msgid "Currency gain & loss Default Journal"
+msgstr "Para birimi kazanç ve kayıp Varsayılan Yevmiye"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_config_settings
+msgid "Currency gain &amp; loss Default Journal"
+msgstr "Para birimi kazanç &amp; kayıp Varsayılan Yevmiye"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_account_move_line__gl_currency_rate
+msgid "Currency rate"
+msgstr "Para birimi oranı"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.actions.act_window,name:account_multicurrency_revaluation.action_view_account_currency_revaluation_wizard
+#: model:ir.ui.menu,name:account_multicurrency_revaluation.menu_view_account_currency_revaluation_wizard
+msgid "Currency revaluation"
+msgstr "Para birimi yeniden değerleme"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_unrealized_report_printer__display_name
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation__display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation__label
+msgid "Entry description"
+msgstr "Kayıt tanımı"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized_report
+msgid "Gain(+)/Loss(-) YTD"
+msgstr "Kazanç(+)/Kayıp(-) YTD"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_unrealized_report_printer__id
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation__id
+msgid "ID"
+msgstr ""
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_config_settings
+msgid ""
+"If marked, the entries created in the process will be posted automatically."
+msgstr ""
+"İşaretlenirse, süreçte oluşturulan girişler otomatik olarak gönderilecektir."
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,help:account_multicurrency_revaluation.field_res_company__auto_post_entries
+#: model:ir.model.fields,help:account_multicurrency_revaluation.field_res_config_settings__auto_post_entries
+msgid ""
+"If marked, the entries created in the process will beposted automatically."
+msgstr ""
+"İşaretlenirse, süreçte oluşturulan girişler otomatik olarak postalanacaktır."
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation__journal_id
+msgid "Journal"
+msgstr "Yevmiye"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model,name:account_multicurrency_revaluation.model_account_move
+msgid "Journal Entry"
+msgstr "Yevmiye Kaydı"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model,name:account_multicurrency_revaluation.model_account_move_line
+msgid "Journal Item"
+msgstr "Yevmiye Kalemi"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_unrealized_report_printer____last_update
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation____last_update
+msgid "Last Modified on"
+msgstr "Son Düzenleme"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_unrealized_report_printer__write_uid
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation__write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_unrealized_report_printer__write_date
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation__write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_config_settings
+msgid "Multicurrency revaluation"
+msgstr "Çoklu Para Birimi Yeniden Değerleme"
+
+#. module: account_multicurrency_revaluation
+#. odoo-python
+#: code:addons/account_multicurrency_revaluation/wizard/wizard_currency_revaluation.py:0
+#: code:addons/account_multicurrency_revaluation/wizard/wizard_currency_revaluation.py:0
+#: code:addons/account_multicurrency_revaluation/wizard/wizard_currency_revaluation.py:0
+#, python-format
+msgid "N/A"
+msgstr ""
+
+#. module: account_multicurrency_revaluation
+#. odoo-python
+#: code:addons/account_multicurrency_revaluation/wizard/wizard_currency_revaluation.py:0
+#, python-format
+msgid ""
+"No account to be revaluated found. Please check 'Allow Currency Revaluation'"
+" for at least one account in account form."
+msgstr ""
+"Yeniden değerlenecek hesap bulunamadı.Hesap formundaki en az bir hesap için"
+"    lütfen 'Para Birimi Yeniden Değerlemeye İzin Ver' seçeneğini "
+"işaretleyin."
+
+#. module: account_multicurrency_revaluation
+#. odoo-python
+#: code:addons/account_multicurrency_revaluation/wizard/wizard_currency_revaluation.py:0
+#, python-format
+msgid "No accounting entry has been posted."
+msgstr "Herhangi bir muhasebe kaydı yapılmadı."
+
+#. module: account_multicurrency_revaluation
+#. odoo-python
+#: code:addons/account_multicurrency_revaluation/wizard/wizard_currency_revaluation.py:0
+#, python-format
+msgid ""
+"No revaluation or provision account are defined for your company.\n"
+"You must specify at least one provision account or a couple of provision account in the accounting settings."
+msgstr ""
+"Şirketiniz için herhangi bir yeniden değerleme veya provizyon hesabı "
+"tanımlanmamıştır. Muhasebe ayarlarında en az bir provizyon hesabı veya "
+"birkaç provizyon hesabı belirtmelisiniz."
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_currency_revaluation_wizard
+msgid ""
+"Odoo will generate exchange rate difference entries for each account set as 'Allow Currency revaluation'.\n"
+"                If the account type is payable or receivable : 1 entry will be generated per account/currency/partner.\n"
+"                For other account types : 1 entry will be generated per account/currency."
+msgstr ""
+"Odoo, 'Para Birimi yeniden değerlemesine izin ver' olarak ayarlanan her "
+"hesap için kur farkı girişleri oluşturacaktır. Hesap türü borç veya alacak "
+"ise: Hesap/para birimi/ortak başına 1 giriş oluşturulacaktır. Diğer hesap "
+"türleri için: Hesap/para birimi başına 1 giriş oluşturulacaktır."
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized_report
+msgid "Partner"
+msgstr "İş Ortağı"
+
+#. module: account_multicurrency_revaluation
+#. odoo-python
+#: code:addons/account_multicurrency_revaluation/wizard/print_currency_unrealized_report.py:0
+#, python-format
+msgid "Please, select the accounts!"
+msgstr "Lütfen hesapları seçin!"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.actions.act_window,name:account_multicurrency_revaluation.currency_urealized_report_action_wizard
+msgid "Print Currency Revaluation Report"
+msgstr "Para Birimi Yeniden Değerleme Raporunu Yazdır"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_company__provision_bs_gain_account_id
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_config_settings__provision_bs_gain_account_id
+msgid "Provision B.S. gain account"
+msgstr "Provizyon bilanço kazanç hesabı"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_company__provision_bs_loss_account_id
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_config_settings__provision_bs_loss_account_id
+msgid "Provision B.S. loss account"
+msgstr "Provizyon bilanço kayıp hesabı"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_company__provision_pl_analytic_account_id
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_config_settings__provision_pl_analytic_account_id
+msgid "Provision P&L Analytic account"
+msgstr "Provizyon Kâr&Zarar analitik hesabı"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_company__provision_pl_gain_account_id
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_config_settings__provision_pl_gain_account_id
+msgid "Provision P&L gain account"
+msgstr "Provizyon Kâr&Zarar hesabı"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_company__provision_pl_loss_account_id
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_config_settings__provision_pl_loss_account_id
+msgid "Provision P&L loss account"
+msgstr "Provizyon Kâr&Zarar kayıp hesabı"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized_report
+msgid "Report"
+msgstr "Rapor"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_account_move_line__gl_revaluated_balance
+msgid "Revaluated Amount"
+msgstr "Yeniden Değerleme Miktarı"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized_report
+msgid "Revaluated Amount YTD"
+msgstr "Yeniden Değerleme Miktarı YTD"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_company__revaluation_analytic_account_id
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_config_settings__revaluation_analytic_account_id
+msgid "Revaluation Analytic account"
+msgstr "Yeniden Değerleme Analitik Hesabı"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_wizard_currency_revaluation__revaluation_date
+msgid "Revaluation Date"
+msgstr "Yeniden Değerleme Tarihi"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.curr_unrealized_report
+msgid "Revaluation Rate"
+msgstr "Yeniden Değerleme Oranı"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_company__revaluation_gain_account_id
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_config_settings__revaluation_gain_account_id
+msgid "Revaluation gain account"
+msgstr "Yeniden değerleme kazanç hesabı"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_company__revaluation_loss_account_id
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_config_settings__revaluation_loss_account_id
+msgid "Revaluation loss account"
+msgstr "Yeniden değerleme kayıp hesabı"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_move_filter
+msgid "Revaluation to reverse"
+msgstr "Yeniden değerlemeyi ters çevir"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,help:account_multicurrency_revaluation.field_res_company__reversable_revaluations
+#: model:ir.model.fields,help:account_multicurrency_revaluation.field_res_config_settings__reversable_revaluations
+msgid "Revaluations entries will be created as \"To Be Reversed\"."
+msgstr "Yeniden değerleme kayıtları \"Ters Çevrilecek\" olarak oluşturulur."
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_config_settings
+msgid "Revaluations entries will be created as 'To Be Reversed'."
+msgstr "Yeniden değerleme kayıtları \\'Ters Çevrilecek\\' olarak oluşturulur."
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_company__reversable_revaluations
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_res_config_settings__reversable_revaluations
+msgid "Reversable Revaluations"
+msgstr "Ters Çevrilebilir Yeniden Değerlemeler"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,help:account_multicurrency_revaluation.field_wizard_currency_revaluation__label
+msgid ""
+"This label will be inserted in entries description. You can use %(account)s,"
+" %(account_name)s, %(currency)s and %(rate)s keywords."
+msgstr ""
+"Bu etiket, kayıt açıklamasına eklenecek. %(account)s, %(currency)s ve "
+"%(rate)s anahtar kelimelerini kullanabilirsiniz."
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model,name:account_multicurrency_revaluation.model_unrealized_report_printer
+msgid "Unrealized Currency Report Printer"
+msgstr "Gerçekleşmemiş Para Birimi Raporunu Yazdır"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,help:account_multicurrency_revaluation.field_wizard_currency_revaluation__journal_id
+msgid "You can set the default journal in company settings."
+msgstr "Varsayılan yevmiyeyi şirket ayarlarından belirleyebilirsiniz."
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.currency_urealized_report_launcher_wizard
+msgid "_Print"
+msgstr "_Yazdır"
+
+#. module: account_multicurrency_revaluation
+#: model_terms:ir.ui.view,arch_db:account_multicurrency_revaluation.view_account_currency_revaluation_wizard
+msgid "_Validate"
+msgstr "_Doğrula"
+
+#. module: account_multicurrency_revaluation
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_account_bank_statement_line__revaluation_to_reverse
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_account_move__revaluation_to_reverse
+#: model:ir.model.fields,field_description:account_multicurrency_revaluation.field_account_payment__revaluation_to_reverse
+msgid "revaluation to reverse"
+msgstr "tersine çevrilecek yeniden değerleme"

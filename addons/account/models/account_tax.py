@@ -687,7 +687,7 @@ class AccountTax(models.Model):
                 cumulated_tax_included_amount += factorized_tax_amount
 
             # If the tax affects the base of subsequent taxes, its tax move lines must
-            # receive the base tags and tag_ids of these taxes, so that the tax report computes
+            # receive the base tags and tag_ids of these taxes, so that the tax reports computes
             # the right total
             subsequent_taxes = self.env['account.tax']
             subsequent_tags = self.env['account.account.tag']

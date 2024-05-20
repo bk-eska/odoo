@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2015 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record id="view_account_journal_form_einvoice" model="ir.ui.view">
+        <field name="name">account.journal.form.einvoice</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id"
+               ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='refund_sequence']/.."
+                   position="after">
+                <group string="E-Invoice Sequence"
+                       attrs="{'invisible':['|',
+                       ('type','not in', ['sale', 'purchase']),
+                       ('l10n_tr_einvoice_enabled','=', False)]}">
+                    <field name="l10n_tr_einvoice_enabled" invisible="1" />
+                    <field name="l10n_tr_einvoice_sequence"
+                           domain="[('code', '=', 'account.einvoice'),
+                           ('company_id', '=', company_id)]"
+                           attrs="{'required':[('type','in',
+                            ['sale', 'purchase']),
+                            ('l10n_tr_einvoice_enabled','=', True)]}"
+                           context="{'default_code': 'account.einvoice',
+                         'default_padding': 9,
+                         'default_implementation': 'no_gap',
+                         'default_use_date_range': True,
+                         'default_prefix': 'EFA%%(range_year)s'}"/>
+                    <field name="l10n_tr_earchive_sequence"
+                           domain="[('code', '=', 'account.earchive'),
+                           ('company_id', '=', company_id)]"
+                           attrs="{'required':[('type','in', ['sale', 'purchase']),
+                            ('l10n_tr_einvoice_enabled','=', True)]}"
+                           context="{'default_code': 'account.earchive',
+                         'default_padding': 9,
+                         'default_implementation': 'no_gap',
+                         'default_use_date_range': True,
+                         'default_prefix': 'EAR%%(range_year)s'}"/>
+                    <field name="l10n_tr_einvoice_sender_id"
+                           domain="[('company_id', '=', company_id)]"
+                           attrs="{'required':[('type','in', ['sale', 'purchase']),
+                         ('l10n_tr_einvoice_enabled','=', True)]}"/>
+                    <field name="l10n_tr_branch_id"
+                           domain="[('parent_id', '=', company_partner_id)]"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

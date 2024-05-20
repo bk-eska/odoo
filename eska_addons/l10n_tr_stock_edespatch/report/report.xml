@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<odoo>
+	<data noupdate="1">
+		<record forcecreate="True"
+                id="stock_edespatch_xslt"
+                model="ir.actions.report">
+            <field name="name">E-Despatch</field>
+            <field name="model">stock.picking</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">stock.report_edespatch_despatch</field>
+            <field eval="True" name="multi"/>
+            <field eval="True" name="attachment_use"/>
+            <field eval="True" name="attach_xml"/>
+            <field eval="True" name="xslt_transform"/>
+            <!--
+            <field name="attachment">(object.state in
+                ('open','in_payment','paid') or
+                object.type in('in_invoice', 'out_refund')) and
+                ((object.name or '').replace('/','')+'.pdf')</field>
+            -->
+            <field name="xslt" type="base64"
+                   file="l10n_tr_stock_edespatch/report/irsaliye.xslt"/>
+        </record>
+        <record  forcecreate="True"
+                 id="filter_edespatch"
+                 model="ir.filters">
+            <field name="name">E-Despatch</field>
+            <field name="model_id">stock.picking</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[('l10n_tr_document_type', '=', 'edespatch')]</field>
+        </record>
+		<record  forcecreate="True"
+                 id="route_edespatch"
+                 model="ir.actions.report.route">
+            <field name="parent_id" ref="stock.action_report_delivery"/>
+            <field name="sequence">10</field>
+            <field name="report_id" ref="stock_edespatch_xslt"/>
+            <field name="filter_id" ref="filter_edespatch"/>
+        </record>
+	</data>
+</odoo>

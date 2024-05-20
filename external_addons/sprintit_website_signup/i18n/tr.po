@@ -1,0 +1,270 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sprintit_website_signup
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-15 07:50+0000\n"
+"PO-Revision-Date: 2024-05-15 07:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sprintit_website_signup
+#. odoo-python
+#: code:addons/external_addons/sprintit_website_signup/models/res_users.py:0
+#: code:addons/sprintit_website_signup/models/res_users.py:0
+#, python-format
+msgid "<b>%s User Approved by %s</b>"
+msgstr "<b>%s Kullanıcısı %s Tarafından Onaylandı</b>"
+
+#. module: sprintit_website_signup
+#. odoo-python
+#: code:addons/external_addons/sprintit_website_signup/models/res_users.py:0
+#: code:addons/sprintit_website_signup/models/res_users.py:0
+#, python-format
+msgid "<b>%s User Rejected by %s</b>"
+msgstr "<b>%s Kullanıcısı %s Tarafından Reddedildi</b>"
+
+#. module: sprintit_website_signup
+#. odoo-python
+#: code:addons/external_addons/sprintit_website_signup/controllers/main.py:0
+#: code:addons/sprintit_website_signup/controllers/main.py:0
+#, python-format
+msgid ""
+"<b>Please review signup request of user %s</b><br/>Find it under Settings ->"
+" Users -> To be Approve Users"
+msgstr ""
+"<b>Lütfen %s kullanıcısının üyelik talebini değerlendirin</b><br/>Ayarlar ->"
+" Kullanıcılar -> Onaylanacak Kullanıcılar içinden erişebilirsiniz"
+
+#. module: sprintit_website_signup
+#: model:mail.template,body_html:sprintit_website_signup.mail_template_user_signup_account_rejected
+msgid ""
+"<div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <p>Dear ${object.name},</p>\n"
+"                <p>\n"
+"                    Your account has been Rejected! , For more detail contact us.\n"
+"                </p>\n"
+"                <p>Best regards,</p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <p>Sayın ${object.name},</p>\n"
+"                <p>\n"
+"                    Hesabınız reddedilmiştir! , Daha fazla bilgi için bizimle iletişime geçiniz.\n"
+"                </p>\n"
+"                <p>Saygılarımızla,</p>\n"
+"            </div>\n"
+"        "
+
+#. module: sprintit_website_signup
+#: model:mail.template,body_html:sprintit_website_signup.mail_template_user_signup_account_approved
+msgid ""
+"<div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <p>Dear ${object.name},</p>\n"
+"                <p>\n"
+"                    Your account has been approved!\n"
+"                </p>\n"
+"                <div style=\"text-align: center; margin-top: 16px;\">\n"
+"                    <a href=\"/web/login?%24%7Bctx%5B'auth_login'%5D%7D\" style=\"padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#875A7B; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #875A7B; border: 1px solid #875A7B; border-radius:3px\">\n"
+"                        Go to My Account\n"
+"                    </a>\n"
+"                </div>\n"
+"                <p>Best regards,</p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <p>Sayın ${object.name},</p>\n"
+"                <p>\n"
+"                    Hesabınız onaylanmıştır!\n"
+"                </p>\n"
+"                <div style=\"text-align: center; margin-top: 16px;\">\n"
+"                    <a href=\"/web/login?${ctx['auth_login']}\" style=\"padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#875A7B; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: #875A7B; border: 1px solid #875A7B; border-radius:3px\">\n"
+"                        Hesabıma Git\n"
+"                    </a>\n"
+"                </div>\n"
+"                <p>Saygılarımızla,</p>\n"
+"            </div>\n"
+"        "
+
+#. module: sprintit_website_signup
+#: model:mail.template,body_html:sprintit_website_signup.mail_template_user_signup_approval
+msgid ""
+"<div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <p>Dear Approval Team,</p>\n"
+"                <p>\n"
+"                    New user <strong>${object.name}</strong> with email <strong>${object.email}</strong> is signup.Review his profile and take appropriate action.\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+msgstr ""
+"<div style=\"padding:0px;width:600px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777\">\n"
+"                <p>Sayın Onaylama Ekibi,</p>\n"
+"                <p>\n"
+"                    Yeni kullanıcı <strong>${object.name}</strong>, <strong>${object.email}</strong> e-postasıyla kaydoldu. Profili değerlendirip uygun aksiyonu alınız.\n"
+"                </p>\n"
+"            </div>\n"
+"        "
+
+#. module: sprintit_website_signup
+#: model:mail.template,subject:sprintit_website_signup.mail_template_user_signup_account_rejected
+msgid "Account Rejected"
+msgstr "Hesabınız Reddedildi"
+
+#. module: sprintit_website_signup
+#: model_terms:ir.ui.view,arch_db:sprintit_website_signup.res_user_view_inherited
+msgid "Approve Login"
+msgstr "Kullanıcı Girişini Onayla"
+
+#. module: sprintit_website_signup
+#: model:ir.model.fields,field_description:sprintit_website_signup.field_res_users__approved_date
+msgid "Approved Date"
+msgstr "Onaylama Tarihi"
+
+#. module: sprintit_website_signup
+#: model:ir.model.fields,field_description:sprintit_website_signup.field_res_users__action_by_user_id
+msgid "Approved or Rejected By"
+msgstr "Onaylayan veya Reddeden"
+
+#. module: sprintit_website_signup
+#: model_terms:ir.ui.view,arch_db:sprintit_website_signup.fieldsExt
+msgid "Company Name"
+msgstr "Şirket Adı"
+
+#. module: sprintit_website_signup
+#: model:ir.model,name:sprintit_website_signup.model_res_config_settings
+msgid "Config Settings"
+msgstr "Yapılandırma Ayarları"
+
+#. module: sprintit_website_signup
+#: model:ir.model.fields,field_description:sprintit_website_signup.field_res_users__for_approval_menu
+msgid "For Approval Menu"
+msgstr "Onaylama Menüsü İçin"
+
+#. module: sprintit_website_signup
+#: model_terms:ir.actions.act_window,help:sprintit_website_signup.action_res_users_for_approval
+msgid ""
+"Here system list all the users which are signup through website (B2C) and "
+"need approval."
+msgstr ""
+"Sistem burada websiteden (B2C) kayıt olan ve onaylanması gereken tüm "
+"kullanıcıları listeler."
+
+#. module: sprintit_website_signup
+#: model_terms:ir.ui.view,arch_db:sprintit_website_signup.res_config_settings_inherited
+msgid "Is Signup Approval Needed for B2C users?"
+msgstr "B2C kullanıcıları için Kayıt Onayı Gerekli mi?"
+
+#. module: sprintit_website_signup
+#: model:mail.template,subject:sprintit_website_signup.mail_template_user_signup_approval
+msgid "New User ${object.name} has Signup waiting for Approval"
+msgstr "Yeni Kullanıcı ${object.name} Kayıt Onayı bekliyor"
+
+#. module: sprintit_website_signup
+#: model_terms:ir.ui.view,arch_db:sprintit_website_signup.res_user_view_inherited
+msgid "Reject Login"
+msgstr "Kullanıcı Girişini Reddet"
+
+#. module: sprintit_website_signup
+#: model:ir.model.fields,field_description:sprintit_website_signup.field_res_config_settings__auth_signup_approval
+#: model_terms:ir.ui.view,arch_db:sprintit_website_signup.res_config_settings_inherited
+msgid "Signup Approval Needed?"
+msgstr "Kayıt Onayı Gerekli Mi?"
+
+#. module: sprintit_website_signup
+#: model:res.groups,name:sprintit_website_signup.group_approval_channel
+msgid "Signup Approval User"
+msgstr "Kayıt Onay Kullanıcısı"
+
+#. module: sprintit_website_signup
+#: model:mail.template,name:sprintit_website_signup.mail_template_user_signup_account_approved
+msgid "Signup: Odoo Account Approved"
+msgstr "Kayıt: Odoo Hesabı Onaylandı"
+
+#. module: sprintit_website_signup
+#: model:mail.template,name:sprintit_website_signup.mail_template_user_signup_account_rejected
+msgid "Signup: Odoo Account Reject"
+msgstr "Kayıt: Odoo Hesabı Reddedildi"
+
+#. module: sprintit_website_signup
+#: model:mail.template,name:sprintit_website_signup.mail_template_user_signup_approval
+msgid "Signup: Odoo Account Signup Approval"
+msgstr "Kayıt: Odoo Hesabı Kayıt Onayı"
+
+#. module: sprintit_website_signup
+#. odoo-python
+#: code:addons/external_addons/sprintit_website_signup/controllers/main.py:0
+#: code:addons/sprintit_website_signup/controllers/main.py:0
+#, python-format
+msgid "Thank you, We get your signup request, We will contact you shortly.."
+msgstr ""
+"Teşekkürler, Kaydolma talebinizi aldık, Kısa süre içinde sizinle iletişime "
+"geçeceğiz.."
+
+#. module: sprintit_website_signup
+#: model:ir.actions.act_window,name:sprintit_website_signup.action_res_users_for_approval
+#: model:ir.ui.menu,name:sprintit_website_signup.menu_action_res_users
+msgid "To Be Approve Users"
+msgstr "Onaylanacak Kullanıcılar"
+
+#. module: sprintit_website_signup
+#: model_terms:ir.ui.view,arch_db:sprintit_website_signup.res_user_search_inherited
+msgid "To be Approve"
+msgstr "Onaylanacak"
+
+#. module: sprintit_website_signup
+#: model:ir.model,name:sprintit_website_signup.model_res_users
+msgid "User"
+msgstr "Kullanıcı"
+
+#. module: sprintit_website_signup
+#. odoo-python
+#: code:addons/external_addons/sprintit_website_signup/controllers/main.py:0
+#: code:addons/external_addons/sprintit_website_signup/models/res_users.py:0
+#: code:addons/sprintit_website_signup/controllers/main.py:0
+#: code:addons/sprintit_website_signup/models/res_users.py:0
+#, python-format
+msgid "User Approval"
+msgstr "Kullanıcı Onayı"
+
+#. module: sprintit_website_signup
+#. odoo-python
+#: code:addons/external_addons/sprintit_website_signup/models/res_users.py:0
+#: code:addons/sprintit_website_signup/models/res_users.py:0
+#, python-format
+msgid "User Rejected"
+msgstr "Kullanıcı Reddedildi"
+
+#. module: sprintit_website_signup
+#: model:mail.template,subject:sprintit_website_signup.mail_template_user_signup_account_approved
+msgid "Welcome to ${object.company_id.name}!"
+msgstr "${object.company_id.name} Şirketine Hoşgeldiniz!"
+
+#. module: sprintit_website_signup
+#. odoo-python
+#: code:addons/external_addons/sprintit_website_signup/controllers/main.py:0
+#: code:addons/sprintit_website_signup/controllers/main.py:0
+#, python-format
+msgid "You can login only after your login get approved..!"
+msgstr "Giriş kaydınız onaylandıktan sonra giriş yapabilirsiniz..!"
+
+#. module: sprintit_website_signup
+#. odoo-python
+#: code:addons/external_addons/sprintit_website_signup/controllers/main.py:0
+#: code:addons/sprintit_website_signup/controllers/main.py:0
+#, python-format
+msgid "Your login will continue after it approved again..!"
+msgstr "Giriş kaydınız yeniden onaylandıktan sonra giriş yapabileceksiniz..!"
+
+#. module: sprintit_website_signup
+#: model_terms:ir.ui.view,arch_db:sprintit_website_signup.fieldsExt
+msgid "e.g. SprintIT"
+msgstr "örn. SprintIT"

@@ -1,0 +1,122 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr_tax_office
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-03 08:58+0000\n"
+"PO-Revision-Date: 2021-03-03 08:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr_tax_office
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_account_tax_office__active
+msgid "Active"
+msgstr "Etkin"
+
+#. module: l10n_tr_tax_office
+#: model_terms:ir.ui.view,arch_db:l10n_tr_tax_office.view_tax_office_search
+msgid "Archived"
+msgstr "Arşivlendi"
+
+#. module: l10n_tr_tax_office
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_account_tax_office__code
+msgid "Code"
+msgstr "Kod"
+
+#. module: l10n_tr_tax_office
+#: model:ir.model,name:l10n_tr_tax_office.model_res_company
+msgid "Companies"
+msgstr "Şirketler"
+
+#. module: l10n_tr_tax_office
+#: model:ir.model,name:l10n_tr_tax_office.model_res_partner
+msgid "Contact"
+msgstr "Temas"
+
+#. module: l10n_tr_tax_office
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_account_tax_office__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: l10n_tr_tax_office
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_account_tax_office__create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: l10n_tr_tax_office
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_account_tax_office__display_name
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_res_company__display_name
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: l10n_tr_tax_office
+#: model_terms:ir.ui.view,arch_db:l10n_tr_tax_office.view_tax_office_search
+msgid "Group By"
+msgstr "Grupla"
+
+#. module: l10n_tr_tax_office
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_account_tax_office__id
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_res_company__id
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_tr_tax_office
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_account_tax_office____last_update
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_res_company____last_update
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: l10n_tr_tax_office
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_account_tax_office__write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: l10n_tr_tax_office
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_account_tax_office__write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: l10n_tr_tax_office
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_account_tax_office__name
+msgid "Name"
+msgstr "İsim"
+
+#. module: l10n_tr_tax_office
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_account_tax_office__state_id
+#: model_terms:ir.ui.view,arch_db:l10n_tr_tax_office.view_tax_office_search
+msgid "State"
+msgstr "İl/Eyalet"
+
+#. module: l10n_tr_tax_office
+#: model:ir.model,name:l10n_tr_tax_office.model_account_tax_office
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_res_company__tax_office_id
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_res_partner__tax_office_id
+#: model:ir.model.fields,field_description:l10n_tr_tax_office.field_res_users__tax_office_id
+#: model_terms:ir.ui.view,arch_db:l10n_tr_tax_office.view_tax_office_form
+#: model_terms:ir.ui.view,arch_db:l10n_tr_tax_office.view_tax_office_search
+msgid "Tax Office"
+msgstr "Vergi Dairesi"
+
+#. module: l10n_tr_tax_office
+#: model_terms:ir.ui.view,arch_db:l10n_tr_tax_office.report_invoice_document_tax_office
+msgid "Tax Office:"
+msgstr "Vergi Dairesi"
+
+#. module: l10n_tr_tax_office
+#: model:ir.actions.act_window,name:l10n_tr_tax_office.action_tax_office
+#: model:ir.ui.menu,name:l10n_tr_tax_office.menu_tax_office
+#: model_terms:ir.ui.view,arch_db:l10n_tr_tax_office.view_tax_office_search
+#: model_terms:ir.ui.view,arch_db:l10n_tr_tax_office.view_tax_office_tree
+msgid "Tax Offices"
+msgstr "Vergi Daireleri"
+

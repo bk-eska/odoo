@@ -19,7 +19,7 @@ def _prepare_data(env, data):
     total = 0
     qty_by_product_in = data.get('quantity_by_product')
     # search for products all at once, ordered by name desc since popitem() used in xml to print the labels
-    # is LIFO, which results in ordering by product name in the report
+    # is LIFO, which results in ordering by product name in the reports
     products = Product.search([('id', 'in', [int(p) for p in qty_by_product_in.keys()])], order='name desc')
     quantity_by_product = defaultdict(list)
     for product in products:
@@ -46,14 +46,14 @@ def _prepare_data(env, data):
     }
 
 class ReportProductTemplateLabel(models.AbstractModel):
-    _name = 'report.product.report_producttemplatelabel'
+    _name = 'reports.product.report_producttemplatelabel'
     _description = 'Product Label Report'
 
     def _get_report_values(self, docids, data):
         return _prepare_data(self.env, data)
 
 class ReportProductTemplateLabelDymo(models.AbstractModel):
-    _name = 'report.product.report_producttemplatelabel_dymo'
+    _name = 'reports.product.report_producttemplatelabel_dymo'
     _description = 'Product Label Report'
 
     def _get_report_values(self, docids, data):

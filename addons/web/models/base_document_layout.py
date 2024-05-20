@@ -81,12 +81,12 @@ class BaseDocumentLayout(models.TransientModel):
     layout_background = fields.Selection(related='company_id.layout_background', readonly=False)
     layout_background_image = fields.Binary(related='company_id.layout_background_image', readonly=False)
 
-    report_layout_id = fields.Many2one('report.layout')
+    report_layout_id = fields.Many2one('reports.layout')
 
     # All the sanitization get disabled as we want true raw html to be passed to an iframe.
     preview = fields.Html(compute='_compute_preview', sanitize=False)
 
-    # Those following fields are required as a company to create invoice report
+    # Those following fields are required as a company to create invoice reports
     partner_id = fields.Many2one(related='company_id.partner_id', readonly=True)
     phone = fields.Char(related='company_id.phone', readonly=True)
     email = fields.Char(related='company_id.email', readonly=True)
@@ -154,7 +154,7 @@ class BaseDocumentLayout(models.TransientModel):
             wizard.font = wizard.company_id.font
             wizard.primary_color = wizard.company_id.primary_color
             wizard.secondary_color = wizard.company_id.secondary_color
-            wizard_layout = wizard.env["report.layout"].search([
+            wizard_layout = wizard.env["reports.layout"].search([
                 ('view_id.key', '=', wizard.company_id.external_report_layout_id.key)
             ])
             wizard.report_layout_id = wizard_layout or wizard_layout.search([], limit=1)

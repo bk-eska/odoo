@@ -51,7 +51,7 @@ class WebsiteSaleBackend(WebsiteBackend):
             ('date', '>=', datetime_from),
             ('date', '<=', fields.Datetime.now())
         ]
-        report_product_lines = request.env['sale.report'].read_group(
+        report_product_lines = request.env['sale.reports'].read_group(
             domain=sale_report_domain,
             fields=['product_tmpl_id', 'product_uom_qty', 'price_subtotal'],
             groupby='product_tmpl_id', orderby='product_uom_qty desc', limit=5)
@@ -77,7 +77,7 @@ class WebsiteSaleBackend(WebsiteBackend):
                 sales_values['summary']['order_count'] += res['state_count']
             sales_values['summary']['order_carts_count'] += res['state_count']
 
-        report_price_lines = request.env['sale.report'].read_group(
+        report_price_lines = request.env['sale.reports'].read_group(
             domain=[
                 ('website_id', '=', current_website.id),
                 ('state', 'in', ['sale', 'done']),
@@ -167,7 +167,7 @@ class WebsiteSaleBackend(WebsiteBackend):
         days_between = (date_to - date_from).days
         date_list = [(date_from + timedelta(days=x)) for x in range(0, days_between + 1)]
 
-        daily_sales = request.env['sale.report'].read_group(
+        daily_sales = request.env['sale.reports'].read_group(
             domain=sales_domain,
             fields=['date', 'price_subtotal'],
             groupby='date:day')

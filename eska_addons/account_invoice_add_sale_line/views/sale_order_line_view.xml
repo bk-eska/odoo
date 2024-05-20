@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_invoice_add_sale_line_tree" model="ir.ui.view">
+        <field name="name">sale.order.line.add.sale.line.tree</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <tree create="false" editable="bottom">
+                <field name="state" invisible="1"/>
+                <field name="order_id"/>
+                <field name="name"/>
+                <field name="price_unit"/>
+                <field name="product_uom_qty" attrs="{'readonly': [('state', 'not in', ['draft', 'sent'])]}"/>
+                <field name="qty_invoiced"/>
+                <field name="qty_to_invoice"/>
+                <field name="order_partner_id"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

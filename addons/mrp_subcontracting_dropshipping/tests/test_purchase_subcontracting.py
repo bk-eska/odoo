@@ -406,7 +406,7 @@ class TestSubcontractingDropshippingFlows(TestMrpSubcontractingCommon):
         Take two BoM having those components. One being subcontracted and the other not.
          - Compo RR : Buy & Reordering rule to resupply subcontractor.
          - Compo DROP : Buy & Dropship subcontractor on order.
-        Check that depending on the context, the right route is shown on the report.
+        Check that depending on the context, the right route is shown on the reports.
         """
         route_buy = self.env.ref('purchase_stock.route_warehouse0_buy')
         route_dropship = self.env['stock.route'].search([('name', '=', 'Dropship Subcontractor on Order')], limit=1)
@@ -449,14 +449,14 @@ class TestSubcontractingDropshippingFlows(TestMrpSubcontractingCommon):
         # Need to add the subcontractor as Vendor to have the bom read as subcontracted.
         self.comp1.write({'seller_ids': [Command.create({'partner_id': self.subcontractor_partner1.id})]})
 
-        report = self.env['report.mrp.report_bom_structure'].with_context(warehouse=warehouse.id)._get_report_data(bom_subcontract.id)
+        report = self.env['reports.mrp.report_bom_structure'].with_context(warehouse=warehouse.id)._get_report_data(bom_subcontract.id)
         component_lines = report.get('lines', []).get('components', [])
         self.assertEqual(component_lines[0]['product_id'], compo_drop.id)
         self.assertEqual(component_lines[0]['route_name'], 'Dropship Subcontractor on Order')
         self.assertEqual(component_lines[1]['product_id'], compo_rr.id)
         self.assertEqual(component_lines[1]['route_name'], 'Buy', 'Despite the RR linked to it, it should still display the Buy route')
 
-        report = self.env['report.mrp.report_bom_structure'].with_context(warehouse=warehouse.id)._get_report_data(bom_local.id)
+        report = self.env['reports.mrp.report_bom_structure'].with_context(warehouse=warehouse.id)._get_report_data(bom_local.id)
         component_lines = report.get('lines', []).get('components', [])
         self.assertEqual(component_lines[0]['product_id'], compo_drop.id)
         self.assertEqual(component_lines[0]['route_name'], 'Buy', 'Outside of the subcontracted context, it should try to resupply stock.')

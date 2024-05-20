@@ -4,7 +4,7 @@ from odoo import api, fields, models
 
 
 class SaleReport(models.Model):
-    _inherit = 'sale.report'
+    _inherit = 'sale.reports'
 
     website_id = fields.Many2one('website', readonly=True)
 

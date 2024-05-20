@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<odoo>
+	<data noupdate="1">
+        <record id="invoice_einvoice_xslt" model="ir.actions.report">
+            <field name="name">E-Invoice</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">account.report_einvoice</field>
+            <field eval="True" name="multi"/>
+            <field eval="True" name="attachment_use"/>
+            <field eval="True" name="attach_xml"/>
+            <field eval="True" name="xslt_transform"/>
+            <field name="attachment">(object.state == 'posted') and
+                ((object.name or 'INV').replace('/','_')+'.pdf')</field>
+            <field name="xslt" type="base64"
+                   file="l10n_tr_account_einvoice/report/general.xslt"/>
+        </record>
+        <record id="invoice_earchive_xslt" model="ir.actions.report">
+            <field name="name">E-Archive</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">account.report_earchive</field>
+            <field eval="True" name="multi"/>
+            <field eval="True" name="attachment_use"/>
+            <field eval="True" name="attach_xml"/>
+            <field eval="True" name="xslt_transform"/>
+            <field name="attachment">(object.state == 'posted') and
+                ((object.name or 'INV').replace('/','_')+'.pdf')</field>
+            <field name="xslt" type="base64"
+                   file="l10n_tr_account_einvoice/report/general.xslt"/>
+        </record>
+        <record id="filter_einvoice" model="ir.filters">
+            <field name="name">E-Invoice</field>
+            <field name="model_id">account.move</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[('l10n_tr_delivery_type', '=', 'einvoice'), ('move_type', 'in', ['out_invoice', 'in_refund'])]</field>
+        </record>
+        <record id="filter_earchive" model="ir.filters">
+            <field name="name">E-Archive</field>
+            <field name="model_id">account.move</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[('l10n_tr_delivery_type', '=', 'earchive'), ('move_type', 'in', ['out_invoice', 'in_refund'])]</field>
+        </record>
+        <record id="route_einvoice" model="ir.actions.report.route">
+            <field name="parent_id" ref="account.account_invoices"/>
+            <field name="sequence">10</field>
+            <field name="report_id" ref="invoice_einvoice_xslt"/>
+            <field name="filter_id" ref="filter_einvoice"/>
+        </record>
+        <record id="route_earchive" model="ir.actions.report.route">
+            <field name="parent_id" ref="account.account_invoices"/>
+            <field name="sequence">20</field>
+            <field name="report_id" ref="invoice_earchive_xslt"/>
+            <field name="filter_id" ref="filter_earchive"/>
+        </record>
+		<record id="route_einvoice_payment" model="ir.actions.report.route">
+            <field name="parent_id"
+                   ref="account.account_invoices_without_payment"/>
+            <field name="sequence">10</field>
+            <field name="report_id" ref="invoice_einvoice_xslt"/>
+            <field name="filter_id" ref="filter_einvoice"/>
+        </record>
+		<record id="route_earchive_payment" model="ir.actions.report.route">
+            <field name="parent_id"
+                   ref="account.account_invoices_without_payment"/>
+            <field name="sequence">20</field>
+            <field name="report_id" ref="invoice_earchive_xslt"/>
+            <field name="filter_id" ref="filter_earchive"/>
+        </record>
+	</data>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2015 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record id="view_picking_type_form_edespatch" model="ir.ui.view">
+        <field name="name">stock.picking.type.form.edespatch</field>
+        <field name="model">stock.picking.type</field>
+        <field name="inherit_id"
+               ref="stock.view_picking_type_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group>
+                    <group string="E-Despatch" attrs="{'invisible':['|',
+                    ('code','not in',['outgoing', 'internal']),
+                        ('l10n_tr_edespatch_enabled','=',False)]}">
+                        <field name="company_id" invisible="1"/>
+                        <field name="l10n_tr_edespatch_enabled" invisible="1"/>
+                        <field name="l10n_tr_edespatch_sequence"
+                               domain="[('code', '=', 'stock.edespatch'),
+                               ('company_id', '=', company_id)]"
+                               attrs="{'required':[('code','in', ['outgoing', 'internal']),
+                                ('l10n_tr_edespatch_enabled','=',True)]}"
+                               context="{'default_code': 'stock.edespatch',
+                             'default_padding': 9,
+                             'default_implementation': 'no_gap',
+                             'default_use_date_range': True,
+                             'default_prefix': 'EIR%%(range_year)s'}"/>
+                        <field name="l10n_tr_edespatch_sender_id"
+                               domain="[('company_id', '=', company_id)]"
+                               attrs="{'required':[('code','in', ['outgoing', 'internal']),
+                             ('l10n_tr_edespatch_enabled','=', True)]}"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

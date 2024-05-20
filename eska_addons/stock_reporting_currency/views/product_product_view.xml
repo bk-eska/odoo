@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="product_variant_easy_edit_view_report_currency" model="ir.ui.view">
+        <field name="name">product.product.view.form.easy.report.currency</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_variant_easy_edit_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='currency_id']" position="before">
+                <field name="report_currency_id" invisible="1"/>
+                <field name="report_currency_standard_price"
+                       widget='monetary'
+                       class="oe_inline"
+                       options="{'currency_field': 'report_currency_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_product_tree_view_inherit_report_currency" model="ir.ui.view">
+        <field name="name">product.product.tree.inherit.report.currency</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='standard_price']" position="after">
+                <field name="report_currency_id" invisible="1"/>
+                <field name="report_currency_standard_price"
+                       widget='monetary'
+                       options="{'currency_field': 'report_currency_id'}"
+                       optional="show"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

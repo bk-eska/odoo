@@ -289,7 +289,7 @@ class AccountMove(models.Model):
 
         # b64encode returns a bytestring, the template tries to turn it to string,
         # but only gets the repr(pdf) --> "b'<base64_data>'"
-        pdf = self.env['ir.actions.report']._render_qweb_pdf("account.account_invoices", self.id)[0]
+        pdf = self.env['ir.actions.reports']._render_qweb_pdf("account.account_invoices", self.id)[0]
         pdf = base64.b64encode(pdf).decode()
         pdf_name = re.sub(r'\W+', '', self.name) + '.pdf'
 
@@ -480,7 +480,7 @@ class AccountTax(models.Model):
         if not tax_tags:
             return False
 
-        it_tax_report_ve38_lines = self.env['account.report.line'].search([
+        it_tax_report_ve38_lines = self.env['account.reports.line'].search([
             ('report_id.country_id.code', '=', 'IT'),
             ('code', '=', 'VE38'),
         ])

@@ -1,0 +1,71 @@
+<odoo>
+    <record id="report_equipment_assignment_form" model="ir.actions.report">
+        <field name="name">Equipment Assignment Form</field>
+        <field name="model">maintanence.equipment.assign </field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">maintenance_assignment.report_equipment_assignment_form</field>
+        <field name="report_file">maintenance_assignment.report_equipment_assignment_form</field>
+        <field name="binding_model_id" ref="model_maintenance_equipment_assign"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="base.paperformat"/>
+    </record>
+
+    <template id="report_equipment_assignment_form">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+                        <img src="/maintenance_assignment/static/src/img/logo.png" alt="logo" style="height: 50px;"/>
+                        <div>
+                            <div>Tarih: <span t-esc="doc.date"/></div>
+                            <div>Sayfa No: <span t-esc="doc.id"/></div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; font-size: 24px; font-weight: bold; margin-top: 20px;">ZİMMET FORMU</div>
+                    <div style="margin: 20px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div>PERSONEL ADI / SOYADI : <span t-esc="doc.employee_id.name"/></div>
+                            <div>ÇALIŞTIĞI BÖLÜM : <span t-esc="doc.employee_id.department_id.name"/></div>
+                        </div>
+                        <div style="font-weight: bold; padding: 10px 0;">AÇIKLAMALAR : <span t-esc="doc.description"/></div>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr>
+                                <th style="border: 1px solid black; padding: 8px; text-align: left;">Sıra No</th>
+                                <th style="border: 1px solid black; padding: 8px; text-align: left;">Malzeme Cinsi / Özellikleri</th>
+                                <th style="border: 1px solid black; padding: 8px; text-align: left;">Miktar</th>
+                                <th style="border: 1px solid black; padding: 8px; text-align: left;">Tarih</th>
+                                <th style="border: 1px solid black; padding: 8px; text-align: left;">Teslim Alan</th>
+                                <th style="border: 1px solid black; padding: 8px; text-align: left;">Teslim Eden</th>
+                                <th style="border: 1px solid black; padding: 8px; text-align: left;">Miktar</th>
+                                <th style="border: 1px solid black; padding: 8px; text-align: left;">Tarih</th>
+                                <th style="border: 1px solid black; padding: 8px; text-align: left;">Teslim Eden</th>
+                                <th style="border: 1px solid black; padding: 8px; text-align: left;">Teslim Alan</th>
+                            </tr>
+                            <t t-foreach="doc.equipment_ids" t-as="equipment">
+                                <tr>
+                                    <td style="border: 1px solid black; padding: 8px;"><span t-esc="equipment.sequence"/></td>
+                                    <td style="border: 1px solid black; padding: 8px;"><span t-esc="equipment.name"/></td>
+                                    <td style="border: 1px solid black; padding: 8px;">1</td>
+                                    <td style="border: 1px solid black; padding: 8px;"><span t-esc="doc.date"/></td>
+                                    <td style="border: 1px solid black; padding: 8px;"><span t-esc="doc.employee_id.name"/></td>
+                                    <td style="border: 1px solid black; padding: 8px;"><span t-esc="doc.company_id.name"/></td>
+                                    <td style="border: 1px solid black; padding: 8px;">1</td>
+                                    <td style="border: 1px solid black; padding: 8px;"><span t-esc="doc.date"/></td>
+                                    <td style="border: 1px solid black; padding: 8px;"><span t-esc="doc.company_id.name"/></td>
+                                    <td style="border: 1px solid black; padding: 8px;"><span t-esc="doc.employee_id.name"/></td>
+                                </tr>
+                            </t>
+                        </table>
+                        <div style="font-size: 12px; padding-top: 10px;">
+                            <field name="description" style="border: 1px solid black; padding: 8px; width: 100%; height: 100px;"/>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding-top: 20px;">
+                            <div>TESLİM ALAN: <span t-esc="doc.employee_id.name"/></div>
+                            <div>TESLİM EDEN: <span t-esc="doc.company_id.name"/></div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

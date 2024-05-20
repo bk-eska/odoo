@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <template id="hr_leave_template_refuse_reason">
+        <p>Your leave request <t t-esc="name"/> has been refused</p>
+        <ul class="o_timeline_tracking_value_list">
+            <li>Reason : <t t-esc="reason"/></li>
+        </ul>
+    </template>
+</odoo>

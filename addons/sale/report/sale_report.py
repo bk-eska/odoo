@@ -4,7 +4,7 @@ from odoo import api, fields, models
 
 
 class SaleReport(models.Model):
-    _name = "sale.report"
+    _name = "sale.reports"
     _description = "Sales Analysis Report"
     _auto = False
     _rec_name = 'date'

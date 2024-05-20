@@ -1066,7 +1066,7 @@ class PosOrder(models.Model):
         attachment = [(4, receipt.id)]
 
         if self.mapped('account_move'):
-            report = self.env['ir.actions.report']._render_qweb_pdf("account.account_invoices", self.account_move.ids[0])
+            report = self.env['ir.actions.reports']._render_qweb_pdf("account.account_invoices", self.account_move.ids[0])
             filename = name + '.pdf'
             invoice = self.env['ir.attachment'].create({
                 'name': filename,
@@ -1450,7 +1450,7 @@ class PosOrderLineLot(models.Model):
 
 class ReportSaleDetails(models.AbstractModel):
 
-    _name = 'report.point_of_sale.report_saledetails'
+    _name = 'reports.point_of_sale.report_saledetails'
     _description = 'Point of Sale Details'
 
 
@@ -1571,7 +1571,7 @@ class ReportSaleDetails(models.AbstractModel):
         data = dict(data or {})
         # initialize data keys with their value if provided, else None
         data.update({
-            #If no data is provided it means that the report is called from the PoS, and docids represent the session_id
+            #If no data is provided it means that the reports is called from the PoS, and docids represent the session_id
             'session_ids': data.get('session_ids') or (docids if not data.get('config_ids') and not data.get('date_start') and not data.get('date_stop') else None),
             'config_ids': data.get('config_ids'),
             'date_start': data.get('date_start'),

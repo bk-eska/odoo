@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="mrp_reporting_currency.BomOverviewLine" t-inherit="mrp.BomOverviewLine" t-inherit-mode="extension" owl="1">
+        <xpath expr="//td[@t-esc=&quot;formatMonetary(data.bom_cost)&quot;]" position="after">
+            <td t-if="showCosts"
+                t-attf-class="text-end {{ data.type == 'component' ? 'opacity-50' : '' }}"
+                t-esc="formatReportMonetary(data.report_bom_cost)"/>
+        </xpath>
+        <xpath expr="//span[@t-esc=&quot;formatMonetary(data.prod_cost)&quot;]/parent::td" position="after">
+            <td t-if="showCosts" class="text-end">
+                <span t-if="data.hasOwnProperty('report_prod_cost')" t-esc="formatReportMonetary(data.report_prod_cost)"/>
+            </td>
+        </xpath>
+    </t>
+</templates>

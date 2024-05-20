@@ -1,0 +1,230 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-02 19:19+0000\n"
+"PO-Revision-Date: 2022-08-02 19:19+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_4961_banka_sigorta_muameleleri_vergisi
+msgid "4961 Banka Sigorta Muameleleri Vergisi"
+msgstr ""
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_5035_damga_vergisi
+msgid "5035 Sayılı Kanuna Göre Damga Vergisi"
+msgstr ""
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_5035_ozel_iletisim_vergisi
+msgid "5035 Sayılı Kanuna Göre Özel İletişim Vergisi"
+msgstr ""
+
+#. module: l10n_tr
+#: model:ir.model,name:l10n_tr.model_account_chart_template
+msgid "Account Chart Template"
+msgstr "Hesap Planı Şablonu"
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_belediye_tuketim_vergisi
+msgid "Belediye Tüketim Vergisi"
+msgstr ""
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_borsa_tescil_ucreti
+msgid "Borsa Tescil Ücreti"
+msgstr ""
+
+#. module: l10n_tr
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position__category_id
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position_template__category_id
+msgid "Category"
+msgstr "Kategori"
+
+#. module: l10n_tr
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position__code
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position_category__code
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position_template__code
+#: model:ir.model.fields,field_description:l10n_tr.field_account_tax_group__code
+msgid "Code"
+msgstr "Kod"
+
+#. module: l10n_tr
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position_category__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: l10n_tr
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position_category__create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_damga_vergisi
+msgid "Damga Vergisi"
+msgstr ""
+
+#. module: l10n_tr
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position_category__description
+msgid "Description"
+msgstr "Açıklama"
+
+#. module: l10n_tr
+#: model:ir.model.fields,field_description:l10n_tr.field_account_chart_template__display_name
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position__display_name
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position_category__display_name
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position_template__display_name
+#: model:ir.model.fields,field_description:l10n_tr.field_account_tax_group__display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_elektrik_tuketim_vergisi
+msgid "Elektrik Tüketim Vergisi"
+msgstr ""
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_elektrik_ve_havagazi_tuketim_vergisi
+msgid "Elektrik ve Havagazı Tüketim Vergisi"
+msgstr ""
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_enerji_fonu
+msgid "Enerji Fonu"
+msgstr ""
+
+#. module: l10n_tr
+#: model:ir.model,name:l10n_tr.model_account_fiscal_position
+msgid "Fiscal Position"
+msgstr "Mali Koşul"
+
+#. module: l10n_tr
+#: model:ir.actions.act_window,name:l10n_tr.action_account_fiscal_position_category
+#: model:ir.ui.menu,name:l10n_tr.menu_account_fiscal_position_category
+msgid "Fiscal Position Categories"
+msgstr "Mali Koşul Kategorileri"
+
+#. module: l10n_tr
+#: model:ir.model,name:l10n_tr.model_account_fiscal_position_category
+#: model_terms:ir.ui.view,arch_db:l10n_tr.view_account_fiscal_position_category_form
+#: model_terms:ir.ui.view,arch_db:l10n_tr.view_account_fiscal_position_category_tree
+msgid "Fiscal Position Category"
+msgstr "Mali Koşul Kategorisi"
+
+#. module: l10n_tr
+#: model_terms:ir.actions.act_window,help:l10n_tr.action_account_fiscal_position_category
+msgid "Fiscal position categories."
+msgstr "Mali koşul kategorileri"
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_gelir_vergisi_stopaji
+msgid "Gelir Vergisi Stopajı"
+msgstr ""
+
+#. module: l10n_tr
+#: model:ir.model.fields,field_description:l10n_tr.field_account_chart_template__id
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position__id
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position_category__id
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position_template__id
+#: model:ir.model.fields,field_description:l10n_tr.field_account_tax_group__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_katma_deger_vergisi
+msgid "Katma Değer Vergisi (KDV)"
+msgstr ""
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_kdv_tevkifati
+msgid "Katma Değer Vergisi Tevkifatı"
+msgstr ""
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_kkdf
+msgid "Kaynak Kullanımı Destekleme Fonu (KKDF) Kesintisi"
+msgstr ""
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_kurumlar_vergisi
+msgid "Kurumlar Vergisi"
+msgstr ""
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_kurumlar_vergisi_stopaji
+msgid "Kurumlar Vergisi Stopajı"
+msgstr ""
+
+#. module: l10n_tr
+#: model:ir.model.fields,field_description:l10n_tr.field_account_chart_template____last_update
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position____last_update
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position_category____last_update
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position_template____last_update
+#: model:ir.model.fields,field_description:l10n_tr.field_account_tax_group____last_update
+msgid "Last Modified on"
+msgstr "Son Düzenleme"
+
+#. module: l10n_tr
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position_category__write_uid
+msgid "Last Updated by"
+msgstr "Son Düzenleyen"
+
+#. module: l10n_tr
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position_category__write_date
+msgid "Last Updated on"
+msgstr "Son Güncellenme"
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_mahsuplardan_kesilen_damga_vergisi
+msgid "Mahsuplardan Kesilen Damga Vergisi"
+msgstr ""
+
+#. module: l10n_tr
+#: model:ir.model.fields,field_description:l10n_tr.field_account_fiscal_position_category__name
+msgid "Name"
+msgstr "Ad"
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_trt_payi
+msgid "TRT Payı"
+msgstr ""
+
+#. module: l10n_tr
+#: model:ir.model,name:l10n_tr.model_account_tax_group
+msgid "Tax Group"
+msgstr "Vergi Grubu"
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_telsiz_kullanim_ucreti
+msgid "Telsiz Kullanım Ücreti"
+msgstr ""
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_telsiz_ruhsat_ucreti
+msgid "Telsiz Ruhsat Ücreti"
+msgstr ""
+
+#. module: l10n_tr
+#: model:ir.model,name:l10n_tr.model_account_fiscal_position_template
+msgid "Template for Fiscal Position"
+msgstr "Mali Koşul Şablonu"
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_cevre_temizlik_vergisi
+msgid "Çevre Temizlik Vergisi"
+msgstr ""
+
+#. module: l10n_tr
+#: model:account.tax.group,name:l10n_tr.tax_group_ozel_iletisim_vergisi
+msgid "Özel İletişim Vergisi"
+msgstr ""

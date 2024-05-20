@@ -20,7 +20,7 @@ class CrmTeam(models.Model):
     
     def _graph_get_model(self):
         if self.use_opportunities and self._context.get('in_sales_app') :
-            return 'sale.report'
+            return 'sale.reports'
         return super(CrmTeam,self)._graph_get_model()
 
     def _graph_date_column(self):

@@ -44,7 +44,7 @@ class StockMoveLine(models.Model):
         for line in res:
             # If the line is added in a done production, we need to map it
             # manually to the produced move lines in order to see them in the
-            # traceability report
+            # traceability reports
             if line.move_id.raw_material_production_id and line.state == 'done':
                 mo = line.move_id.raw_material_production_id
                 finished_lots = mo.lot_producing_id

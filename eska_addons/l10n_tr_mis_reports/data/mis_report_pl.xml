@@ -1,0 +1,3319 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).-->
+<odoo>
+    <record model="mis.report" id="mis_report_pl">
+        <field name="name">Türkiye Ayrıntılı Bilanço</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_base"/>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_frt">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">frt</field>
+        <field name="description">Bilanço</field>
+        <field name="expression">+fra +frp</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_1"/>
+        <field name="sequence">-1</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fra">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fra</field>
+        <field name="description">AKTİF (VARLIKLAR)</field>
+        <field name="expression">+fr1 +fr2</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_2"/>
+        <field name="sequence">1</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr1">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr1</field>
+        <field name="description">DÖNEN VARLIKLAR</field>
+        <field name="expression">+fr10 +fr11 +fr12 +fr13 +fr15 +fr17 +fr18 +fr19</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_3"/>
+        <field name="sequence">2</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr10">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr10</field>
+        <field name="description">Hazır Değerler</field>
+        <field name="expression">+fr100 +fr101 +fr102 +fr103 +fr108</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">3</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr100">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr100</field>
+        <field name="description">Kasa</field>
+        <field name="expression">bals[100%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">4</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr101">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr101</field>
+        <field name="description">Alınan Çekler</field>
+        <field name="expression">bals[101%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">5</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr102">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr102</field>
+        <field name="description">Bankalar</field>
+        <field name="expression">bals[102%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">6</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr103">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr103</field>
+        <field name="description">Verilen Çekler ve Ödeme Emir.(-)</field>
+        <field name="expression">bals[103%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">7</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr108">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr108</field>
+        <field name="description">Diğer Hazır Değerler</field>
+        <field name="expression">bals[108%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">8</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr11">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr11</field>
+        <field name="description">Menkul Kıymetler</field>
+        <field name="expression">+fr110 +fr111 +fr112 +fr118 +fr119</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">9</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr110">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr110</field>
+        <field name="description">Hisse Senetleri</field>
+        <field name="expression">bals[110%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">10</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr111">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr111</field>
+        <field name="description">Özel Kesim Tahv. Senet ve Bon.</field>
+        <field name="expression">bals[111%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">11</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr112">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr112</field>
+        <field name="description">Kamu Kesimi Tahv. Senet ve Bon.</field>
+        <field name="expression">bals[112%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">12</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr118">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr118</field>
+        <field name="description">Diğer Menkul Kıymetler</field>
+        <field name="expression">bals[118%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">13</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr119">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr119</field>
+        <field name="description">Menkul Kıymetler Değer Düşüklüğü Karşılığı (-)</field>
+        <field name="expression">bals[119%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">14</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr12">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr12</field>
+        <field name="description">Ticari Alacaklar</field>
+        <field name="expression">+fr120 +fr121 +fr122 +fr124 +fr126 +fr127 +fr128 +fr129</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">15</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr120">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr120</field>
+        <field name="description">Alıcılar</field>
+        <field name="expression">bals[120%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">16</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr121">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr121</field>
+        <field name="description">Alacak Senetleri</field>
+        <field name="expression">bals[121%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">17</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr122">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr122</field>
+        <field name="description">Alacak Senetleri Reeskontu (-)</field>
+        <field name="expression">bals[122%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">18</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr124">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr124</field>
+        <field name="description">Kazanılmamış Finansal Kiralama Faiz Gelirleri (-)</field>
+        <field name="expression">bals[124%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">19</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr126">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr126</field>
+        <field name="description">Verilen Depozito ve Teminatlar</field>
+        <field name="expression">bals[126%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">20</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr127">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr127</field>
+        <field name="description">Diğer Ticari Alacaklar</field>
+        <field name="expression">bals[127%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">21</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr128">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr128</field>
+        <field name="description">Şüpheli Ticari Alacaklar</field>
+        <field name="expression">bals[128%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">22</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr129">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr129</field>
+        <field name="description">Şüpheli Ticari Alacaklar Karş. (-)</field>
+        <field name="expression">bals[129%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">23</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr13">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr13</field>
+        <field name="description">Diğer Alacaklar</field>
+        <field name="expression">+fr131 +fr132 +fr133 +fr135 +fr136 +fr137 +fr138 +fr139</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">24</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr131">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr131</field>
+        <field name="description">Ortaklardan Alacaklar</field>
+        <field name="expression">bals[131%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">25</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr132">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr132</field>
+        <field name="description">İştiraklerden Alacaklar</field>
+        <field name="expression">bals[132%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">26</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr133">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr133</field>
+        <field name="description">Bağlı Ortaklıklardan Alacaklar</field>
+        <field name="expression">bals[133%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">27</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr135">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr135</field>
+        <field name="description">Personelden Alacaklar</field>
+        <field name="expression">bals[135%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">28</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr136">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr136</field>
+        <field name="description">Diğer Çeşitli Alacaklar</field>
+        <field name="expression">bals[136%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">29</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr137">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr137</field>
+        <field name="description">Diğer Alacak Senetleri Reesk. (-)</field>
+        <field name="expression">bals[137%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">30</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr138">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr138</field>
+        <field name="description">Şüpheli Diğer Alacaklar</field>
+        <field name="expression">bals[138%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">31</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr139">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr139</field>
+        <field name="description">Şüpheli Diğer Alacaklar Karşılığı (-)</field>
+        <field name="expression">bals[139%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">32</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr15">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr15</field>
+        <field name="description">Stoklar</field>
+        <field name="expression">+fr150 +fr151 +fr152 +fr153 +fr157 +fr158 +fr159</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">33</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr150">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr150</field>
+        <field name="description">İlk Madde ve Malzeme</field>
+        <field name="expression">bals[150%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">34</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr151">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr151</field>
+        <field name="description">Yarı Mamüller</field>
+        <field name="expression">bals[151%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">35</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr152">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr152</field>
+        <field name="description">Mamüller</field>
+        <field name="expression">bals[152%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">36</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr153">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr153</field>
+        <field name="description">Ticari Mallar</field>
+        <field name="expression">bals[153%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">37</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr157">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr157</field>
+        <field name="description">Diğer Stoklar</field>
+        <field name="expression">bals[157%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">38</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr158">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr158</field>
+        <field name="description">Stok Değer Düşüklüğü Karşılığı (-)</field>
+        <field name="expression">bals[158%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">39</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr159">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr159</field>
+        <field name="description">Verilen Sipariş Avansları</field>
+        <field name="expression">bals[159%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">40</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr17">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr17</field>
+        <field name="description">Yıllara Yaygın İnş. Ve On. Mal.</field>
+        <field name="expression">+fr170 +fr178 +fr179</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">41</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr170">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr170</field>
+        <field name="description">Yıllara Yaygın İnş. Ve On. Mal.</field>
+        <field name="expression">bals[170%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">42</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr178">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr178</field>
+        <field name="description">Yıllara Yaygın İnş. Enf.Düz. Hes.</field>
+        <field name="expression">bals[178%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">43</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr179">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr179</field>
+        <field name="description">Taşeronlara Verilen Avanslar</field>
+        <field name="expression">bals[179%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">44</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr18">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr18</field>
+        <field name="description">Gel. Ayl. Ait Gid. Ve Gelir Tah.</field>
+        <field name="expression">+fr180 +fr181</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">45</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr180">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr180</field>
+        <field name="description">Gelecek Aylara Ait Giderler</field>
+        <field name="expression">bals[180%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">46</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr181">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr181</field>
+        <field name="description">Gelir Tahakkukları</field>
+        <field name="expression">bals[181%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">47</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr19">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr19</field>
+        <field name="description">Diğer Dönen Varlıklar</field>
+        <field name="expression">+fr190 +fr191 +fr192 +fr193 +fr195 +fr196 +fr197 +fr198 +fr199</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">48</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr190">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr190</field>
+        <field name="description">Devreden KDV</field>
+        <field name="expression">bals[190%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">49</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr191">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr191</field>
+        <field name="description">İndirilecek KDV</field>
+        <field name="expression">bals[191%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">50</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr192">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr192</field>
+        <field name="description">Diğer KDV</field>
+        <field name="expression">bals[192%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">51</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr193">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr193</field>
+        <field name="description">Peşin Ödenen Vergiler ve Fonlar</field>
+        <field name="expression">bals[193%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">52</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr195">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr195</field>
+        <field name="description">İş Avansları</field>
+        <field name="expression">bals[195%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">53</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr196">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr196</field>
+        <field name="description">Personel Avansları</field>
+        <field name="expression">bals[196%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">54</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr197">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr197</field>
+        <field name="description">Sayım ve Tesellüm Noksanları</field>
+        <field name="expression">bals[197%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">55</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr198">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr198</field>
+        <field name="description">Diğer Çeşitli Dönen Varlıklar</field>
+        <field name="expression">bals[198%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">56</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr199">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr199</field>
+        <field name="description">Diğer Dönen Varlıklar Karşılığı (-)</field>
+        <field name="expression">bals[199%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">57</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr2">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr2</field>
+        <field name="description">DURAN VARLIKLAR</field>
+        <field name="expression">+fr22 +fr23 +fr24 +fr25 +fr26 +fr27 +fr28 +fr29</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_3"/>
+        <field name="sequence">60</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr22">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr22</field>
+        <field name="description">Ticari Alacaklar</field>
+        <field name="expression">+fr220 +fr221 +fr222 +fr224 +fr226 +fr229</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">61</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr220">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr220</field>
+        <field name="description">Alıcılar</field>
+        <field name="expression">bals[220%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">62</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr221">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr221</field>
+        <field name="description">Alacak Senetleri</field>
+        <field name="expression">bals[221%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">63</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr222">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr222</field>
+        <field name="description">Alacak Senetleri Reeskontu (-)</field>
+        <field name="expression">bals[222%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">64</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr224">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr224</field>
+        <field name="description">Kazanılmamış Fin. Kir. Faiz Gelirleri (-)</field>
+        <field name="expression">bals[224%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">65</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr226">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr226</field>
+        <field name="description">Verilen Depozito ve Teminatlar</field>
+        <field name="expression">bals[226%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">66</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr229">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr229</field>
+        <field name="description">Şüpheli Alacaklar Karşılığı (-)</field>
+        <field name="expression">bals[229%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">67</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr23">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr23</field>
+        <field name="description">Diğer Alacaklar</field>
+        <field name="expression">+fr231 +fr232 +fr233 +fr235 +fr236 +fr237 +fr239</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">68</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr231">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr231</field>
+        <field name="description">Ortaklardan Alacaklar</field>
+        <field name="expression">bals[231%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">69</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr232">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr232</field>
+        <field name="description">İştiraklerden Alacaklar</field>
+        <field name="expression">bals[232%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">70</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr233">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr233</field>
+        <field name="description">Bağlı Ortaklıklardan Alacaklar</field>
+        <field name="expression">bals[233%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">71</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr235">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr235</field>
+        <field name="description">Personelden Alacaklar</field>
+        <field name="expression">bals[235%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">72</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr236">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr236</field>
+        <field name="description">Diğer Çeşitli Alacaklar</field>
+        <field name="expression">bals[236%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">73</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr237">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr237</field>
+        <field name="description">Diğer Alacak Senetleri Reeskontu (-)</field>
+        <field name="expression">bals[237%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">74</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr239">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr239</field>
+        <field name="description">Şüpheli Alacaklar Karşılığı (-)</field>
+        <field name="expression">bals[239%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">75</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr24">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr24</field>
+        <field name="description">Mali Duran Varlıklar</field>
+        <field name="expression">+fr240 +fr241 +fr242 +fr243 +fr244 +fr245 +fr246 +fr247 +fr248 +fr249</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">76</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr240">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr240</field>
+        <field name="description">Bağlı Menkul Kıymetler</field>
+        <field name="expression">bals[241%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">77</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr241">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr241</field>
+        <field name="description">Bağlı Menkul Kıymetler Değer Düşüklüğü Karşılığı (-)</field>
+        <field name="expression">bals[241%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">78</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr242">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr242</field>
+        <field name="description">İştirakler</field>
+        <field name="expression">bals[242%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">79</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr243">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr243</field>
+        <field name="description">İştiraklere Sermaye Taahhütleri (-)</field>
+        <field name="expression">bals[243%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">80</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr244">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr244</field>
+        <field name="description">İştirakler Sermaye Payları Değer Değer Düşüklüğü Karşılığı (-)</field>
+        <field name="expression">bals[244%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">81</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr245">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr245</field>
+        <field name="description">Bağlı Ortaklıklar</field>
+        <field name="expression">bals[245%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">82</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr246">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr246</field>
+        <field name="description">Bağlı Ortaklıklara Sermaye Taahhütleri (-)</field>
+        <field name="expression">bals[246%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">83</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr247">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr247</field>
+        <field name="description">Bağlı Ortaklıklar Sermaye Payları Değer Düşüklüğü Karşılığı (-)</field>
+        <field name="expression">bals[247%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">84</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr248">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr248</field>
+        <field name="description">Diğer Mali Duran Varlıklar</field>
+        <field name="expression">bals[248%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">85</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr249">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr249</field>
+        <field name="description">Diğer Mali Duran Varlıklar Karşılığı (-)</field>
+        <field name="expression">bals[249%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">86</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr25">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr25</field>
+        <field name="description">Maddi Duran Varlıklar</field>
+        <field name="expression">+fr250 +fr251 +fr252 +fr253 +fr254 +fr255 +fr256 +fr257 +fr258 +fr259</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">87</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr250">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr250</field>
+        <field name="description">Arazi ve Arsalar</field>
+        <field name="expression">bals[250%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">88</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr251">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr251</field>
+        <field name="description">Yeraltı ve Yerüstü Düzenleri</field>
+        <field name="expression">bals[251%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">89</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr252">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr252</field>
+        <field name="description">Binalar</field>
+        <field name="expression">bals[252%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">90</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr252">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr252</field>
+        <field name="description">Binalar</field>
+        <field name="expression">bals[252%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">91</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr253">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr253</field>
+        <field name="description">Tesis, Makine ve Cihazlar</field>
+        <field name="expression">bals[253%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">92</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr254">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr254</field>
+        <field name="description">Taşıtlar</field>
+        <field name="expression">bals[254%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">93</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr255">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr255</field>
+        <field name="description">Demirbaşlar</field>
+        <field name="expression">bals[255%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">94</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr256">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr256</field>
+        <field name="description">Diğer Maddi Duran Varlıklar</field>
+        <field name="expression">bals[256%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">95</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr257">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr257</field>
+        <field name="description">Birikmiş Amortismanlar (-)</field>
+        <field name="expression">bals[257%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">96</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr258">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr258</field>
+        <field name="description">Yapılmakta Olan Yatırımlar</field>
+        <field name="expression">bals[258%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">97</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr259">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr259</field>
+        <field name="description">Verilen Avanslar</field>
+        <field name="expression">bals[259%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">98</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr26">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr26</field>
+        <field name="description">Maddi Olmayan Duran Varlıklar</field>
+        <field name="expression">+fr260 +fr261 +fr262 +fr263 +fr264 +fr267 +fr268 +fr269</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">99</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr260">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr260</field>
+        <field name="description">Haklar</field>
+        <field name="expression">bals[260%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">100</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr261">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr261</field>
+        <field name="description">Şerefiye</field>
+        <field name="expression">bals[261%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">101</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr262">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr262</field>
+        <field name="description">Kuruluş ve Örgütleme Giderleri</field>
+        <field name="expression">bals[262%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">102</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr263">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr263</field>
+        <field name="description">Araştırma ve Geliştirme Giderleri</field>
+        <field name="expression">bals[263%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">103</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr264">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr264</field>
+        <field name="description">Özel Maliyetler</field>
+        <field name="expression">bals[264%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">104</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr267">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr267</field>
+        <field name="description">Diğer Maddi Olmayan Duran Varlıklar</field>
+        <field name="expression">bals[267%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">105</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr268">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr268</field>
+        <field name="description">Birikmiş Amortismanlar (-)</field>
+        <field name="expression">bals[268%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">106</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr269">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr269</field>
+        <field name="description">Verilen Avanslar</field>
+        <field name="expression">bals[269%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">107</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr27">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr27</field>
+        <field name="description">Özel Tükenmeye Tabi Varlıklar</field>
+        <field name="expression">+fr271 +fr272 +fr277 +fr278 +fr279</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">108</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr271">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr271</field>
+        <field name="description">Arama Giderleri</field>
+        <field name="expression">bals[271%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">109</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr272">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr272</field>
+        <field name="description">Hazırlık ve Geliştirme Giderleri</field>
+        <field name="expression">bals[272%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">110</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr277">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr277</field>
+        <field name="description">Diğer Özel Tükenmeye Tabi Varlıklar</field>
+        <field name="expression">bals[277%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">111</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr278">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr278</field>
+        <field name="description">Birikmiş Tükenme Payları (-)</field>
+        <field name="expression">bals[278%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">112</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr279">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr279</field>
+        <field name="description">Verilen Avanslar</field>
+        <field name="expression">bals[279%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">113</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr28">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr28</field>
+        <field name="description">Gelecek Yıllara Ait Giderler ve Gelir Tahakkukları</field>
+        <field name="expression">+fr280 +fr281</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">114</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr280">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr280</field>
+        <field name="description">Gelecek Yıllara Ait Giderler</field>
+        <field name="expression">bals[280%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">115</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr281">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr281</field>
+        <field name="description">Gelir Tahakkukları</field>
+        <field name="expression">bals[281%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">116</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr29">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr29</field>
+        <field name="description">Diğer Duran Varlıklar</field>
+        <field name="expression">+fr291 +fr292 +fr293 +fr294 +fr295 +fr297 +fr298 +fr299</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">117</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr291">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr291</field>
+        <field name="description">Gelecek Yıllarda İndirilecek KDV</field>
+        <field name="expression">bals[291%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">118</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr292">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr292</field>
+        <field name="description">Diğer KDV</field>
+        <field name="expression">bals[292%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">119</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr293">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr293</field>
+        <field name="description">Gelecek Yıllar İhtiyacı Stoklar</field>
+        <field name="expression">bals[293%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">120</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr294">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr294</field>
+        <field name="description">Elden Çıkarılacak Stoklar Ve Mad.D.V.</field>
+        <field name="expression">bals[294%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">121</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr295">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr295</field>
+        <field name="description">Peşin Ödenen Vergi Ve Fonlar</field>
+        <field name="expression">bals[295%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">122</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr297">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr297</field>
+        <field name="description">Diğer Çeşitli Duran Varlıklar</field>
+        <field name="expression">bals[297%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">123</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr298">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr298</field>
+        <field name="description">Stok Değer Düşüklüğü Karşılığı (-)</field>
+        <field name="expression">bals[298%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">124</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr299">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr299</field>
+        <field name="description">Birikmiş Amortismanlar (-)</field>
+        <field name="expression">bals[299%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">125</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_frp">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">frp</field>
+        <field name="description">PASİF (KAYNAKLAR)</field>
+        <field name="expression">+fr3 +fr4 +fr5</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_2"/>
+        <field name="sequence">126</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr3">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr3</field>
+        <field name="description">KISA VADELİ YABANCI KAYNAKLAR</field>
+        <field name="expression">+fr30 +fr32 +fr33 +fr34 +fr35 +fr36 +fr37 +fr38 +fr39</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_3"/>
+        <field name="sequence">127</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr30">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr30</field>
+        <field name="description">Mali Borçlar</field>
+        <field name="expression">+fr300 +fr301 +fr302 +fr303 +fr304 +fr305 +fr306 +fr308 +fr309</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">128</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr300">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr300</field>
+        <field name="description">Banka Kredileri</field>
+        <field name="expression">bals[300%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">129</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr301">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr301</field>
+        <field name="description">Finansal Kir.İşlemlerinden Doğan Borçlar</field>
+        <field name="expression">bals[301%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">130</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr302">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr302</field>
+        <field name="description">Ertelenmiş Fin.Kir.Borçlanma Mal. (-)</field>
+        <field name="expression">bals[302%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">131</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr303">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr303</field>
+        <field name="description">Uzun Vadeli Kredilerin Anapara Taksitleri ve Faizleri</field>
+        <field name="expression">bals[303%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">132</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr304">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr304</field>
+        <field name="description">Tahvil, Anapara, Borç Taksit ve Faizleri</field>
+        <field name="expression">bals[304%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">133</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr305">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr305</field>
+        <field name="description">Çıkarılmış Bonolar ve Senetler</field>
+        <field name="expression">bals[305%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">134</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr306">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr306</field>
+        <field name="description">Çıkarılmış, Diğer Menkul Kıymetler</field>
+        <field name="expression">bals[306%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">135</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr308">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr308</field>
+        <field name="description">Menkul Kıymetler İhraç Farkları (-)</field>
+        <field name="expression">bals[308%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">136</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr309">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr309</field>
+        <field name="description">Diğer Mali Borçlar</field>
+        <field name="expression">bals[309%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">137</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr32">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr32</field>
+        <field name="description">Ticari Borçlar</field>
+        <field name="expression">+fr320 +fr321 +fr322 +fr326 +fr329</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">138</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr320">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr320</field>
+        <field name="description">Satıcılar</field>
+        <field name="expression">bals[320%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">139</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr321">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr321</field>
+        <field name="description">Borç Senetleri</field>
+        <field name="expression">bals[321%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">140</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr322">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr322</field>
+        <field name="description">Borç Senetleri Reeskontu (-)</field>
+        <field name="expression">bals[322%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">141</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr326">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr326</field>
+        <field name="description">Alınan Depozito ve Teminatlar</field>
+        <field name="expression">bals[326%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">142</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr329">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr329</field>
+        <field name="description">Diğer Ticari Borçlar</field>
+        <field name="expression">bals[329%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">143</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr33">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr33</field>
+        <field name="description">Diğer Borçlar</field>
+        <field name="expression">+fr331 +fr332 +fr333 +fr335 +fr336 +fr337</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">144</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr331">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr331</field>
+        <field name="description">Ortaklara Borçlar</field>
+        <field name="expression">bals[331%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">145</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr332">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr332</field>
+        <field name="description">İştiraklere Borçlar</field>
+        <field name="expression">bals[332%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">146</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr333">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr333</field>
+        <field name="description">Bağlı Ortaklıklara Borçlar</field>
+        <field name="expression">bals[333%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">147</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr335">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr335</field>
+        <field name="description">Personele Borçlar</field>
+        <field name="expression">bals[335%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">148</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr336">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr336</field>
+        <field name="description">Diğer Çeşitli Borçlar</field>
+        <field name="expression">bals[336%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">149</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr337">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr337</field>
+        <field name="description">Diğer Borç Senetleri Reeskontu (-)</field>
+        <field name="expression">bals[337%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">150</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr34">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr34</field>
+        <field name="description">Alınan Avanslar</field>
+        <field name="expression">+fr340 +fr349</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">151</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr340">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr340</field>
+        <field name="description">Alınan Sipariş Avansları</field>
+        <field name="expression">bals[340%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">152</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr349">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr349</field>
+        <field name="description">Alınan Diğer Avanslar</field>
+        <field name="expression">bals[349%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">153</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr35">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr35</field>
+        <field name="description">Yıllara Yaygın İnş. Ve On. Hak.</field>
+        <field name="expression">+fr350 +fr358</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">154</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr350">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr350</field>
+        <field name="description">Yıllara Yaygın İnş. Ve On. Hak. bedelleri</field>
+        <field name="expression">bals[350%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">155</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr358">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr358</field>
+        <field name="description">Yıllara Yaygın İnş. Enflasyon Düz. Hesabı</field>
+        <field name="expression">bals[358%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">156</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr36">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr36</field>
+        <field name="description">Ödenecek Vergi ve Diğer Yüküm.</field>
+        <field name="expression">+fr360 +fr361 +fr368 +fr369</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">157</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr360">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr360</field>
+        <field name="description">Ödenecek Vergi ve Fonları</field>
+        <field name="expression">bals[360%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">158</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr361">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr361</field>
+        <field name="description">Ödenecek Sosyal Güvenlik Kesintileri</field>
+        <field name="expression">bals[361%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">159</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr368">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr368</field>
+        <field name="description">Vadesi Geçmiş Ert. veya Taksitlendirilmiş Vergi ve Diğer Yükümlülükler</field>
+        <field name="expression">bals[368%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">160</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr369">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr369</field>
+        <field name="description">Ödenecek Diğer Yükümlülükler</field>
+        <field name="expression">bals[369%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">161</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr37">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr37</field>
+        <field name="description">Borç ve Gider Karşılıkları</field>
+        <field name="expression">+fr370 +fr371 +fr372 +fr373 +fr379</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">162</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr370">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr370</field>
+        <field name="description">Dönem Karı Vergi ve Diğer Yasal Yükümlülük Karşılıkları</field>
+        <field name="expression">bals[370%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">163</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr371">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr371</field>
+        <field name="description">Dönem Karının Peşin Ödenen Vergi ve Diğer Yükümlülükleri (-)</field>
+        <field name="expression">bals[371%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">164</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr372">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr372</field>
+        <field name="description">Kıdem Tazminatı Karşılığı</field>
+        <field name="expression">bals[372%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">165</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr373">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr373</field>
+        <field name="description">Maliyet Giderleri Karşılığı</field>
+        <field name="expression">bals[373%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">166</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr379">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr379</field>
+        <field name="description">Diğer Borç ve Gider Karşılıkları</field>
+        <field name="expression">bals[379%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">167</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr38">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr38</field>
+        <field name="description">Gelecek Aylara Ait Gelirler ve Gider Tahakkukları</field>
+        <field name="expression">+fr380 +fr381</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">168</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr380">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr380</field>
+        <field name="description">Gelecek Aylara Ait Gelirler</field>
+        <field name="expression">bals[380%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">169</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr381">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr381</field>
+        <field name="description">Gider Tahakkukları</field>
+        <field name="expression">bals[381%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">170</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr39">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr39</field>
+        <field name="description">Diğer Kısa Vadeli Yabancı Kaynaklar</field>
+        <field name="expression">+fr391 +fr392 +fr393 +fr397 +fr399</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">171</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr391">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr391</field>
+        <field name="description">Hesaplanan KDV</field>
+        <field name="expression">bals[391%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">172</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr392">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr392</field>
+        <field name="description">Diğer KDV</field>
+        <field name="expression">bals[392%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">173</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr393">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr393</field>
+        <field name="description">Merkez Ve Şubeler Cari Hesabı</field>
+        <field name="expression">bals[393%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">174</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr397">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr397</field>
+        <field name="description">Sayım ve Tesellüm Fazlaları</field>
+        <field name="expression">bals[397%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">175</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr399">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr399</field>
+        <field name="description">Diğer Çeşitli Yabancı Kaynaklar</field>
+        <field name="expression">bals[399%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">176</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr4">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr4</field>
+        <field name="description">UZUN VADELİ YABANCI KAYNAKLAR</field>
+        <field name="expression">+fr40 +fr42 +fr43 +fr44 +fr47 +fr48 +fr49</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_3"/>
+        <field name="sequence">177</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr40">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr40</field>
+        <field name="description">Mali Borçlar</field>
+        <field name="expression">+fr400 +fr401 +fr402 +fr405 +fr407 +fr408 +fr409</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">178</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr400">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr400</field>
+        <field name="description">Banka Kredileri</field>
+        <field name="expression">bals[400%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">179</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr401">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr401</field>
+        <field name="description">Finansal Kir.İşlemlerinden Doğan Borçlar</field>
+        <field name="expression">bals[401%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">180</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr402">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr402</field>
+        <field name="description">Ertelenmiş Fin.Kir.Borçlanma Mal. (-)</field>
+        <field name="expression">bals[402%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">181</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr405">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr405</field>
+        <field name="description">Çıkarılmış Tahviller</field>
+        <field name="expression">bals[405%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">182</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr407">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr407</field>
+        <field name="description">Çıkarılmış Diğer Menkul Kıymetler</field>
+        <field name="expression">bals[407%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">183</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr408">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr408</field>
+        <field name="description">Menkul Kıymetler İhraç Farkı (-)</field>
+        <field name="expression">bals[408%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">184</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr409">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr409</field>
+        <field name="description">Diğer Mali Borçlar</field>
+        <field name="expression">bals[409%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">185</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr42">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr42</field>
+        <field name="description">Ticari Borçlar</field>
+        <field name="expression">+fr420 +fr421 +fr422 +fr426 +fr429</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">186</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr420">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr420</field>
+        <field name="description">Satıcılar</field>
+        <field name="expression">bals[420%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">187</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr421">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr421</field>
+        <field name="description">Borç Senetleri</field>
+        <field name="expression">bals[421%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">188</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr422">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr422</field>
+        <field name="description">Borç Senetleri Reeskontu (-)</field>
+        <field name="expression">bals[422%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">189</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr426">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr426</field>
+        <field name="description">Alınan Depozito ve Teminatlar</field>
+        <field name="expression">bals[426%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">190</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr429">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr429</field>
+        <field name="description">Diğer Ticari Borçlar</field>
+        <field name="expression">bals[429%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">191</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr43">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr43</field>
+        <field name="description">Diğer Borçlar</field>
+        <field name="expression">+fr431 +fr432 +fr433 +fr436 +fr437 +fr438</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">192</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr431">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr431</field>
+        <field name="description">Ortaklara Borçlar</field>
+        <field name="expression">bals[431%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">193</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr432">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr432</field>
+        <field name="description">İştiraklere Borçlar</field>
+        <field name="expression">bals[432%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">194</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr433">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr433</field>
+        <field name="description">Bağlı Ortaklıklara Borçlar</field>
+        <field name="expression">bals[433%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">195</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr436">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr436</field>
+        <field name="description">Diğer Çeşitli Borçlar</field>
+        <field name="expression">bals[436%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">196</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr437">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr437</field>
+        <field name="description">Diğer Borç Senetleri Reeskontu (-)</field>
+        <field name="expression">bals[437%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">197</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr438">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr438</field>
+        <field name="description">Kamuya Olan Ert. veya Taksitl. Borçlar</field>
+        <field name="expression">bals[438%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">198</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr44">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr44</field>
+        <field name="description">Alınan Avanslar</field>
+        <field name="expression">+fr440 +fr449</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">199</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr440">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr440</field>
+        <field name="description">Alınan Sipariş Avansları</field>
+        <field name="expression">bals[440%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">200</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr449">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr449</field>
+        <field name="description">Alınan Diğer Avanslar</field>
+        <field name="expression">bals[449%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">201</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr47">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr47</field>
+        <field name="description">Borç ve Gider Karşılıkları</field>
+        <field name="expression">+fr472 +fr479</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">202</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr472">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr472</field>
+        <field name="description">Kıdem Tazminatı Karşılıkları</field>
+        <field name="expression">bals[472%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">203</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr479">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr479</field>
+        <field name="description">Diğer Borç ve Gider Karşılıkları</field>
+        <field name="expression">bals[479%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">204</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr48">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr48</field>
+        <field name="description">Gelecek Yıllara Ait Gelirler ve Gider Tahakkukları</field>
+        <field name="expression">+fr480 +fr481</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">205</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr480">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr480</field>
+        <field name="description">Gelecek Yıllara Ait Gelirler</field>
+        <field name="expression">bals[480%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">206</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr481">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr481</field>
+        <field name="description">Gider Tahakkukları</field>
+        <field name="expression">bals[481%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">207</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr49">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr49</field>
+        <field name="description">Diğer Uzun Vadeli Yabancı Kaynaklar</field>
+        <field name="expression">+fr492 +fr493 +fr499</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">208</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr492">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr492</field>
+        <field name="description">Gelecek Yıllara Eklenen veya Terkin Edilen KDV</field>
+        <field name="expression">bals[492%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">209</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr493">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr493</field>
+        <field name="description">Tesise Katılma Payları</field>
+        <field name="expression">bals[493%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">210</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr499">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr499</field>
+        <field name="description">Diğer Çeşitli Uzun Vadeli Yabancı Kay.</field>
+        <field name="expression">bals[499%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">211</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr5">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr5</field>
+        <field name="description">ÖZKAYNAKLAR</field>
+        <field name="expression">+fr50 +fr52 +fr54 +fr57 +fr58 +fr59</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_3"/>
+        <field name="sequence">212</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr50">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr50</field>
+        <field name="description">Ödenmiş Sermaye</field>
+        <field name="expression">+fr500 +fr501 +fr502 +fr503</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">213</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr500">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr500</field>
+        <field name="description">Sermaye</field>
+        <field name="expression">bals[500%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">214</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr501">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr501</field>
+        <field name="description">Ödenmemiş Sermaye (-)</field>
+        <field name="expression">bals[501%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">215</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr502">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr502</field>
+        <field name="description">Sermaye Düzeltmesi Olumlu Farkları</field>
+        <field name="expression">bals[502%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">216</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr503">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr503</field>
+        <field name="description">Sermaye Düzeltmesi Olumsuz Farkları (-)</field>
+        <field name="expression">bals[503%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">217</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr52">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr52</field>
+        <field name="description">Sermaye Yedekleri</field>
+        <field name="expression">+fr520 +fr521 +fr522 +fr523 +fr524 +fr529</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">218</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr520">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr520</field>
+        <field name="description">Hisse Senedi İhraç Primleri</field>
+        <field name="expression">bals[520%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">219</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr521">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr521</field>
+        <field name="description">Hisse Senedi İptal Kararları</field>
+        <field name="expression">bals[521%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">220</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr522">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr522</field>
+        <field name="description">M.D.V. Yeniden Değerleme Artışları</field>
+        <field name="expression">bals[522%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">221</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr523">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr523</field>
+        <field name="description">İştirakler Yeniden Değerleme Artışları</field>
+        <field name="expression">bals[523%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">222</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr524">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr524</field>
+        <field name="description">Maliyet Bedeli Artışları Fonu</field>
+        <field name="expression">bals[524%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">223</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr529">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr529</field>
+        <field name="description">Diğer Sermaye Yedekleri</field>
+        <field name="expression">bals[529%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">224</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr54">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr54</field>
+        <field name="description">Kar Yedekleri</field>
+        <field name="expression">+fr540 +fr541 +fr542 +fr548 +fr549</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">225</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr540">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr540</field>
+        <field name="description">Yasal Yedekleri</field>
+        <field name="expression">bals[540%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">226</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr541">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr541</field>
+        <field name="description">Statü Yedekleri</field>
+        <field name="expression">bals[541%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">227</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr542">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr542</field>
+        <field name="description">Olağanüstü Yedekleri</field>
+        <field name="expression">bals[542%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">228</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr548">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr548</field>
+        <field name="description">Diğer Kar Yedekleri</field>
+        <field name="expression">bals[548%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">229</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr549">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr549</field>
+        <field name="description">Özel Fonlar</field>
+        <field name="expression">bals[549%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">230</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr57">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr57</field>
+        <field name="description">Geçmiş Yıllar Karları</field>
+        <field name="expression">+fr570</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">231</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr570">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr570</field>
+        <field name="description">Geçmiş Yıllar Karları</field>
+        <field name="expression">bals[570%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">232</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr58">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr58</field>
+        <field name="description">Geçmiş Yıllar Zararları (-)</field>
+        <field name="expression">+fr580</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">233</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr580">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr580</field>
+        <field name="description">Geçmiş Yıllar Zararları (-)</field>
+        <field name="expression">bals[580%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">234</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr59">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr59</field>
+        <field name="description">Dönem Net Karı</field>
+        <field name="expression">+fr590</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_4"/>
+        <field name="sequence">235</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr590">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr590</field>
+        <field name="description">Dönem Net Karı</field>
+        <field name="expression">bals[590%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">236</field>
+    </record>
+    <record model="mis.report.kpi" id="mis_report_pl_fr591">
+        <field name="report_id" ref="mis_report_pl"/>
+        <field name="name">fr591</field>
+        <field name="description">Dönem Net Zararı (-)</field>
+        <field name="expression">bals[591%]</field>
+        <field name="type">num</field>
+        <field name="compare_method">pct</field>
+        <field name="style_id" ref="mis_report_style_l10n_tr_5"/>
+        <field name="auto_expand_accounts" eval="True"/>
+        <field
+                name="auto_expand_accounts_style_id"
+                ref="mis_report_style_l10n_tr_acc_det"
+        />
+        <field name="sequence">237</field>
+    </record>
+</odoo>

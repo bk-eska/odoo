@@ -1,0 +1,81 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr_stock_document
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-28 13:49+0000\n"
+"PO-Revision-Date: 2023-04-28 13:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr_stock_document
+#: model:ir.model.fields,field_description:l10n_tr_stock_document.field_stock_picking__l10n_tr_date_despatch
+msgid "Actual Despatch Date"
+msgstr ""
+
+#. module: l10n_tr_stock_document
+#: model:ir.model.fields.selection,name:l10n_tr_stock_document.selection__stock_picking__l10n_tr_document_type__invoice
+msgid "Despatch Invoice"
+msgstr ""
+
+#. module: l10n_tr_stock_document
+#: model:ir.model.fields,field_description:l10n_tr_stock_document.field_stock_move__l10n_tr_document_number
+#: model:ir.model.fields,field_description:l10n_tr_stock_document.field_stock_picking__l10n_tr_document_number
+msgid "Document Number"
+msgstr ""
+
+#. module: l10n_tr_stock_document
+#: model:ir.model.fields,field_description:l10n_tr_stock_document.field_stock_picking_type__l10n_tr_document_number_required
+msgid "Document Number Required"
+msgstr ""
+
+#. module: l10n_tr_stock_document
+#: model:ir.model.fields,field_description:l10n_tr_stock_document.field_stock_picking__l10n_tr_document_type
+msgid "Document Type"
+msgstr ""
+
+#. module: l10n_tr_stock_document
+#: model:ir.model,name:l10n_tr_stock_document.model_stock_picking_type
+msgid "Picking Type"
+msgstr ""
+
+#. module: l10n_tr_stock_document
+#. odoo-python
+#: code:addons/l10n_tr_stock_document/models/stock_picking.py:0
+#, python-format
+msgid "Please enter document number!"
+msgstr ""
+
+#. module: l10n_tr_stock_document
+#: model:ir.model.fields.selection,name:l10n_tr_stock_document.selection__stock_picking__l10n_tr_document_type__printed
+msgid "Printed Despatch"
+msgstr ""
+
+#. module: l10n_tr_stock_document
+#: model:ir.model,name:l10n_tr_stock_document.model_stock_move
+msgid "Stock Move"
+msgstr ""
+
+#. module: l10n_tr_stock_document
+#: model:ir.model,name:l10n_tr_stock_document.model_stock_picking
+msgid "Transfer"
+msgstr ""
+
+#. module: l10n_tr_stock_document
+#: model:ir.model.fields,field_description:l10n_tr_stock_document.field_stock_move__l10n_tr_use_document
+#: model:ir.model.fields,field_description:l10n_tr_stock_document.field_stock_picking__l10n_tr_use_document
+msgid "Turkey Document Fields"
+msgstr ""
+
+#. module: l10n_tr_stock_document
+#: model:ir.model.fields,help:l10n_tr_stock_document.field_stock_move__l10n_tr_use_document
+#: model:ir.model.fields,help:l10n_tr_stock_document.field_stock_picking__l10n_tr_use_document
+msgid "Use document features compliant with Turkey localization"
+msgstr ""

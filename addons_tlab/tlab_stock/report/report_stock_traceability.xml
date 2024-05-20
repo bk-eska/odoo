@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_stock_inventory_tlab" inherit_id="stock.report_stock_inventory">
+        <xpath expr="//th[hasclass('o_report_line_header')][2]" position="after">
+            <th class="o_report_line_header">Barcode</th>
+        </xpath>
+    </template>
+
+    <template id="report_stock_body_print_tlab" inherit_id="stock.report_stock_body_print">
+        <xpath expr="//th[hasclass('o_report_line_header')][2]" position="after">
+            <th class="o_report_line_header">Barcode</th>
+        </xpath>
+    </template>
+</odoo>

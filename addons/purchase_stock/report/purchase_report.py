@@ -9,7 +9,7 @@ from odoo.osv.expression import expression
 
 
 class PurchaseReport(models.Model):
-    _inherit = "purchase.report"
+    _inherit = "purchase.reports"
 
     picking_type_id = fields.Many2one('stock.warehouse', 'Warehouse', readonly=True)
     avg_receipt_delay = fields.Float(
@@ -30,7 +30,7 @@ class PurchaseReport(models.Model):
     @api.model
     def read_group(self, domain, fields, groupby, offset=0, limit=None, orderby=False, lazy=True):
         """ This is a hack to allow us to correctly calculate the average of PO specific date values since
-            the normal report query result will duplicate PO values across its PO lines during joins and
+            the normal reports query result will duplicate PO values across its PO lines during joins and
             lead to incorrect aggregation values.
 
             Only the AVG operator is supported for avg_receipt_delay.

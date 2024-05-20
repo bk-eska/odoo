@@ -13,7 +13,7 @@ from odoo.osv.expression import AND, expression
 
 
 class PurchaseReport(models.Model):
-    _name = "purchase.report"
+    _name = "purchase.reports"
     _description = "Purchase Report"
     _auto = False
     _order = 'date_order desc, price_total desc'
@@ -159,7 +159,7 @@ class PurchaseReport(models.Model):
     @api.model
     def read_group(self, domain, fields, groupby, offset=0, limit=None, orderby=False, lazy=True):
         """ This is a hack to allow us to correctly calculate the average of PO specific date values since
-            the normal report query result will duplicate PO values across its PO lines during joins and
+            the normal reports query result will duplicate PO values across its PO lines during joins and
             lead to incorrect aggregation values.
 
             Only the AVG operator is supported for avg_days_to_purchase.

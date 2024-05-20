@@ -328,7 +328,7 @@ class AccountMove(models.Model):
         return super()._get_name_invoice_report()
 
     def _l10n_ar_get_invoice_totals_for_report(self):
-        """If the invoice document type indicates that vat should not be detailed in the printed report (result of _l10n_ar_include_vat()) then we overwrite tax_totals field so that includes taxes in the total amount, otherwise it would be showing amount_untaxed in the amount_total"""
+        """If the invoice document type indicates that vat should not be detailed in the printed reports (result of _l10n_ar_include_vat()) then we overwrite tax_totals field so that includes taxes in the total amount, otherwise it would be showing amount_untaxed in the amount_total"""
         self.ensure_one()
         include_vat = self._l10n_ar_include_vat()
         base_lines = self.line_ids.filtered(lambda x: x.display_type == 'product')

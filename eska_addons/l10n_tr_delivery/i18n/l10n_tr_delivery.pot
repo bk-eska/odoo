@@ -1,0 +1,118 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr_delivery
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-04 11:16+0000\n"
+"PO-Revision-Date: 2024-01-04 11:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr_delivery
+#: model_terms:ir.ui.view,arch_db:l10n_tr_delivery.report_deliveryslip_tr
+msgid "<strong>Number Of Packages:</strong>"
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model.fields,field_description:l10n_tr_delivery.field_stock_picking__l10n_tr_weight_additional
+#: model_terms:ir.ui.view,arch_db:l10n_tr_delivery.view_picking_withcarrier_out_form
+msgid "Additional Weight"
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model,name:l10n_tr_delivery.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model.fields,field_description:l10n_tr_delivery.field_stock_picking__l10n_tr_driver_id
+msgid "Driver"
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model.fields,field_description:l10n_tr_delivery.field_res_partner__l10n_tr_is_transporter
+#: model:ir.model.fields,field_description:l10n_tr_delivery.field_res_users__l10n_tr_is_transporter
+msgid "Is Transport Company"
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model.fields,field_description:l10n_tr_delivery.field_res_partner__l10n_tr_is_driver
+#: model:ir.model.fields,field_description:l10n_tr_delivery.field_res_users__l10n_tr_is_driver
+msgid "Is a Driver"
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model.fields,field_description:l10n_tr_delivery.field_stock_picking__l10n_tr_number_of_packages
+msgid "Number of Packages"
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model.fields,help:l10n_tr_delivery.field_res_partner__l10n_tr_is_driver
+#: model:ir.model.fields,help:l10n_tr_delivery.field_res_users__l10n_tr_is_driver
+msgid "Specify if this is a driver. Used in E-Despatch."
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model.fields,help:l10n_tr_delivery.field_res_partner__l10n_tr_is_transporter
+#: model:ir.model.fields,help:l10n_tr_delivery.field_res_users__l10n_tr_is_transporter
+msgid "Specify if this is a transport company. Used in E-Despatch."
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model.fields,help:l10n_tr_delivery.field_stock_package_type__l10n_tr_unece_code
+msgid ""
+"Standard nomenclature of the United Nations Economic Commission for Europe "
+"(UNECE)."
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model,name:l10n_tr_delivery.model_stock_package_type
+msgid "Stock package type"
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model.fields,field_description:l10n_tr_delivery.field_stock_picking__l10n_tr_trailer_plate_no
+msgid "Trailer Plate No"
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model,name:l10n_tr_delivery.model_stock_picking
+msgid "Transfer"
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model_terms:ir.ui.view,arch_db:l10n_tr_delivery.view_partner_form_delivery
+msgid "Transport"
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model.fields,field_description:l10n_tr_delivery.field_stock_picking__l10n_tr_transporter_id
+msgid "Transport Company"
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model_terms:ir.ui.view,arch_db:l10n_tr_delivery.view_picking_withcarrier_out_form
+msgid "Transport Information"
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model.fields,field_description:l10n_tr_delivery.field_stock_package_type__l10n_tr_unece_code
+msgid "UNECE Code"
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model.fields,help:l10n_tr_delivery.field_stock_picking__l10n_tr_weight_additional
+msgid "Use this field to calculate shipping (gross) weight"
+msgstr ""
+
+#. module: l10n_tr_delivery
+#: model:ir.model.fields,field_description:l10n_tr_delivery.field_stock_picking__l10n_tr_vehicle_license_plate
+msgid "Vehicle License Plate"
+msgstr ""

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_sale_portal_remark"
+              inherit_id="sale.sale_order_portal_content">
+        <xpath expr="//t[@t-foreach='lines_to_report']/tr" position="after">
+            <t t-if="line.remark">
+                <br/>
+                <tr class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                    <td name="product_name" colspan="100">
+                        <strong>Remark: </strong>
+                        <span style="margin-left:15px;" t-field="line.remark"/>
+                    </td>
+                </tr>
+            </t>
+        </xpath>
+    </template>
+</odoo>

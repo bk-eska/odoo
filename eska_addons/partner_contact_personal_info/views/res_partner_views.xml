@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 Eska Technology LLC (www.eskaweb.com)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record id="contact_personal_information_view" model="ir.ui.view">
+        <field name="name">res.partner.personal.ifo</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='internal_notes']" position="after">
+                <page name="personal_information_page"
+                      string="Personal Information"
+                      attrs="{'invisible': [('is_company','=',True)]}">
+                    <group>
+                        <group name="personal_information_group">
+                            <field name='father_name'/>
+                            <field name='mother_name'/>
+                            <field name='maiden_name'/>
+                            <field name='birth_place'/>
+                            <field name='birth_date'/>
+                            <field name='nationality_id'/>
+                            <field name='gender'/>
+                            <field name="age"
+                                   attrs="{'invisible': [('birth_date', '=', False)]}"
+                            />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

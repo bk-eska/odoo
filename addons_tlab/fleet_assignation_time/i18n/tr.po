@@ -1,0 +1,31 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_datetime
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-24 18:50+0000\n"
+"PO-Revision-Date: 2024-03-24 18:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fleet_datetime
+#: model:ir.model,name:fleet_datetime.model_fleet_vehicle_assignation_log
+msgid "Drivers history on a vehicle"
+msgstr "Bir araçtaki sürücü geçmişi"
+
+#. module: fleet_datetime
+#: model:ir.model.fields,field_description:fleet_datetime.field_fleet_vehicle_assignation_log__date_end
+msgid "End Date"
+msgstr "Bitiş Tarihi"
+
+#. module: fleet_datetime
+#: model:ir.model.fields,field_description:fleet_datetime.field_fleet_vehicle_assignation_log__date_start
+msgid "Start Date"
+msgstr "Başlangıç Tarihi"

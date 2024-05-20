@@ -8,7 +8,7 @@ from odoo.addons.stock.tests.test_report import TestReportsCommon
 class TestMrpStockReports(TestReportsCommon):
     def test_report_forecast_1_mo_count(self):
         """ Creates and configures a product who could be produce and could be a component.
-        Plans some producing and consumming MO and check the report values.
+        Plans some producing and consumming MO and check the reports values.
         """
         # Create a variant attribute.
         product_chocolate = self.env['product.product'].create({
@@ -67,7 +67,7 @@ class TestMrpStockReports(TestReportsCommon):
         self.assertEqual(draft_production_qty['in'], 10)
         self.assertEqual(draft_production_qty['out'], 4)
 
-        # Confirms the MO and checks the report lines.
+        # Confirms the MO and checks the reports lines.
         mo_1.action_confirm()
         mo_2.action_confirm()
         report_values, docs, lines = self.get_report_forecast(product_template_ids=product_chococake.product_tmpl_id.ids)
@@ -89,7 +89,7 @@ class TestMrpStockReports(TestReportsCommon):
 
     def test_report_forecast_2_production_backorder(self):
         """ Creates a manufacturing order and produces half the quantity.
-        Then creates a backorder and checks the report.
+        Then creates a backorder and checks the reports.
         """
         # Configures the warehouse.
         warehouse = self.env.ref('stock.warehouse0')
@@ -137,7 +137,7 @@ class TestMrpStockReports(TestReportsCommon):
         backorder.action_backorder()
 
         mo_2 = (mo_1.procurement_group_id.mrp_production_ids - mo_1)
-        # Checks the forecast report.
+        # Checks the forecast reports.
         report_values, docs, lines = self.get_report_forecast(product_template_ids=product_apple_pie.product_tmpl_id.ids)
         self.assertEqual(len(lines), 1, "Must have only one line about the backorder")
         self.assertEqual(lines[0]['document_in'].id, mo_2.id)
@@ -149,12 +149,12 @@ class TestMrpStockReports(TestReportsCommon):
         mo_form.qty_producing = 1
         mo_2 = mo_form.save()
         mo_2.button_mark_done()
-        # Checks the forecast report.
+        # Checks the forecast reports.
         report_values, docs, lines = self.get_report_forecast(product_template_ids=product_apple_pie.product_tmpl_id.ids)
         self.assertEqual(len(lines), 0, "Must have no line")
 
     def test_report_forecast_3_report_line_corresponding_to_mo_highlighted(self):
-        """ When accessing the report from a MO, checks if the correct MO is highlighted in the report
+        """ When accessing the reports from a MO, checks if the correct MO is highlighted in the reports
         """
         product_banana = self.env['product.product'].create({
             'name': 'Banana',
@@ -182,9 +182,9 @@ class TestMrpStockReports(TestReportsCommon):
             _, _, lines = self.get_report_forecast(product_template_ids=product_banana.product_tmpl_id.ids, context=context)
             for line in lines:
                 if line['document_in'] == mo:
-                    self.assertTrue(line['is_matched'], "The corresponding MO line should be matched in the forecast report.")
+                    self.assertTrue(line['is_matched'], "The corresponding MO line should be matched in the forecast reports.")
                 else:
-                    self.assertFalse(line['is_matched'], "A line of the forecast report not linked to the MO shoud not be matched.")
+                    self.assertFalse(line['is_matched'], "A line of the forecast reports not linked to the MO shoud not be matched.")
 
     def test_subkit_in_delivery_slip(self):
         """
@@ -194,7 +194,7 @@ class TestMrpStockReports(TestReportsCommon):
                     |               |- Compo 03 x1
 
         This test ensures that, when delivering one Super Kit, one Sub Kit, one Compo 01 and one Compo 02,
-        and when putting in pack the third component of the Super Kit, the delivery report is correct.
+        and when putting in pack the third component of the Super Kit, the delivery reports is correct.
         """
         compo01, compo02, compo03, subkit, superkit = self.env['product.product'].create([{
             'name': n,
@@ -242,7 +242,7 @@ class TestMrpStockReports(TestReportsCommon):
         move.move_line_ids.result_package_id = self.env['stock.quant.package'].create({'name': 'Package0001'})
         picking.button_validate()
 
-        html_report = self.env['ir.actions.report']._render_qweb_html(
+        html_report = self.env['ir.actions.reports']._render_qweb_html(
             'stock.report_deliveryslip', picking.ids)[0].decode('utf-8').split('\n')
         keys = [
             "Package0001", "Compo 03",
@@ -255,4 +255,4 @@ class TestMrpStockReports(TestReportsCommon):
                 break
             if keys[0] in line:
                 keys = keys[1:]
-        self.assertFalse(keys, "All keys should be in the report with the defined order")
+        self.assertFalse(keys, "All keys should be in the reports with the defined order")

@@ -85,7 +85,7 @@ class AccountBankStatementLine(models.Model):
     amount = fields.Monetary()
 
     # Note the values of this field does not necessarily correspond to the cumulated balance in the account move line.
-    # here these values correspond to occurrence order (the reality) and they should match the bank report but in
+    # here these values correspond to occurrence order (the reality) and they should match the bank reports but in
     # the move lines, it corresponds to the recognition order. Also, the statements act as checkpoints on this field
     running_balance = fields.Monetary(
         compute='_compute_running_balance'

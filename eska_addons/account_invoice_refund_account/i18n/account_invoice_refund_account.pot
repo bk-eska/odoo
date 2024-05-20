@@ -1,0 +1,74 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_invoice_refund_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-14 07:56+0000\n"
+"PO-Revision-Date: 2022-07-14 07:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_invoice_refund_account
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_account_move__display_name
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_product_category__display_name
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_product_template__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: account_invoice_refund_account
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_account_move__id
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_account_move_line__id
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_product_category__id
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_product_template__id
+msgid "ID"
+msgstr ""
+
+#. module: account_invoice_refund_account
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_product_category__property_account_in_refund_id
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_product_product__property_account_in_refund_id
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_product_template__property_account_in_refund_id
+msgid "In Refund Account"
+msgstr ""
+
+#. module: account_invoice_refund_account
+#: model:ir.model,name:account_invoice_refund_account.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: account_invoice_refund_account
+#: model:ir.model,name:account_invoice_refund_account.model_account_move_line
+msgid "Journal Item"
+msgstr ""
+
+#. module: account_invoice_refund_account
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_account_move____last_update
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_product_category____last_update
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_product_template____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_invoice_refund_account
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_product_category__property_account_out_refund_id
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_product_product__property_account_out_refund_id
+#: model:ir.model.fields,field_description:account_invoice_refund_account.field_product_template__property_account_out_refund_id
+msgid "Out Refund Account"
+msgstr ""
+
+#. module: account_invoice_refund_account
+#: model:ir.model,name:account_invoice_refund_account.model_product_category
+msgid "Product Category"
+msgstr ""
+
+#. module: account_invoice_refund_account
+#: model:ir.model,name:account_invoice_refund_account.model_product_template
+msgid "Product Template"
+msgstr ""

@@ -8,10 +8,10 @@ class ResCompany(models.Model):
 
     l10n_ar_gross_income_number = fields.Char(
         related='partner_id.l10n_ar_gross_income_number', string='Gross Income Number', readonly=False,
-        help="This field is required in order to print the invoice report properly")
+        help="This field is required in order to print the invoice reports properly")
     l10n_ar_gross_income_type = fields.Selection(
         related='partner_id.l10n_ar_gross_income_type', string='Gross Income', readonly=False,
-        help="This field is required in order to print the invoice report properly")
+        help="This field is required in order to print the invoice reports properly")
     l10n_ar_afip_responsibility_type_id = fields.Many2one(
         domain="[('code', 'in', [1, 4, 6])]", related='partner_id.l10n_ar_afip_responsibility_type_id', readonly=False)
     l10n_ar_company_requires_vat = fields.Boolean(compute='_compute_l10n_ar_company_requires_vat', string='Company Requires Vat?')

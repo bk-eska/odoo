@@ -6,7 +6,7 @@ from odoo.exceptions import UserError
 
 
 class PosInvoiceReport(models.AbstractModel):
-    _name = 'report.point_of_sale.report_invoice'
+    _name = 'reports.point_of_sale.report_invoice'
     _description = 'Point of Sale Invoice Report'
 
     @api.model
@@ -26,5 +26,5 @@ class PosInvoiceReport(models.AbstractModel):
 
         return {
             'docs': self.env['account.move'].sudo().browse(ids_to_print),
-            'qr_code_urls': self.env['report.account.report_invoice'].sudo()._get_report_values(ids_to_print)['qr_code_urls']
+            'qr_code_urls': self.env['reports.account.report_invoice'].sudo()._get_report_values(ids_to_print)['qr_code_urls']
         }

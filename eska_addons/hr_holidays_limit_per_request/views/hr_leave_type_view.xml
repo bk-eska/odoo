@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+     <record id="hr_leave_types_form_view_limit_per_request" model="ir.ui.view">
+         <field name="name">hr.leave.types.form.view.limit.per.request</field>
+         <field name="model">hr.leave.type</field>
+         <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+         <field name="arch" type="xml">
+             <xpath expr="//field[@name='employee_requests']" position="after">
+                 <field name="min_leave_limit"/>
+                 <field name="max_leave_limit"/>
+             </xpath>
+         </field>
+     </record>
+</odoo>

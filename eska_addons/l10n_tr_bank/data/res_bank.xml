@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2023 ESKA Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <data noupdate="1">
+        <record model='res.bank' id='tr_ziraat'>
+            <field name='name'>Ziraat Bankası</field>
+            <field name='bic'>TCZBTR2A</field>
+            <field name='street'>Hacıbayram Mah. Atatürk Bulvarı</field>
+            <field name='street2'>No:8</field>
+            <field name='city'>Altındağ</field>
+            <field name='zip'>06050</field>
+            <field name='state' ref='base.state_tr_06'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>312-584 20 00</field>
+            <field name='l10n_tr_eft_code'>00010</field>
+        </record>
+        <record model='res.bank' id='tr_halk'>
+            <field name='name'>Halk Bankası</field>
+            <field name='bic'>TRHBTR2A</field>
+            <field name='street'>Barbaros Mah. Şebboy Sok.</field>
+            <field name='street2'>No:4</field>
+            <field name='city'>Ataşehir</field>
+            <field name='zip'>34746</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>216-503 70 70</field>
+            <field name='l10n_tr_eft_code'>00012</field>
+        </record>
+        <record model='res.bank' id='tr_vakiflar'>
+            <field name='name'>Vakıflar Bankası</field>
+            <field name='bic'>TVBATR2A</field>
+            <field name='street'>Saray Mah. Dr.Adnan Büyükdeniz Cad.</field>
+            <field name='street2'>No:7/A-B</field>
+            <field name='city'>Ümraniye</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>216-724 10 00</field>
+            <field name='l10n_tr_eft_code'>00015</field>
+        </record>
+        <record model='res.bank' id='tr_adabank'>
+            <field name='name'>Adabank</field>
+            <field name='bic'>ADABTRIS</field>
+            <field name='street'>Büyükdere Cad. Rumeli Han </field>
+            <field name='street2'>No:40</field>
+            <field name='city'>Mecidiyeköy</field>
+            <field name='zip'>80494</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-272 64 27</field>
+            <field name='l10n_tr_eft_code'>00100</field>
+        </record>
+        <record model='res.bank' id='tr_akbank'>
+            <field name='name'>Akbank</field>
+            <field name='bic'>AKBKTRIS</field>
+            <field name='street'>Sabancı Center</field>
+            <field name='street2'></field>
+            <field name='city'>4.Levent</field>
+            <field name='zip'>34330</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-385 55 55</field>
+            <field name='l10n_tr_eft_code'>00046</field>
+        </record>
+        <record model='res.bank' id='tr_anadolu'>
+            <field name='name'>Anadolubank</field>
+            <field name='bic'>ANDLTRIS</field>
+            <field name='street'>Saray mah. Toya sok.</field>
+            <field name='street2'>No:3</field>
+            <field name='city'>Ümraniye</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-368 70 00</field>
+            <field name='l10n_tr_eft_code'>00135</field>
+        </record>
+        <record model='res.bank' id='tr_fiba'>
+            <field name='name'>Fibabanka</field>
+            <field name='bic'>FBHLTRIS</field>
+            <field name='street'>Esentepe mah. Büyükdere cad.</field>
+            <field name='street2'>No:129</field>
+            <field name='city'>Şişli</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-381 82 82</field>
+            <field name='l10n_tr_eft_code'>00103</field>
+        </record>
+        <record model='res.bank' id='tr_sekerbank'>
+            <field name='name'>Şekerbank</field>
+            <field name='bic'>SEKETR2A</field>
+            <field name='street'>Emniyet Evleri Mah. Eski Büyükdere Cad.</field>
+            <field name='street2'>No:1/1A</field>
+            <field name='city'>Kağıthane</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-319 70 00</field>
+            <field name='l10n_tr_eft_code'>00059</field>
+        </record>
+        <record model='res.bank' id='tr_turkish'>
+            <field name='name'>Turkish Bank</field>
+            <field name='bic'>TUBATRIS</field>
+            <field name='street'>Vali Konağı Cad.</field>
+            <field name='street2'>No:1</field>
+            <field name='city'>Nişantaşı</field>
+            <field name='zip'>34371</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-373 63 73</field>
+            <field name='l10n_tr_eft_code'>00096</field>
+        </record>
+        <record model='res.bank' id='tr_teb'>
+            <field name='name'>Türk Ekonomi Bankası (TEB)</field>
+            <field name='bic'>TEBUTRIS</field>
+            <field name='street'>Saray Mah. Sokullu Cad. TEB Kampüs</field>
+            <field name='street2'>C ve D Blok. No:7A-7B</field>
+            <field name='city'>Ümraniye</field>
+            <field name='zip'>34768</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>216-635 35 35</field>
+            <field name='l10n_tr_eft_code'>00032</field>
+        </record>
+        <record model='res.bank' id='tr_is'>
+            <field name='name'>İş Bankası</field>
+            <field name='bic'>ISBKTRIS</field>
+            <field name='street'>İş Kuleleri</field>
+            <field name='street2'>Levent</field>
+            <field name='city'>Beşiktaş</field>
+            <field name='zip'>34330</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-316 00 00</field>
+            <field name='l10n_tr_eft_code'>00064</field>
+        </record>
+        <record model='res.bank' id='tr_ykb'>
+            <field name='name'>Yapı ve Kredi Bankası (YKB)</field>
+            <field name='bic'>YAPITRISXXX</field>
+            <field name='street'>Yapı Kredi Plaza Büyükdere Cad.</field>
+            <field name='street2'>Levent, D Blok</field>
+            <field name='city'>Beşiktaş</field>
+            <field name='zip'>80620</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-339 70 00</field>
+            <field name='l10n_tr_eft_code'>00067</field>
+        </record>
+        <record model='res.bank' id='tr_birlesikfon'>
+            <field name='name'>Birleşik Fon Bankası</field>
+            <field name='bic'>BAYDTRIS</field>
+            <field name='street'>Büyükdere Cad.</field>
+            <field name='street2'>No:143</field>
+            <field name='city'>Esentepe-Şişli</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-340 10 00</field>
+            <field name='l10n_tr_eft_code'>00029</field>
+        </record>
+        <record model='res.bank' id='tr_alternatifbank'>
+            <field name='name'>Alternatifbank</field>
+            <field name='bic'>ALFBTRIS</field>
+            <field name='street'>Ayazağa mah. Cendere Cad.</field>
+            <field name='street2'>No:109/M 2D Blok</field>
+            <field name='city'>Sarıyer</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-315 65 00</field>
+            <field name='l10n_tr_eft_code'>00124</field>
+        </record>
+        <record model='res.bank' id='tr_arapturk'>
+            <field name='name'>Arap Türk Bankası</field>
+            <field name='bic'>ATUBTRIS</field>
+            <field name='street'>Vali Konağı Cad.</field>
+            <field name='street2'>No:10</field>
+            <field name='city'>Nişantaşı</field>
+            <field name='zip'>80200</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-225 05 00</field>
+            <field name='l10n_tr_eft_code'>00091</field>
+        </record>
+        <record model='res.bank' id='tr_bankofchina'>
+            <field name='name'>Bank of China Turkey</field>
+            <field name='bic'>BKCHTRIS</field>
+            <field name='street'>Büyükdere Cad. Tekfen Tower</field>
+            <field name='street2'>No:209 Kat:21</field>
+            <field name='city'>4.Levent-Şişli</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-260 88 88</field>
+            <field name='l10n_tr_eft_code'>00149</field>
+        </record>
+        <record model='res.bank' id='tr_burgan'>
+            <field name='name'>Burgan Bank</field>
+            <field name='bic'>TEKFTRIS</field>
+            <field name='street'>Maslak Mah. Eski Büyükdere Cad.</field>
+            <field name='street2'>No:13</field>
+            <field name='city'>Sarıyer</field>
+            <field name='zip'>34485</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-371 37 37</field>
+            <field name='l10n_tr_eft_code'>00125</field>
+        </record>
+        <record model='res.bank' id='tr_citibank'>
+            <field name='name'>Citibank</field>
+            <field name='bic'>CITITRIX</field>
+            <field name='street'>Eski Büyükdere Cad. Tekfen Tower</field>
+            <field name='street2'>No:209</field>
+            <field name='city'>4.Levent-Şişli</field>
+            <field name='zip'>34394</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-319 45 00</field>
+            <field name='l10n_tr_eft_code'>00092</field>
+        </record>
+        <record model='res.bank' id='tr_denizbank'>
+            <field name='name'>Denizbank</field>
+            <field name='bic'>DENITRIS</field>
+            <field name='street'>Büyükdere Cad.</field>
+            <field name='street2'>No:141</field>
+            <field name='city'>Esentepe-Şişli</field>
+            <field name='zip'>34394</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-348 20 00</field>
+            <field name='l10n_tr_eft_code'>00134</field>
+        </record>
+        <record model='res.bank' id='tr_deutsche'>
+            <field name='name'>Deutsche Bank</field>
+            <field name='bic'>BKTRTRIS</field>
+            <field name='street'>Esentepe Mah. Büyükdere Cad.</field>
+            <field name='street2'>No:175/149</field>
+            <field name='city'>Şişli</field>
+            <field name='zip'>34394</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-317 01 00</field>
+            <field name='l10n_tr_eft_code'>00115</field>
+        </record>
+        <record model='res.bank' id='tr_hsbc'>
+            <field name='name'>HSBC Bank</field>
+            <field name='bic'>HSBCTRIX</field>
+            <field name='street'>Esentepe Mah. Büyükdere Cad.</field>
+            <field name='city'>Şişli</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-376 40 00</field>
+            <field name='l10n_tr_eft_code'>00123</field>
+        </record>
+        <record model='res.bank' id='tr_icbc'>
+            <field name='name'>ICBC Turkey Bank</field>
+            <field name='bic'>ICBKTRIS</field>
+            <field name='street'>Maslak Mah. Dereboyu/2 Cad.</field>
+            <field name='street2'>No:13</field>
+            <field name='city'>Sarıyer</field>
+            <field name='zip'>34398</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-335 53 35</field>
+            <field name='l10n_tr_eft_code'>00109</field>
+        </record>
+        <record model='res.bank' id='tr_ing'>
+            <field name='name'>ING Bank</field>
+            <field name='bic'>INGBTRIS</field>
+            <field name='street'>Reşitpaşa mah. Eski Büyükdere Cad.</field>
+            <field name='street2'>No:8</field>
+            <field name='city'>Sarıyer</field>
+            <field name='zip'>34467</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-335 10 00</field>
+            <field name='l10n_tr_eft_code'>00099</field>
+        </record>
+        <record model='res.bank' id='tr_mufg'>
+            <field name='name'>MUFG Bank Turkey</field>
+            <field name='bic'>BOTKTRIS</field>
+            <field name='street'>Fatih Sultan Mehmet Mah. Poligon Cad. Buyaka 2 Sitesi</field>
+            <field name='street2'>No:8B Kapı No:82</field>
+            <field name='city'>Ümraniye</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>216-600 30 00</field>
+            <field name='l10n_tr_eft_code'>00147</field>
+        </record>
+        <record model='res.bank' id='tr_odea'>
+            <field name='name'>Odeabank</field>
+            <field name='bic'>ODEATRIS</field>
+            <field name='street'>Esentepe Mah. Büyükdere Cad. Levent 199</field>
+            <field name='street2'>No:199/119</field>
+            <field name='city'>Şişli</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-304 84 44</field>
+            <field name='l10n_tr_eft_code'>00146</field>
+        </record>
+        <record model='res.bank' id='tr_finans'>
+            <field name='name'>QNB Finansbank</field>
+            <field name='bic'>FNNBTRIS</field>
+            <field name='street'>Esentepe Mah. Büyükdere Cad. Kristal Kule Binası</field>
+            <field name='street2'>No:215</field>
+            <field name='city'>Şişli</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-318 50 00</field>
+            <field name='l10n_tr_eft_code'>00111</field>
+        </record>
+        <record model='res.bank' id='tr_rabobank'>
+            <field name='name'>Rabobank</field>
+            <field name='bic'>RABOTRIS</field>
+            <field name='street'>Esentepe Mah. Büyükdere Cad. Bahar Sok. River Plaza</field>
+            <field name='street2'>No:13 K:7 Ofis No:15-16</field>
+            <field name='city'>Şişli</field>
+            <field name='zip'>34394</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-708 46 00</field>
+            <field name='l10n_tr_eft_code'>00137</field>
+        </record>
+        <record model='res.bank' id='tr_turkland'>
+            <field name='name'>Turkland Bank</field>
+            <field name='bic'>TBNKTRIS</field>
+            <field name='street'>19 Mayıs Mah. 19 Mayıs Cad. Şişli Plaza</field>
+            <field name='street2'>A Blok No:7</field>
+            <field name='city'>Şişli</field>
+            <field name='zip'>34360</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-368 34 34</field>
+            <field name='l10n_tr_eft_code'>00108</field>
+        </record>
+        <record model='res.bank' id='tr_garanti'>
+            <field name='name'>Garanti Bankası</field>
+            <field name='bic'>TGBATRIS</field>
+            <field name='street'>Levent, Nispetiye Mah. Aytar Cad.</field>
+            <field name='street2'> No:2</field>
+            <field name='city'>Beşiktaş</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-318 18 18</field>
+            <field name='l10n_tr_eft_code'>00062</field>
+        </record>
+        <record model='res.bank' id='tr_mellat'>
+            <field name='name'>Bank Mellat</field>
+            <field name='bic'>BKMTTRIS</field>
+            <field name='street'>Büyükdere Cad. Binbirçiçek Sok.</field>
+            <field name='street2'>No:1</field>
+            <field name='city'>1.Levent</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-279 80 15</field>
+            <field name='l10n_tr_eft_code'>00094</field>
+        </record>
+        <record model='res.bank' id='tr_habib'>
+            <field name='name'>Habib Bank</field>
+            <field name='bic'>HABBTRIS</field>
+            <field name='street'>Levent mah. Meltem sok. İş Bankası Kuleleri</field>
+            <field name='street2'>Blok No:10, Kapı No:27</field>
+            <field name='city'>Beşiktaş</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-375 79 50</field>
+            <field name='l10n_tr_eft_code'>00097</field>
+        </record>
+        <record model='res.bank' id='tr_intesasanpaolo'>
+            <field name='name'>Intesa Sanpaolo</field>
+            <field name='bic'>BCITTRIS</field>
+            <field name='street'>Meltem Sokak,İş Kuleleri</field>
+            <field name='street2'>No:10 Kule 2 Kat:21</field>
+            <field name='city'>Beşiktaş</field>
+            <field name='zip'>34330</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-385 06 00</field>
+            <field name='l10n_tr_eft_code'>00148</field>
+        </record>
+        <record model='res.bank' id='tr_jpmorganchase'>
+            <field name='name'>JP Morgan Chase Bank</field>
+            <field name='bic'>CHASTRIS</field>
+            <field name='street'>Büyükdere Cad. Kanyon Ofis Binası</field>
+            <field name='street2'>No:185 Kat:8</field>
+            <field name='city'>Levent</field>
+            <field name='zip'>34394</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-319 85 00</field>
+            <field name='l10n_tr_eft_code'>00098</field>
+        </record>
+        <record model='res.bank' id='tr_societe_generale'>
+            <field name='name'>Societe Generale (SA)</field>
+            <field name='bic'>SOGETRIS</field>
+            <field name='street'>Nispetiye Cad. Akmerkez</field>
+            <field name='street2'>E-3 Blok Kat:10</field>
+            <field name='city'>Etiler</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-282 19 42</field>
+            <field name='l10n_tr_eft_code'>00122</field>
+        </record>
+        <record model='res.bank' id='tr_iller'>
+            <field name='name'>İller Bankası</field>
+            <field name='bic'></field>
+            <field name='street'>Emniyet Mah. Hipodrom Cad.</field>
+            <field name='street2'>No:9/12</field>
+            <field name='city'>Yenimahalle</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>312-508 70 00</field>
+            <field name='l10n_tr_eft_code'>00004</field>
+        </record>
+        <record model='res.bank' id='tr_eximbank'>
+            <field name='name'>Eximbank</field>
+            <field name='bic'>TIKBTR2A</field>
+            <field name='street'>Saray Mahallesi</field>
+            <field name='street2'>Ahmet Tevfik İleri Cad. No 19</field>
+            <field name='city'>Ümraniye</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>216-666 55 00</field>
+            <field name='l10n_tr_eft_code'>00016</field>
+        </record>
+        <record model='res.bank' id='tr_kalkinma'>
+            <field name='name'>Türkiye Kalkınma ve Yatırım Bankası</field>
+            <field name='bic'>TKBNTR2A</field>
+            <field name='street'>Saray Mah. Dr.Adnan Büyükdeniz Cad.</field>
+            <field name='street2'>No:10</field>
+            <field name='city'>Ümraniye</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>216-6368700</field>
+            <field name='l10n_tr_eft_code'>00017</field>
+        </record>
+        <record model='res.bank' id='tr_aktif'>
+            <field name='name'>Aktif Yatırım Bankası</field>
+            <field name='bic'>CAYTTRIS</field>
+            <field name='street'>Esentepe Mah. Kore Şehitleri Cad. Aktif Bank Genel Müdürlük Apt.</field>
+            <field name='street2'>No:8/1</field>
+            <field name='city'>Şişli</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-340 80 00</field>
+            <field name='l10n_tr_eft_code'>00143</field>
+        </record>
+        <record model='res.bank' id='tr_diler'>
+            <field name='name'>Diler Yatırım Bankası</field>
+            <field name='bic'>DYAKTRIS</field>
+            <field name='street'>ESki Büyükdere Cad.</field>
+            <field name='street2'>No:1 Plaza Kat:3</field>
+            <field name='city'>Maslak</field>
+            <field name='zip'>34485</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-253 66 30</field>
+            <field name='l10n_tr_eft_code'>00138</field>
+        </record>
+        <record model='res.bank' id='tr_golden_global'>
+            <field name='name'>Golden Global Yatırım Bankası</field>
+            <field name='bic'>GOGYTRIS</field>
+            <field name='street'>Büyükdere Cd. Astoria</field>
+            <field name='street2'>No:127 B/17 Kat:6</field>
+            <field name='city'>Şişli</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-215 26 41</field>
+            <field name='l10n_tr_eft_code'>00150</field>
+        </record>
+        <record model='res.bank' id='tr_gsd'>
+            <field name='name'>GSD Yatırım Bankası</field>
+            <field name='bic'>GSDBTRIS</field>
+            <field name='street'>Aydınevler Mah. Kaptan Rıfat Sok.</field>
+            <field name='street2'>No:3</field>
+            <field name='city'>Küçükyalı/Maltepe</field>
+            <field name='zip'>34854</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>216-587 90 00</field>
+            <field name='l10n_tr_eft_code'>00139</field>
+        </record>
+        <record model='res.bank' id='tr_takas'>
+            <field name='name'>İstanbul Takas ve Saklama Bankası</field>
+            <field name='bic'>TVSBTRIS</field>
+            <field name='street'>Reşitpaşa Mah. Borsa İstanbul Cad.</field>
+            <field name='street2'>No:4</field>
+            <field name='city'>Sarıyer</field>
+            <field name='zip'>34467</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-315 25 25</field>
+            <field name='l10n_tr_eft_code'>00132</field>
+        </record>
+        <record model='res.bank' id='tr_nurol'>
+            <field name='name'>Nurol Yatırım Bankası</field>
+            <field name='bic'>NUROTRIS</field>
+            <field name='street'>Maslak Mah. Büyükdere Cad. Nurol Plaza</field>
+            <field name='street2'>No:255 Kapı no:1502</field>
+            <field name='city'>Maslak/Sarıyer</field>
+            <field name='zip'>34485</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-286 81 00</field>
+            <field name='l10n_tr_eft_code'>00141</field>
+        </record>
+        <record model='res.bank' id='tr_sinai_kalkinma'>
+            <field name='name'>Türkiye Sınai Kalkınma Bankası</field>
+            <field name='bic'>TSKBTRIS</field>
+            <field name='street'>Meclisi Mebusan Cad.</field>
+            <field name='street2'>No:81</field>
+            <field name='city'>Fındıklı</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-334 50 50</field>
+            <field name='l10n_tr_eft_code'>00014</field>
+        </record>
+        <record model='res.bank' id='tr_pozitif'>
+            <field name='name'>BankPozitif</field>
+            <field name='bic'>BPTRTRIS</field>
+            <field name='street'>Rüzgarlıbahçe Mah. Kumlu Sok.</field>
+            <field name='street2'>No:3/2</field>
+            <field name='city'>Kavacık/Beykoz</field>
+            <field name='zip'>34805</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>216-538 25 25</field>
+            <field name='l10n_tr_eft_code'>00142</field>
+        </record>
+        <record model='res.bank' id='tr_merril_lynch'>
+            <field name='name'>Bank of America</field>
+            <field name='bic'>MEYYTRISXXX</field>
+            <field name='street'>Büyükdere Cad. Kanyon Ofisi Bloğu</field>
+            <field name='street2'>No:185 11.Kat</field>
+            <field name='city'>Levent</field>
+            <field name='zip'>34394</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-319 95 00</field>
+            <field name='l10n_tr_eft_code'>00129</field>
+        </record>
+        <record model='res.bank' id='tr_pasha'>
+            <field name='name'>Pashabank</field>
+            <field name='bic'>TAIBTRIS</field>
+            <field name='street'>Sultan Selim Mah. Hümeyra Sok. Pasha Plaza</field>
+            <field name='street2'>No:2/7</field>
+            <field name='city'>Kağıthane</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-705 89 00</field>
+            <field name='l10n_tr_eft_code'>00116</field>
+        </record>
+        <record model='res.bank' id='tr_standard_chartered'>
+            <field name='name'>Standard Chartered</field>
+            <field name='bic'>SUITRIS</field>
+            <field name='street'>Büyükdere Cad. Yapı Kredi Plaza</field>
+            <field name='street2'>Levent, C Blok, Kat 15</field>
+            <field name='city'>Beşiktaş</field>
+            <field name='zip'>34330</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-339 37 00</field>
+            <field name='l10n_tr_eft_code'>00121</field>
+        </record>
+        <record model='res.bank' id='tr_albaraka'>
+            <field name='name'>AlbarakaTürk Katılım Bankası</field>
+            <field name='bic'>BTFHTRIS</field>
+            <field name='street'>Saray Mah. Dr.Adnan Büyükdeniz Cad.</field>
+            <field name='street2'>No:6</field>
+            <field name='city'>Ümraniye</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>216-666 01 01</field>
+            <field name='l10n_tr_eft_code'>00203</field>
+        </record>
+        <record model='res.bank' id='tr_kuveyt'>
+            <field name='name'>Kuveyt Türk Katılım Bankası</field>
+            <field name='bic'>KTEFRIS</field>
+            <field name='street'>Büyükdere Cad. </field>
+            <field name='street2'>No:129-1</field>
+            <field name='city'>Esentepe/Şişli</field>
+            <field name='zip'>34394</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>212-354 11 11</field>
+            <field name='l10n_tr_eft_code'>00205</field>
+        </record>
+        <record model='res.bank' id='tr_finans_katilim'>
+            <field name='name'>Finans Katılım Bankası</field>
+            <field name='bic'>AFKBTRIS</field>
+            <field name='street'>Saray Mah. Sokullu Cad.</field>
+            <field name='street2'>No:6</field>
+            <field name='city'>Ümraniyee</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>216-676 00 00</field>
+            <field name='l10n_tr_eft_code'>00206</field>
+        </record>
+        <record model='res.bank' id='tr_vakif_katilim'>
+            <field name='name'>Vakıf Katılım Bankası</field>
+            <field name='bic'>VAKFTRISXXX</field>
+            <field name='street'>Saray Mah. Dr.Adnan Büyükdeniz Cad.</field>
+            <field name='street2'>No:10</field>
+            <field name='city'>Ümraniye</field>
+            <field name='zip'>34768</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>216-800 55 55</field>
+            <field name='l10n_tr_eft_code'>00210</field>
+        </record>
+        <record model='res.bank' id='tr_ziraat_katilim'>
+            <field name='name'>Ziraat Katılım Bankası</field>
+            <field name='bic'>ZKBATRIS</field>
+            <field name='street'>Hobyar Mah. Şeyhulislam Hayri Efendi Cad.</field>
+            <field name='street2'>No:12</field>
+            <field name='city'>Bahçekapı-Fatih</field>
+            <field name='zip'>34112</field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>216-404 11 00</field>
+            <field name='l10n_tr_eft_code'>00209</field>
+        </record>
+        <record model='res.bank' id='tr_emlak_katilim'>
+            <field name='name'>Emlak Katılım Bankası</field>
+            <field name='bic'>EKBATRIS</field>
+            <field name='street'>Barbaros Mah. Begonya Sk.</field>
+            <field name='street2'>No:9A</field>
+            <field name='city'>Ataşehir</field>
+            <field name='zip'></field>
+            <field name='state' ref='base.state_tr_34'/>
+            <field name='country' ref='base.tr'/>
+            <field name='phone'>216-266 26 26</field>
+            <field name='l10n_tr_eft_code'>00211</field>
+        </record>
+    </data>
+</odoo>

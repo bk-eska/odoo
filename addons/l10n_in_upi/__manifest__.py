@@ -6,7 +6,7 @@
     'description': """
 Invoice with UPI QR code
 =========================
-This module adds QR code in invoice report for UPI payment allowing to make payment via any UPI app.
+This module adds QR code in invoice reports for UPI payment allowing to make payment via any UPI app.
 
 To print UPI Qr code add UPI id in company and tick "QR Codes" in configuration
   """,

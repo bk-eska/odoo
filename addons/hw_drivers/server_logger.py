@@ -86,7 +86,7 @@ class AsyncHTTPHandler(logging.Handler):
                     self.__class__.__name__, queue_size, self._MAX_QUEUE_SIZE,
                     100 * queue_size / self._MAX_QUEUE_SIZE)
                 _logger.warning(log_message)  # As we don't log our own logs, this will be part of the IoT logs
-                # In order to report this to the server (on the current batch) we will append it manually
+                # In order to reports this to the server (on the current batch) we will append it manually
                 yield convert_server_line(logging.WARNING, log_message)
 
         queue_size = self._log_queue.qsize()  # This is an approximate value

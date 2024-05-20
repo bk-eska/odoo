@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record model="hr.leave.reason" id="tr_hr_leave_reason_01">
+			<field name="code">01</field>
+			<field name="name">İstirahat</field>
+			<field name="description">Ay içinde rapor alan sigortalılar bu kodla bildirilir. Kurumca elektronik ortamda alınabilenler hariç Kurumca yetkilendirilmiş sağlık hizmeti sunucularından veya işyeri hekimlerinden alınmış istirahatli olduğunu gösteren rapor ile ispat edilir. Her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder.</field>
+		</record>
+<!--		<record model="hr.leave.reason" id="tr_hr_leave_reason_02">-->
+<!--			<field name="code">02</field>-->
+<!--			<field name="name">Ücretsiz/aylıksız izin</field>-->
+<!--			<field name="description">Sigortalılardan birine disiplin cezası verilmesi halinde bu kodla bildirim yapılır. Sigortalıya tebliğ edilen disiplin cezası uygulamasına ilişkin belge ile ispat edilir. Her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder.</field>-->
+<!--		</record>-->
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_03">
+			<field name="code">03</field>
+			<field name="name">Disiplin cezası</field>
+			<field name="description">Sigortalılardan birine disiplin cezası verilmesi halinde bu kodla bildirim yapılır. Sigortalıya tebliğ edilen disiplin cezası uygulamasına ilişkin belge ile ispat edilir. Her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_04">
+			<field name="code">04</field>
+			<field name="name">Gözaltı</field>
+			<field name="description">Değişik nedenlerden gözaltına alınan sigortalılar bu kodla bildirilir. Gözaltına alınmaya ilişkin belge ile ispat edilir. Her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_05">
+			<field name="code">05</field>
+			<field name="name">Tutukluluk</field>
+			<field name="description">Değişik nedenlerden tutuklanan sigortalılar bu kodla bildirilir. Tutuklanmaya ilişkin belge ile ispat edilir. Her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_06">
+			<field name="code">06</field>
+			<field name="name">Kısmi istihdam</field>
+			<field name="description">Kısmi süreli çalıştırılan sigortalı bu kodla bildirilir. Kısmi süreli çalışmalara ait sigortalı ve işverenin imzasını taşıyan yazılı iş sözleşmesi ile ispat edilir. Noter onaylı olması halinde her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder. Adi sözleşme olması halinde her zaman düzenlenebilir nitelikte olan belgedir. İbraz edildiği tarihten sonra hüküm ifade eder. Geçmişe yönelik geçerli sayılmasına SGK’nın denetim ve kontrolle görevli memurlarınca karar verilecektir.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_07">
+			<field name="code">07</field>
+			<field name="name">Puantaj</field>
+			<field name="description">Tam süreli istihdam edilen sigortalılardan bazı iş günlerinde çalışmayan veya çalıştırılmayan sigortalılar bu kodlar bildirilir. Sigortalının imzasını taşıyan puantaj kayıtları ile ispat edilir. Her zaman düzenlenebilir nitelikte olan belgedir. İbraz edildiği tarihten sonra hüküm ifade eder. Geçmişe yönelik geçerli sayılmasına SGK’nın denetim ve kontrolle görevli memurlarınca karar verilecektir.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_08">
+			<field name="code">08</field>
+			<field name="name">Grev</field>
+			<field name="description">Sigortalıların geçici bir süre için grev yapması dolayısıyla işe gelmemesi halinde eksik günler bu kod ile bildirilir. İlgili resmî makamlardan alınan yazı ile ispat edilir. Her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_09">
+			<field name="code">09</field>
+			<field name="name">Lokavt</field>
+			<field name="description">Lokavt halinde işçilerin eksik günleri bu kod ile bildirilir. İlgili resmî makamlardan alınan yazı ile ispat edilir. Her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_10">
+			<field name="code">10</field>
+			<field name="name">Genel hayatı etkileyen olaylar</field>
+			<field name="description">Hayatın olağan akışına aykırı durumlar oluştuğunda eksik günler bu kod ile bildirilir. İlgili resmî makamlardan alınan yazı ile ispat edilir. Her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder.</field>
+		</record>
+<!--		<record model="hr.leave.reason" id="tr_hr_leave_reason_11">-->
+<!--			<field name="code">11</field>-->
+<!--			<field name="name">Doğal afet</field>-->
+<!--			<field name="description">Sel, yangın, deprem v.b doğal afet sebepleriyle oluşan eksik günler SGK’ya bu kod ile bildirilir. İlgili resmî makamlardan alınan yazı ile ispat edilir. Her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder.</field>-->
+<!--		</record>-->
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_12">
+			<field name="code">12</field>
+			<field name="name">Birden fazla</field>
+			<field name="description">Eksik gün sebebi birden fazla ise bu kodla bildirim yapılır. (Hem hastalıktan raporlu olması hem de kısmi istihdam olması gibi) Eksik gün nedeninin niteliğine göre her zaman düzenlenebilir nitelikte olan veya olmayan belgelerle ispat edilir.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_13">
+			<field name="code">13</field>
+			<field name="name">Diğer nedenler</field>
+			<field name="description">Eksik gün nedeni sayılan nedenler arasında bulunmuyorsa, diğer nedenler kodu seçilebilir. Eksik gün nedeninin niteliğine göre her zaman düzenlenebilir nitelikte olan veya olmayan belgelerle ispat edilir.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_15">
+			<field name="code">15</field>
+			<field name="name">Devamsızlık</field>
+			<field name="description">İşçinin mazeretsiz şekilde işe gelmemesi halinde bu kod seçilir. İşe devamsızlığa ilişkin belgeler ile ispat edilir. Her zaman düzenlenebilir nitelikte olan belgedir. İbraz edildiği tarihten sonra hüküm ifade eder. Geçmişe yönelik geçerli sayılmasına SGK’nın denetim ve kontrolle görevli memurlarınca karar verilecektir.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_16">
+			<field name="code">16</field>
+			<field name="name">Fesih tarihinde çalışmamış</field>
+			<field name="description">Sigortalı, sözleşmenin feshinin olduğu tarihte çalışmamışsa bu kod ile bildirilir. İş sözleşmesinin feshedildiği tarihte çalışılmadığına dair belge ile ispat edilir. Her zaman düzenlenebilir nitelikte olan belgedir. İbraz edildiği tarihten sonra hüküm ifade eder. Geçmişe yönelik geçerli sayılmasına SGK’nın denetim ve kontrolle görevli memurlarınca karar verilecektir.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_17">
+			<field name="code">17</field>
+			<field name="name">Ev hizmetlerinde 30 günden az çalışma</field>
+			<field name="description">Ev hizmetlerinde 5510 sayılı Kanunun Ek-9 kapsamında çalışanların eksik günü olması halinde seçilecek koddur. Eksik gün nedeninin niteliğine göre her zaman düzenlenebilir nitelikte olan veya olmayan belgelerle ispat edilir.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_18">
+			<field name="code">18</field>
+			<field name="name">Kısa çalışma ödeneği</field>
+			<field name="description">Kısa çalışma ödeneği alan sigortalılar bu kodla bildirilir. Kısa çalışma ödeneği alındığına dair ilgili resmî makamlardan alınan belge ile ispat edilir. Her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_19">
+			<field name="code">19</field>
+			<field name="name">Ücretsiz Doğum izni</field>
+			<field name="description">Doğum yapan kadın sigortalıya analık istirahati sona erdikten sonra verilen izindir. Bu süreçte sigortalı bu kod ile bildirilir. Sigortalı ve işveren arasında imzalanan belge ile ispat edilir. Belgenin noter onaylı olması halinde her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder. Adi belge olması halinde her zaman düzenlenebilir nitelikte olan belgedir. İbraz edildiği tarihten sonra hüküm ifade eder. Geçmişe yönelik geçerli sayılmasına SGK’nın denetim ve kontrolle görevli memurlarınca karar verilecektir.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_20">
+			<field name="code">20</field>
+			<field name="name">Ücretsiz Yol İzni</field>
+			<field name="description">Yıllık iznini bulunduğu şehirden başka şehirde geçirecek olan sigortalılara verilen izin durumunda kullanılan koddur. Yıllık izin belgesiyle ispat edilir. Yıllık izin defterinde yer alması durumunda her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_21">
+			<field name="code">21</field>
+			<field name="name">Diğer Ücretsiz İzin</field>
+			<field name="description">Bu kod ile bahsedilen ücretsiz izin Kanunla verilmesi zorunlu olmayan ancak işçi ile işverenin anlaşması neticesinde oluşan ücretsiz izinlerdir. Sigortalı ve işveren arasında imzalanan belge ile ispat edilir. Belgenin noter onaylı olması halinde her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder. Adi belge olması halinde her zaman düzenlenebilir nitelikte olan belgedir. İbraz edildiği tarihten sonra hüküm ifade eder. Geçmişe yönelik geçerli sayılmasına SGK’nın denetim ve kontrolle görevli memurlarınca karar verilecektir.</field>
+		</record>
+<!--		<record model="hr.leave.reason" id="tr_hr_leave_reason_22">-->
+<!--			<field name="code">22</field>-->
+<!--			<field name="name">5434 SK. ek 76, GM 192</field>-->
+<!--			<field name="description">5434 sayılı Emekli Sandığına bağlı çalışanların eksik günleri bu kod ile bildirilir. 5434 sayılı Kanunun Ek 76 ve Geçici 192’nci maddesine tabi olunduğunu gösterir.Belge ile ispat edilir. Her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder.</field>-->
+<!--		</record>-->
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_23">
+			<field name="code">23</field>
+			<field name="name">Yarım çalışma ödeneği</field>
+			<field name="description">Yarım çalışma ödeneği alan sigortalılar bu kodla bildirilir. Yarım çalışma ödeneği alındığına dair ilgili resmî makamlardan alınan belge ile ispat edilir. Her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_24">
+			<field name="code">24</field>
+			<field name="name">Yarım çalışma ödeneği ve diğer nedenler</field>
+			<field name="description">Bu eksik gün kodu, ay içinde yarım çalışma ödeneği alırken aynı zamanda başka nedenlerle de eksik çalışma durumu olması halinde kullanılır. Eksik gün nedeninin niteliğine göre her zaman düzenlenebilir nitelikte olan veya olmayan belgelerle ispat edilir.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_25">
+			<field name="code">25</field>
+			<field name="name">Diğer Belge/Kanun Türlerinden Gün Tamamlama</field>
+			<field name="description">Sigortalının birden fazla belge ya da kanun türünden bildirilmesinin gerektiği hallerde kullanılan koddur. (5746 ARGE Teşviki, yeraltı ve yerüstü işlerde çalışan işçiler, sağlık hizmet sunucularında fiili hizmete tabi çalışan personeller vs.) Her iki belge/kanun türünden bildirilen gün sayısı 30 olacağından belge ibrazı istenmez.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_26">
+			<field name="code">26</field>
+			<field name="name">Kısmi istihdama izin verilen yabancı uyruklu</field>
+			<field name="description">Kısmi süreli çalışmalarına kendi mevzuatları gereğince izin verilen yabancı uyruklu sigortalılar için bu eksik gün nedeninin seçilmesi gerekmektedir. (Örneğin eğitim kurumlarında kısmi çalışmasına izin verilen yabancı uyruklu öğretim görevlileri gibi) Resmî makamlardan alınan belge ile ispat edilir. Her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_27">
+			<field name="code">27</field>
+			<field name="name">Kısa Çalışma Ödeneği ve diğer nedenler</field>
+			<field name="description">Bu eksik gün kodu, ay içinde kısa çalışma ödeneği alırken aynı zamanda başka nedenlerle de eksik çalışma durumu olması halinde kullanılır. Eksik gün nedeninin niteliğine göre her zaman düzenlenebilir nitelikte olan veya olmayan belgelerle ispat edilir.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_28">
+			<field name="code">28</field>
+			<field name="name">Pandemi Ücretsiz İzin (4857 GEÇ.10.MD)</field>
+			<field name="description">4857 sayılı Kanunun Geçici 10 uncu maddesi gereği ücretsiz izne ayrılan sigortalılar için kullanılan koddur. İşverenin tek taraflı beyanıyla gerçekleşir, sigortalının izni aranmaz. Bu kapsamdakiler nakdi ücret desteğinden yararlandığından nakdi ücret desteği alındığına dair ilgili resmî makamlardan alınan belge ile ispat edilir. Her zaman düzenlenebilir nitelikte olmayan belgedir. Düzenlendiği tarih itibariyle hüküm ifade eder.</field>
+		</record>
+		<record model="hr.leave.reason" id="tr_hr_leave_reason_29">
+			<field name="code">29</field>
+			<field name="name">Pandemi Ücretsiz İzin ve diğer</field>
+			<field name="description">Bu eksik gün kodu, ay içinde pandemi ücret izin yanında aynı zamanda başka nedenlerle de eksik çalışma durumu olması halinde kullanılır. Eksik gün nedeninin niteliğine göre her zaman düzenlenebilir nitelikte olan veya olmayan belgelerle ispat edilir.</field>
+		</record>
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="sale_order_form_view_mrp_intercompany" model="ir.ui.view">
+        <field name="name">sale.order.form.view.mrp.intercompany</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_quotation_send']" position="after">
+                <button name="action_create_mo"
+                        attrs="{'invisible': [('state', '=', 'cancel')]}"
+                        type="object"
+                        string="Create MO"/>
+            </xpath>
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="mo_created"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="after">
+                <field name="mo_id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -3,9 +3,9 @@ from odoo import api, SUPERUSER_ID
 
 
 def migrate(cr, version):
-    # The tax report line 68 has been removed as it does not appear in tax report anymore.
-    # But, it was referenced in the account.sales.report
-    # So, we update amls of this line only, to make this report consistent.
+    # The tax reports line 68 has been removed as it does not appear in tax reports anymore.
+    # But, it was referenced in the account.sales.reports
+    # So, we update amls of this line only, to make this reports consistent.
 
     env = api.Environment(cr, SUPERUSER_ID, {})
     country = env['res.country'].search([('code', '=', 'DE')], limit=1)

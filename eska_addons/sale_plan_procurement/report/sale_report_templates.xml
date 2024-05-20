@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="sale_report_plan_procurement" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//t[@t-foreach='lines_to_report']/tr" position="attributes">
+            <attribute name="t-if">line.product_uom_qty or doc.state == 'draft'</attribute>
+        </xpath>
+    </template>
+</odoo>

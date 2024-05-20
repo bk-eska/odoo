@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="stock_scrap_form_view_inherit_tlab" model="ir.ui.view">
+        <field name="name">stock.scrap.form.inherit.tlab</field>
+        <field name="model">stock.scrap</field>
+        <field name="inherit_id" ref="stock.stock_scrap_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="uts_description"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_scrap_form_view2_inherit_tlab" model="ir.ui.view">
+        <field name="name">stock.scrap.form.inherit.tlab</field>
+        <field name="model">stock.scrap</field>
+        <field name="inherit_id" ref="stock.stock_scrap_form_view2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='scrap_location_id']" position="after">
+                <field name="x_studio_field_6d8a0"/>
+                <field name="uts_description"/>
+                <field name="x_PD2286418094217456"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

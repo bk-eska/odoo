@@ -9,8 +9,8 @@
     'data': [
         'security/ir.model.access.csv',
         'security/loyalty_security.xml',
-        'report/loyalty_report_templates.xml',
-        'report/loyalty_report.xml',
+        'reports/loyalty_report_templates.xml',
+        'reports/loyalty_report.xml',
         'data/loyalty_data.xml',
         'data/mail_template_data.xml',
         'wizard/loyalty_generate_wizard_views.xml',

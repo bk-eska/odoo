@@ -53,13 +53,13 @@ class TestMailComposer(TestMailCommon, TestRecipients):
             additional_values={'user_id': cls.user_employee_2.id},
         )
 
-        cls.test_report = cls.env['ir.actions.report'].create({
+        cls.test_report = cls.env['ir.actions.reports'].create({
             'name': 'Test Report on mail test ticket',
             'model': 'mail.test.ticket',
             'report_type': 'qweb-pdf',
             'report_name': 'test_mail.mail_test_ticket_test_template',
         })
-        cls.test_record_report = cls.env['ir.actions.report']._render_qweb_pdf(cls.test_report, cls.test_record.ids)
+        cls.test_record_report = cls.env['ir.actions.reports']._render_qweb_pdf(cls.test_report, cls.test_record.ids)
 
         cls.test_from = '"John Doe" <john@example.com>'
 
@@ -166,7 +166,7 @@ class TestComposerForm(TestMailComposer):
         ))
         self.assertEqual(len(composer_form.attachment_ids), 0)
 
-        # change template: 2 static (attachment_ids) and 1 dynamic (report)
+        # change template: 2 static (attachment_ids) and 1 dynamic (reports)
         composer_form.template_id = template_1
         self.assertEqual(len(composer_form.attachment_ids), 3)
         report_attachments = [att for att in composer_form.attachment_ids if att not in template_1_attachments]
@@ -174,7 +174,7 @@ class TestComposerForm(TestMailComposer):
         tpl_attachments = composer_form.attachment_ids[:] - report_attachments[0]
         self.assertEqual(tpl_attachments, template_1_attachments)
 
-        # change template: 0 static (attachment_ids) and 1 dynamic (report)
+        # change template: 0 static (attachment_ids) and 1 dynamic (reports)
         composer_form.template_id = template_2
         self.assertEqual(len(composer_form.attachment_ids), 1)
         report_attachments = [att for att in composer_form.attachment_ids if att not in template_1_attachments]
@@ -353,17 +353,17 @@ class TestComposerInternals(TestMailComposer):
                 # currently onchange necessary
                 composer._onchange_template_id_wrapper()
 
-                # values coming from template: attachment_ids + report in comment
+                # values coming from template: attachment_ids + reports in comment
                 if composition_mode == 'comment':
                     self.assertEqual(len(composer.attachment_ids), 4)
                     for attach in attachs:
                         self.assertIn(attach, composer.attachment_ids)
                     generated = composer.attachment_ids - attachs
-                    self.assertEqual(len(generated), 1, 'MailComposer: should have 1 additional attachment for report')
+                    self.assertEqual(len(generated), 1, 'MailComposer: should have 1 additional attachment for reports')
                     self.assertEqual(generated.name, f'TestReport for {self.test_record.name}.html')
                     self.assertEqual(generated.res_model, 'mail.compose.message')
                     self.assertEqual(generated.res_id, 0)
-                # values coming from template: attachment_ids only (report is dynamic)
+                # values coming from template: attachment_ids only (reports is dynamic)
                 else:
                     self.assertEqual(
                         sorted(composer.attachment_ids.ids),

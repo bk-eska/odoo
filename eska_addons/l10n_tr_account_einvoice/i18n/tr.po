@@ -1,0 +1,818 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr_account_einvoice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-24 16:27+0000\n"
+"PO-Revision-Date: 2023-07-24 16:27+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/wizard/account_move_reversal.py:0
+#, python-format
+msgid "%s is linked to this invoice and lines are imported."
+msgstr "%s bu faturaya bağlandı ve satırları içeri aktarıldı."
+
+#. module: l10n_tr_account_einvoice
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_move_form_einvoice
+msgid "Accept"
+msgstr "Kabul Et"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move__l10n_tr_einvoice_response_type__accepted
+msgid "Accepted"
+msgstr "Kabul Edildi"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model,name:l10n_tr_account_einvoice.model_account_move_reversal
+msgid "Account Move Reversal"
+msgstr "Hesap Hareketi Ters Kayıt"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_postbox__active
+msgid "Active"
+msgstr "Etkin"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_user__alias
+msgid "Alias"
+msgstr "Rumuz"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_user__alias_created
+msgid "Alias Created"
+msgstr "Rumuz Oluşturulma"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model,name:l10n_tr_account_einvoice.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Banka Hesapları"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_journal__l10n_tr_branch_id
+msgid "Branch"
+msgstr "Şube"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,help:l10n_tr_account_einvoice.field_account_journal__l10n_tr_branch_id
+msgid "Branch which will be used in e-documents."
+msgstr "E-dökümanlarda kullanılacak şube."
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Cannot find XSLT for this invoice."
+msgstr "Bu fatura için XSLT bulunamadı."
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Cannot set cancelled E-archive invoices to draft!"
+msgstr "İptal edilen E-arşiv faturaları taslağa çekemezsiniz!"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,help:l10n_tr_account_einvoice.field_account_move_reversal__refund_method
+msgid ""
+"Choose how you want to credit this invoice. You cannot \"modify\" nor "
+"\"cancel\" if the invoice is already reconciled."
+msgstr ""
+"Bu faturaya nasıl alacak vermek istediğinizi seçin. Fatura zaten "
+"uzlaştırılmışsa \"değiştiremez\" veya \"iptal\" edemezsiniz."
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model,name:l10n_tr_account_einvoice.model_res_company
+msgid "Companies"
+msgstr "Şirketler"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_postbox__company_id
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_sender__company_id
+msgid "Company"
+msgstr "Firma"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/res_company.py:0
+#, python-format
+msgid "Company has no sender(s)!"
+msgstr "Şirketin göndericisi bulunmuyor!"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move__l10n_tr_einvoice_state__completed
+msgid "Completed"
+msgstr "Tamamlandı"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model,name:l10n_tr_account_einvoice.model_res_partner
+msgid "Contact"
+msgstr "İletişim"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_postbox__create_uid
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_sender__create_uid
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_user__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_postbox__create_date
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_sender__create_date
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_user__create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_move_reversal__refund_method
+msgid "Credit Method"
+msgstr "İade Yöntemi"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Currency Rate: 1 %s = %.4f %s"
+msgstr "Döviz Kuru: 1 %s = %.4f %s"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Customer %s does not have an email!"
+msgstr "%s müşterisinin emaili bulunmuyor!"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_partner__l10n_tr_default_einvoice_postbox
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_users__l10n_tr_default_einvoice_postbox
+msgid "Default Postbox"
+msgstr "Varsayılan Posta Kutusu"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_partner__l10n_tr_default_einvoice_profile
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_users__l10n_tr_default_einvoice_profile
+msgid "Default Profile"
+msgstr "Varsayılan Senaryo"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,help:l10n_tr_account_einvoice.field_res_partner__l10n_tr_default_einvoice_postbox
+#: model:ir.model.fields,help:l10n_tr_account_einvoice.field_res_users__l10n_tr_default_einvoice_postbox
+msgid "Default e-invoice postbox of this partner."
+msgstr "İş ortağının varsayılan e-fatura posta kutusu"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_bank_statement_line__l10n_tr_delivery_type
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_move__l10n_tr_delivery_type
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_payment__l10n_tr_delivery_type
+msgid "Delivery Type"
+msgstr "Gönderim Türü"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Description is missing! All invoice lines must have a description."
+msgstr "Açıklama eksik! Tüm fatura satılarında açıklama olmalıdır."
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_postbox__display_name
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_sender__display_name
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_user__display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_company__l10n_tr_einvoice_user_download
+msgid "Download Registered User List"
+msgstr "Kayıtlı Kullanıcı Listesini İndir"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move__l10n_tr_einvoice_state__draft
+msgid "Draft"
+msgstr "Taslak"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.actions.report,name:l10n_tr_account_einvoice.invoice_earchive_xslt
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move__l10n_tr_delivery_type__earchive
+msgid "E-Archive"
+msgstr "E-Arşiv"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_company__l10n_tr_earchive_auto_email
+msgid "E-Archive Auto E-Mail"
+msgstr "E-Arşiv Otomatik E-Posta"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_journal__l10n_tr_earchive_sequence
+msgid "E-Archive Number Sequence"
+msgstr "E-Arşiv Numara Sırası"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "E-Archive invoice completed"
+msgstr "E-Arşiv fatura tamamlandı"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.actions.report,name:l10n_tr_account_einvoice.invoice_einvoice_xslt
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move__l10n_tr_delivery_type__einvoice
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_company_form_einvoice
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_move_form_einvoice
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_partner_form_einvoice
+msgid "E-Invoice"
+msgstr "E-Fatura"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_journal__l10n_tr_einvoice_enabled
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_company__l10n_tr_einvoice_enabled
+msgid "E-Invoice Enabled"
+msgstr "E-Fatura Etkinleştirildi"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.actions.server,name:l10n_tr_account_einvoice.ir_cron_einvoice_get_invoices_action_ir_actions_server
+#: model:ir.cron,cron_name:l10n_tr_account_einvoice.ir_cron_einvoice_get_invoices_action
+msgid "E-Invoice Get Invoices"
+msgstr "E-Fatura Faturaları Al"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.actions.server,name:l10n_tr_account_einvoice.ir_cron_einvoice_get_registered_users_action_ir_actions_server
+#: model:ir.cron,cron_name:l10n_tr_account_einvoice.ir_cron_einvoice_get_registered_users_action
+msgid "E-Invoice Get Registered Users"
+msgstr "E-Fatura Kayıtlı Kullanıcıları Al"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.actions.server,name:l10n_tr_account_einvoice.ir_cron_einvoice_get_responses_action_ir_actions_server
+#: model:ir.cron,cron_name:l10n_tr_account_einvoice.ir_cron_einvoice_get_responses_action
+msgid "E-Invoice Get Responses"
+msgstr "E-Fatura Cevapları Al"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_bank_statement_line__l10n_tr_einvoice_sequence
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_journal__l10n_tr_einvoice_sequence
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_move__l10n_tr_einvoice_sequence
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_payment__l10n_tr_einvoice_sequence
+msgid "E-Invoice Number Sequence"
+msgstr "E-Fatura Numara Sırası"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model,name:l10n_tr_account_einvoice.model_l10n_tr_einvoice_postbox
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_company__l10n_tr_einvoice_postbox_ids
+msgid "E-Invoice Postboxes"
+msgstr "E-Fatura Posta Kutusu"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,help:l10n_tr_account_einvoice.field_res_company__l10n_tr_einvoice_postbox_ids
+msgid "E-Invoice Postboxes for this company."
+msgstr "Bu şirketin E-Fatura posta kutuları"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_bank_statement_line__l10n_tr_einvoice_profile
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_move__l10n_tr_einvoice_profile
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_payment__l10n_tr_einvoice_profile
+msgid "E-Invoice Profile"
+msgstr "E-Fatura Senaryosu"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_partner__l10n_tr_einvoice_user
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_users__l10n_tr_einvoice_user
+msgid "E-Invoice Registered User"
+msgstr "E-Fatura Kayıtlı Kullanıcı"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_company__l10n_tr_einvoice_user_download_date
+msgid "E-Invoice Registered User Download Date"
+msgstr "E-Fatura Kayıtlı Kullanıcı İndirme Tarihi"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_company__l10n_tr_einvoice_user_download_sequence
+msgid "E-Invoice Registered User Download Sequence"
+msgstr "E-Fatura Kayıtlı Kullanıcı İndirme Sırası"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.actions.act_window,name:l10n_tr_account_einvoice.action_registered_user
+#: model:ir.model,name:l10n_tr_account_einvoice.model_l10n_tr_einvoice_user
+#: model:ir.ui.menu,name:l10n_tr_account_einvoice.menu_finance_l10n_tr_einvoice_user
+msgid "E-Invoice Registered Users"
+msgstr "E-Fatura Kayıtlı Kullanıcılar"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_bank_statement_line__l10n_tr_einvoice_response_type
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_move__l10n_tr_einvoice_response_type
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_payment__l10n_tr_einvoice_response_type
+msgid "E-Invoice Response Type"
+msgstr "E-Fatura Cevap Türü"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_journal__l10n_tr_einvoice_sender_id
+msgid "E-Invoice Sender"
+msgstr "E-Fatura Gönderici Birimi"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model,name:l10n_tr_account_einvoice.model_l10n_tr_einvoice_sender
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_company__l10n_tr_einvoice_sender_ids
+msgid "E-Invoice Senders"
+msgstr "E-Fatura Gönderici Birimleri"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,help:l10n_tr_account_einvoice.field_res_company__l10n_tr_einvoice_sender_ids
+msgid "E-Invoice Senders for this company."
+msgstr "Bu firmanın E-Fatura Gönderici Birimleri"
+
+#. module: l10n_tr_account_einvoice
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_account_journal_form_einvoice
+msgid "E-Invoice Sequence"
+msgstr "E-Fatura Sırası"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_bank_statement_line__l10n_tr_einvoice_state
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_move__l10n_tr_einvoice_state
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_payment__l10n_tr_einvoice_state
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_account_invoice_filter_einvoice
+msgid "E-Invoice Status"
+msgstr "E-Fatura Durumu"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_move_reversal__l10n_tr_link_invoice_id
+msgid "E-Invoice To Link"
+msgstr "Bağlanacak E-Fatura"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.actions.server,name:l10n_tr_account_einvoice.ir_cron_einvoice_update_invoices_action_ir_actions_server
+#: model:ir.cron,cron_name:l10n_tr_account_einvoice.ir_cron_einvoice_update_invoices_action
+msgid "E-Invoice Update Status Of Invoices"
+msgstr "E-Fatura Faturaların Durumunu Güncelle"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/res_company.py:0
+#, python-format
+msgid "E-Invoice received"
+msgstr "E-Fatura  alındı"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "E-Invoice response sent (accepted)"
+msgstr "E-Fatura cevabı gönderildi (kabul)"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "E-Invoice response sent (rejected)"
+msgstr "E-Fatura cevabı gönderildi (red)"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "E-Invoice response transmitted"
+msgstr "E-Fatura cevabı iletildi"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "E-Invoice sent"
+msgstr "E-Fatura gönderildi"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "E-Invoice transmitted"
+msgstr "E-Fatura iletildi"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/res_company.py:0
+#, python-format
+msgid "E-Invoice waiting response"
+msgstr "E-Fatura cevap bekliyor"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "E-Invoice xsd validation failed!"
+msgstr "E-Fatura xsd doğrulaması başarısız!"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "E-invoice accepted"
+msgstr "E-fatura kabul edildi"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_bank_statement_line__l10n_tr_einvoice_envelope_uuid
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_move__l10n_tr_einvoice_envelope_uuid
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_payment__l10n_tr_einvoice_envelope_uuid
+msgid "Envelope UUID"
+msgstr "Zarf ETTN"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move__l10n_tr_einvoice_state__failed
+msgid "Failed"
+msgstr "Başarısız"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_user__first_created
+msgid "First Created"
+msgstr "İlk Oluşturulma"
+
+#. module: l10n_tr_account_einvoice
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_company_form_einvoice
+msgid "Get Invoices"
+msgstr "Faturaları Al"
+
+#. module: l10n_tr_account_einvoice
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_company_form_einvoice
+msgid "Get Responses"
+msgstr "Cevapları Al"
+
+#. module: l10n_tr_account_einvoice
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_move_form_einvoice
+msgid "Get Status"
+msgstr "Durumu Güncelle"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move__l10n_tr_einvoice_profile__hks
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__res_partner__l10n_tr_default_einvoice_profile__hks
+msgid "Hal Tipi"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_postbox__id
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_sender__id
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_user__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_user__identifier
+msgid "Identifier"
+msgstr "Tanımlayıcı"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_company__l10n_tr_einvoice_import_invoice_lines
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_partner__l10n_tr_einvoice_import_invoice_lines
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_users__l10n_tr_einvoice_import_invoice_lines
+msgid "Import Incoming Invoice Lines"
+msgstr "Gelen Faturaların Satırlarını İçeri Al"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Invoice Accepted"
+msgstr "Fatura Kabul Edildi"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Invoice Rejected"
+msgstr "Fatura Reddedildi"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid ""
+"Invoice line must have tax unless it's fiscal position category is "
+"exception!"
+msgstr ""
+"Mali koşul kategorisi istisna değilse fatura satırlarında vergi olmalıdır!"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/wizard/account_move_reversal.py:0
+#, python-format
+msgid "Invoice refund"
+msgstr "Fatura iadesi"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Invoices cannot be rejected after 7 days!"
+msgstr "Faturalar 7 günden sonra reddedilemez!"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model,name:l10n_tr_account_einvoice.model_account_journal
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_postbox__journal_id
+msgid "Journal"
+msgstr "Yevmiye"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model,name:l10n_tr_account_einvoice.model_account_move
+msgid "Journal Entry"
+msgstr "Yevmiye Kaydı"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move__l10n_tr_einvoice_profile__kamu
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__res_partner__l10n_tr_default_einvoice_profile__kamu
+msgid "Kamu"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_postbox__name
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_sender__name
+msgid "Label"
+msgstr "Etiket"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_postbox__date_last_check
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_sender__date_last_check
+msgid "Last Check Date"
+msgstr "Son Kontrol Tarihi"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_postbox____last_update
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_sender____last_update
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_user____last_update
+msgid "Last Modified on"
+msgstr "Son Güncelleme"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_postbox__write_uid
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_sender__write_uid
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_user__write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_postbox__write_date
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_sender__write_date
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_user__write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move_reversal__refund_method__link
+msgid "Link to a Refund E-Invoice"
+msgstr "Bir İade E-Faturaya Bağla"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Only: "
+msgstr "Yalnız: "
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_move_reversal__partner_id
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_postbox__partner_id
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_sender__partner_id
+msgid "Partner"
+msgstr "İş Ortağı"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Partner is an E-invoice user!"
+msgstr "İş Ortağı E-Fatura kullanıcısı!"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Partner is not an E-invoice user!"
+msgstr "İş Ortağı E-fatura kullanıcısı değil!"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Please select an E-invoice sequence!"
+msgstr "Lütfen E-fatura numaralandırma sırası seçiniz!"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_bank_statement_line__l10n_tr_einvoice_postbox_id
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_move__l10n_tr_einvoice_postbox_id
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_payment__l10n_tr_einvoice_postbox_id
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.l10n_tr_einvoice_postbox_form
+msgid "Postbox"
+msgstr "Posta Kutusu"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_journal__l10n_tr_einvoice_postbox_ids
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_partner__l10n_tr_einvoice_postbox_ids
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_users__l10n_tr_einvoice_postbox_ids
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_company_form_einvoice
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_partner_form_einvoice
+msgid "Postboxes"
+msgstr "Posta Kutuları"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,help:l10n_tr_account_einvoice.field_res_partner__l10n_tr_einvoice_postbox_ids
+#: model:ir.model.fields,help:l10n_tr_account_einvoice.field_res_users__l10n_tr_einvoice_postbox_ids
+msgid "Postboxes of this partner."
+msgstr "Bu iş ortağının posta kutuları."
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,help:l10n_tr_account_einvoice.field_account_journal__l10n_tr_einvoice_postbox_ids
+msgid "Postboxes related with this journals."
+msgstr "Bu faturalama noktasıyla ilişkili posta kutuları."
+
+#. module: l10n_tr_account_einvoice
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_registered_user_search
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_registered_user_tree
+msgid "Registered Users"
+msgstr "Kayıtlı Kullanıcılar"
+
+#. module: l10n_tr_account_einvoice
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_move_form_einvoice
+msgid "Reject"
+msgstr "Reddet"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move__l10n_tr_einvoice_response_type__rejected
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move__l10n_tr_einvoice_state__rejected
+msgid "Rejected"
+msgstr "Reddedildi"
+
+#. module: l10n_tr_account_einvoice
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_move_form_einvoice
+msgid "Resend"
+msgstr "Tekrar Gönder"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_bank_statement_line__l10n_tr_einvoice_response_uuid
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_move__l10n_tr_einvoice_response_uuid
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_payment__l10n_tr_einvoice_response_uuid
+msgid "Response UUID"
+msgstr "Cevap ETTN"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Return invoices can be only be used with TEMELFATURA profile!"
+msgstr "Fatura tipi IADE iken fatura profili sadece TEMELFATURA olabilir!"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/wizard/account_move_reversal.py:0
+#, python-format
+msgid "Reverse Moves"
+msgstr "Ters İşlemler"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_setup_bank_manual_config__l10n_tr_einvoice_send
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_partner_bank__l10n_tr_einvoice_send
+msgid "Send in E-Invoices"
+msgstr "E-Faturalarda Gönder"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_bank_statement_line__l10n_tr_einvoice_sender_id
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_move__l10n_tr_einvoice_sender_id
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_payment__l10n_tr_einvoice_sender_id
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.l10n_tr_einvoice_sender_form
+msgid "Sender"
+msgstr "Gönderici Birim"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_partner__l10n_tr_einvoice_sender_ids
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_res_users__l10n_tr_einvoice_sender_ids
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_company_form_einvoice
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_partner_form_einvoice
+msgid "Senders"
+msgstr "Gönderici Birimler"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,help:l10n_tr_account_einvoice.field_res_partner__l10n_tr_einvoice_sender_ids
+#: model:ir.model.fields,help:l10n_tr_account_einvoice.field_res_users__l10n_tr_einvoice_sender_ids
+msgid "Senders of this partner."
+msgstr "Bu iş ortağının gönderici birimleri."
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move__l10n_tr_einvoice_state__sent
+msgid "Sent"
+msgstr "Gönderildi"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Tax category (and its parents) has no tax type!"
+msgstr "Vergi kategorisi (ve üst vergi türlerinde) vergi türü bulunamadı!"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Tax type has no code!"
+msgstr "Vergi türünün vergi kodu yok!"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move__l10n_tr_einvoice_profile__temelfatura
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__res_partner__l10n_tr_default_einvoice_profile__temelfatura
+msgid "Temel Fatura"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid ""
+"Invoice %s is validated on %s after this date using this invoice "
+"sequence!"
+msgstr "%s numaralı fatura %s tarihinde bu fatura sırasından onaylanmıştır!"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move__l10n_tr_einvoice_profile__ticarifatura
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__res_partner__l10n_tr_default_einvoice_profile__ticarifatura
+msgid "Ticari Fatura"
+msgstr ""
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_user__title
+msgid "Title"
+msgstr "Başlık"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_l10n_tr_einvoice_user__type
+msgid "Type"
+msgstr "Tür"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_bank_statement_line__l10n_tr_einvoice_uuid
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_move__l10n_tr_einvoice_uuid
+#: model:ir.model.fields,field_description:l10n_tr_account_einvoice.field_account_payment__l10n_tr_einvoice_uuid
+msgid "UUID"
+msgstr "ETTN"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Unit of measure code is missing! It has to be a valid UNECE code!"
+msgstr "Ölçü birim kodu bulunamadı! Bu geçerli bir UNECE kodu olmalıdır!"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid "Unit of measure is needed on invoice line!"
+msgstr "Fatura satırında ölçü birimi gereklidir!"
+
+#. module: l10n_tr_account_einvoice
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_company_form_einvoice
+msgid "Update Invoices"
+msgstr "Faturaları Güncelle"
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move__l10n_tr_einvoice_state__waiting
+msgid "Waiting Response"
+msgstr "Cevap Bekliyor"
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/wizard/account_move_reversal.py:0
+#, python-format
+msgid "You can link only customer invoices to refund E-Invoice."
+msgstr "Sadece müşteri faturalarını E-Faturaya bağlayabilirsiniz!"
+
+#. module: l10n_tr_account_einvoice
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_einvoice.view_account_move_reversal_einvoice
+msgid ""
+"You can link this refund to an existing E-Invoice refund with this option."
+msgstr ""
+"Bu iadeyi mevcut bir E-faturaya bu seçeneği kullanarak bağlayabilirsiniz."
+
+#. module: l10n_tr_account_einvoice
+#. odoo-python
+#: code:addons/l10n_tr_account_einvoice/models/account_move.py:0
+#, python-format
+msgid ""
+"You cannot cancel sent E-Invoices! Please wait for invoice to be received."
+msgstr ""
+"Gönderilen E-Faturaları iptal edemezsiniz! Lütfen faturanın ulaşmasını "
+"bekleyiniz."
+
+#. module: l10n_tr_account_einvoice
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__account_move__l10n_tr_einvoice_profile__ozelfatura
+#: model:ir.model.fields.selection,name:l10n_tr_account_einvoice.selection__res_partner__l10n_tr_default_einvoice_profile__ozelfatura
+msgid "Özel Fatura"
+msgstr ""

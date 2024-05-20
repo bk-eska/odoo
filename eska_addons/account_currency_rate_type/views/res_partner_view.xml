@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2015 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record id="view_partner_property_form_currency_rate" model="ir.ui.view">
+        <field name="name">res.partner.form.currency.rate.type</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='property_payment_term_id']"
+                   position="after">
+                <field name="sale_currency_rate_type_id"
+                       groups="base.group_multi_currency"/>
+            </xpath>
+            <xpath expr="//field[@name='property_supplier_payment_term_id']"
+                   position="after">
+                <field name="purchase_currency_rate_type_id"
+                       groups="base.group_multi_currency"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

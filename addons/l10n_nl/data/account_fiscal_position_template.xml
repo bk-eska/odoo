@@ -37,7 +37,7 @@
             <field name="auto_apply" eval="True"/>
         </record>
 
-        <!-- Fiscal Position for customers within the EU who don't have to report taxes -->
+        <!-- Fiscal Position for customers within the EU who don't have to reports taxes -->
         <record id="fiscal_position_template_eu_no_taxes_report" model="account.fiscal.position.template">
             <field name="name">Installatie en Afstandsverkopen</field>
             <field name="chart_template_id" ref="l10nnl_chart_template" />

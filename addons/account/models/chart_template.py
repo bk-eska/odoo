@@ -18,7 +18,7 @@ _logger = logging.getLogger(__name__)
 
 def migrate_set_tags_and_taxes_updatable(cr, registry, module):
     ''' This is a utility function used to manually set the flag noupdate to False on tags and account tax templates on localization modules
-    that need migration (for example in case of VAT report improvements)
+    that need migration (for example in case of VAT reports improvements)
     '''
     env = api.Environment(cr, SUPERUSER_ID, {})
     xml_record_ids = env['ir.model.data'].search([
@@ -1216,7 +1216,7 @@ class AccountTaxTemplate(models.Model):
     @api.model
     def _try_instantiating_foreign_taxes(self, country, company):
         """ This function is called in multivat setup, when a company needs to submit a
-        tax report in a foreign country.
+        tax reports in a foreign country.
 
         It searches for tax templates in the provided countries and instantiates the
         ones it find in the provided company.
@@ -1499,10 +1499,10 @@ class AccountTaxRepartitionLineTemplate(models.Model):
 
 
     # These last two fields are helpers used to ease the declaration of account.account.tag objects in XML.
-    # They are directly linked to account.tax.report.expression objects, which create corresponding + and - tags
+    # They are directly linked to account.tax.reports.expression objects, which create corresponding + and - tags
     # at creation. This way, we avoid declaring + and - separately every time.
-    plus_report_expression_ids = fields.Many2many(string="Plus Tax Report Expressions", relation='account_tax_rep_template_plus', comodel_name='account.report.expression', copy=True, help="Tax report expressions whose '+' tag will be assigned to move lines by this repartition line")
-    minus_report_expression_ids = fields.Many2many(string="Minus Report Expressions", relation='account_tax_rep_template_minus', comodel_name='account.report.expression', copy=True, help="Tax report expressions whose '-' tag will be assigned to move lines by this repartition line")
+    plus_report_expression_ids = fields.Many2many(string="Plus Tax Report Expressions", relation='account_tax_rep_template_plus', comodel_name='account.reports.expression', copy=True, help="Tax reports expressions whose '+' tag will be assigned to move lines by this repartition line")
+    minus_report_expression_ids = fields.Many2many(string="Minus Report Expressions", relation='account_tax_rep_template_minus', comodel_name='account.reports.expression', copy=True, help="Tax reports expressions whose '-' tag will be assigned to move lines by this repartition line")
 
     @api.model_create_multi
     def create(self, vals_list):

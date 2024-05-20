@@ -17,7 +17,7 @@ class TestPurchaseStockReports(TestReportsCommon):
             line.product_qty = 5
         po = po_form.save()
 
-        # Checks the report.
+        # Checks the reports.
         report_values, docs, lines = self.get_report_forecast(product_template_ids=self.product_template.ids)
         draft_picking_qty_in = docs['draft_picking_qty']['in']
         draft_purchase_qty = docs['draft_purchase_qty']
@@ -27,7 +27,7 @@ class TestPurchaseStockReports(TestReportsCommon):
         self.assertEqual(draft_purchase_qty, 5)
         self.assertEqual(pending_qty_in, 5)
 
-        # Confirms the PO and checks the report again.
+        # Confirms the PO and checks the reports again.
         po.button_confirm()
         report_values, docs, lines = self.get_report_forecast(product_template_ids=self.product_template.ids)
         draft_picking_qty_in = docs['draft_picking_qty']['in']
@@ -60,7 +60,7 @@ class TestPurchaseStockReports(TestReportsCommon):
         with po_form.order_line.edit(0) as line:
             line.product_qty = 10
         po = po_form.save()
-        # Checks the report.
+        # Checks the reports.
         report_values, docs, lines = self.get_report_forecast(product_template_ids=self.product_template.ids)
         draft_picking_qty_in = docs['draft_picking_qty']['in']
         draft_purchase_qty = docs['draft_purchase_qty']
@@ -91,7 +91,7 @@ class TestPurchaseStockReports(TestReportsCommon):
             line.product_qty = 4
         po = po_form.save()
 
-        # Checks the report -> Must be empty for now, just display some pending qty.
+        # Checks the reports -> Must be empty for now, just display some pending qty.
         report_values, docs, lines = self.get_report_forecast(product_template_ids=self.product_template.ids)
         draft_picking_qty_in = docs['draft_picking_qty']['in']
         draft_purchase_qty = docs['draft_purchase_qty']
@@ -101,7 +101,7 @@ class TestPurchaseStockReports(TestReportsCommon):
         self.assertEqual(draft_purchase_qty, 4)
         self.assertEqual(pending_qty_in, 4)
 
-        # Confirms the PO and checks the report again.
+        # Confirms the PO and checks the reports again.
         po.button_confirm()
         report_values, docs, lines = self.get_report_forecast(product_template_ids=self.product_template.ids)
         draft_picking_qty_in = docs['draft_picking_qty']['in']
@@ -135,7 +135,7 @@ class TestPurchaseStockReports(TestReportsCommon):
         with po_form.order_line.edit(0) as line:
             line.product_qty = 10
         po = po_form.save()
-        # Checks the report.
+        # Checks the reports.
         report_values, docs, lines = self.get_report_forecast(product_template_ids=self.product_template.ids)
         draft_picking_qty_in = docs['draft_picking_qty']['in']
         draft_purchase_qty = docs['draft_purchase_qty']
@@ -148,7 +148,7 @@ class TestPurchaseStockReports(TestReportsCommon):
         self.assertEqual(pending_qty_in, 0)
 
     def test_report_forecast_3_report_line_corresponding_to_po_line_highlighted(self):
-        """ When accessing the report from a PO line, checks if the correct PO line is highlighted in the report
+        """ When accessing the reports from a PO line, checks if the correct PO line is highlighted in the reports
         """
         # We create 2 identical PO
         po_form = Form(self.env['purchase.order'])
@@ -167,9 +167,9 @@ class TestPurchaseStockReports(TestReportsCommon):
             _, _, lines = self.get_report_forecast(product_template_ids=self.product_template.ids, context=context)
             for line in lines:
                 if line['document_in'] == po:
-                    self.assertTrue(line['is_matched'], "The corresponding PO line should be matched in the forecast report.")
+                    self.assertTrue(line['is_matched'], "The corresponding PO line should be matched in the forecast reports.")
                 else:
-                    self.assertFalse(line['is_matched'], "A line of the forecast report not linked to the PO shoud not be matched.")
+                    self.assertFalse(line['is_matched'], "A line of the forecast reports not linked to the PO shoud not be matched.")
 
     def test_approval_and_forecasted_qty(self):
         """
@@ -232,7 +232,7 @@ class TestPurchaseStockReports(TestReportsCommon):
         })]
         receipt.button_validate()
 
-        data = self.env['vendor.delay.report'].read_group(
+        data = self.env['vendor.delay.reports'].read_group(
             [('partner_id', '=', self.partner.id)],
             ['product_id', 'on_time_rate', 'qty_on_time', 'qty_total'],
             ['product_id'],
@@ -288,7 +288,7 @@ class TestPurchaseStockReports(TestReportsCommon):
         })]
         receipt.button_validate()
 
-        data = self.env['vendor.delay.report'].read_group(
+        data = self.env['vendor.delay.reports'].read_group(
             [('partner_id', '=', self.partner.id)],
             ['product_id', 'on_time_rate', 'qty_on_time', 'qty_total'],
             ['product_id'],
@@ -319,7 +319,7 @@ class TestPurchaseStockReports(TestReportsCommon):
         action = receipt01.button_validate()
         Form(self.env[action['res_model']].with_context(action['context'])).save().process()
 
-        data = self.env['vendor.delay.report'].read_group(
+        data = self.env['vendor.delay.reports'].read_group(
             [('partner_id', '=', self.partner.id)],
             ['product_id', 'on_time_rate', 'qty_on_time', 'qty_total'],
             ['product_id'],
@@ -333,7 +333,7 @@ class TestPurchaseStockReports(TestReportsCommon):
         receipt02.button_validate()
 
         (receipt01 | receipt02).move_ids.invalidate_recordset()
-        data = self.env['vendor.delay.report'].read_group(
+        data = self.env['vendor.delay.reports'].read_group(
             [('partner_id', '=', self.partner.id)],
             ['product_id', 'on_time_rate', 'qty_on_time', 'qty_total'],
             ['product_id'],
@@ -362,7 +362,7 @@ class TestPurchaseStockReports(TestReportsCommon):
         action = receipt01.button_validate()
         Form(self.env[action['res_model']].with_context(action['context'])).save().process_cancel_backorder()
 
-        data = self.env['vendor.delay.report'].read_group(
+        data = self.env['vendor.delay.reports'].read_group(
             [('partner_id', '=', self.partner.id)],
             ['product_id', 'on_time_rate', 'qty_on_time', 'qty_total'],
             ['product_id'],

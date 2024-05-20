@@ -60,7 +60,7 @@ class TestReportStockQuantity(tests.TransactionCase):
     def test_report_stock_quantity(self):
         from_date = fields.Date.to_string(fields.Date.add(fields.Date.today(), days=-1))
         to_date = fields.Date.to_string(fields.Date.add(fields.Date.today(), days=4))
-        report = self.env['report.stock.quantity'].read_group(
+        report = self.env['reports.stock.quantity'].read_group(
             [('date', '>=', from_date), ('date', '<=', to_date), ('product_id', '=', self.product1.id)],
             ['product_qty', 'date', 'product_id', 'state'],
             ['date:day', 'product_id', 'state'],
@@ -96,7 +96,7 @@ class TestReportStockQuantity(tests.TransactionCase):
         })
 
         self.env.flush_all()
-        report = self.env['report.stock.quantity'].read_group(
+        report = self.env['reports.stock.quantity'].read_group(
             [('date', '>=', fields.Date.today()), ('date', '<=', fields.Date.today()), ('product_id', '=', self.product1.id)],
             ['product_qty', 'date', 'product_id', 'state'],
             ['date:day', 'product_id', 'state'],
@@ -110,7 +110,7 @@ class TestReportStockQuantity(tests.TransactionCase):
     def test_report_stock_quantity_with_product_qty_filter(self):
         from_date = fields.Date.to_string(fields.Date.add(fields.Date.today(), days=-1))
         to_date = fields.Date.to_string(fields.Date.add(fields.Date.today(), days=4))
-        report = self.env['report.stock.quantity'].read_group(
+        report = self.env['reports.stock.quantity'].read_group(
             [('product_qty', '<', 0), ('date', '>=', from_date), ('date', '<=', to_date), ('product_id', '=', self.product1.id)],
             ['product_qty', 'date', 'product_id', 'state'],
             ['date:day', 'product_id', 'state'],
@@ -187,7 +187,7 @@ class TestReportStockQuantity(tests.TransactionCase):
 
     def test_inter_warehouse_transfer(self):
         """
-        Ensure that the report correctly processes the inter-warehouses SM
+        Ensure that the reports correctly processes the inter-warehouses SM
         """
         product = self.env['product.product'].create({
             'name': 'SuperProduct',
@@ -225,7 +225,7 @@ class TestReportStockQuantity(tests.TransactionCase):
 
         self.env.flush_all()
 
-        data = self.env['report.stock.quantity'].read_group(
+        data = self.env['reports.stock.quantity'].read_group(
             [('state', '=', 'forecast'), ('product_id', '=', product.id), ('date', '>=', two_days_ago), ('date', '<=', in_two_days)],
             ['product_qty', 'date', 'warehouse_id'],
             ['date:day', 'warehouse_id'],

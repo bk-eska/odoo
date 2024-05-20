@@ -63,7 +63,7 @@ class Company(models.Model):
     parent_id = fields.Many2one('res.company', string='Parent Company', index=True)
     child_ids = fields.One2many('res.company', 'parent_id', string='Child Companies')
     partner_id = fields.Many2one('res.partner', string='Partner', required=True)
-    report_header = fields.Html(string='Company Tagline', help="Appears by default on the top right corner of your printed documents (report header).")
+    report_header = fields.Html(string='Company Tagline', help="Appears by default on the top right corner of your printed documents (reports header).")
     report_footer = fields.Html(string='Report Footer', translate=True, help="Footer text displayed at the bottom of all reports.")
     company_details = fields.Html(string='Company Details', help="Header text displayed at the top of all reports.")
     is_company_details_empty = fields.Boolean(compute='_compute_empty_company_details')
@@ -89,7 +89,7 @@ class Company(models.Model):
     website = fields.Char(related='partner_id.website', readonly=False)
     vat = fields.Char(related='partner_id.vat', string="Tax ID", readonly=False)
     company_registry = fields.Char(related='partner_id.company_registry', string="Company ID", readonly=False)
-    paperformat_id = fields.Many2one('report.paperformat', 'Paper format', default=lambda self: self.env.ref('base.paperformat_euro', raise_if_not_found=False))
+    paperformat_id = fields.Many2one('reports.paperformat', 'Paper format', default=lambda self: self.env.ref('base.paperformat_euro', raise_if_not_found=False))
     external_report_layout_id = fields.Many2one('ir.ui.view', 'Document Template')
     base_onboarding_company_state = fields.Selection([
         ('not_done', "Not done"), ('just_done', "Just done"), ('done', "Done")], string="State of the onboarding company step", default='not_done')
@@ -300,7 +300,7 @@ class Company(models.Model):
         active_model = context.get('active_model')
         if report_name and active_ids and active_model:
             docids = self.env[active_model].browse(active_ids)
-            return (self.env['ir.actions.report'].search([('report_name', '=', report_name)], limit=1)
+            return (self.env['ir.actions.reports'].search([('report_name', '=', report_name)], limit=1)
                         .report_action(docids))
 
     @api.model

@@ -40,7 +40,7 @@ class SnailmailLetter(models.Model):
     partner_id = fields.Many2one('res.partner', string='Recipient', required=True)
     company_id = fields.Many2one('res.company', string='Company', required=True, readonly=True,
         default=lambda self: self.env.company.id)
-    report_template = fields.Many2one('ir.actions.report', 'Optional report to print and attach')
+    report_template = fields.Many2one('ir.actions.reports', 'Optional reports to print and attach')
 
     attachment_id = fields.Many2one('ir.attachment', string='Attachment', ondelete='cascade', index='btree_not_null')
     attachment_datas = fields.Binary('Document', related='attachment_id.datas')
@@ -140,12 +140,12 @@ class SnailmailLetter(models.Model):
             report = self.report_template
             if not report:
                 report_name = self.env.context.get('report_name')
-                report = self.env['ir.actions.report']._get_report_from_name(report_name)
+                report = self.env['ir.actions.reports']._get_report_from_name(report_name)
                 if not report:
                     return False
                 else:
                     self.write({'report_template': report.id})
-                # report = self.env.ref('account.account_invoices')
+                # reports = self.env.ref('account.account_invoices')
             if report.print_report_name:
                 report_name = safe_eval(report.print_report_name, {'object': obj})
             elif report.attachment:
@@ -156,7 +156,7 @@ class SnailmailLetter(models.Model):
             paperformat = report.get_paperformat()
             if (paperformat.format == 'custom' and paperformat.page_width != 210 and paperformat.page_height != 297) or paperformat.format != 'A4':
                 raise UserError(_("Please use an A4 Paper format."))
-            pdf_bin, unused_filetype = self.env['ir.actions.report'].with_context(snailmail_layout=not self.cover, lang='en_US')._render_qweb_pdf(report, self.res_id)
+            pdf_bin, unused_filetype = self.env['ir.actions.reports'].with_context(snailmail_layout=not self.cover, lang='en_US')._render_qweb_pdf(report, self.res_id)
             pdf_bin = self._overwrite_margins(pdf_bin)
             if self.cover:
                 pdf_bin = self._append_cover_page(pdf_bin)

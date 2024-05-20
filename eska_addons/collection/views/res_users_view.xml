@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_users_form_inherit_collection_journal" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.collection.journal</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='share']" position="after">
+                <field name="journal_id"
+                       readonly="1"
+                       attrs="{'invisible': [('share', '=', True)]}"/>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <button string="Collector Setup"
+                        type="object"
+                        name="action_create_journal"
+                        attrs="{'invisible': ['|', ('share', '=', True), ('journal_id', '!=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

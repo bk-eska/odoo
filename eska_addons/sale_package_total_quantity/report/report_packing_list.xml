@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_packing_list_total_quantity" inherit_id="sale_package.report_packing_list">
+        <xpath expr="//table[@name='package_contents']" position="after">
+            <div class="clearfix">
+                <div id="total" class="row" name="total">
+                    <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+                        <table class="table table-sm">
+                            <t t-set="total_packages" t-value="len(doc.package_ids)"/>
+                            <tr class="border-black o_total">
+                                <td name="td_amount_total_label"><strong>Total Packages</strong></td>
+                                <td name="td_amount_total" class="text-right">
+                                    <span t-out="total_packages"/>
+                                </td>
+                            </tr>
+                            <t t-set="total_qty" t-value="sum(doc.package_ids.mapped('quant_ids.quantity'))"/>
+                            <tr class="o_total">
+                                <td name="td_amount_total_label"><strong>Total Quantity</strong></td>
+                                <td name="td_amount_total" class="text-right">
+                                    <span t-out="total_qty"/>
+                                </td>
+                            </tr>
+                            <t t-set="total_weight" t-value="sum(doc.package_ids.mapped('weight'))"/>
+                            <tr class="o_total">
+                                <td name="td_amount_total_label"><strong>Total Weight</strong></td>
+                                <td name="td_amount_total" class="text-right">
+                                    <span t-out="total_weight"
+                                          t-options='{"widget": "float", "decimal_precision": "Stock Weight"}'/>
+                                    <span t-field="doc.package_ids[0].weight_uom_name"/>
+                                </td>
+                            </tr>
+                            <t t-set="total_shipping_weight" t-value="sum(doc.package_ids.mapped('shipping_weight'))"/>
+                            <tr class="o_total">
+                                <td name="td_amount_total_label"><strong>Total Shipping Weight</strong></td>
+                                <td name="td_amount_total" class="text-right">
+                                    <span t-out="total_shipping_weight"
+                                          t-options='{"widget": "float", "decimal_precision": "Stock Weight"}'/>
+                                    <span t-field="doc.package_ids[0].weight_uom_name"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

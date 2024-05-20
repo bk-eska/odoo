@@ -1,0 +1,140 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* yavuzpres_sale_mrp_intercompany
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-03 18:04+0000\n"
+"PO-Revision-Date: 2023-10-03 18:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#. odoo-python
+#: code:addons/yavuzpres_sale_mrp_intercompany/models/sale_order.py:0
+#, python-format
+msgid "%s manufacturing orders have been created."
+msgstr "%s adet üretim emri oluşturuldu."
+
+#. module: yavuzpres_sale_mrp_intercompany
+#. odoo-python
+#: code:addons/yavuzpres_sale_mrp_intercompany/models/sale_order.py:0
+#, python-format
+msgid "Commitment date is required for MO creating!"
+msgstr "MO oluşturmak için Teslim Tarihi girilmesi zorunludur!"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model,name:yavuzpres_sale_mrp_intercompany.model_res_company
+msgid "Companies"
+msgstr "Şirketler"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model_terms:ir.ui.view,arch_db:yavuzpres_sale_mrp_intercompany.sale_order_form_view_mrp_intercompany
+msgid "Create MO"
+msgstr "MO Oluştur"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model.fields,field_description:yavuzpres_sale_mrp_intercompany.field_mrp_production__client
+msgid "Customer"
+msgstr "Müşteri"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#. odoo-python
+#: code:addons/yavuzpres_sale_mrp_intercompany/models/sale_order.py:0
+#, python-format
+msgid "Inter-company destination not found!"
+msgstr "Şirketlerarası hedef şirket bulunmuyor!"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#. odoo-python
+#: code:addons/yavuzpres_sale_mrp_intercompany/models/sale_order.py:0
+#, python-format
+msgid "Inter-company operation type not found!"
+msgstr "Şirketlerarası hedef operasyon türü bulunmuyor!"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model.fields,field_description:yavuzpres_sale_mrp_intercompany.field_res_company__intercompany_destination
+msgid "Intercompany Destination"
+msgstr "Şirketlerarası Hedef Şirket"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model.fields,field_description:yavuzpres_sale_mrp_intercompany.field_stock_picking_type__intercompany_operation
+msgid "Intercompany Sale Manufacturing"
+msgstr "Şirketlerarası Satış Üretim"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model.fields,field_description:yavuzpres_sale_mrp_intercompany.field_sale_order__mo_created
+msgid "MO Created"
+msgstr "MO Oluşturuldu"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model.fields,field_description:yavuzpres_sale_mrp_intercompany.field_sale_order_line__mo_id
+msgid "Manufacturing Order"
+msgstr "Üretim Emri"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model,name:yavuzpres_sale_mrp_intercompany.model_stock_picking_type
+msgid "Picking Type"
+msgstr "Toplama Türü"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model,name:yavuzpres_sale_mrp_intercompany.model_mrp_production
+msgid "Production Order"
+msgstr "Üretim Emri"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model,name:yavuzpres_sale_mrp_intercompany.model_sale_order
+msgid "Sales Order"
+msgstr "Satış Siparişi"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model,name:yavuzpres_sale_mrp_intercompany.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Satış Sipariş Satırı"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model.fields,field_description:yavuzpres_sale_mrp_intercompany.field_mrp_production__date_source_order
+msgid "Source Order Date"
+msgstr "Kaynak Satış Siparişi Tarihi"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model.fields,field_description:yavuzpres_sale_mrp_intercompany.field_mrp_production__sale_order_ref
+msgid "Source Sale Order"
+msgstr "Kaynak Satış Siparişi"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model.fields,field_description:yavuzpres_sale_mrp_intercompany.field_mrp_production__sale_order_line_id
+msgid "Source Sale Order Line"
+msgstr "Kaynak Satış Siparişi Satırı"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model.fields,field_description:yavuzpres_sale_mrp_intercompany.field_mrp_production__parent_client
+msgid "Teknotel Customer"
+msgstr "Teknotel Müşteri"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model.fields,field_description:yavuzpres_sale_mrp_intercompany.field_mrp_production__parent_client_ref
+msgid "Teknotel Customer Purchase No"
+msgstr "Teknotel Müşteri Satınalma No"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#: model:ir.model.fields,field_description:yavuzpres_sale_mrp_intercompany.field_mrp_production__order_client_ref
+msgid "Yavuzpres Customer Purchase No"
+msgstr "Yavuzpres Müşteri Satınalma No"
+
+#. module: yavuzpres_sale_mrp_intercompany
+#. odoo-python
+#: code:addons/yavuzpres_sale_mrp_intercompany/models/sale_order_line.py:0
+#, python-format
+msgid ""
+"You are trying to delete one or more products with active manufacturing "
+"orders"
+msgstr ""
+"Aktif üretim emri bulunan bir veya birden fazla ürünü silmeye "
+"çalışıyorsunuz"

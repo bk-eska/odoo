@@ -452,15 +452,15 @@ class HrExpense(models.Model):
                 expense_to_previous_sheet[expense] = expense.sheet_id
         if 'tax_ids' in vals or 'analytic_distribution' in vals or 'account_id' in vals:
             if any(not expense.is_editable for expense in self):
-                raise UserError(_('You are not authorized to edit this expense report.'))
+                raise UserError(_('You are not authorized to edit this expense reports.'))
         if 'reference' in vals:
             if any(not expense.is_ref_editable for expense in self):
-                raise UserError(_('You are not authorized to edit the reference of this expense report.'))
+                raise UserError(_('You are not authorized to edit the reference of this expense reports.'))
         res = super(HrExpense, self).write(vals)
         if 'employee_id' in vals:
             # In case expense has sheet which has only one expense_line_ids,
             # then changing the expense.employee_id triggers changing the sheet.employee_id too.
-            # Otherwise we unlink the expense line from sheet, (so that the user can create a new report).
+            # Otherwise we unlink the expense line from sheet, (so that the user can create a new reports).
             if self.sheet_id:
                 employees = self.sheet_id.expense_line_ids.mapped('employee_id')
                 if len(employees) == 1:
@@ -530,15 +530,15 @@ Or send your receipts at <a href="mailto:%(email)s?subject=Lunch%%20with%%20cust
         expenses_with_amount = self.filtered(lambda expense: not float_compare(expense.total_amount_company, 0.0, precision_rounding=expense.company_currency_id.rounding) == 0)
 
         if any(expense.state != 'draft' or expense.sheet_id for expense in expenses_with_amount):
-            raise UserError(_("You cannot report twice the same line!"))
+            raise UserError(_("You cannot reports twice the same line!"))
         if not expenses_with_amount:
-            raise UserError(_("You cannot report the expenses without amount!"))
+            raise UserError(_("You cannot reports the expenses without amount!"))
         if len(expenses_with_amount.mapped('employee_id')) != 1:
-            raise UserError(_("You cannot report expenses for different employees in the same report."))
+            raise UserError(_("You cannot reports expenses for different employees in the same reports."))
         if any(not expense.product_id for expense in expenses_with_amount):
-            raise UserError(_("You can not create report without category."))
+            raise UserError(_("You can not create reports without category."))
         if len(self.company_id) != 1:
-            raise UserError(_("You cannot report expenses for different companies in the same report."))
+            raise UserError(_("You cannot reports expenses for different companies in the same reports."))
 
         # Check if two reports should be created
         own_expenses = expenses_with_amount.filtered(lambda x: x.payment_mode == 'own_account')
@@ -583,7 +583,7 @@ Or send your receipts at <a href="mailto:%(email)s?subject=Lunch%%20with%%20cust
             expenses = self.env['hr.expense'].search([('state', '=', 'draft'), ('sheet_id', '=', False), ('employee_id', '=', self.env.user.employee_id.id)])
 
         if not expenses:
-            raise UserError(_('You have no expense to report'))
+            raise UserError(_('You have no expense to reports'))
         else:
             return expenses.action_submit_expenses()
 
@@ -722,7 +722,7 @@ Or send your receipts at <a href="mailto:%(email)s?subject=Lunch%%20with%%20cust
     def get_expense_dashboard(self):
         expense_state = {
             'draft': {
-                'description': _('to report'),
+                'description': _('to reports'),
                 'amount': 0.0,
                 'currency': self.env.company.currency_id.id,
             },
@@ -1133,7 +1133,7 @@ class HrExpenseSheet(models.Model):
     def _check_expense_lines_company(self):
         for sheet in self:
             if any(expense.company_id != sheet.company_id for expense in sheet.expense_line_ids):
-                raise ValidationError(_('An expense report must contain only lines from the same company.'))
+                raise ValidationError(_('An expense reports must contain only lines from the same company.'))
 
     def _search_product_ids(self, operator, value):
         if operator == 'in' and not isinstance(value, list):
@@ -1199,7 +1199,7 @@ class HrExpenseSheet(models.Model):
             raise UserError(_("Specify expense journal to generate accounting entries."))
 
         if not self.employee_id.sudo().address_home_id:
-            raise UserError(_("The private address of the employee is required to post the expense report. Please add it on the employee form."))
+            raise UserError(_("The private address of the employee is required to post the expense reports. Please add it on the employee form."))
 
         expense_line_ids = self.mapped('expense_line_ids')\
             .filtered(lambda r: not float_is_zero(r.total_amount, precision_rounding=(r.currency_id or self.env.company.currency_id).rounding))

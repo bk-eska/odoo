@@ -15,7 +15,7 @@
     'data': [
         'data/utm_data.xml',
         'security/ir.model.access.csv',
-        'report/mailing_trace_report_views.xml',
+        'reports/mailing_trace_report_views.xml',
         'views/mailing_list_views.xml',
         'views/mailing_contact_views.xml',
         'views/mailing_trace_views.xml',

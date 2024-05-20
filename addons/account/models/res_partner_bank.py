@@ -33,7 +33,7 @@ class ResPartnerBank(models.Model):
                 raise ValidationError(_('A bank account can belong to only one journal.'))
 
     def _build_qr_code_vals(self, amount, free_communication, structured_communication, currency, debtor_partner, qr_method=None, silent_errors=True):
-        """ Returns the QR-code vals needed to generate the QR-code report link to pay this account with the given parameters,
+        """ Returns the QR-code vals needed to generate the QR-code reports link to pay this account with the given parameters,
         or None if no QR-code could be generated.
 
         :param amount: The amount to be paid
@@ -95,7 +95,7 @@ class ResPartnerBank(models.Model):
     def _get_qr_code_url(self, qr_method, amount, currency, debtor_partner, free_communication, structured_communication):
         """ Hook for extension, to support the different QR generation methods.
         This function uses the provided qr_method to try generation a QR-code for
-        the given data. It it succeeds, it returns the report URL to make this
+        the given data. It it succeeds, it returns the reports URL to make this
         QR-code; else None.
 
         :param qr_method: The QR generation method to be used to make the QR-code.
@@ -106,7 +106,7 @@ class ResPartnerBank(models.Model):
         :param structured_communication: Structured communication to add to the payment when generating one with the QR-code
         """
         params = self._get_qr_code_generation_params(qr_method, amount, currency, debtor_partner, free_communication, structured_communication)
-        return '/report/barcode/?' + werkzeug.urls.url_encode(params) if params else None
+        return '/reports/barcode/?' + werkzeug.urls.url_encode(params) if params else None
 
     def _get_qr_code_base64(self, qr_method, amount, currency, debtor_partner, free_communication, structured_communication):
         """ Hook for extension, to support the different QR generation methods.
@@ -123,7 +123,7 @@ class ResPartnerBank(models.Model):
         params = self._get_qr_code_generation_params(qr_method, amount, currency, debtor_partner, free_communication, structured_communication)
         if params:
             try:
-                barcode = self.env['ir.actions.report'].barcode(**params)
+                barcode = self.env['ir.actions.reports'].barcode(**params)
             except (ValueError, AttributeError):
                 raise werkzeug.exceptions.HTTPException(description='Cannot convert into barcode.')
             return image_data_uri(base64.b64encode(barcode))

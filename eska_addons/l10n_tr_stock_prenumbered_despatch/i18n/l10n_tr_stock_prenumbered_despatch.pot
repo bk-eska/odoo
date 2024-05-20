@@ -1,0 +1,90 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr_stock_prenumbered_despatch
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-30 12:48+0000\n"
+"PO-Revision-Date: 2022-06-30 12:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr_stock_prenumbered_despatch
+#: model_terms:ir.ui.view,arch_db:l10n_tr_stock_prenumbered_despatch.despatch_stock_picking_form
+msgid "Assign Number"
+msgstr ""
+
+#. module: l10n_tr_stock_prenumbered_despatch
+#: model:ir.model.fields,field_description:l10n_tr_stock_prenumbered_despatch.field_stock_picking_type__despatch_auto_number
+msgid "Auto Number"
+msgstr ""
+
+#. module: l10n_tr_stock_prenumbered_despatch
+#: model:ir.model.fields,field_description:l10n_tr_stock_prenumbered_despatch.field_stock_picking__despatch_number_sequence
+msgid "Despatch Number Sequence"
+msgstr ""
+
+#. module: l10n_tr_stock_prenumbered_despatch
+#: model:ir.model.fields,field_description:l10n_tr_stock_prenumbered_despatch.field_stock_picking__display_name
+#: model:ir.model.fields,field_description:l10n_tr_stock_prenumbered_despatch.field_stock_picking_type__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_tr_stock_prenumbered_despatch
+#: model:ir.model.fields,help:l10n_tr_stock_prenumbered_despatch.field_stock_picking_type__despatch_auto_number
+msgid "Gives auto number on validate"
+msgstr ""
+
+#. module: l10n_tr_stock_prenumbered_despatch
+#: model:ir.model.fields,field_description:l10n_tr_stock_prenumbered_despatch.field_stock_picking__id
+#: model:ir.model.fields,field_description:l10n_tr_stock_prenumbered_despatch.field_stock_picking_type__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_tr_stock_prenumbered_despatch
+#: model:ir.model.fields,field_description:l10n_tr_stock_prenumbered_despatch.field_stock_picking____last_update
+#: model:ir.model.fields,field_description:l10n_tr_stock_prenumbered_despatch.field_stock_picking_type____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: l10n_tr_stock_prenumbered_despatch
+#: model:ir.model,name:l10n_tr_stock_prenumbered_despatch.model_stock_picking_type
+msgid "Picking Type"
+msgstr ""
+
+#. module: l10n_tr_stock_prenumbered_despatch
+#: model:ir.model.fields,field_description:l10n_tr_stock_prenumbered_despatch.field_stock_picking_type__despatch_number_sequence
+#: model:ir.model.fields,help:l10n_tr_stock_prenumbered_despatch.field_stock_picking__despatch_number_sequence
+msgid "Printed Despatch Number Sequence"
+msgstr ""
+
+#. module: l10n_tr_stock_prenumbered_despatch
+#: model_terms:ir.ui.view,arch_db:l10n_tr_stock_prenumbered_despatch.view_picking_type_form_inherit_despatch
+msgid "Printed Despatch Sequence"
+msgstr ""
+
+#. module: l10n_tr_stock_prenumbered_despatch
+#: model:ir.model.fields,help:l10n_tr_stock_prenumbered_despatch.field_stock_picking_type__despatch_number_sequence
+msgid "This is used to number printed despatches"
+msgstr ""
+
+#. module: l10n_tr_stock_prenumbered_despatch
+#: model:ir.model,name:l10n_tr_stock_prenumbered_despatch.model_stock_picking
+msgid "Transfer"
+msgstr ""
+
+#. module: l10n_tr_stock_prenumbered_despatch
+#: model:ir.model.fields,field_description:l10n_tr_stock_prenumbered_despatch.field_stock_picking_type__use_document
+msgid "Turkey Document Fields"
+msgstr ""
+
+#. module: l10n_tr_stock_prenumbered_despatch
+#: model:ir.model.fields,help:l10n_tr_stock_prenumbered_despatch.field_stock_picking_type__use_document
+msgid "Use document features compliant with Turkey localization"
+msgstr ""

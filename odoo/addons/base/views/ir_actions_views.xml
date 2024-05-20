@@ -46,7 +46,7 @@
         <menuitem id="next_id_6" name="Actions" parent="base.menu_custom" sequence="5"/>
         <menuitem action="ir_sequence_actions" id="menu_ir_sequence_actions" parent="next_id_6"/>
 
-        <!-- ir.actions.report -->
+        <!-- ir.actions.reports -->
 
         <record id="act_report_xml_view" model="ir.ui.view">
             <field name="name">ir.actions.report</field>

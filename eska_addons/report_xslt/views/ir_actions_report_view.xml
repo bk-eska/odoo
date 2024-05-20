@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record id="act_report_xml_view_xslt" model="ir.ui.view">
+        <field name="name">ir.actions.report.xslt</field>
+        <field name="model">ir.actions.report</field>
+        <field name="inherit_id" ref="base.act_report_xml_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='paperformat_id']" position="after">
+                <field name="xslt_transform"/>
+                <field name="xslt"
+                       attrs="{'invisible':[('xslt_transform','=',False)],
+                       'required':[('report_type','=','xslt')]}"/>
+                <field name="attach_xml"
+                       attrs="{'invisible':[('xslt_transform','=',False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

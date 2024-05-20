@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2023 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record model="ir.ui.view" id="helpdesk_mgmt_knowledge_base_form">
+        <field name="name">helpdesk.ticket.knowledge.base.form</field>
+        <field name="model">helpdesk.ticket.knowledge.base</field>
+        <field name="arch" type="xml">
+            <form string="Type">
+                <group>
+                    <field name="name"/>
+                    <field name="description"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="helpdesk_mgmt_knowledge_base_tree" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.knowledge.base.tree</field>
+        <field name="model">helpdesk.ticket.knowledge.base</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_helpdesk_mgmt_knowledge_base" model="ir.actions.act_window">
+        <field name="name">Knowledge Base</field>
+        <field name="res_model">helpdesk.ticket.knowledge.base</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+            name="Knowledge Base"
+            id="helpdesk_mgmt_knowledge_base"
+            parent="helpdesk_mgmt.helpdesk_ticket_main_menu"
+            action="helpdesk_mgmt_knowledge_base.action_helpdesk_mgmt_knowledge_base"
+            sequence="11"
+    />
+
+</odoo>

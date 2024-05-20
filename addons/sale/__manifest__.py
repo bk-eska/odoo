@@ -20,10 +20,10 @@ This module contains all the common features of Sales Management and eCommerce.
         'security/res_groups.xml',
         'security/ir_rules.xml',
 
-        'report/account_invoice_report_views.xml',
-        'report/ir_actions_report_templates.xml',
-        'report/ir_actions_report.xml',
-        'report/sale_report_views.xml',
+        'reports/account_invoice_report_views.xml',
+        'reports/ir_actions_report_templates.xml',
+        'reports/ir_actions_report.xml',
+        'reports/sale_report_views.xml',
 
         'data/ir_sequence_data.xml',
         'data/mail_activity_type_data.xml',

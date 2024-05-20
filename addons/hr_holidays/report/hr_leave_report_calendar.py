@@ -7,7 +7,7 @@ from odoo.addons.base.models.res_partner import _tz_get
 
 
 class LeaveReportCalendar(models.Model):
-    _name = "hr.leave.report.calendar"
+    _name = "hr.leave.reports.calendar"
     _description = 'Time Off Calendar'
     _auto = False
     _order = "start_datetime DESC, employee_id"

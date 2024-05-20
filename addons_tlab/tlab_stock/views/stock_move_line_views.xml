@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="view_move_line_tree_tlab" model="ir.ui.view">
+        <field name="name">stock.move.line.tree.tlab</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="action"/>
+            </xpath>
+            <xpath expr="//field[@name='qty_done']" position="attributes">
+                <attribute name="sum">Toplam Miktar</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

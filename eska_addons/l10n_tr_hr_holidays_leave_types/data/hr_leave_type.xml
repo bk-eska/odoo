@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <data noupdate="1">
+        <record id="tr_izin_evlilik" model="hr.leave.type">
+            <field name="name">Evlilik İzni</field>
+            <field name="color_name">lightsalmon</field>
+            <field name="leave_validation_type">hr</field>
+            <field name="requires_allocation">no</field>
+            <field name="max_leave_limit">3</field>
+            <field name="leave_notif_subtype_id" ref="mt_marriage"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+        </record>
+        <record id="tr_izin_dogum" model="hr.leave.type">
+            <field name="name">Doğum İzni</field>
+            <field name="color_name">lightcyan</field>
+            <field name="leave_validation_type">hr</field>
+            <field name="requires_allocation">no</field>
+            <field name="max_leave_limit">112</field>
+            <field name="leave_notif_subtype_id" ref="mt_giving_birth"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+        </record>
+        <record id="tr_izin_sut" model="hr.leave.type">
+            <field name="name">Süt İzni</field>
+            <field name="color_name">lightpink</field>
+            <field name="leave_validation_type">hr</field>
+            <field name="requires_allocation">no</field>
+            <field name="max_leave_limit">1</field>
+            <field name="leave_notif_subtype_id" ref="mt_milk"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+        </record>
+        <record id="tr_izin_olum" model="hr.leave.type">
+            <field name="name">Ölüm İzni</field>
+            <field name="color_name">ivory</field>
+            <field name="leave_validation_type">hr</field>
+            <field name="requires_allocation">no</field>
+            <field name="max_leave_limit">3</field>
+            <field name="leave_notif_subtype_id" ref="mt_death"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+        </record>
+        <record id="tr_izin_mazeret" model="hr.leave.type">
+            <field name="name">Mazeret İzni</field>
+            <field name="color_name">lightgreen</field>
+            <field name="leave_validation_type">hr</field>
+            <field name="requires_allocation">yes</field>
+            <field name="max_leave_limit">10</field>
+            <field name="leave_notif_subtype_id" ref="mt_excuse"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+        </record>
+        <record id="tr_izin_babalik" model="hr.leave.type">
+            <field name="name">Babalık İzni</field>
+            <field name="color_name">lightblue</field>
+            <field name="leave_validation_type">hr</field>
+            <field name="requires_allocation">no</field>
+            <field name="max_leave_limit">5</field>
+            <field name="leave_notif_subtype_id" ref="mt_paternity"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+        </record>
+        <record id="tr_izin_gebelik" model="hr.leave.type">
+            <field name="name">Gebelik Kontrol İzni</field>
+            <field name="color_name">lavender</field>
+            <field name="leave_validation_type">hr</field>
+            <field name="requires_allocation">yes</field>
+            <field name="max_leave_limit">1</field>
+            <field name="leave_notif_subtype_id" ref="mt_pregnancy_control"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+        </record>
+        <record id="tr_izin_engelli" model="hr.leave.type">
+            <field name="name">Engelli İzni</field>
+            <field name="color_name">lightyellow</field>
+            <field name="leave_validation_type">hr</field>
+            <field name="requires_allocation">no</field>
+            <field name="max_leave_limit">7</field>
+            <field name="leave_notif_subtype_id" ref="mt_disability"/>
+            <field name="responsible_id" ref="base.user_admin"/>
+        </record>
+	</data>
+</odoo>

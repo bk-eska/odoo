@@ -1,0 +1,301 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_picking_invoicing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-01 10:22+0000\n"
+"PO-Revision-Date: 2024-04-01 10:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_picking_invoicing
+#. odoo-python
+#: code:addons/stock_picking_invoicing/wizards/stock_invoice_onshipping.py:0
+#, python-format
+msgid "All pickings are not related to your company!"
+msgstr "Tüm transferler şirketinize ait değil!"
+
+#. module: stock_picking_invoicing
+#: model_terms:ir.ui.view,arch_db:stock_picking_invoicing.view_stock_invoice_onshipping
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_picking_type__count_picking_2binvoiced
+msgid "Count Picking 2Binvoiced"
+msgstr "Faturalanacak Transfer Adedi"
+
+#. module: stock_picking_invoicing
+#: model_terms:ir.ui.view,arch_db:stock_picking_invoicing.view_stock_invoice_onshipping
+msgid "Create"
+msgstr "Oluştur"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_invoice_onshipping__journal_type__sale
+msgid "Create Customer Invoice"
+msgstr "Müşteri Faturası Oluştur"
+
+#. module: stock_picking_invoicing
+#: model:ir.actions.act_window,name:stock_picking_invoicing.action_stock_invoice_onshipping
+msgid "Create Draft Invoices"
+msgstr "Taslak Faturalar Oluştur"
+
+#. module: stock_picking_invoicing
+#: model_terms:ir.ui.view,arch_db:stock_picking_invoicing.view_picking_form
+msgid "Create Invoice"
+msgstr "Fatura Oluştur"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_invoice_onshipping__journal_type__purchase
+msgid "Create Supplier Invoice"
+msgstr "Tedarikçi Faturası Oluştur"
+
+#. module: stock_picking_invoicing
+#: model_terms:ir.ui.view,arch_db:stock_picking_invoicing.view_stock_invoice_onshipping
+msgid "Create invoice"
+msgstr "Fatura oluştur"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_invoice_onshipping__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_invoice_onshipping__create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_invoice_onshipping__display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_invoice_onshipping__group
+msgid "Group"
+msgstr "Grup"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,help:stock_picking_invoicing.field_stock_invoice_onshipping__group
+msgid ""
+"Group pickings/moves to create invoice(s):\n"
+"Picking: One invoice per picking;\n"
+"Partner: One invoice for each picking's partner;\n"
+"Partner/Product: One invoice per picking's partner and group product into a single invoice line."
+msgstr ""
+"Faturaları oluşturmak için transferleri grupla:\n"
+"Transfer: Her transfer için bir fatura;\n"
+"İş Ortağı: Her bir transferin iş ortağı için bir fatura;\n"
+"İş Ortağı/Ürün: Her bir transferin iş ortağı için bir fatura ve ürünleri tek bir satıra grupla."
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_invoice_onshipping__id
+msgid "ID"
+msgstr ""
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_invoice_onshipping__invoice_date
+msgid "Invoice Date"
+msgstr "Fatura Tarihi"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_invoice_state_mixin__invoice_state
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_move__invoice_state
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_picking__invoice_state
+msgid "Invoice Status"
+msgstr "Fatura Durumu"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_invoice_state_mixin__invoice_state__invoiced
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_move__invoice_state__invoiced
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_picking__invoice_state__invoiced
+msgid "Invoiced"
+msgstr "Faturalandı"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,help:stock_picking_invoicing.field_stock_invoice_state_mixin__invoice_state
+#: model:ir.model.fields,help:stock_picking_invoicing.field_stock_move__invoice_state
+#: model:ir.model.fields,help:stock_picking_invoicing.field_stock_picking__invoice_state
+msgid ""
+"Invoiced: an invoice already exists\n"
+"To Be Invoiced: need to be invoiced\n"
+"Not Applicable: no invoice to create"
+msgstr ""
+"Faturalandı: mevcutta bir fatura var\n"
+"Faturalanacak: faturalanması gerekiyor\n"
+"Uygulanamaz: oluşturulacak fatura yok"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_return_picking__invoice_state
+#: model_terms:ir.ui.view,arch_db:stock_picking_invoicing.view_move_picking_form
+#: model_terms:ir.ui.view,arch_db:stock_picking_invoicing.view_picking_form
+msgid "Invoicing"
+msgstr "Faturalama"
+
+#. module: stock_picking_invoicing
+#: model:ir.model,name:stock_picking_invoicing.model_account_move
+msgid "Journal Entry"
+msgstr "Yevmiye Kaydı"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_invoice_onshipping__journal_type
+msgid "Journal Type"
+msgstr "Yevmiye Türü"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_invoice_onshipping____last_update
+msgid "Last Modified on"
+msgstr "Son Değiştirilme"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_invoice_onshipping__write_uid
+msgid "Last Updated by"
+msgstr "Son Değiştiren"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_invoice_onshipping__write_date
+msgid "Last Updated on"
+msgstr "Son Güncellenme"
+
+#. module: stock_picking_invoicing
+#. odoo-python
+#: code:addons/stock_picking_invoicing/wizards/stock_invoice_onshipping.py:0
+#, python-format
+msgid "No invoice created!"
+msgstr "Fatura oluşturulmadı!"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_return_picking__invoice_state__none
+msgid "No invoicing"
+msgstr "Faturalama yok"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_invoice_state_mixin__invoice_state__none
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_move__invoice_state__none
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_picking__invoice_state__none
+msgid "Not Applicable"
+msgstr "Uygulanamaz"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_invoice_onshipping__group__partner
+msgid "Partner"
+msgstr "İş Ortağı"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_invoice_onshipping__group__partner_product
+msgid "Partner/Product"
+msgstr "Müşteri/Ürün"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_invoice_onshipping__group__picking
+msgid "Picking"
+msgstr "Transfer"
+
+#. module: stock_picking_invoicing
+#: model:ir.model,name:stock_picking_invoicing.model_stock_picking_type
+msgid "Picking Type"
+msgstr "Toplama Türü"
+
+#. module: stock_picking_invoicing
+#: model:ir.actions.act_window,name:stock_picking_invoicing.2binvoiced_action_picking_dashboard
+msgid "Picking to Invoice"
+msgstr "Faturalanacak Transferler"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_invoice_onshipping__purchase_journal
+msgid "Purchase Journal"
+msgstr "Satınalma Yevmiyesi"
+
+#. module: stock_picking_invoicing
+#: model:ir.model,name:stock_picking_invoicing.model_stock_return_picking
+msgid "Return Picking"
+msgstr "Ters Transfer"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_invoice_onshipping__sale_journal
+msgid "Sale Journal"
+msgstr "Satış Yevmiyesi"
+
+#. module: stock_picking_invoicing
+#: model_terms:ir.ui.view,arch_db:stock_picking_invoicing.view_picking_form
+msgid "Set to Not Billable"
+msgstr "Faturalanamaz olarak işaretle"
+
+#. module: stock_picking_invoicing
+#: model_terms:ir.ui.view,arch_db:stock_picking_invoicing.view_picking_form
+msgid "Set to as invoiced"
+msgstr "Faturalandı olarak işaretle"
+
+#. module: stock_picking_invoicing
+#: model_terms:ir.ui.view,arch_db:stock_picking_invoicing.view_picking_form
+msgid "Set to be invoiced"
+msgstr "Faturalanacak işaretle"
+
+#. module: stock_picking_invoicing
+#: model_terms:ir.ui.view,arch_db:stock_picking_invoicing.view_picking_invoicing_internal_search
+msgid "Shipments to Invoice"
+msgstr "Faturalanacak Transferler"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_invoice_onshipping__show_purchase_journal
+msgid "Show Purchase Journal"
+msgstr "Satınalma Yevmiyesini Göster"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields,field_description:stock_picking_invoicing.field_stock_invoice_onshipping__show_sale_journal
+msgid "Show Sale Journal"
+msgstr "Satış Yevmiyesini Göster"
+
+#. module: stock_picking_invoicing
+#: model:ir.model,name:stock_picking_invoicing.model_stock_invoice_onshipping
+msgid "Stock Invoice Onshipping"
+msgstr "İrsaliyeden Fatura"
+
+#. module: stock_picking_invoicing
+#: model:ir.model,name:stock_picking_invoicing.model_stock_invoice_state_mixin
+msgid "Stock Invoice State Mixin"
+msgstr "Stok Fatura Mixin"
+
+#. module: stock_picking_invoicing
+#: model:ir.model,name:stock_picking_invoicing.model_stock_move
+msgid "Stock Move"
+msgstr "Stok Hareketi"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_invoice_state_mixin__invoice_state__2binvoiced
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_move__invoice_state__2binvoiced
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_picking__invoice_state__2binvoiced
+msgid "To Be Invoiced"
+msgstr "Faturalanacak"
+
+#. module: stock_picking_invoicing
+#: model_terms:ir.ui.view,arch_db:stock_picking_invoicing.stock_picking_type_kanban
+msgid "To be Invoiced"
+msgstr "Faturalanacak"
+
+#. module: stock_picking_invoicing
+#: model:ir.model.fields.selection,name:stock_picking_invoicing.selection__stock_return_picking__invoice_state__2binvoiced
+msgid "To be refunded/invoiced"
+msgstr "İade edilecek/faturalanacak"
+
+#. module: stock_picking_invoicing
+#: model:ir.model,name:stock_picking_invoicing.model_stock_picking
+msgid "Transfer"
+msgstr ""
+
+#. module: stock_picking_invoicing
+#: model_terms:ir.ui.view,arch_db:stock_picking_invoicing.view_picking_form
+msgid "True"
+msgstr "Doğru"
+
+#. module: stock_picking_invoicing
+#: model_terms:ir.ui.view,arch_db:stock_picking_invoicing.view_stock_invoice_onshipping
+msgid "or"
+msgstr "veya"

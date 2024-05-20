@@ -113,7 +113,7 @@ class AccountMove(models.Model):
         """Reset E-Faktur, so it can be use for other invoice."""
         for move in self:
             if move.l10n_id_attachment_id:
-                raise UserError(_('You have already generated the tax report for this document: %s', move.name))
+                raise UserError(_('You have already generated the tax reports for this document: %s', move.name))
             self.env['l10n_id_efaktur.efaktur.range'].push_number(move.company_id.id, move.l10n_id_tax_number[3:])
             move.message_post(
                 body='e-Faktur Reset: %s ' % (move.l10n_id_tax_number),
@@ -138,7 +138,7 @@ class AccountMove(models.Model):
             if not record.l10n_id_tax_number:
                 if not self.l10n_id_need_kode_transaksi:
                     raise ValidationError(_('E-faktur is not available for invoices without any taxes.'))
-                raise ValidationError(_('Connect %(move_number)s with E-faktur to download this report', move_number=record.name))
+                raise ValidationError(_('Connect %(move_number)s with E-faktur to download this reports', move_number=record.name))
 
         self._generate_efaktur(',')
         return self.download_csv()

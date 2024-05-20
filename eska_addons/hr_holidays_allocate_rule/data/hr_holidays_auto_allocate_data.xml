@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- Copyright 2024 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <data noupdate="1">
+        <record forcecreate="True" id="hr_holidays_auto_allocate_cron" model="ir.cron">
+            <field name="name">Auto Allocate Time Off</field>
+            <field name="model_id" ref="model_hr_holidays_allocate_rule"/>
+            <field name="state">code</field>
+            <field name="code">model.allocate_leaves()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).strftime('%Y-%m-%d 06:00:00')" />
+        </record>
+    </data>
+</odoo>

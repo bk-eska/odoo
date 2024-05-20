@@ -1,0 +1,184 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_set
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-02 10:14+0000\n"
+"PO-Revision-Date: 2024-01-02 10:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set__active
+#: model:ir.model.fields,field_description:product_set.field_product_set_line__active
+msgid "Active"
+msgstr "Aktif"
+
+#. module: product_set
+#: model_terms:ir.ui.view,arch_db:product_set.view_product_set_form
+msgid "Add a line"
+msgstr "Satır Ekle"
+
+#. module: product_set
+#: model_terms:ir.ui.view,arch_db:product_set.view_product_set_form
+msgid "Add a note"
+msgstr "Not Ekle"
+
+#. module: product_set
+#: model_terms:ir.ui.view,arch_db:product_set.view_product_set_form
+msgid "Add a section"
+msgstr "Bölüm Ekle"
+
+#. module: product_set
+#: model_terms:ir.ui.view,arch_db:product_set.view_product_set_form
+#: model_terms:ir.ui.view,arch_db:product_set.view_product_set_search
+msgid "Archived"
+msgstr "Arşivlendi"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set__company_id
+#: model:ir.model.fields,field_description:product_set.field_product_set_line__company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set__create_uid
+#: model:ir.model.fields,field_description:product_set.field_product_set_line__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set__create_date
+#: model:ir.model.fields,field_description:product_set.field_product_set_line__create_date
+msgid "Created on"
+msgstr "Oluşturuldu"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set__display_name
+#: model:ir.model.fields,field_description:product_set.field_product_set_line__display_name
+msgid "Display Name"
+msgstr "Görünen İsim"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set_line__display_type
+msgid "Display Type"
+msgstr "Görünüm Türü"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set__id
+#: model:ir.model.fields,field_description:product_set.field_product_set_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set__ref
+msgid "Internal Reference"
+msgstr "İç Referans"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set____last_update
+#: model:ir.model.fields,field_description:product_set.field_product_set_line____last_update
+msgid "Last Modified on"
+msgstr "Son değişiklik"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set__write_uid
+#: model:ir.model.fields,field_description:product_set.field_product_set_line__write_uid
+msgid "Last Updated by"
+msgstr "Son güncelleyen"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set__write_date
+#: model:ir.model.fields,field_description:product_set.field_product_set_line__write_date
+msgid "Last Updated on"
+msgstr "Son güncellenme"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set__name
+#: model:ir.model.fields,field_description:product_set.field_product_set_line__name
+msgid "Name"
+msgstr "Adı"
+
+#. module: product_set
+#: model:ir.model.fields.selection,name:product_set.selection__product_set_line__display_type__line_note
+msgid "Note"
+msgstr "Not"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set__partner_id
+#: model_terms:ir.ui.view,arch_db:product_set.view_product_set_search
+msgid "Partner"
+msgstr "İş Ortağı"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set_line__product_id
+#: model_terms:ir.ui.view,arch_db:product_set.view_product_set_line_search
+msgid "Product"
+msgstr "Ürün"
+
+#. module: product_set
+#: model:ir.actions.act_window,name:product_set.act_open_product_set_view
+#: model:ir.model,name:product_set.model_product_set
+#: model_terms:ir.ui.view,arch_db:product_set.view_product_set_form
+#: model_terms:ir.ui.view,arch_db:product_set.view_product_set_line_search
+#: model_terms:ir.ui.view,arch_db:product_set.view_product_set_search
+msgid "Product set"
+msgstr "Ürün seti"
+
+#. module: product_set
+#: model:ir.model.fields,help:product_set.field_product_set__ref
+msgid "Product set internal reference"
+msgstr "Ürün seti iç referansı"
+
+#. module: product_set
+#: model:ir.actions.act_window,name:product_set.act_open_product_set_line_view
+#: model:ir.model,name:product_set.model_product_set_line
+#: model_terms:ir.ui.view,arch_db:product_set.view_product_set_line_search
+msgid "Product set line"
+msgstr "Ürün seti satırı"
+
+#. module: product_set
+#: model:ir.model.fields,help:product_set.field_product_set__name
+msgid "Product set name"
+msgstr "Ürün setinin adı"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set__set_line_ids
+msgid "Products"
+msgstr "Ürünler"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set_line__quantity
+msgid "Quantity"
+msgstr "Miktar"
+
+#. module: product_set
+#: model:ir.model.fields.selection,name:product_set.selection__product_set_line__display_type__line_section
+msgid "Section"
+msgstr "Bölüm"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set_line__sequence
+msgid "Sequence"
+msgstr "Sıra"
+
+#. module: product_set
+#: model:ir.model.fields,field_description:product_set.field_product_set_line__product_set_id
+msgid "Set"
+msgstr ""
+
+#. module: product_set
+#: model:ir.model.fields,help:product_set.field_product_set__partner_id
+msgid ""
+"You can attache the set to a specific partner or no one. If you don't "
+"specify one, it's going to be available for all of them."
+msgstr ""
+"Seti belirli bir ortağa ekleyebilir veya hiç kimseye ekleyemezsiniz."
+"Birini belirtmezseniz, hepsi için kullanılabilir olacaktır."

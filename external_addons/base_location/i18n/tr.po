@@ -1,0 +1,255 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* base_location
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-09 11:36+0000\n"
+"PO-Revision-Date: 2023-07-09 11:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_location
+#: model:res.city,name:base_location.demo_brussels_city
+msgid "Brussels"
+msgstr "Brüksel"
+
+#. module: base_location
+#: model:ir.model.fields,help:base_location.field_res_company__country_enforce_cities
+msgid ""
+"Check this box to ensure every address created in that country has a 'City' "
+"chosen in the list of the country's cities."
+msgstr ""
+"O ülkede oluşturulan her adresin, ülkenin şehirler listesinde seçilmiş bir "
+"'Şehir' olduğundan emin olmak için bu kutuyu işaretleyin."
+
+#. module: base_location
+#: model:ir.actions.act_window,name:base_location.action_res_city_full
+#: model:ir.ui.menu,name:base_location.locations_menu_cities
+msgid "Cities"
+msgstr "Şehirler"
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_city
+#: model:ir.model.fields,field_description:base_location.field_res_brand__city
+#: model:ir.model.fields,field_description:base_location.field_res_city_zip__city_id
+#: model:ir.model.fields,field_description:base_location.field_res_partner__city
+#: model:ir.model.fields,field_description:base_location.field_res_users__city
+msgid "City"
+msgstr "İl"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_brand__city_id
+#: model:ir.model.fields,field_description:base_location.field_res_company__city_id
+#: model:ir.model.fields,field_description:base_location.field_res_partner__city_id
+#: model:ir.model.fields,field_description:base_location.field_res_users__city_id
+msgid "City ID"
+msgstr "Şehir ID'si"
+
+#. module: base_location
+#: model_terms:ir.ui.view,arch_db:base_location.view_company_form_city
+#: model_terms:ir.ui.view,arch_db:base_location.view_partner_form
+msgid "City completion"
+msgstr "Şehir tamamlama"
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_city_zip
+msgid "City/locations completion object"
+msgstr "İl/konum tamamlama nesnesi "
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_company
+msgid "Companies"
+msgstr "Şirketler"
+
+#. module: base_location
+#: model:ir.model,name:base_location.model_res_partner
+msgid "Contact"
+msgstr "Temas"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_brand__country_id
+#: model:ir.model.fields,field_description:base_location.field_res_city_zip__country_id
+#: model:ir.model.fields,field_description:base_location.field_res_partner__country_id
+#: model:ir.model.fields,field_description:base_location.field_res_users__country_id
+#: model_terms:ir.ui.view,arch_db:base_location.view_country_search
+msgid "Country"
+msgstr "Ülke"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_city_zip__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_city_zip__create_date
+msgid "Created on"
+msgstr "Oluşturuldu"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_city_zip__display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: base_location
+#: model_terms:ir.actions.act_window,help:base_location.action_res_city_full
+msgid ""
+"Display and manage the list of all cities that can be assigned to\n"
+"            your partner records. Note that an option can be set on each country\n"
+"            separately\n"
+"            to enforce any address of it to have a city in this list."
+msgstr ""
+"İş ortağı kayıtlarınıza atanabilecek tüm şehirlerin listesini görüntüleyin\n"
+"            ve yönetin. Herhangi bir adresin bu listede bir şehre sahip olmasını\n"
+"            zorunlu kılmak için\n"
+"            her ülkede ayrı ayrı bir seçeneğin ayarlanabileceğini unutmayın."
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_company__country_enforce_cities
+msgid "Enforce Cities"
+msgstr "Şehirleri Uygula"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_city_zip__id
+msgid "ID"
+msgstr ""
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_city_zip____last_update
+msgid "Last Modified on"
+msgstr "Son değişiklik"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_city_zip__write_uid
+msgid "Last Updated by"
+msgstr "Son güncelleyen"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_city_zip__write_date
+msgid "Last Updated on"
+msgstr "Son güncelleme"
+
+#. module: base_location
+#: model_terms:ir.ui.view,arch_db:base_location.view_partner_form
+msgid "Location completion"
+msgstr "Konum tamamlama"
+
+#. module: base_location
+#: model:ir.actions.act_window,name:base_location.action_zip_tree
+msgid "Locations"
+msgstr "Konumlar"
+
+#. module: base_location
+#: model_terms:ir.ui.view,arch_db:base_location.view_city_zip_filter
+msgid "Search zip"
+msgstr "Posta Kodu Arama"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_brand__state_id
+#: model:ir.model.fields,field_description:base_location.field_res_city_zip__state_id
+#: model:ir.model.fields,field_description:base_location.field_res_partner__state_id
+#: model:ir.model.fields,field_description:base_location.field_res_users__state_id
+msgid "State"
+msgstr "İl/Eyalet"
+
+#. module: base_location
+#. odoo-python
+#: code:addons/base_location/models/res_partner.py:0
+#, python-format
+msgid ""
+"The city of the partner %(partner)s differs from that in location "
+"%(location)s"
+msgstr ""
+"%(partner)s müşterisinin şehri %(location)s konumundakinden farklıdır."
+
+#. module: base_location
+#. odoo-python
+#: code:addons/base_location/models/res_partner.py:0
+#, python-format
+msgid ""
+"The country of the partner %(partner)s differs from that in location "
+"%(location)s"
+msgstr ""
+"%(partner)s müşterisinin ülkesi %(location)s konumundakinden farklıdır."
+
+#. module: base_location
+#. odoo-python
+#: code:addons/base_location/models/res_partner.py:0
+#, python-format
+msgid ""
+"The state of the partner %(partner)s differs from that in location "
+"%(location)s"
+msgstr ""
+"%(partner)s müşterisinin eyalet/ili %(location)s konumundakinden farklıdır."
+
+#. module: base_location
+#. odoo-python
+#: code:addons/base_location/models/res_partner.py:0
+#, python-format
+msgid ""
+"The zip of the partner %(partner)s differs from that in location "
+"%(location)s"
+msgstr ""
+"%(partner)s müşterisinin posta kodu %(location)s konumundakinden farklıdır."
+
+#. module: base_location
+#: model:ir.model.fields,help:base_location.field_res_company__zip_id
+msgid "Use the city name or the zip code to search the location"
+msgstr "Konumu aramak için şehir adını veya posta kodunu kullanın"
+
+#. module: base_location
+#: model:ir.model.constraint,message:base_location.constraint_res_city_name_state_country_uniq
+msgid ""
+"You already have a city with that name in the same state.The city must have "
+"a unique name within it's state and it's country"
+msgstr ""
+"Aynı eyalette bu isimde bir şehriniz zaten var. Şehrin adı, kendieyaleti ve "
+"ülkesi içinde benzersiz olmalı"
+
+#. module: base_location
+#: model:ir.model.constraint,message:base_location.constraint_res_city_zip_name_city_uniq
+msgid ""
+"You already have a zip with that code in the same city. The zip code must be"
+" unique within it's city"
+msgstr ""
+"Aynı şehirde bir posta kodunuz zaten var. Posta Kodu, kendişehiri içinde "
+"benzersiz olmalı"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_city_zip__name
+msgid "ZIP"
+msgstr "Posta Kodu"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_brand__zip_id
+#: model:ir.model.fields,field_description:base_location.field_res_company__zip_id
+#: model:ir.model.fields,field_description:base_location.field_res_partner__zip_id
+#: model:ir.model.fields,field_description:base_location.field_res_users__zip_id
+msgid "ZIP Location"
+msgstr "Posta Kodu Konumu"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_brand__zip
+#: model:ir.model.fields,field_description:base_location.field_res_partner__zip
+#: model:ir.model.fields,field_description:base_location.field_res_users__zip
+#: model_terms:ir.ui.view,arch_db:base_location.city_zip_form
+msgid "Zip"
+msgstr "Posta Kodu"
+
+#. module: base_location
+#: model:ir.ui.menu,name:base_location.locations_menu_zips
+#: model_terms:ir.ui.view,arch_db:base_location.view_city_form
+#: model_terms:ir.ui.view,arch_db:base_location.view_res_country_city_better_zip_form
+msgid "Zips"
+msgstr "Posta Kodları"
+
+#. module: base_location
+#: model:ir.model.fields,field_description:base_location.field_res_city__zip_ids
+msgid "Zips in this city"
+msgstr "Şehirlerin Posta Kodları"

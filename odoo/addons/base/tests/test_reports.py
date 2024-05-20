@@ -19,20 +19,20 @@ class TestReports(odoo.tests.TransactionCase):
             'account.report_invoice': invoice_domain,
             'l10n_th.report_commercial_invoice': invoice_domain,
         }
-        Report = self.env['ir.actions.report']
+        Report = self.env['ir.actions.reports']
         for report in Report.search([('report_type', 'like', 'qweb')]):
-            report_model = 'report.%s' % report.report_name
+            report_model = 'reports.%s' % report.report_name
             try:
                 self.env[report_model]
             except KeyError:
                 # Only test the generic reports here
-                _logger.info("testing report %s", report.report_name)
+                _logger.info("testing reports %s", report.report_name)
                 report_model_domain = specific_model_domains.get(report.report_name, [])
                 report_records = self.env[report.model].search(report_model_domain, limit=10)
                 if not report_records:
-                    _logger.info("no record found skipping report %s", report.report_name)
+                    _logger.info("no record found skipping reports %s", report.report_name)
 
-                # Test report generation
+                # Test reports generation
                 if not report.multi:
                     for record in report_records:
                         Report._render_qweb_html(report.id, record.ids)

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2024 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record id="view_sale_order_remark" model="ir.ui.view">
+        <field name="name">sale.order.remark</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="after">
+                <field name="remark"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form/field[@name='name']" position="after">
+                <field name="remark"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

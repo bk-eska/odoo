@@ -4,7 +4,7 @@ from odoo import models, api
 
 
 class MrpStockReport(models.TransientModel):
-    _inherit = 'stock.traceability.report'
+    _inherit = 'stock.traceability.reports'
 
     @api.model
     def _get_reference(self, move_line):

@@ -1,0 +1,252 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_tr_account_document
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-19 08:55+0000\n"
+"PO-Revision-Date: 2024-02-19 08:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_journal__l10n_tr_bank_payment_type__bank
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_journal__l10n_tr_payment_type__bank
+msgid "Bank"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_journal__l10n_tr_bank_payment_type
+msgid "Bank Payment Type"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#. odoo-python
+#: code:addons/l10n_tr_account_document/models/account_move.py:0
+#, python-format
+msgid "Bank Receipt"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#. odoo-python
+#: code:addons/l10n_tr_account_document/models/account_move.py:0
+#, python-format
+msgid "Bank Statement"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_journal__l10n_tr_cash_payment_type__cash
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_journal__l10n_tr_payment_type__cash
+msgid "Cash"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_journal__l10n_tr_cash_payment_type
+msgid "Cash Payment Type"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_journal__l10n_tr_bank_payment_type__check
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_journal__l10n_tr_cash_payment_type__check
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_journal__l10n_tr_payment_type__check
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_move__l10n_tr_document_type__check
+msgid "Check"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_journal__invoice_reference_model
+msgid "Communication Standard"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model,name:l10n_tr_account_document.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_journal__l10n_tr_bank_payment_type__credit_card
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_journal__l10n_tr_payment_type__credit_card
+msgid "Credit Card"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_move__l10n_tr_document_type__order-customer
+msgid "Customer Order"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_bank_statement_line__l10n_tr_delivery_type
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_move__l10n_tr_delivery_type
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_payment__l10n_tr_delivery_type
+msgid "Delivery Type"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_bank_statement_line__l10n_tr_document_date
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_move__l10n_tr_document_date
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_payment__l10n_tr_document_date
+msgid "Document Date"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_bank_statement_line__l10n_tr_document_number
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_move__l10n_tr_document_number
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_payment__l10n_tr_document_number
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_payment_register__l10n_tr_document_number
+msgid "Document Number"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_bank_statement_line__l10n_tr_document_type
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_move__l10n_tr_document_type
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_payment__l10n_tr_document_type
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_document.view_account_move_filter_document
+msgid "Document Type"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_bank_statement_line__l10n_tr_document_type_description
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_move__l10n_tr_document_type_description
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_payment__l10n_tr_document_type_description
+msgid "Document Type Description"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#. odoo-python
+#: code:addons/l10n_tr_account_document/models/account_move.py:0
+#, python-format
+msgid "Freelance"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_move__l10n_tr_document_type__invoice
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_move__l10n_tr_invoice_type__invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#. odoo-python
+#: code:addons/l10n_tr_account_document/models/account_move.py:0
+#, python-format
+msgid "Invoice %s is posted before!"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_bank_statement_line__l10n_tr_invoice_type
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_move__l10n_tr_invoice_type
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_payment__l10n_tr_invoice_type
+msgid "Invoice Type"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model,name:l10n_tr_account_document.model_account_journal
+msgid "Journal"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model,name:l10n_tr_account_document.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model,name:l10n_tr_account_document.model_account_move_line
+msgid "Journal Item"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_move__l10n_tr_document_type__other
+msgid "Other"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_bank_statement_line__l10n_tr_payment_type
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_journal__l10n_tr_payment_type
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_move__l10n_tr_payment_type
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_payment__l10n_tr_payment_type
+#: model_terms:ir.ui.view,arch_db:l10n_tr_account_document.view_move_form_document
+msgid "Payment Type"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#. odoo-python
+#: code:addons/l10n_tr_account_document/models/account_move.py:0
+#, python-format
+msgid "Payment type of journal is invalid!"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#. odoo-python
+#: code:addons/l10n_tr_account_document/models/account_move.py:0
+#, python-format
+msgid "Please enter document number!"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_move__l10n_tr_delivery_type__printed
+msgid "Printed"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_journal__l10n_tr_bank_payment_type__promissory
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_journal__l10n_tr_cash_payment_type__promissory
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_journal__l10n_tr_payment_type__promissory
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_move__l10n_tr_document_type__voucher
+msgid "Promissory Note"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_move__l10n_tr_document_type__receipt
+msgid "Receipt"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model,name:l10n_tr_account_document.model_account_payment_register
+msgid "Register Payment"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_move__l10n_tr_document_type__shipment
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_move__l10n_tr_invoice_type__shipment
+msgid "Shipment"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_journal__invoice_reference_model__tr
+msgid "Turkey"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_bank_statement_line__l10n_tr_use_document
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_journal__l10n_tr_use_document
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_move__l10n_tr_use_document
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_payment__l10n_tr_use_document
+#: model:ir.model.fields,field_description:l10n_tr_account_document.field_account_payment_register__l10n_tr_use_document
+msgid "Turkey Document Fields"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields,help:l10n_tr_account_document.field_account_bank_statement_line__l10n_tr_use_document
+#: model:ir.model.fields,help:l10n_tr_account_document.field_account_journal__l10n_tr_use_document
+#: model:ir.model.fields,help:l10n_tr_account_document.field_account_move__l10n_tr_use_document
+#: model:ir.model.fields,help:l10n_tr_account_document.field_account_payment__l10n_tr_use_document
+#: model:ir.model.fields,help:l10n_tr_account_document.field_account_payment_register__l10n_tr_use_document
+msgid "Use document features compliant with Turkey localization"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields.selection,name:l10n_tr_account_document.selection__account_move__l10n_tr_document_type__order-vendor
+msgid "Vendor Order"
+msgstr ""
+
+#. module: l10n_tr_account_document
+#: model:ir.model.fields,help:l10n_tr_account_document.field_account_journal__invoice_reference_model
+msgid ""
+"You can choose different models for each type of reference. The default one "
+"is the Odoo reference."
+msgstr ""

@@ -1,0 +1,350 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* password_security
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-20 07:50+0000\n"
+"PO-Revision-Date: 2023-06-20 07:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: password_security
+#. odoo-python
+#: code:addons/password_security/models/res_users.py:0
+#, python-format
+msgid ""
+"\n"
+"* Lowercase letter (at least %s characters)"
+msgstr ""
+"\n"
+"* Küçük harf (en az %s karakter)"
+
+#. module: password_security
+#. odoo-python
+#: code:addons/password_security/models/res_users.py:0
+#, python-format
+msgid ""
+"\n"
+"* Numeric digit (at least %s characters)"
+msgstr ""
+"\n"
+"* Sayısal rakam (en az %s karakter)"
+
+#. module: password_security
+#. odoo-python
+#: code:addons/password_security/models/res_users.py:0
+#, python-format
+msgid ""
+"\n"
+"* Special character (at least %s characters)"
+msgstr ""
+"\n"
+"* Özel karakter (en az %s karakter)"
+
+#. module: password_security
+#. odoo-python
+#: code:addons/password_security/models/res_users.py:0
+#, python-format
+msgid ""
+"\n"
+"* Uppercase letter (at least %s characters)"
+msgstr ""
+"\n"
+"* Büyük harf (en az %s karakter)"
+
+#. module: password_security
+#: model:ir.model.fields,help:password_security.field_res_company__password_minimum
+#: model:ir.model.fields,help:password_security.field_res_config_settings__password_minimum
+msgid "Amount of hours until a user may change password again"
+msgstr "Kullanıcının parolayı tekrar değiştirebilmesi için geçen saat miktarı"
+
+#. module: password_security
+#. odoo-python
+#: code:addons/password_security/models/res_users.py:0
+#, python-format
+msgid "Cannot use the most recent %d passwords"
+msgstr "En yeni %d parola kullanılamaz"
+
+#. module: password_security
+#. odoo-python
+#: code:addons/password_security/models/res_users.py:0
+#, python-format
+msgid "Choose a stronger password!"
+msgstr "Daha güçlü bir parola seçin!"
+
+#. module: password_security
+#: model:ir.model,name:password_security.model_res_company
+msgid "Companies"
+msgstr "Şirketler"
+
+#. module: password_security
+#: model:ir.model,name:password_security.model_res_config_settings
+msgid "Config Settings"
+msgstr "Yapılandırma Ayarları"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_users_pass_history__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_users_pass_history__create_date
+msgid "Created on"
+msgstr "Oluşturuldu"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_users_pass_history__date
+msgid "Date"
+msgstr "Tarih"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_expiration
+#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_expiration
+msgid "Days"
+msgstr "Günler"
+
+#. module: password_security
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "Disallow reuse of"
+msgstr "Yeniden kullanımına izin verme"
+
+#. module: password_security
+#: model:ir.model.fields,help:password_security.field_res_company__password_history
+#: model:ir.model.fields,help:password_security.field_res_config_settings__password_history
+msgid ""
+"Disallow reuse of this many previous passwords - use negative number for "
+"infinite, or 0 to disable"
+msgstr "Bu kadar çok önceki parolanın yeniden kullanılmasına izin verme - sonsuz için negatif sayı kullanın veya devre dışı bırakmak için 0 kullanın"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_users_pass_history__display_name
+msgid "Display Name"
+msgstr "Görünen İsim"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_users_pass_history__password_crypt
+msgid "Encrypted Password"
+msgstr "Şifreli Şifre"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_estimate
+#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_estimate
+msgid "Estimation"
+msgstr "Değerlendirme"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_history
+#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_history
+msgid "History"
+msgstr "Geçmiş"
+
+#. module: password_security
+#: model:ir.model.fields,help:password_security.field_res_company__password_expiration
+#: model:ir.model.fields,help:password_security.field_res_config_settings__password_expiration
+msgid "How many days until passwords expire"
+msgstr "Parolaların süresinin dolmasına kalan gün"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_users_pass_history__id
+msgid "ID"
+msgstr "ID"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_users_pass_history____last_update
+msgid "Last Modified on"
+msgstr "Son değişiklik"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_users_pass_history__write_uid
+msgid "Last Updated by"
+msgstr "Son güncelleyen"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_users_pass_history__write_date
+msgid "Last Updated on"
+msgstr "Son güncellenme"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_users__password_write_date
+msgid "Last password update"
+msgstr "Son şifre güncellemesi"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_lower
+#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_lower
+msgid "Lowercase"
+msgstr "Küçük harf"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_minimum
+#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_minimum
+msgid "Minimum Hours"
+msgstr "Minimum Saat"
+
+#. module: password_security
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "Minimum number of characters"
+msgstr "Minimum karakter sayısı"
+
+#. module: password_security
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "Minimum number of lowercase characters"
+msgstr "Minimum küçük harf karakter sayısı"
+
+#. module: password_security
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "Minimum number of numeric characters"
+msgstr "Minimum sayısal karakter sayısı"
+
+#. module: password_security
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "Minimum number of special characters"
+msgstr "Minimum özel karakter sayısı"
+
+#. module: password_security
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "Minimum number of strength estimation"
+msgstr "Minimum güç değerlendirmesi sayısı"
+
+#. module: password_security
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "Minimum number of uppercase characters"
+msgstr "Minimum büyük harf karakter sayısı"
+
+#. module: password_security
+#. odoo-python
+#: code:addons/password_security/models/res_users.py:0
+#, python-format
+msgid "Must contain the following:"
+msgstr "Aşağıdakileri içermelidir:"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_numeric
+#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_numeric
+msgid "Numeric"
+msgstr "Sayısal"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_users__password_history_ids
+msgid "Password History"
+msgstr "Şifre Geçmişi"
+
+#. module: password_security
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "Password Policy"
+msgstr "Şifre politikası"
+
+#. module: password_security
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "Password expires in"
+msgstr "Şifre süresi dolma zamanı"
+
+#. module: password_security
+#. odoo-python
+#: code:addons/password_security/models/res_users.py:0
+#, python-format
+msgid "Password must be %d characters or more."
+msgstr "Parola %d karakter veya daha fazla olmalıdır."
+
+#. module: password_security
+#. odoo-python
+#: code:addons/password_security/models/res_users.py:0
+#, python-format
+msgid ""
+"Passwords can only be reset every %d hour(s). Please contact an "
+"administrator for assistance."
+msgstr ""
+"Şifreler yalnızca %d saatte bir sıfırlanabilir."
+" Lütfen yardım için bir yönetici ile iletişime geçin."
+
+#. module: password_security
+#: model:ir.model.fields,help:password_security.field_res_company__password_lower
+#: model:ir.model.fields,help:password_security.field_res_config_settings__password_lower
+msgid "Require number of lowercase letters"
+msgstr "Küçük harf sayısını zorunlu kıl"
+
+#. module: password_security
+#: model:ir.model.fields,help:password_security.field_res_company__password_numeric
+#: model:ir.model.fields,help:password_security.field_res_config_settings__password_numeric
+msgid "Require number of numeric digits"
+msgstr "Sayısal hane sayısını zorunlu kıl"
+
+#. module: password_security
+#: model:ir.model.fields,help:password_security.field_res_company__password_special
+#: model:ir.model.fields,help:password_security.field_res_config_settings__password_special
+msgid "Require number of unique special characters"
+msgstr "Benzersiz özel karakterlerin sayısını zorunlu kıl"
+
+#. module: password_security
+#: model:ir.model.fields,help:password_security.field_res_company__password_upper
+#: model:ir.model.fields,help:password_security.field_res_config_settings__password_upper
+msgid "Require number of uppercase letters"
+msgstr "Büyük harf sayısını zorunlu kıl"
+
+#. module: password_security
+#: model:ir.model.fields,help:password_security.field_res_company__password_estimate
+#: model:ir.model.fields,help:password_security.field_res_config_settings__password_estimate
+msgid "Required score for the strength estimation. Between 0 and 4"
+msgstr "Güç değerlendirmesi için gerekli puan. 0 ile 4 arasında"
+
+#. module: password_security
+#: model:ir.model,name:password_security.model_res_users_pass_history
+msgid "Res Users Password History"
+msgstr "Kullanıcılar Şifre Geçmişi"
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_special
+#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_special
+msgid "Special"
+msgstr "Özel"
+
+#. module: password_security
+#. odoo-python
+#: code:addons/password_security/models/res_company.py:0
+#, python-format
+msgid "The estimation must be between 0 and 4."
+msgstr "Değerlendirme 0 ve 4 arasında olmalıdır."
+
+#. module: password_security
+#: model:ir.model.fields,field_description:password_security.field_res_company__password_upper
+#: model:ir.model.fields,field_description:password_security.field_res_config_settings__password_upper
+msgid "Uppercase"
+msgstr "Büyük harf"
+
+#. module: password_security
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "Use negative number for infinite, or 0 to disable"
+msgstr "Sonsuz için negatif sayı kullanın veya devre dışı bırakmak için 0 kullanın"
+
+#. module: password_security
+#: model:ir.model,name:password_security.model_res_users
+#: model:ir.model.fields,field_description:password_security.field_res_users_pass_history__user_id
+msgid "User"
+msgstr "Kullanıcı"
+
+#. module: password_security
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "User can change password in"
+msgstr "Kullanıcı şifreyi bu zamanda değiştirebilir"
+
+#. module: password_security
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "days."
+msgstr "gün"
+
+#. module: password_security
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "hours again."
+msgstr "tekrar saat."
+
+#. module: password_security
+#: model_terms:ir.ui.view,arch_db:password_security.res_config_settings_view_form
+msgid "previous passwords."
+msgstr "önceki şifreler."

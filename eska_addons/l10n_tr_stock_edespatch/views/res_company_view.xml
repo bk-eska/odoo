@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2015 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).-->
+<odoo>
+    <record id="view_company_form_edespatch" model="ir.ui.view">
+        <field name="name">res.company.form.edespatch</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="E-Despatch"
+                      attrs="{'invisible':[('l10n_tr_use_document', '=', False)]}">
+                    <group>
+                        <group>
+                            <field name="l10n_tr_edespatch_enabled"/>
+                        </group>
+                        <group attrs="{'invisible':[('l10n_tr_edespatch_enabled', '=', False)]}">
+                            <field name="l10n_tr_edespatch_user_download"/>
+                        </group>
+                    </group>
+                    <group attrs="{'invisible':[('l10n_tr_edespatch_enabled','=', False)]}">
+                        <group string="Senders">
+                            <field name="l10n_tr_edespatch_sender_ids" colspan="2" nolabel="1">
+                                <tree string="Senders" editable="bottom">
+                                    <field name="name"/>
+                                    <field name="date_last_check"/>
+                                    <button name="get_receipts"
+                                            type="object"
+                                            string="Get Receipts"
+                                            class="oe_highlight"/>
+                                    <button name="update_despatches"
+                                            type="object"
+                                            string="Update Despatches"
+                                            class="oe_highlight"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group string="Postboxes">
+                            <field name="l10n_tr_edespatch_postbox_ids" colspan="2" nolabel="1">
+                                <tree string="Postboxes" editable="bottom">
+                                    <field name="name"/>
+                                    <field name="picking_type_id"
+                                           domain="[('code', '=', 'incoming')]"/>
+                                    <field name="date_last_check"/>
+                                    <button name="get_despatches"
+                                            type="object"
+                                            string="Get Despatches"
+                                            class="oe_highlight"/>
+                                    <button name="update_despatches"
+                                            type="object"
+                                            string="Update Despatches"
+                                            class="oe_highlight"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

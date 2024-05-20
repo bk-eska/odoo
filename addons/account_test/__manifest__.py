@@ -15,15 +15,15 @@ With this module you can manually check consistencies and inconsistencies of acc
 
 You can write a query in order to create Consistency Test and you will get the result of the test 
 in PDF format which can be accessed by Menu Reporting -> Accounting Tests, then select the test 
-and print the report from Print button in header area.
+and print the reports from Print button in header area.
 """,
     'depends': ['account'],
     'data': [
         'security/ir.model.access.csv',
         'views/accounting_assert_test_views.xml',
-        'report/accounting_assert_test_reports.xml',
+        'reports/accounting_assert_test_reports.xml',
         'data/accounting_assert_test_data.xml',
-        'report/report_account_test_templates.xml',
+        'reports/report_account_test_templates.xml',
     ],
     'installable': True,
     'license': 'LGPL-3',

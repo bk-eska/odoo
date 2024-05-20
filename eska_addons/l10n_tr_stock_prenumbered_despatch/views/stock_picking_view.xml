@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="despatch_stock_picking_form" model="ir.ui.view">
+        <field name="name">stock.picking.despatch.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_assign']" position="after">
+                <button name="action_assign_number"
+                        string="Assign Number"
+                        type="object"
+                        attrs="{'invisible':['|', '|', '|', '|',
+                        ('l10n_tr_despatch_number_sequence','=', False),
+                        ('l10n_tr_use_document', '=', False),
+                        ('state', 'in', ['done', 'cancel']),
+                        ('picking_type_code', '=', 'incoming'),
+                        ('l10n_tr_document_type','!=','printed')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="l10n_tr_despatch_number_sequence"
+                       domain="[('code', '=', 'stock.picking'),
+                       ('company_id', '=', company_id)]"
+                       attrs="{'invisible':['|',
+                       ('l10n_tr_use_document', '=', False),
+                       ('l10n_tr_document_type','!=','printed')]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

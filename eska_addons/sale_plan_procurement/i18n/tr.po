@@ -1,0 +1,254 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sale_plan_procurement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-01 19:08+0000\n"
+"PO-Revision-Date: 2024-02-01 19:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields.selection,name:sale_plan_procurement.selection__sale_purchase_generate_wizard__generate_type__automatic
+msgid "Automatic (Product + Category)"
+msgstr "Otomatik (Ürün + Kategori)"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_order_line__stock_available_qty
+msgid "Available Quantity"
+msgstr "Mevcut Miktar"
+
+#. module: sale_plan_procurement
+#: model_terms:ir.ui.view,arch_db:sale_plan_procurement.sale_purchase_generate_wizard_form
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: sale_plan_procurement
+#: model:ir.model,name:sale_plan_procurement.model_res_partner
+msgid "Contact"
+msgstr "Temas"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_purchase_generate_wizard__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_purchase_generate_wizard__create_date
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_purchase_generate_wizard__display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: sale_plan_procurement
+#: model_terms:ir.ui.view,arch_db:sale_plan_procurement.sale_purchase_generate_wizard_form
+msgid "Generate"
+msgstr "Oluştur"
+
+#. module: sale_plan_procurement
+#: model:ir.actions.act_window,name:sale_plan_procurement.sale_purchase_generate_wizard_action
+msgid "Generate Purchase"
+msgstr "Satınalma Oluştur"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_order_line__purchase_line_ids
+msgid "Generated Purchase Lines"
+msgstr "Oluşturulan Satınalma Siparişi"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_purchase_generate_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,help:sale_plan_procurement.field_sale_order_line__unit_cost
+msgid ""
+"In Standard Price & AVCO: value of the product (automatically computed in AVCO).\n"
+"        In FIFO: value of the next unit that will leave the stock (automatically computed).\n"
+"        Used to value the product when the purchase cost is not known (e.g. inventory adjustment).\n"
+"        Used to compute margins on sale orders."
+msgstr ""
+"Standart Fiyat ve AVCO'da: ürünün değeri (AVCO'da otomatik olarak hesaplanır).\n"
+"FIFO'da: stoktan ayrılacak bir sonraki birimin değeri (otomatik olarak hesaplanır).\n"
+"Satın alma maliyeti bilinmediğinde (örneğin sayım farkları) ürünü değerlendirmek için kullanılır.\n"
+"Satış siparişlerindeki marjları hesaplamak için kullanılır."
+
+#. module: sale_plan_procurement
+#: model_terms:ir.ui.view,arch_db:sale_plan_procurement.view_order_line_form_procurement
+msgid "Inventory"
+msgstr "Stok"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_purchase_generate_wizard____last_update
+msgid "Last Modified on"
+msgstr "Son Düzenleme"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_purchase_generate_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_purchase_generate_wizard__write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields.selection,name:sale_plan_procurement.selection__sale_purchase_generate_wizard__generate_type__manual
+msgid "Manual"
+msgstr "Manuel"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_purchase_generate_wizard__generate_type
+msgid "Mode"
+msgstr "Mod"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_purchase_order_line__planned_qty
+msgid "Planned Qty"
+msgstr "Planlanan Miktar"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_order_line__planned_stock_qty
+msgid "Planned Stock Qty"
+msgstr "Planlanan Stok Miktarı"
+
+#. module: sale_plan_procurement
+#: model_terms:ir.ui.view,arch_db:sale_plan_procurement.view_order_form_inherit_sale_plan_procurement
+msgid "Procurement"
+msgstr "Tedarik"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_order_line__procurement_summary
+msgid "Procurement Summary"
+msgstr "Tedarik Özeti"
+
+#. module: sale_plan_procurement
+#: model:ir.model,name:sale_plan_procurement.model_product_template
+msgid "Product"
+msgstr "Ürün"
+
+#. module: sale_plan_procurement
+#. odoo-python
+#: code:addons/sale_plan_procurement/wizard/sale_purchase_generate_wizard.py:0
+#, python-format
+msgid "Product %s does not have any vendor on it and on category of it"
+msgstr "%s ürününde ve kategorisinde tanımlı tedarikçi bulunmuyor!"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_res_partner__product_categ_ids
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_res_users__product_categ_ids
+msgid "Product Categories"
+msgstr "Ürün Kategorileri"
+
+#. module: sale_plan_procurement
+#: model:ir.model,name:sale_plan_procurement.model_product_category
+msgid "Product Category"
+msgstr "Ürün Kategorisi"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_res_partner__product_template_ids
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_res_users__product_template_ids
+msgid "Products"
+msgstr "Ürünler"
+
+#. module: sale_plan_procurement
+#: model_terms:ir.ui.view,arch_db:sale_plan_procurement.sale_purchase_generate_wizard_form
+msgid "Purchase Generate"
+msgstr "Satınalma Oluştur"
+
+#. module: sale_plan_procurement
+#: model:ir.model,name:sale_plan_procurement.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Satınalma Sipariş Satırı"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,help:sale_plan_procurement.field_sale_order_line__purchase_line_ids
+msgid ""
+"Purchase line generated by this Sales item on order confirmation, or when "
+"the quantity was increased."
+msgstr ""
+"Sipariş onayı veya miktar artırıldığında satış kalemi tarafından oluşturulan"
+" satın alma kalemi."
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_order_line__product_uom_qty
+msgid "Quantity"
+msgstr "Miktar"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_order_line__requested_qty
+msgid "Requested Qty"
+msgstr "Talep Edilen Miktar"
+
+#. module: sale_plan_procurement
+#. odoo-python
+#: code:addons/sale_plan_procurement/models/sale_order.py:0
+#, python-format
+msgid "Sale Order Line"
+msgstr "Satış Siparişi Satırı"
+
+#. module: sale_plan_procurement
+#: model:ir.model,name:sale_plan_procurement.model_sale_purchase_generate_wizard
+msgid "Sale Purchase Generate Wizard"
+msgstr "Satış Satınalma Olulturma Sihirbazı"
+
+#. module: sale_plan_procurement
+#: model:ir.model,name:sale_plan_procurement.model_sale_order
+msgid "Sales Order"
+msgstr "Satış Siparişi"
+
+#. module: sale_plan_procurement
+#: model:ir.model,name:sale_plan_procurement.model_sale_order_line
+#: model_terms:ir.ui.view,arch_db:sale_plan_procurement.view_order_line_form_procurement
+msgid "Sales Order Line"
+msgstr "Satış Sipariş Satırı"
+
+#. module: sale_plan_procurement
+#: model_terms:ir.ui.view,arch_db:sale_plan_procurement.view_order_line_tree_procurement
+msgid "Sales Order Lines"
+msgstr "Satış Siparişleri Satırları"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_order_line__stock_qty
+msgid "Stock Quantity"
+msgstr "Stok Miktarı"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_order_line__unit_cost
+msgid "Stock Unit Cost"
+msgstr "Stok Birim Maliyet"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_order_line__total_planned_qty
+msgid "Total Planned Qty"
+msgstr "Toplam Planlanan Miktar"
+
+#. module: sale_plan_procurement
+#: model_terms:ir.ui.view,arch_db:sale_plan_procurement.view_order_line_form_procurement
+#: model_terms:ir.ui.view,arch_db:sale_plan_procurement.view_order_line_tree_procurement
+msgid "Unit Cost"
+msgstr "Birim Maliyet"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_sale_purchase_generate_wizard__partner_id
+msgid "Vendor"
+msgstr "Tedarikçi"
+
+#. module: sale_plan_procurement
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_product_category__vendor_ids
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_product_product__vendor_ids
+#: model:ir.model.fields,field_description:sale_plan_procurement.field_product_template__vendor_ids
+#: model_terms:ir.ui.view,arch_db:sale_plan_procurement.product_category_form_view_inherit_vendor
+msgid "Vendors"
+msgstr "Tedarikçiler"

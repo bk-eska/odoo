@@ -1,0 +1,28 @@
+# Copyright 2021 Eska Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+
+from odoo import fields, models
+
+
+class ResCounty(models.Model):
+    _name = 'res.county'
+    _description = "Counties"
+    _order = 'state_id,name'
+
+    name = fields.Char(
+        string='Name',
+        required=True
+    )
+    code = fields.Char(
+        string='Code'
+    )
+    state_id = fields.Many2one(
+        comodel_name='res.country.state',
+        string='State',
+        required=True
+    )
+    city_ids = fields.One2many(
+        comodel_name='res.city',
+        inverse_name='county_id',
+        string='Cities'
+    )

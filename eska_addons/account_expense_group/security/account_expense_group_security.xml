@@ -1,0 +1,13 @@
+<!-- Copyright 2023 ESKA Yazılım ve Danışmanlık A.Ş (www.eskayazilim.com.tr)
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).-->
+<odoo>
+    <data noupdate="1">
+        <record id="account_expense_group_comp_rule" model="ir.rule">
+            <field name="name">Expense group multi company rule</field>
+            <field name="model_id"
+                   ref="account_expense_group.model_account_expense_group"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id','in',company_ids)]</field>
+        </record>
+    </data>
+</odoo>

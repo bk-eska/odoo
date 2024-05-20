@@ -146,7 +146,7 @@ class MassMailController(http.Controller):
     # MAILING MANAGEMENT
     # ------------------------------------------------------------
 
-    @http.route('/mailing/report/unsubscribe', type='http', website=True, auth='public')
+    @http.route('/mailing/reports/unsubscribe', type='http', website=True, auth='public')
     def turn_off_mailing_reports(self, token, user_id):
         if not token or not user_id:
             raise NotFound()
