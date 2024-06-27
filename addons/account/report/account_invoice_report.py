@@ -7,7 +7,7 @@ from functools import lru_cache
 
 
 class AccountInvoiceReport(models.Model):
-    _name = "account.invoice.reports"
+    _name = "account.invoice.report"
     _description = "Invoices Statistics"
     _auto = False
     _rec_name = 'invoice_date'
@@ -135,8 +135,8 @@ class AccountInvoiceReport(models.Model):
 
 
 class ReportInvoiceWithoutPayment(models.AbstractModel):
-    _name = 'reports.account.report_invoice'
-    _description = 'Account reports without payment lines'
+    _name = 'report.account.report_invoice'
+    _description = 'Account report without payment lines'
 
     @api.model
     def _get_report_values(self, docids, data=None):
@@ -157,9 +157,9 @@ class ReportInvoiceWithoutPayment(models.AbstractModel):
         }
 
 class ReportInvoiceWithPayment(models.AbstractModel):
-    _name = 'reports.account.report_invoice_with_payments'
-    _description = 'Account reports with payment lines'
-    _inherit = 'reports.account.report_invoice'
+    _name = 'report.account.report_invoice_with_payments'
+    _description = 'Account report with payment lines'
+    _inherit = 'report.account.report_invoice'
 
     @api.model
     def _get_report_values(self, docids, data=None):

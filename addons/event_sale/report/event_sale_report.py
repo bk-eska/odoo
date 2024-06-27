@@ -5,9 +5,9 @@ from odoo import fields, models, tools
 
 
 class EventSaleReport(models.Model):
-    """Event Registrations-based sales reports, allowing to analyze sales and number of seats
+    """Event Registrations-based sales report, allowing to analyze sales and number of seats
     by event (type), ticket, etc. Each opened record will also give access to all this information."""
-    _name = 'event.sale.reports'
+    _name = 'event.sale.report'
     _description = 'Event Sales Report'
     _auto = False
     _rec_name = 'sale_order_line_id'

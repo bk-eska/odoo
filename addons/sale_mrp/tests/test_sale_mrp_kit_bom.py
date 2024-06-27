@@ -416,7 +416,7 @@ class TestSaleMrpKitBom(TransactionCase):
                 - Compo 1
 
         This test ensures that, when delivering a Kit product with a sales description,
-        the delivery reports is correctly printed with all the products.
+        the delivery report is correctly printed with all the products.
         """
         kit_1, component_1, product_1, kit_3, kit_4 = self.env['product.product'].create([{
             'name': n,
@@ -515,7 +515,7 @@ class TestSaleMrpKitBom(TransactionCase):
         picking.button_validate()
         self.assertEqual(picking.state, 'done')
 
-        html_report = self.env['ir.actions.reports']._render_qweb_html('stock.report_deliveryslip', picking.ids)[0].decode('utf-8').split('\n')
+        html_report = self.env['ir.actions.report']._render_qweb_html('stock.report_deliveryslip', picking.ids)[0].decode('utf-8').split('\n')
         keys = [
             "Kit 1", "Compo 1", "Kit 2 (red)", "Compo 1", "Kit 2 (blue)", "Compo 1",
             "Kit 3", "Compo 1", "Kit 4", "Compo 1",
@@ -526,4 +526,4 @@ class TestSaleMrpKitBom(TransactionCase):
                 break
             if keys[0] in line:
                 keys = keys[1:]
-        self.assertFalse(keys, "All keys should be in the reports with the defined order")
+        self.assertFalse(keys, "All keys should be in the report with the defined order")

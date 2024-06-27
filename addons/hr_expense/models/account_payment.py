@@ -49,7 +49,7 @@ class AccountPayment(models.Model):
     def _synchronize_to_moves(self, changed_fields):
         # EXTENDS account
         if self.expense_sheet_id:
-            raise UserError(_("You cannot do this modification since the payment is linked to an expense reports."))
+            raise UserError(_("You cannot do this modification since the payment is linked to an expense report."))
         return super()._synchronize_to_moves(changed_fields)
 
     def _creation_message(self):

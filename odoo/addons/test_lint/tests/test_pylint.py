@@ -68,7 +68,7 @@ class TestPyLint(TransactionCase):
             '--rcfile=%s' % os.devnull,
             '--disable=all',
             '--enable=%s' % ','.join(self.ENABLED_CODES),
-            '--reports=n',
+            '--report=n',
             "--msg-template='{msg} ({msg_id}) at {path}:{line}'",
             '--load-plugins=pylint.extensions.bad_builtin,_odoo_checker_sql_injection,_odoo_checker_gettext,_odoo_checker_unlink_override',
             '--bad-functions=%s' % ','.join(self.BAD_FUNCTIONS),

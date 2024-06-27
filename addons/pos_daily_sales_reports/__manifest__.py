@@ -7,10 +7,10 @@
     'version': '1.0',
     'category': 'Point of Sale',
     'sequence': 6,
-    'summary': 'Daily X and Z sales reports of a Point of Sale session',
+    'summary': 'Daily X and Z sales report of a Point of Sale session',
     'description': """
 
-This module allows the cashier to quickly print a X and a Z sale reports
+This module allows the cashier to quickly print a X and a Z sale report
 for a given session or a Sales Details for multiple sessions
 and configs.
 

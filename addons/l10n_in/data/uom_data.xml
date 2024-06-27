@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="1">
     <!--
-        l10n_in_code use in export GSTR hsn section reports.
+        l10n_in_code use in export GSTR hsn section report.
     -->
     <record id="uom.product_uom_unit" model="uom.uom">
         <field name="l10n_in_code">UNT-UNITS</field>

@@ -29,7 +29,7 @@ class AccountMove(models.Model):
         return rslt
 
     def _get_invoiced_lot_values(self):
-        """ Get and prepare data to show a table of invoiced lot on the invoice's reports. """
+        """ Get and prepare data to show a table of invoiced lot on the invoice's report. """
         self.ensure_one()
 
         res = super(AccountMove, self)._get_invoiced_lot_values()
@@ -106,7 +106,7 @@ class AccountMove(models.Model):
                 'quantity': formatLang(self.env, invoiced_lot_qty, dp='Product Unit of Measure'),
                 'uom_name': lot.product_uom_id.name,
                 'lot_name': lot.name,
-                # The lot id is needed by localizations to inherit the method and add custom fields on the invoice's reports.
+                # The lot id is needed by localizations to inherit the method and add custom fields on the invoice's report.
                 'lot_id': lot.id,
             })
 

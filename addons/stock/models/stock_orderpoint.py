@@ -290,7 +290,7 @@ class StockWarehouseOrderpoint(models.Model):
 
     def _set_default_route_id(self):
         """ Write the `route_id` field on `self`. This method is intendend to be called on the
-        orderpoints generated when openning the replenish reports.
+        orderpoints generated when openning the replenish report.
         """
         self = self.filtered(lambda o: not o.route_id)
         rules_groups = self.env['stock.rule']._read_group([
@@ -322,18 +322,18 @@ class StockWarehouseOrderpoint(models.Model):
     def _get_orderpoint_action(self):
         """Create manual orderpoints for missing product in each warehouses. It also removes
         orderpoints that have been replenish. In order to do it:
-        - It uses the reports.stock.quantity to find missing quantity per product/warehouse
+        - It uses the report.stock.quantity to find missing quantity per product/warehouse
         - It checks if orderpoint already exist to refill this location.
         - It checks if it exists other sources (e.g RFQ) tha refill the warehouse.
         - It creates the orderpoints for missing quantity that were not refill by an upper option.
 
-        return replenish reports ir.actions.act_window
+        return replenish report ir.actions.act_window
         """
         action = self.env["ir.actions.actions"]._for_xml_id("stock.action_orderpoint_replenish")
         action['context'] = self.env.context
         # Search also with archived ones to avoid to trigger product_location_check SQL constraints later
         # It means that when there will be a archived orderpoint on a location + product, the replenishment
-        # reports won't take in account this location + product and it won't create any manual orderpoint
+        # report won't take in account this location + product and it won't create any manual orderpoint
         # In master: the active field should be remove
         orderpoints = self.env['stock.warehouse.orderpoint'].with_context(active_test=False).search([])
         # Remove previous automatically created orderpoint that has been refilled.

@@ -5,7 +5,7 @@ from odoo import api, fields, models, tools
 
 
 class PosOrderReport(models.Model):
-    _name = "reports.pos.order"
+    _name = "report.pos.order"
     _description = "Point of Sale Orders Report"
     _auto = False
     _order = 'date desc'

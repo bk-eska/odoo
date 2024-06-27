@@ -790,7 +790,7 @@ class TestPurchaseMrpFlow(AccountTestInvoicingCommon):
         self.assertEqual(mo.date_planned_start.date(), fields.Date.today())
 
     def test_bom_report_incoming_po(self):
-        """ Test reports bom structure with duplicated components
+        """ Test report bom structure with duplicated components
             With enough stock for the first line and two incoming
             POs for the second line and third line.
         """
@@ -840,7 +840,7 @@ class TestPurchaseMrpFlow(AccountTestInvoicingCommon):
 
         po_today.button_confirm()
         po_5days.button_confirm()
-        report_values = self.env['reports.mrp.report_bom_structure']._get_report_data(bom_id=bom.id)
+        report_values = self.env['report.mrp.report_bom_structure']._get_report_data(bom_id=bom.id)
         line1_values = report_values['lines']['components'][0]
         line2_values = report_values['lines']['components'][1]
         line3_values = report_values['lines']['components'][2]
@@ -850,7 +850,7 @@ class TestPurchaseMrpFlow(AccountTestInvoicingCommon):
         self.assertEqual(line2_values['availability_delay'], 0, 'The second component should be expected for today.')
 
     def test_bom_report_incoming_po2(self):
-        """ Test reports bom structure with duplicated components
+        """ Test report bom structure with duplicated components
             With an incoming PO for the first and second line.
         """
         uom_unit = self.env.ref('uom.product_uom_unit')
@@ -886,7 +886,7 @@ class TestPurchaseMrpFlow(AccountTestInvoicingCommon):
             line.price_unit = 10
         po_today = f.save()
         po_today.button_confirm()
-        report_values = self.env['reports.mrp.report_bom_structure']._get_report_data(bom_id=bom.id)
+        report_values = self.env['report.mrp.report_bom_structure']._get_report_data(bom_id=bom.id)
         line1_values = report_values['lines']['components'][0]
         line2_values = report_values['lines']['components'][1]
         self.assertEqual(line1_values['availability_state'], 'expected', 'The first component should be expected as there is an incoming PO.')

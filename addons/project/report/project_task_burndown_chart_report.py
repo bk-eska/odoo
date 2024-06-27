@@ -51,7 +51,7 @@ def remove_domain_leaf(domain, fields_to_remove):
 
 
 class ReportProjectTaskBurndownChart(models.AbstractModel):
-    _name = 'project.task.burndown.chart.reports'
+    _name = 'project.task.burndown.chart.report'
     _description = 'Burndown Chart'
     _auto = False
     _order = 'date'
@@ -287,7 +287,7 @@ class ReportProjectTaskBurndownChart(models.AbstractModel):
     @api.model
     def _determine_domains(self, domain):
         """ Compute two separated domain from the provided one:
-        * A domain that only contains fields that are specific to `project.task.burndown.chart.reports`
+        * A domain that only contains fields that are specific to `project.task.burndown.chart.report`
         * A domain that only contains fields that are specific to `project.task`
 
         Fields that are not part of the constraint are replaced by either a `FALSE_LEAF` or a `TRUE_LEAF` in order
@@ -304,8 +304,8 @@ class ReportProjectTaskBurndownChart(models.AbstractModel):
     @api.model
     def _read_group_raw(self, domain, fields, groupby, offset=0, limit=None, orderby=False, lazy=True):
         """ Although not being a good practice, this code is, for a big part, duplicated from `read_group_raw` from
-        `models.py`. In order to be able to use the reports on big databases, it is necessary to inject `WHERE`
-        statements at the lowest levels in the reports `SQL`. As a result, using a view was no more an option as
+        `models.py`. In order to be able to use the report on big databases, it is necessary to inject `WHERE`
+        statements at the lowest levels in the report `SQL`. As a result, using a view was no more an option as
         `Postgres` could not optimise the `SQL`.
         The code of `fill_temporal` has been removed from what's available in `models.py` as it is not relevant in the
         context of the Burndown Chart. Indeed, series are generated so no empty are returned by the `SQL`, except if
@@ -395,7 +395,7 @@ class ReportProjectTaskBurndownChart(models.AbstractModel):
             select_terms.append('%s as "%s" ' % (gb['qualified_field'], gb['groupby']))
 
         # --- Below code is custom
-        # --- As the reports is base on `project.task` we flush that specific model
+        # --- As the report is base on `project.task` we flush that specific model
 
         # self._flush_search(domain, fields=fnames + groupby_fields)
         self.env['project.task']._flush_search(task_specific_domain, fields=self.task_specific_fields)

@@ -76,7 +76,7 @@ class AccountEdiFormat(models.Model):
             return False
 
         invoice_lines_tags = invoice.line_ids.tax_tag_ids
-        it_tax_report_vj_lines = self.env['account.reports.line'].search([
+        it_tax_report_vj_lines = self.env['account.report.line'].search([
             ('report_id.country_id.code', '=', 'IT'),
             ('code', 'like', 'VJ%'),
         ])
@@ -229,7 +229,7 @@ class AccountEdiFormat(models.Model):
             have not passed customs.
         """
         invoice_lines_tags = invoice.line_ids.tax_tag_ids
-        it_tax_report_vj3_lines = self.env['account.reports.line'].search([
+        it_tax_report_vj3_lines = self.env['account.report.line'].search([
             ('report_id.country_id.code', '=', 'IT'),
             ('code', '=', 'VJ3'),
         ])
@@ -1109,7 +1109,7 @@ class AccountEdiFormat(models.Model):
                 if invoice._is_commercial_partner_pa():
                     to_return[invoice] = {'error': _(
                         'The invoice has been issued, but the delivery to the Public Administration'
-                        ' has failed. The Exchange System will contact them to reports the problem'
+                        ' has failed. The Exchange System will contact them to report the problem'
                         ' and request that they provide a solution.'
                         ' During the following 10 days, the Exchange System will try to forward the'
                         ' FatturaPA file to the Public Administration in question again.'

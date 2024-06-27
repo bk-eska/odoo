@@ -1256,8 +1256,8 @@ class MassMailing(models.Model):
 
     def _get_unsubscribe_token(self, user_id):
         """Generate a secure hash for this user. It allows to opt out from
-        mailing reports while keeping some security in that process. """
-        return tools.hmac(self.env(su=True), 'mailing-reports-deactivated', user_id)
+        mailing report while keeping some security in that process. """
+        return tools.hmac(self.env(su=True), 'mailing-report-deactivated', user_id)
 
     # ------------------------------------------------------
     # TOOLS

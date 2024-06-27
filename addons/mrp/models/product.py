@@ -347,7 +347,7 @@ class ProductProduct(models.Model):
         company_id = self.env.context.get('default_company_id', self.env.company.id)
         warehouse = self.env['stock.warehouse'].search([('company_id', '=', company_id)], limit=1)
         for product in self:
-            bom_data = self.env['reports.mrp.report_bom_structure'].with_context(minimized=True)._get_bom_data(bom_by_products[product], warehouse, product, ignore_stock=True)
+            bom_data = self.env['report.mrp.report_bom_structure'].with_context(minimized=True)._get_bom_data(bom_by_products[product], warehouse, product, ignore_stock=True)
             availability_delay = bom_data.get('resupply_avail_delay')
             product.days_to_prepare_mo = availability_delay - bom_data.get('lead_time', 0) if availability_delay else 0
 

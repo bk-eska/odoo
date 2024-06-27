@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
-    <menuitem id="crm_menu_lead_generator"
-              name="Generate Lead"
-              parent="crm.crm_menu_root"
-              action="lead_generator_action"
-              groups="sales_team.group_sale_salesman"
-              sequence="10"/>
-</odoo>

@@ -11,7 +11,7 @@ CH_QR_CROSS_SIZE_RATIO = 0.1522 # Ratio between the side length of the Swiss QR-
 CH_QR_CROSS_FILE = Path('../static/src/img/CH-Cross_7mm.png') # Image file containing the Swiss QR-code cross to add on top of the QR-code
 
 class IrActionsReport(models.Model):
-    _inherit = 'ir.actions.reports'
+    _inherit = 'ir.actions.report'
 
     @api.model
     def get_available_barcode_masks(self):
@@ -46,7 +46,7 @@ class IrActionsReport(models.Model):
                     qr_inv_ids.append(invoice.id)
                 elif invoice.company_id.country_code == 'CH' and invoice.l10n_ch_isr_valid:
                     isr_inv_ids.append(invoice.id)
-            # Render the additional reports.
+            # Render the additional report.
             streams_to_append = {}
             if qr_inv_ids:
                 qr_res = self._render_qweb_pdf_prepare_streams(

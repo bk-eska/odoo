@@ -5,7 +5,7 @@ from odoo import api, fields, models, tools
 
 
 class TimesheetAttendance(models.Model):
-    _name = 'hr.timesheet.attendance.reports'
+    _name = 'hr.timesheet.attendance.report'
     _auto = False
     _description = 'Timesheet Attendance Report'
 

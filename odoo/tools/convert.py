@@ -276,7 +276,7 @@ form: module.record_id""" % (xml_id,)
         res = {}
         for dest,f in (('name','string'),('model','model'),('report_name','name')):
             res[dest] = rec.get(f)
-            assert res[dest], "Attribute %s of reports is empty !" % (f,)
+            assert res[dest], "Attribute %s of report is empty !" % (f,)
         for field, dest in (('attachment', 'attachment'),
                             ('attachment_use', 'attachment_use'),
                             ('usage', 'usage'),
@@ -296,7 +296,7 @@ form: module.record_id""" % (xml_id,)
 
         xml_id = rec.get('id','')
         self._test_xml_id(xml_id)
-        warnings.warn(f"The <reports> tag is deprecated, use a <record> tag for {xml_id!r}.", DeprecationWarning)
+        warnings.warn(f"The <report> tag is deprecated, use a <record> tag for {xml_id!r}.", DeprecationWarning)
 
         if rec.get('groups'):
             g_names = rec.get('groups','').split(',')
@@ -316,13 +316,13 @@ form: module.record_id""" % (xml_id,)
 
         xid = self.make_xml_id(xml_id)
         data = dict(xml_id=xid, values=res, noupdate=self.noupdate)
-        report = self.env['ir.actions.reports']._load_records([data], self.mode == 'update')
+        report = self.env['ir.actions.report']._load_records([data], self.mode == 'update')
         self.idref[xml_id] = report.id
 
         if not rec.get('menu') or safe_eval(rec.get('menu','False')):
             report.create_action()
         elif self.mode=='update' and safe_eval(rec.get('menu','False'))==False:
-            # Special check for reports having attribute menu=False on update
+            # Special check for report having attribute menu=False on update
             report.unlink_action()
         return report.id
 
@@ -738,7 +738,7 @@ form: module.record_id""" % (xml_id,)
             'function': self._tag_function,
             'menuitem': self._tag_menuitem,
             'template': self._tag_template,
-            'reports': self._tag_report,
+            'report': self._tag_report,
             'act_window': self._tag_act_window,
 
             **dict.fromkeys(self.DATA_ROOTS, self._tag_root)

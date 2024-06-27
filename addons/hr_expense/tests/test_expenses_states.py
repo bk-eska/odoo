@@ -144,7 +144,7 @@ class TestExpensesStates(TestExpenseCommon):
         ])
         self.assertFalse(self.expense_states_employee_sheet.account_move_id)
 
-        # Change the reports state to a partially paid one
+        # Change the report state to a partially paid one
         self.expense_states_employee_sheet.action_sheet_move_create()
         action_context = self.expense_states_employee_sheet.action_register_payment()['context']
         self.env['account.payment.register'].with_context(action_context).create({'amount': 1})._create_payments()
@@ -193,7 +193,7 @@ class TestExpensesStates(TestExpenseCommon):
             {'state': 'draft'},
         ])
 
-        # Change the reports state to a paid one
+        # Change the report state to a paid one
         self.expense_states_employee_sheet.account_move_id.unlink()
         self.expense_states_employee_sheet.action_sheet_move_create()
         action_context = self.expense_states_employee_sheet.action_register_payment()['context']

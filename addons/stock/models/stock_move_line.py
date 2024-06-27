@@ -794,7 +794,7 @@ class StockMoveLine(models.Model):
         """ Returns a dictionary of products (key = id+name+description+uom) and corresponding values of interest.
 
         Allows aggregation of data across separate move lines for the same product. This is expected to be useful
-        in things such as delivery reports. Dict key is made as a combination of values we expect to want to group
+        in things such as delivery report. Dict key is made as a combination of values we expect to want to group
         the products by (i.e. so data is not lost). This function purposely ignores lots/SNs because these are
         expected to already be properly grouped by line.
 

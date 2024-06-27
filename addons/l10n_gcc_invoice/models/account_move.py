@@ -17,7 +17,7 @@ class AccountMove(models.Model):
 
     def _load_narration_translation(self):
         # Workaround to have the english/arabic version of the payment terms
-        # in the reports
+        # in the report
         if not self:
             return
         gcc_countries = self.env.ref('base.gulf_cooperation_council').country_ids

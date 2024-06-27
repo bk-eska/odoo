@@ -581,7 +581,7 @@ class TestBatchPicking(TransactionCase):
 
     def test_process_picking_with_reception_report(self):
         """"
-        Auto batch by partner + Reception reports enabled
+        Auto batch by partner + Reception report enabled
         Batch with two pickings
         Process the first one with backorder:
         - Initial picking should be removed from the batch
@@ -631,7 +631,7 @@ class TestBatchPicking(TransactionCase):
         res = wizard.process()
         self.assertEqual(receipt01.state, 'done')
         self.assertIsInstance(res, dict)
-        self.assertEqual(res.get('res_model'), 'reports.stock.report_reception')
+        self.assertEqual(res.get('res_model'), 'report.stock.report_reception')
 
         backorder = receipt01.backorder_ids
         self.assertTrue(backorder)

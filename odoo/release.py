@@ -22,7 +22,7 @@ long_desc = '''Odoo is a complete ERP and CRM. The main features are accounting 
 and financial), stock management, sales and purchases management, tasks
 automation, marketing campaigns, help desk, POS, etc. Technical features include
 a distributed server, an object database, a dynamic GUI,
-customizable reports, and XML-RPC interfaces.
+customizable report, and XML-RPC interfaces.
 '''
 classifiers = """Development Status :: 5 - Production/Stable
 License :: OSI Approved :: GNU Lesser General Public License v3

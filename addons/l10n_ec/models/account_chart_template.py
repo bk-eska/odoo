@@ -15,7 +15,7 @@ class AccountChartTemplate(models.Model):
 
     def _l10n_ec_configure_ecuadorian_tax_groups_accounts(self, companies):
         '''
-        Set tax groups accounts for automatic closing entry in 103 and 104 reports
+        Set tax groups accounts for automatic closing entry in 103 and 104 report
         The structure of the variable with the list of accounts by tax group:
         ('<tax_group_record_id>', '<payable_account_code>', '<receivable_account_code>')
         '''

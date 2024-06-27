@@ -6,7 +6,7 @@ from odoo import api, fields, models
 
 class HrExpenseRefuseWizard(models.TransientModel):
     """This wizard can be launched from an he.expense (an expense line)
-    or from an hr.expense.sheet (En expense reports)
+    or from an hr.expense.sheet (En expense report)
     'hr_expense_refuse_model' must be passed in the context to differentiate
     the right model to use.
     """

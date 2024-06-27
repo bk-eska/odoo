@@ -373,7 +373,7 @@ class ImageConverter(models.AbstractModel):
     instead.
 
     .. todo:: what happens if different output need different converters? e.g.
-              reports may need embedded images or FS links whereas website
+              report may need embedded images or FS links whereas website
               needs website-aware
     """
     _name = 'ir.qweb.field.image'
@@ -705,7 +705,7 @@ class BarcodeConverter(models.AbstractModel):
         if not value:
             return ''
         barcode_symbology = options.get('symbology', 'Code128')
-        barcode = self.env['ir.actions.reports'].barcode(
+        barcode = self.env['ir.actions.report'].barcode(
             barcode_symbology,
             value,
             **{key: value for key, value in options.items() if key in ['width', 'height', 'humanreadable', 'quiet', 'mask']})

@@ -10,7 +10,7 @@ from odoo.tools.safe_eval import safe_eval
 
 
 class ReportAssertAccount(models.AbstractModel):
-    _name = 'reports.account_test.report_accounttest'
+    _name = 'report.account_test.report_accounttest'
     _description = 'Account Test Report'
 
     @api.model
@@ -63,7 +63,7 @@ class ReportAssertAccount(models.AbstractModel):
 
     @api.model
     def _get_report_values(self, docids, data=None):
-        report = self.env['ir.actions.reports']._get_report_from_name('account_test.report_accounttest')
+        report = self.env['ir.actions.report']._get_report_from_name('account_test.report_accounttest')
         records = self.env['accounting.assert.test'].browse(self.ids)
         return {
             'doc_ids': self._ids,

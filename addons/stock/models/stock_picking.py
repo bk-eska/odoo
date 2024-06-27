@@ -75,7 +75,7 @@ class PickingType(models.Model):
     reservation_days_before_priority = fields.Integer('Days when starred', help="Maximum number of days before scheduled date that priority picking products should be reserved.")
     auto_show_reception_report = fields.Boolean(
         "Show Reception Report at Validation",
-        help="If this checkbox is ticked, Odoo will automatically show the reception reports (if there are moves to allocate to) when validating.")
+        help="If this checkbox is ticked, Odoo will automatically show the reception report (if there are moves to allocate to) when validating.")
 
     count_picking_draft = fields.Integer(compute='_compute_picking_count')
     count_picking_ready = fields.Integer(compute='_compute_picking_count')
@@ -1117,7 +1117,7 @@ class Picking(models.Model):
             pickings_show_report = self.filtered(lambda p: p.picking_type_id.auto_show_reception_report)
             lines = pickings_show_report.move_ids.filtered(lambda m: m.product_id.type == 'product' and m.state != 'cancel' and m.quantity_done and not m.move_dest_ids)
             if lines:
-                # don't show reception reports if all already assigned/nothing to assign
+                # don't show reception report if all already assigned/nothing to assign
                 wh_location_ids = self.env['stock.location']._search([('id', 'child_of', pickings_show_report.picking_type_id.warehouse_id.view_location_id.ids), ('usage', '!=', 'supplier')])
                 if self.env['stock.move'].search([
                         ('state', 'in', ['confirmed', 'partially_available', 'waiting', 'assigned']),
@@ -1613,9 +1613,9 @@ class Picking(models.Model):
         return self.action_open_label_layout()
 
     def _attach_sign(self):
-        """ Render the delivery reports in pdf and attach it to the picking in `self`. """
+        """ Render the delivery report in pdf and attach it to the picking in `self`. """
         self.ensure_one()
-        report = self.env['ir.actions.reports']._render_qweb_pdf("stock.action_report_delivery", self.id)
+        report = self.env['ir.actions.report']._render_qweb_pdf("stock.action_report_delivery", self.id)
         filename = "%s_signed_delivery_slip" % self.name
         if self.partner_id:
             message = _('Order signed by %s') % (self.partner_id.name)

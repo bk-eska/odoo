@@ -67,7 +67,7 @@ class TestSaleReportCurrencyRate(SaleCommon):
         )
 
         sale_orders = self.env['sale.order']
-        expected_reported_amount = 0  # The total amount of all sale orders in the reports.
+        expected_reported_amount = 0  # The total amount of all sale orders in the report.
         qty = 0  # to add variety to the data
 
         # Create sale orders
@@ -109,7 +109,7 @@ class TestSaleReportCurrencyRate(SaleCommon):
                     self.assertAlmostEqual(order.currency_rate, expected_so_currency_rate)
                     self.assertAlmostEqual(order.amount_total, expected_amount_total)
 
-                    # The amount in the reports is converted first to the currency of the company and
+                    # The amount in the report is converted first to the currency of the company and
                     # then to the currency of the current company (self.env.company).
                     current_company_rate = currency_rates[self.env.company.currency_id.id]
                     so_company_rate = currency_rates[company.currency_id.id]
@@ -118,8 +118,8 @@ class TestSaleReportCurrencyRate(SaleCommon):
                         order.amount_total / order.currency_rate * conversion_rate
                     )
 
-        # The reports should show the amount in the current (in this case usd) company currency.
-        report_lines = self.env['sale.reports'].sudo().with_context(
+        # The report should show the amount in the current (in this case usd) company currency.
+        report_lines = self.env['sale.report'].sudo().with_context(
             allow_company_ids=[self.usd_cmp.id, self.eur_cmp.id]
         ).search([('order_id', 'in', sale_orders.ids)])
 

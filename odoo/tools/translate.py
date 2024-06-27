@@ -1177,7 +1177,7 @@ class TranslationModuleReader:
         """
 
         # Also scan these non-addon paths
-        for bin_path in ['osv', 'reports', 'modules', 'service', 'tools']:
+        for bin_path in ['osv', 'report', 'modules', 'service', 'tools']:
             self._path_list.append((os.path.join(config['root_path'], bin_path), True))
         # non-recursive scan for individual files in root directory but without
         # scanning subdirectories that may contain addons

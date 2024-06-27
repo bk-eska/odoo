@@ -6,8 +6,8 @@ from odoo.exceptions import UserError
 
 
 class ReportStockRule(models.AbstractModel):
-    _name = 'reports.stock.report_stock_rule'
-    _description = 'Stock rule reports'
+    _name = 'report.stock.report_stock_rule'
+    _description = 'Stock rule report'
 
     @api.model
     def _get_report_values(self, docids, data=None):

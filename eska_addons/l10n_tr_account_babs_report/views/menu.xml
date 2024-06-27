@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
-    <menuitem
-        parent="account.account_reports_management_menu"
-        action="babs_report_wizard_action"
-        id="menu_babs_report_wizard"
-        sequence="20"
-    />
-</odoo>

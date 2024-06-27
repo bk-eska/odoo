@@ -233,7 +233,7 @@ class Module(models.Model):
     @api.depends('name', 'state')
     def _get_views(self):
         IrModelData = self.env['ir.model.data'].with_context(active_test=True)
-        dmodels = ['ir.ui.view', 'ir.actions.reports', 'ir.ui.menu']
+        dmodels = ['ir.ui.view', 'ir.actions.report', 'ir.ui.menu']
 
         for module in self:
             # Skip uninstalled modules below, no data to find anyway.
@@ -259,7 +259,7 @@ class Module(models.Model):
                 return '%s%s (%s)' % (v.inherit_id and '* INHERIT ' or '', v.name, v.type)
 
             module.views_by_module = "\n".join(sorted(format_view(v) for v in browse('ir.ui.view')))
-            module.reports_by_module = "\n".join(sorted(r.name for r in browse('ir.actions.reports')))
+            module.reports_by_module = "\n".join(sorted(r.name for r in browse('ir.actions.report')))
             module.menus_by_module = "\n".join(sorted(m.complete_name for m in browse('ir.ui.menu')))
 
     @api.depends('icon')

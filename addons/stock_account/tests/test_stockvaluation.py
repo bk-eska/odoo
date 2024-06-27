@@ -3824,7 +3824,7 @@ class TestStockValuation(TransactionCase):
 
     def test_forecast_report_value(self):
         """ Create a SVL for two companies using different currency, and open
-        the forecast reports. Checks the forecast reports use the good currency to
+        the forecast report. Checks the forecast report use the good currency to
         display the product's valuation.
         """
         # Settings
@@ -3896,8 +3896,8 @@ class TestStockValuation(TransactionCase):
         move_2.move_line_ids.qty_done = 4.0
         move_2._action_done()
 
-        # Opens the reports for each company and compares the values.
-        report = self.env['reports.stock.report_product_product_replenishment']
+        # Opens the report for each company and compares the values.
+        report = self.env['report.stock.report_product_product_replenishment']
         report_for_company_1 = report.with_context(warehouse=warehouse_1.id)
         report_for_company_2 = report.with_context(warehouse=warehouse_2.id)
         report_value_1 = report_for_company_1.get_report_values(docids=self.product1.ids)
@@ -4000,7 +4000,7 @@ class TestStockValuation(TransactionCase):
         }])
         pickings.action_confirm()
 
-        user_report = self.env['reports.stock.report_product_product_replenishment'].with_user(self.inventory_user)
+        user_report = self.env['report.stock.report_product_product_replenishment'].with_user(self.inventory_user)
         user_report.get_report_values(docids=self.product1.ids, serialize=True)
         user_report.get_report_values(docids=self.product1.ids)
 

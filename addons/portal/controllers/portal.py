@@ -472,13 +472,13 @@ class CustomerPortal(Controller):
 
     def _show_report(self, model, report_type, report_ref, download=False):
         if report_type not in ('html', 'pdf', 'text'):
-            raise UserError(_("Invalid reports type: %s", report_type))
+            raise UserError(_("Invalid report type: %s", report_type))
 
-        ReportAction = request.env['ir.actions.reports'].sudo()
+        ReportAction = request.env['ir.actions.report'].sudo()
 
         if hasattr(model, 'company_id'):
             if len(model.company_id) > 1:
-                raise UserError(_('Multi company reports are not supported.'))
+                raise UserError(_('Multi company report are not supported.'))
             ReportAction = ReportAction.with_company(model.company_id)
 
         method_name = '_render_qweb_%s' % (report_type)

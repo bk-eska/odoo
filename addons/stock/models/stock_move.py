@@ -1977,8 +1977,8 @@ Please change the quantity done or the rounding precision of your unit of measur
         return self.picking_id.partner_id.lang or self.partner_id.lang or self.env.user.lang
 
     def _get_source_document(self):
-        """ Return the move's document, used by `reports.stock.report_product_product_replenishment`
-        and must be overrided to add more document type in the reports.
+        """ Return the move's document, used by `report.stock.report_product_product_replenishment`
+        and must be overrided to add more document type in the report.
         """
         self.ensure_one()
         return self.picking_id or False
@@ -2215,7 +2215,7 @@ Please change the quantity done or the rounding precision of your unit of measur
         product_ids = self.product_id
         wh_location_query = self.env['stock.location']._search([('id', 'child_of', warehouse.view_location_id.id)])
 
-        in_domain, out_domain = self.env['reports.stock.report_product_product_replenishment']._move_confirmed_domain(
+        in_domain, out_domain = self.env['report.stock.report_product_product_replenishment']._move_confirmed_domain(
             None, product_ids.ids, wh_location_query
         )
         outs = self.env['stock.move'].search(out_domain, order='reservation_date, priority desc, date, id')

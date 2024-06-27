@@ -23,7 +23,7 @@ class LunchCashMove(models.Model):
 
     @api.model
     def get_wallet_balance(self, user, include_config=True):
-        result = float_round(sum(move['amount'] for move in self.env['lunch.cashmove.reports'].search_read(
+        result = float_round(sum(move['amount'] for move in self.env['lunch.cashmove.report'].search_read(
             [('user_id', '=', user.id)], ['amount'])), precision_digits=2)
         if include_config:
             result += user.company_id.lunch_minimum_threshold

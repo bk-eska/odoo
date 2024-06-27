@@ -5,7 +5,7 @@ from odoo import fields, models, api
 
 
 class ReportProjectTaskUser(models.Model):
-    _inherit = "reports.project.task.user"
+    _inherit = "report.project.task.user"
 
     hours_planned = fields.Float('Planned Hours', readonly=True)
     hours_effective = fields.Float('Effective Hours', readonly=True)

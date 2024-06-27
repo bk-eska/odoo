@@ -34,13 +34,13 @@ class ResCompany(models.Model):
         # Load the a chart of accounts matching the currency of the company for the 3 first created companies
         # We are loading an existing CoA and not populating it because:
         #   * it reflects best real use cases.
-        #   * it allows checking reports by localization
+        #   * it allows checking report by localization
         #   * the config is complete with try_loading(), no need to adapt when the model changes
         #   * it is way easier :-)
         # We are loading only for 3 companies because:
         #   * It takes a few hundreds of a second to create account.move records in batch.
         #     Because we want to have a lot of entries for at least one company (in order to test
-        #     reports, functions and widgets performances for instance), we can't afford to do it for
+        #     report, functions and widgets performances for instance), we can't afford to do it for
         #     a lot of companies.
         #   * it would be useless to have entries for all the companies, we can already do everything with
         #     entries in only a few (but multiple) companies.

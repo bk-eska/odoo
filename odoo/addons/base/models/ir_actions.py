@@ -35,7 +35,7 @@ class IrActions(models.Model):
     binding_model_id = fields.Many2one('ir.model', ondelete='cascade',
                                        help="Setting a value makes this action available in the sidebar for the given model.")
     binding_type = fields.Selection([('action', 'Action'),
-                                     ('reports', 'Report')],
+                                     ('report', 'Report')],
                                     required=True, default='action')
     binding_view_types = fields.Char(default='list,form')
 

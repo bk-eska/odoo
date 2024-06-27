@@ -36,7 +36,7 @@
         'wizard/mailing_list_merge_views.xml',
         'wizard/mailing_mailing_test_views.xml',
         'wizard/mailing_mailing_schedule_date_views.xml',
-        'reports/mailing_trace_report_views.xml',
+        'report/mailing_trace_report_views.xml',
         'views/mailing_filter_views.xml',
         'views/mailing_trace_views.xml',
         'views/link_tracker_views.xml',

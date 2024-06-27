@@ -350,7 +350,7 @@ def image_fix_orientation(image):
     """Fix the orientation of the image if it has an EXIF orientation tag.
 
     This typically happens for images taken from a non-standard orientation
-    by some phones or other devices that are able to reports orientation.
+    by some phones or other devices that are able to report orientation.
 
     The specified transposition is applied to the image before all other
     operations, because all of them expect the image to be in its final

@@ -56,7 +56,7 @@ class OdooBaseChecker(checkers.BaseChecker):
         if isinstance(node, astroid.Call):
             node = node.func
         # self._thing is OK (mostly self._table), self._thing() also because
-        # it's a common pattern of reports (self._select, self._group_by, ...)
+        # it's a common pattern of report (self._select, self._group_by, ...)
         return (isinstance(node, astroid.Attribute)
             and isinstance(node.expr, astroid.Name)
             and node.attrname.startswith('_')

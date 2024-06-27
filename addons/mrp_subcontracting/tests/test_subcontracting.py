@@ -588,7 +588,7 @@ class TestSubcontractingFlows(TestMrpSubcontractingCommon):
         })
         self.assertTrue(supplier.is_subcontractor)
         self.comp1.standard_price = 5
-        report_values = self.env['reports.mrp.report_bom_structure']._get_report_data(self.bom.id, searchQty=1, searchVariant=False)
+        report_values = self.env['report.mrp.report_bom_structure']._get_report_data(self.bom.id, searchQty=1, searchVariant=False)
         subcontracting_values = report_values['lines']['subcontracting']
         self.assertEqual(subcontracting_values['name'], self.subcontractor_partner1.display_name)
         self.assertEqual(report_values['lines']['bom_cost'], 20)  # 10 For subcontracting + 5 for comp1 + 5 for subcontracting of comp2_bom
@@ -596,14 +596,14 @@ class TestSubcontractingFlows(TestMrpSubcontractingCommon):
         self.assertEqual(subcontracting_values['prod_cost'], 10)
         self.assertEqual(report_values['lines']['components'][0]['bom_cost'], 5)
         self.assertEqual(report_values['lines']['components'][1]['bom_cost'], 5)
-        report_values = self.env['reports.mrp.report_bom_structure']._get_report_data(self.bom.id, searchQty=3, searchVariant=False)
+        report_values = self.env['report.mrp.report_bom_structure']._get_report_data(self.bom.id, searchQty=3, searchVariant=False)
         subcontracting_values = report_values['lines']['subcontracting']
         self.assertEqual(report_values['lines']['bom_cost'], 60)  # 30 for subcontracting + 15 for comp1 + 15 for subcontracting of comp2_bom
         self.assertEqual(subcontracting_values['bom_cost'], 30)
         self.assertEqual(subcontracting_values['prod_cost'], 30)
         self.assertEqual(report_values['lines']['components'][0]['bom_cost'], 15)
         self.assertEqual(report_values['lines']['components'][1]['bom_cost'], 15)
-        report_values = self.env['reports.mrp.report_bom_structure']._get_report_data(self.bom.id, searchQty=5, searchVariant=False)
+        report_values = self.env['report.mrp.report_bom_structure']._get_report_data(self.bom.id, searchQty=5, searchVariant=False)
         subcontracting_values = report_values['lines']['subcontracting']
         self.assertEqual(report_values['lines']['bom_cost'], 80)  # 50 for subcontracting + 25 for comp1 + 5 for subcontracting of comp2_bom
         self.assertEqual(subcontracting_values['bom_cost'], 50)
@@ -1622,7 +1622,7 @@ class TestSubcontractingSerialMassReceipt(TransactionCase):
 
     def test_bom_subcontracting_product_dynamic_attribute(self):
         """
-            Test that the reports BOM data is available for a product with an dynamic attribute
+            Test that the report BOM data is available for a product with an dynamic attribute
             but without variant.
         """
         dynamic_attribute = self.env['product.attribute'].create({
@@ -1652,5 +1652,5 @@ class TestSubcontractingSerialMassReceipt(TransactionCase):
             'type': 'subcontract',
             'subcontractor_ids': [Command.set([self.subcontractor.id])],
         })
-        report_values = self.env['reports.mrp.report_bom_structure']._get_report_data(bom_id=bom.id, searchVariant=False)
+        report_values = self.env['report.mrp.report_bom_structure']._get_report_data(bom_id=bom.id, searchVariant=False)
         self.assertTrue(report_values)

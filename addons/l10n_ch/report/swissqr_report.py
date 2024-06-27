@@ -2,8 +2,8 @@
 from odoo import api, models
 
 class ReportSwissQR(models.AbstractModel):
-    _name = 'reports.l10n_ch.qr_report_main'
-    _description = 'Swiss QR-bill reports'
+    _name = 'report.l10n_ch.qr_report_main'
+    _description = 'Swiss QR-bill report'
 
     @api.model
     def _get_report_values(self, docids, data=None):

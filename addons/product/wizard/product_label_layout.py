@@ -55,7 +55,7 @@ class ProductLabelLayout(models.TransientModel):
         else:
             raise UserError(_("No product to print, if the product is archived please unarchive it before printing its label."))
 
-        # Build data to pass to the reports
+        # Build data to pass to the report
         data = {
             'active_model': active_model,
             'quantity_by_product': {p: self.custom_quantity for p in products},
@@ -68,7 +68,7 @@ class ProductLabelLayout(models.TransientModel):
         self.ensure_one()
         xml_id, data = self._prepare_report_data()
         if not xml_id:
-            raise UserError(_('Unable to find reports template for %s format', self.print_format))
+            raise UserError(_('Unable to find report template for %s format', self.print_format))
         report_action = self.env.ref(xml_id).report_action(None, data=data)
         report_action.update({'close_on_report_download': True})
         return report_action

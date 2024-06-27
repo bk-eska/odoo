@@ -6,7 +6,7 @@ from odoo import models, fields
 
 
 class PosOrderReport(models.Model):
-    _inherit = "reports.pos.order"
+    _inherit = "report.pos.order"
     employee_id = fields.Many2one(
                 'hr.employee', string='Employee', readonly=True)
 

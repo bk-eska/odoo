@@ -5,7 +5,7 @@ from odoo import models, Command, _
 class AccountChartTemplate(models.Model):
     _inherit = 'account.chart.template'
 
-    # Write paperformat and reports template used on company
+    # Write paperformat and report template used on company
     def _load(self, company):
         res = super(AccountChartTemplate, self)._load(company)
         if self in [

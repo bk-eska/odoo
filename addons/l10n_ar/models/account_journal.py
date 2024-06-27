@@ -14,7 +14,7 @@ class AccountJournal(models.Model):
         'AFIP POS Number', help='This is the point of sale number assigned by AFIP in order to generate invoices')
     company_partner = fields.Many2one('res.partner', related='company_id.partner_id')
     l10n_ar_afip_pos_partner_id = fields.Many2one(
-        'res.partner', 'AFIP POS Address', help='This is the address used for invoice reports of this POS',
+        'res.partner', 'AFIP POS Address', help='This is the address used for invoice report of this POS',
         domain="['|', ('id', '=', company_partner), '&', ('id', 'child_of', company_partner), ('type', '!=', 'contact')]"
     )
 

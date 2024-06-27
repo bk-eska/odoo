@@ -733,7 +733,7 @@ be delivered to one or more recipients. It's attached below.
 
 For further assistance, please send mail to postmaster.
 
-If you do so, please include this problem reports. You can
+If you do so, please include this problem report. You can
 delete your own text from the attached returned message.
 
 
@@ -1008,7 +1008,7 @@ Subject: {subject}
 To: {to}
 Auto-Submitted: auto-replied
 MIME-Version: 1.0
-Content-Type: multipart/reports; reports-type=delivery-status;
+Content-Type: multipart/report; report-type=delivery-status;
     boundary="92726A5F09.1555335666/mail2.test.ironsky"
 Message-Id: <20190415134106.93A83A5F0D@mail2.test.ironsky>
 
@@ -1025,7 +1025,7 @@ be delivered to one or more recipients. It's attached below.
 
 For further assistance, please send mail to postmaster.
 
-If you do so, please include this problem reports. You can
+If you do so, please include this problem report. You can
 delete your own text from the attached returned message.
 
                    The mail system
@@ -1034,7 +1034,7 @@ delete your own text from the attached returned message.
     person at this address. (in reply to RCPT TO command)
 
 --92726A5F09.1555335666/mail2.test.ironsky
-Content-Description: Delivery reports
+Content-Description: Delivery report
 Content-Type: message/delivery-status
 
 Reporting-MTA: dns; mail2.test.ironsky
@@ -1124,7 +1124,7 @@ Subject: Undelivered Mail Returned to Sender
 To: {email_to}
 Auto-Submitted: auto-replied
 MIME-Version: 1.0
-Content-Type: multipart/reports; reports-type=delivery-status;
+Content-Type: multipart/report; report-type=delivery-status;
         boundary="DFFDC17AA03.1673346179/mailserver.odoo.com"
 Message-Id: <40230110102259.EA0B917B8E4@mailserver.odoo.com>
 Content-Transfer-Encoding: 7bit
@@ -1146,7 +1146,7 @@ ply to
     RCPT TO command)
 
 --DFFDC17AA03.1673346179/mailserver.odoo.com
-Content-Description: Delivery reports
+Content-Description: Delivery report
 Content-Type: message/delivery-status
 
 Reporting-MTA: dns; mailserver.odoo.com
@@ -1255,13 +1255,13 @@ From: MAILER-DAEMON <bounces-noreply@mandrillapp.com>
 Subject: Undelivered Mail Returned to Sender
 To: {email_to}
 X-Report-Abuse: Please forward a copy of this message, including all headers, to abuse@mandrill.com
-X-Report-Abuse: You can also reports abuse here: http://mandrillapp.com/contact/abuse?id=9656353.f28f7746389e45f0bfbf9faefe9e0dc8
+X-Report-Abuse: You can also report abuse here: http://mandrillapp.com/contact/abuse?id=9656353.f28f7746389e45f0bfbf9faefe9e0dc8
 X-Mandrill-User: md_9656353
 Feedback-ID: 9656353:9656353.20210824:md
 Message-Id: <9656353.20210824170740.6125275cf21879.17950539@mail9.us4.mandrillapp.com>
 Date: Tue, 24 Aug 2021 17:07:40 +0000
 MIME-Version: 1.0
-Content-Type: multipart/reports; boundary="_av-UfLe6y6qxNo54-urtAxbJQ"
+Content-Type: multipart/report; boundary="_av-UfLe6y6qxNo54-urtAxbJQ"
 
 --_av-UfLe6y6qxNo54-urtAxbJQ
 Content-Type: text/plain; charset=utf-8

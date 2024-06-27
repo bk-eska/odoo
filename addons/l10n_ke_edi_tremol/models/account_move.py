@@ -188,7 +188,7 @@ class AccountMove(models.Model):
                 try:
                     exempt_report_line = self.env.ref('l10n_ke.tax_report_line_exempt_sales')
                 except ValueError:
-                    raise UserError(_("Tax exempt reports line cannot be found, please update the l10n_ke module."))
+                    raise UserError(_("Tax exempt report line cannot be found, please update the l10n_ke module."))
                 letter = 'E' if exempt_report_line.id in report_line_ids else 'C'
 
             uom = line.product_uom_id and line.product_uom_id.name or ''

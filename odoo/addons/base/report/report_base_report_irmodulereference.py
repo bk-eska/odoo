@@ -5,7 +5,7 @@ from odoo import api, models
 
 
 class IrModelReferenceReport(models.AbstractModel):
-    _name = 'reports.base.report_irmodulereference'
+    _name = 'report.base.report_irmodulereference'
     _description = 'Module Reference Report (base)'
 
     @api.model
@@ -27,7 +27,7 @@ class IrModelReferenceReport(models.AbstractModel):
 
     @api.model
     def _get_report_values(self, docids, data=None):
-        report = self.env['ir.actions.reports']._get_report_from_name('base.report_irmodulereference')
+        report = self.env['ir.actions.report']._get_report_from_name('base.report_irmodulereference')
         selected_modules = self.env['ir.module.module'].browse(docids)
         return {
             'doc_ids': docids,

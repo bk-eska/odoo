@@ -40,7 +40,7 @@ class TestAnalyticAccount(TransactionCase):
         })
         user.partner_id.email = 'analyticman@test.com'
 
-        # Shadow the current environment/cursor with one having the reports user.
+        # Shadow the current environment/cursor with one having the report user.
         # This is mandatory to test access rights.
         cls.env = cls.env(user=user)
         cls.cr = cls.env.cr

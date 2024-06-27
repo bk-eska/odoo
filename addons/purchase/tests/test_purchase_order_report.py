@@ -78,25 +78,25 @@ class TestPurchaseOrderReport(AccountTestInvoicingCommon):
         invoice.action_post()
         po.flush_model()
 
-        res_product1 = self.env['purchase.reports'].search([
+        res_product1 = self.env['purchase.report'].search([
             ('order_id', '=', po.id),
             ('product_id', '=', self.product_a.id),
             ('company_id', '=', self.company_data['company'].id),
         ])
 
-        # check that reports will convert dozen to unit or not
+        # check that report will convert dozen to unit or not
         self.assertEqual(res_product1.qty_ordered, 12.0, 'UoM conversion is not working')
-        # reports should show in company currency (amount/rate) = (100/2)
+        # report should show in company currency (amount/rate) = (100/2)
         self.assertEqual(res_product1.price_total, 50.0, 'Currency conversion is not working')
 
-        res_product2 = self.env['purchase.reports'].search([
+        res_product2 = self.env['purchase.report'].search([
             ('order_id', '=', po.id),
             ('product_id', '=', self.product_b.id),
             ('company_id', '=', self.company_data['company'].id),
         ])
 
         self.assertEqual(res_product2.qty_ordered, 1.0, 'No conversion needed since product_b is already a dozen')
-        # reports should show in company currency (amount/rate) = (200/2)
+        # report should show in company currency (amount/rate) = (200/2)
         self.assertEqual(res_product2.price_total, 100.0, 'Currency conversion is not working')
 
     def test_01_delay_and_delay_pass(self):
@@ -113,7 +113,7 @@ class TestPurchaseOrderReport(AccountTestInvoicingCommon):
         po.button_confirm()
 
         po.flush_model()
-        report = self.env['purchase.reports'].read_group(
+        report = self.env['purchase.report'].read_group(
             [('order_id', '=', po.id)],
             ['order_id', 'delay', 'delay_pass'],
             ['order_id'],
@@ -148,12 +148,12 @@ class TestPurchaseOrderReport(AccountTestInvoicingCommon):
         })
         po.button_confirm()
 
-        result_po = self.env['purchase.reports'].search([('order_id', '=', po.id)])
-        self.assertFalse(result_po, "The reports should ignore the notes and sections")
+        result_po = self.env['purchase.report'].search([('order_id', '=', po.id)])
+        self.assertFalse(result_po, "The report should ignore the notes and sections")
 
     def test_po_report_currency(self):
         """
-            Check that the currency of the reports is the one of the current company
+            Check that the currency of the report is the one of the current company
         """
         po = self.env['purchase.order'].create({
             'partner_id': self.partner_a.id,
@@ -177,10 +177,10 @@ class TestPurchaseOrderReport(AccountTestInvoicingCommon):
                 }),
             ],
         })
-        # flush the POs to make sure the reports is up to date
+        # flush the POs to make sure the report is up to date
         po.flush_model()
         po_2.flush_model()
-        report = self.env['purchase.reports'].search([('product_id', "=", self.product_a.id)])
+        report = self.env['purchase.report'].search([('product_id', "=", self.product_a.id)])
         self.assertEqual(report.currency_id, self.env.company.currency_id)
 
     def test_avg_price_calculation(self):
@@ -209,7 +209,7 @@ class TestPurchaseOrderReport(AccountTestInvoicingCommon):
         })
         po.button_confirm()
         po.flush_model()
-        report = self.env['purchase.reports'].read_group(
+        report = self.env['purchase.report'].read_group(
             [('product_id', '=', self.product_a.id)],
             ['qty_ordered', 'price_average:avg'],
             ['product_id'],

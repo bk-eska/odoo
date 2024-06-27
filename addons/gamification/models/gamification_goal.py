@@ -89,7 +89,7 @@ class Goal(models.Model):
         if date.today() - last_update < delta_max:
             return {}
 
-        # generate a reminder reports
+        # generate a reminder report
         body_html = self.env.ref('gamification.email_template_goal_reminder')._render_field('body_html', self.ids, compute_lang=True)[self.id]
         self.message_notify(
             body=body_html,
@@ -279,8 +279,8 @@ class Goal(models.Model):
     def write(self, vals):
         """Overwrite the write method to update the last_update field to today
 
-        If the current value is changed and the reports frequency is set to On
-        change, a reports is generated
+        If the current value is changed and the report frequency is set to On
+        change, a report is generated
         """
         vals['last_update'] = fields.Date.context_today(self)
         result = super(Goal, self).write(vals)

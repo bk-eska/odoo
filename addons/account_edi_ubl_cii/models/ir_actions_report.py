@@ -12,7 +12,7 @@ import io
 
 
 class IrActionsReport(models.Model):
-    _inherit = 'ir.actions.reports'
+    _inherit = 'ir.actions.report'
 
     def _add_pdf_into_invoice_xml(self, invoice, stream_data):
         format_codes = ['ubl_bis3', 'ubl_de', 'nlcius_1', 'efff_1']
@@ -54,7 +54,7 @@ class IrActionsReport(models.Model):
 
     def _render_qweb_pdf_prepare_streams(self, report_ref, data, res_ids=None):
         # EXTENDS base
-        # Add the pdf reports in the XML as base64 string.
+        # Add the pdf report in the XML as base64 string.
         collected_streams = super()._render_qweb_pdf_prepare_streams(report_ref, data, res_ids=res_ids)
 
         if collected_streams \

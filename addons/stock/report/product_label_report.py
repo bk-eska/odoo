@@ -9,7 +9,7 @@ from odoo.exceptions import UserError
 import markupsafe
 
 class ReportProductLabel(models.AbstractModel):
-    _name = 'reports.stock.label_product_product_view'
+    _name = 'report.stock.label_product_product_view'
     _description = 'Product Label Report'
 
     def _get_report_values(self, docids, data):
@@ -49,7 +49,7 @@ class ReportProductLabel(models.AbstractModel):
 
 
 class ReportLotLabel(models.AbstractModel):
-    _name = 'reports.stock.label_lot_template_view'
+    _name = 'report.stock.label_lot_template_view'
     _description = 'Lot Label Report'
 
     def _get_report_values(self, docids, data):

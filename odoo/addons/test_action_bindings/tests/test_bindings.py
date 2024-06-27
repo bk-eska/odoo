@@ -10,12 +10,12 @@ class TestActionBindings(common.TransactionCase):
         self.env.ref('base.action_partner_merge').unlink()
         bindings = Actions.get_bindings('res.partner')
         self.assertFalse(bindings.get('action'))
-        self.assertFalse(bindings.get('reports'))
+        self.assertFalse(bindings.get('report'))
 
         # create action bindings, and check the returned bindings
         action1 = self.env.ref('base.action_attachment')
         action2 = self.env.ref('base.ir_default_menu_action')
-        action3 = self.env['ir.actions.reports'].search([('groups_id', '=', False)], limit=1)
+        action3 = self.env['ir.actions.report'].search([('groups_id', '=', False)], limit=1)
         action1.binding_model_id = action2.binding_model_id \
                                  = action3.binding_model_id \
                                  = self.env['ir.model']._get('res.partner')
@@ -27,7 +27,7 @@ class TestActionBindings(common.TransactionCase):
             "Wrong action bindings",
         )
         self.assertItemsEqual(
-            bindings['reports'],
+            bindings['report'],
             action3.read(['name', 'binding_view_types']),
             "Wrong action bindings",
         )
@@ -44,7 +44,7 @@ class TestActionBindings(common.TransactionCase):
             "Wrong action bindings",
         )
         self.assertItemsEqual(
-            bindings['reports'],
+            bindings['report'],
             action3.read(['name', 'binding_view_types']),
             "Wrong action bindings",
         )

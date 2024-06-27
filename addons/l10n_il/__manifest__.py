@@ -11,7 +11,7 @@ This is the latest basic Israelian localisation necessary to run Odoo in Israel:
 
 This module consists of:
  - Generic Israel Chart of Accounts
- - Taxes and tax reports
+ - Taxes and tax report
  - Multiple Fiscal positions
  """,
     'website': 'http://www.odoo.com/accounting',

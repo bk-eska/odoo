@@ -53,7 +53,7 @@ class Country(models.Model):
         domain=[('model', '=', 'res.partner'), ('type', '=', 'form')],
         help="Use this field if you want to replace the usual way to encode a complete address. "
              "Note that the address_format field is used to modify the way to display addresses "
-             "(in reports for example), while this field is used to modify the input form for "
+             "(in report for example), while this field is used to modify the input form for "
              "addresses.")
     currency_id = fields.Many2one('res.currency', string='Currency')
     image_url = fields.Char(

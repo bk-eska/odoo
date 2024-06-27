@@ -6,7 +6,7 @@ from odoo.osv import expression
 
 
 class LeaveReport(models.Model):
-    _name = "hr.leave.reports"
+    _name = "hr.leave.report"
     _description = 'Time Off Summary / Report'
     _auto = False
     _order = "date_from DESC, employee_id"
@@ -110,7 +110,7 @@ class LeaveReport(models.Model):
         return {
             'name': _('Time Off Analysis'),
             'type': 'ir.actions.act_window',
-            'res_model': 'hr.leave.reports',
+            'res_model': 'hr.leave.report',
             'view_mode': 'tree,pivot,form',
             'search_view_id': [self.env.ref('hr_holidays.view_hr_holidays_filter_report').id],
             'domain': domain,

@@ -5,7 +5,7 @@ from odoo import api, models
 
 
 class ReportStockRule(models.AbstractModel):
-    _inherit = 'reports.stock.report_stock_rule'
+    _inherit = 'report.stock.report_stock_rule'
 
     @api.model
     def _get_rule_loc(self, rule, product_id):

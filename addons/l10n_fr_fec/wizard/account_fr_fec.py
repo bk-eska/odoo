@@ -23,8 +23,8 @@ class AccountFrFec(models.TransientModel):
     filename = fields.Char(string='Filename', size=256, readonly=True)
     test_file = fields.Boolean()
     export_type = fields.Selection([
-        ('official', 'Official FEC reports (posted entries only)'),
-        ('nonofficial', 'Non-official FEC reports (posted and unposted entries)'),
+        ('official', 'Official FEC report (posted entries only)'),
+        ('nonofficial', 'Non-official FEC report (posted and unposted entries)'),
         ], string='Export Type', required=True, default='official')
 
     @api.onchange('test_file')
@@ -66,7 +66,7 @@ class AccountFrFec(models.TransientModel):
             AND am.company_id = %s
             AND aa.include_initial_balance IS NOT TRUE
         '''
-        # For official reports: only use posted entries
+        # For official report: only use posted entries
         if self.export_type == "official":
             sql_query += '''
             AND am.state = 'posted'
@@ -192,7 +192,7 @@ class AccountFrFec(models.TransientModel):
             AND aa.include_initial_balance = 't'
         '''
 
-        # For official reports: only use posted entries
+        # For official report: only use posted entries
         if self.export_type == "official":
             sql_query += '''
             AND am.state = 'posted'
@@ -289,7 +289,7 @@ class AccountFrFec(models.TransientModel):
             AND aa.include_initial_balance = 't'
         '''
 
-        # For official reports: only use posted entries
+        # For official report: only use posted entries
         if self.export_type == "official":
             sql_query += '''
             AND am.state = 'posted'

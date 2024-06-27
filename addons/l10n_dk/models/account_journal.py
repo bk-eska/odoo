@@ -14,7 +14,7 @@ class AccountJournal(models.Model):
 
         if company.account_fiscal_country_id.code == 'DK':
             # Ensure the newly liquidity accounts have the right account tag in order to be part
-            # of the Danish financial reports.
+            # of the Danish financial report.
             account_vals.setdefault('tag_ids', [])
             account_vals['tag_ids'].append((4, self.env.ref('l10n_dk.account_tag_liquidity').id))
 

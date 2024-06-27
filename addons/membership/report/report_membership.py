@@ -17,7 +17,7 @@ STATE = [
 class ReportMembership(models.Model):
     '''Membership Analysis'''
 
-    _name = 'reports.membership'
+    _name = 'report.membership'
     _description = 'Membership Analysis'
     _auto = False
     _rec_name = 'start_date'

@@ -10,7 +10,7 @@ from odoo.exceptions import UserError
 
 
 class HrHolidaySummaryReport(models.AbstractModel):
-    _name = 'reports.hr_holidays.report_holidayssummary'
+    _name = 'report.hr_holidays.report_holidayssummary'
     _description = 'Holidays Summary Report'
 
     def _get_header_info(self, start_date, holiday_type):
@@ -65,7 +65,7 @@ class HrHolidaySummaryReport(models.AbstractModel):
             ('date_to', '>=', str(start_date))
         ])
         for holiday in holidays:
-            # Convert date to user timezone, otherwise the reports will not be consistent with the
+            # Convert date to user timezone, otherwise the report will not be consistent with the
             # value displayed in the interface.
             date_from = fields.Datetime.from_string(holiday.date_from)
             date_from = fields.Datetime.context_timestamp(holiday, date_from).date()
@@ -108,9 +108,9 @@ class HrHolidaySummaryReport(models.AbstractModel):
     @api.model
     def _get_report_values(self, docids, data=None):
         if not data.get('form'):
-            raise UserError(_("Form content is missing, this reports cannot be printed."))
+            raise UserError(_("Form content is missing, this report cannot be printed."))
 
-        holidays_report = self.env['ir.actions.reports']._get_report_from_name('hr_holidays.report_holidayssummary')
+        holidays_report = self.env['ir.actions.report']._get_report_from_name('hr_holidays.report_holidayssummary')
         holidays = self.env['hr.leave'].browse(self.ids)
         return {
             'doc_ids': self.ids,

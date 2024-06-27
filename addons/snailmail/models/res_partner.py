@@ -26,7 +26,7 @@ class ResPartner(models.Model):
         return super(ResPartner, self).write(vals)
 
     def _get_country_name(self):
-        # when sending a letter, thus rendering the reports with the snailmail_layout,
+        # when sending a letter, thus rendering the report with the snailmail_layout,
         # we need to override the country name to its english version following the
         # dictionary imported in country_utils.py
         country_code = self.country_id.code

@@ -10,7 +10,7 @@ class TestStockReportTour(HttpCase):
         return '/web#&model=product.template&action=stock.product_template_action_product'
 
     def test_stock_route_diagram_report(self):
-        """ Open the route diagram reports."""
+        """ Open the route diagram report."""
         url = self._get_report_url()
 
         self.start_tour(url, 'test_stock_route_diagram_report', login='admin', timeout=180)

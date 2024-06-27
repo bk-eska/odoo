@@ -22,10 +22,10 @@ class AccountMove(models.Model):
     _inherit = 'account.move'
 
     l10n_ch_isr_subscription = fields.Char(compute='_compute_l10n_ch_isr_subscription', help='ISR subscription number identifying your company or your bank to generate ISR.')
-    l10n_ch_isr_subscription_formatted = fields.Char(compute='_compute_l10n_ch_isr_subscription', help="ISR subscription number your company or your bank, formated with '-' and without the padding zeros, to generate ISR reports.")
+    l10n_ch_isr_subscription_formatted = fields.Char(compute='_compute_l10n_ch_isr_subscription', help="ISR subscription number your company or your bank, formated with '-' and without the padding zeros, to generate ISR report.")
 
     l10n_ch_isr_number = fields.Char(compute='_compute_l10n_ch_isr_number', store=True, help='The reference number associated with this invoice')
-    l10n_ch_isr_number_spaced = fields.Char(compute='_compute_l10n_ch_isr_number_spaced', help="ISR number split in blocks of 5 characters (right-justified), to generate ISR reports.")
+    l10n_ch_isr_number_spaced = fields.Char(compute='_compute_l10n_ch_isr_number_spaced', help="ISR number split in blocks of 5 characters (right-justified), to generate ISR report.")
 
     l10n_ch_isr_optical_line = fields.Char(compute="_compute_l10n_ch_isr_optical_line", help='Optical reading line, as it will be printed on ISR')
 
@@ -289,9 +289,9 @@ class AccountMove(models.Model):
         """ Splits the total amount of this invoice in two parts, using the dot as
         a separator, and taking two precision digits (always displayed).
         These two parts are returned as the two elements of a tuple, as strings
-        to print in the reports.
+        to print in the report.
 
-        This function is needed on the model, as it must be called in the reports
+        This function is needed on the model, as it must be called in the report
         template, which cannot reference static functions
         """
         return float_split_str(self.amount_residual, 2)

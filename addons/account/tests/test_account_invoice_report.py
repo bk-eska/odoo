@@ -97,7 +97,7 @@ class TestAccountInvoiceReport(AccountTestInvoicingCommon):
         ])
 
     def assertInvoiceReportValues(self, expected_values_list):
-        reports = self.env['account.invoice.reports'].search([('company_id', '=', self.company_data['company'].id)], order='price_subtotal DESC, quantity ASC')
+        reports = self.env['account.invoice.report'].search([('company_id', '=', self.company_data['company'].id)], order='price_subtotal DESC, quantity ASC')
         expected_values_dict = [{
             'price_average': vals[0],
             'price_subtotal': vals[1],

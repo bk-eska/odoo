@@ -5,7 +5,7 @@ from odoo import fields, models
 
 
 class AccountInvoiceReport(models.Model):
-    _inherit = 'account.invoice.reports'
+    _inherit = 'account.invoice.report'
 
     team_id = fields.Many2one(comodel_name='crm.team', string="Sales Team")
 

@@ -9,7 +9,7 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     # if set, the matrix of the products configurable by matrix will be shown
-    # on the reports of the order.
+    # on the report of the order.
     report_grids = fields.Boolean(string="Print Variant Grids", default=True)
 
     """ Matrix loading and update: fields and methods :
@@ -150,7 +150,7 @@ class SaleOrder(models.Model):
     def get_report_matrixes(self):
         """Reporting method.
 
-        :return: array of matrices to display in the reports
+        :return: array of matrices to display in the report
         :rtype: list
         """
         matrixes = []

@@ -227,7 +227,7 @@ class TestEditableQuant(TransactionCase):
         self.assertEqual(quant.quantity, 8)
 
     def test_edit_quant_4(self):
-        """ Update the quantity with the inventory reports mode """
+        """ Update the quantity with the inventory report mode """
         default_wh = self.env['stock.warehouse'].search([('company_id', '=', self.env.company.id)], limit=1)
         default_stock_location = default_wh.lot_stock_id
         quant = self.Quant.create({

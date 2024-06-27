@@ -30,8 +30,8 @@ class TestImLivechatReport(TestImLivechatCommon):
         cls.env['mail.message'].flush_model()
 
     def test_im_livechat_report_channel(self):
-        report = self.env['im_livechat.reports.channel'].search([('livechat_channel_id', '=', self.livechat_channel.id)])
-        self.assertEqual(len(report), 1, 'Should have one channel reports for this live channel')
+        report = self.env['im_livechat.report.channel'].search([('livechat_channel_id', '=', self.livechat_channel.id)])
+        self.assertEqual(len(report), 1, 'Should have one channel report for this live channel')
         # We have those messages, ordered by creation;
         # 05:05:54: wrong model
         # 06:05:54: visitor message
@@ -44,7 +44,7 @@ class TestImLivechatReport(TestImLivechatCommon):
         self.assertEqual(int(report.duration), 9600)
 
     def test_im_livechat_report_operator(self):
-        result = self.env['im_livechat.reports.operator'].read_group([], ['time_to_answer:avg', 'duration:avg'], [])
+        result = self.env['im_livechat.report.operator'].read_group([], ['time_to_answer:avg', 'duration:avg'], [])
         self.assertEqual(len(result), 1)
         self.assertEqual(int(result[0]['time_to_answer']), 7800)
         self.assertEqual(int(result[0]['duration']), 9600)

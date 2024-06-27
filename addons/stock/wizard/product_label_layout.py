@@ -35,7 +35,7 @@ class ProductLabelLayout(models.TransientModel):
                     qties[line.product_id.id] += line.qty_done
                 else:
                     qties[line.product_id.id] = 1
-            # Pass only products with some quantity done to the reports
+            # Pass only products with some quantity done to the report
             data['quantity_by_product'] = {p: int(q) for p, q in qties.items() if q}
             data['custom_barcodes'] = custom_barcodes
         return xml_id, data

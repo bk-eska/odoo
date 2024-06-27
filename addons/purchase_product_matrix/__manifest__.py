@@ -14,8 +14,8 @@
     'depends': ['purchase', 'product_matrix'],
     'data': [
         'views/purchase_views.xml',
-        'reports/purchase_quotation_templates.xml',
-        'reports/purchase_order_templates.xml',
+        'report/purchase_quotation_templates.xml',
+        'report/purchase_order_templates.xml',
     ],
     'assets': {
         'web.assets_backend': [

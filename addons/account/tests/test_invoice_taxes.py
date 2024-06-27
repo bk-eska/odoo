@@ -53,8 +53,8 @@ class TestInvoiceTaxes(AccountTestInvoicingCommon):
             'sequence': 40,
         })
 
-        tax_report = cls.env['account.reports'].create({
-            'name': "Tax reports",
+        tax_report = cls.env['account.report'].create({
+            'name': "Tax report",
             'country_id': cls.company_data['company'].country_id.id,
             'column_ids': [
                 Command.create({
@@ -64,7 +64,7 @@ class TestInvoiceTaxes(AccountTestInvoicingCommon):
             ],
         })
 
-        tax_report_line = cls.env['account.reports.line'].create({
+        tax_report_line = cls.env['account.report.line'].create({
             'name': 'test_tax_report_line',
             'report_id': tax_report.id,
             'sequence': 10,
@@ -79,7 +79,7 @@ class TestInvoiceTaxes(AccountTestInvoicingCommon):
         tax_tags = tax_report_line.expression_ids._get_matching_tags()
         cls.tax_tag_pos, cls.tax_tag_neg = tax_tags.sorted('tax_negate')
 
-        base_report_line = cls.env['account.reports.line'].create({
+        base_report_line = cls.env['account.report.line'].create({
             'name': 'base_test_tax_report_line',
             'report_id': tax_report.id,
             'sequence': 10,

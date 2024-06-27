@@ -18,7 +18,7 @@ The following topics are covered by this module:
     * Impact for stocks
     * Invoicing (products and/or services)
     * Warranty concept
-    * Repair quotation reports
+    * Repair quotation report
     * Notes for the technician and for the final customer
 """,
     'depends': ['stock', 'sale_management', 'account'],
@@ -31,8 +31,8 @@ The following topics are covered by this module:
         'views/repair_views.xml',
         'views/stock_lot_views.xml',
         'views/stock_picking_views.xml',
-        'reports/repair_reports.xml',
-        'reports/repair_templates_repair_order.xml',
+        'report/repair_reports.xml',
+        'report/repair_templates_repair_order.xml',
         'data/ir_sequence_data.xml',
         'data/mail_template_data.xml',
     ],

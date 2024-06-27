@@ -31,8 +31,8 @@ class TestPoSSaleReport(TestPoSCommon):
 
         session.action_pos_session_closing_control()
 
-        # PoS Orders have negative IDs to avoid conflict, so reports[0] will correspond to the newest order
-        reports = self.env['sale.reports'].sudo().search([('product_id', '=', self.product0.id)], order='id', limit=2)
+        # PoS Orders have negative IDs to avoid conflict, so report[0] will correspond to the newest order
+        reports = self.env['sale.report'].sudo().search([('product_id', '=', self.product0.id)], order='id', limit=2)
         self.assertEqual(reports[0].weight, 3)
         self.assertEqual(reports[0].volume, 4)
         self.assertEqual(reports[1].weight, 18)
@@ -74,10 +74,10 @@ class TestPoSSaleReport(TestPoSCommon):
 
         session.action_pos_session_closing_control()
 
-        report = self.env['sale.reports'].sudo().search([('product_id', '=', product_1.id)], order='id', limit=1)
+        report = self.env['sale.report'].sudo().search([('product_id', '=', product_1.id)], order='id', limit=1)
         self.assertEqual(report.weight, 3)
         self.assertEqual(report.weight, 3)
-        report = self.env['sale.reports'].sudo().search([('product_id', '=', product_2.id)], order='id', limit=1)
+        report = self.env['sale.report'].sudo().search([('product_id', '=', product_2.id)], order='id', limit=1)
         self.assertEqual(report.weight, 6)
         self.assertEqual(report.weight, 6)
 

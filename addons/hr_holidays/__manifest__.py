@@ -16,7 +16,7 @@ This application controls the time off schedule of your company. It allows emplo
 
 You can configure several kinds of time off (sickness, paid days, ...) and allocate time off to an employee or department quickly using time off allocation. An employee can also make a request for more days off by making a new time off allocation. It will increase the total of available days for that time off type (if the request is accepted).
 
-You can keep track of time off in different ways by following reports:
+You can keep track of time off in different ways by following report:
 
 * Time Off Summary
 * Time Off by Department
@@ -47,11 +47,11 @@ A synchronization with an internal agenda (Meetings of the CRM module) is also p
         'wizard/hr_holidays_summary_employees_views.xml',
         'wizard/hr_departure_wizard_views.xml',
 
-        'reports/hr_holidays_templates.xml',
-        'reports/hr_holidays_reports.xml',
-        'reports/hr_leave_reports.xml',
-        'reports/hr_leave_report_calendar.xml',
-        'reports/hr_leave_employee_type_report.xml',
+        'report/hr_holidays_templates.xml',
+        'report/hr_holidays_reports.xml',
+        'report/hr_leave_reports.xml',
+        'report/hr_leave_report_calendar.xml',
+        'report/hr_leave_employee_type_report.xml',
 
         'views/hr_views.xml',
         'views/hr_holidays_views.xml',

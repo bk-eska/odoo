@@ -65,10 +65,10 @@ class AccountAccount(models.Model):
         string="Type", tracking=True,
         required=True,
         compute='_compute_account_type', store=True, readonly=False, precompute=True, index=True,
-        help="Account Type is used for information purpose, to generate country-specific legal reports, and set the rules to close a fiscal year and generate opening entries."
+        help="Account Type is used for information purpose, to generate country-specific legal report, and set the rules to close a fiscal year and generate opening entries."
     )
     include_initial_balance = fields.Boolean(string="Bring Accounts Balance Forward",
-        help="Used in reports to know if we should consider journal items from the beginning of time instead of from the fiscal year only. Account types that should be reset to zero at each new fiscal year (like expenses, revenue..) should not have this option set.",
+        help="Used in report to know if we should consider journal items from the beginning of time instead of from the fiscal year only. Account types that should be reset to zero at each new fiscal year (like expenses, revenue..) should not have this option set.",
         compute="_compute_include_initial_balance",
         store=True)
     internal_group = fields.Selection(
@@ -113,8 +113,8 @@ class AccountAccount(models.Model):
     ]
 
     non_trade = fields.Boolean(default=False,
-                               help="If set, this account will belong to Non Trade Receivable/Payable in reports and filters.\n"
-                                    "If not, this account will belong to Trade Receivable/Payable in reports and filters.")
+                               help="If set, this account will belong to Non Trade Receivable/Payable in report and filters.\n"
+                                    "If not, this account will belong to Trade Receivable/Payable in report and filters.")
 
     @api.constrains('reconcile', 'internal_group', 'tax_ids')
     def _constrains_reconcile(self):

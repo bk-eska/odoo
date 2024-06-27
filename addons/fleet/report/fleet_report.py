@@ -7,7 +7,7 @@ from odoo import api, fields, models
 
 
 class FleetReport(models.Model):
-    _name = "fleet.vehicle.cost.reports"
+    _name = "fleet.vehicle.cost.report"
     _description = "Fleet Analysis Report"
     _auto = False
     _order = 'date_start desc'

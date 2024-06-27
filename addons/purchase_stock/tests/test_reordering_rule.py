@@ -314,7 +314,7 @@ class TestReorderingRule(TransactionCase):
     def test_replenish_report_1(self):
         """Tests the auto generation of manual orderpoints.
 
-        Opening multiple times the reports should not duplicate the generated orderpoints.
+        Opening multiple times the report should not duplicate the generated orderpoints.
         MTO products should not trigger the creation of generated orderpoints
         """
         partner = self.env['res.partner'].create({

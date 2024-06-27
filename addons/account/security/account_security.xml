@@ -20,8 +20,8 @@
         `group_account_user` is almost (a bit more than) the sum of `group_account_invoice` and `group_account_readonly`
         `group_account_manager` is the king (except when Consolidation is installed, then there is a super-king)
 
-        `group_account_invoice` can create/edit invoices, refunds, payments, etc but cannot see accounting related stuff (journal entries, reports, reconciliation,...)
-        `group_account_readonly` can see (and only see) everything, including the journal entries, advanced configuration, reports
+        `group_account_invoice` can create/edit invoices, refunds, payments, etc but cannot see accounting related stuff (journal entries, report, reconciliation,...)
+        `group_account_readonly` can see (and only see) everything, including the journal entries, advanced configuration, report
         `group_account_user`  is the accountant: he can do everything except advanced config (accounting periods for instance)
         `group_account_manager` can edit some config that `group_account_user` cannot do
 

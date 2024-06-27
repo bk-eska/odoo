@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_equipment_location_user,equipment.location.user,model_maintenance_equipment_location,base.group_user,1,0,0,0
-access_equipment_location_manager,equipment.location.manager,model_maintenance_equipment_location,maintenance.group_equipment_manager,1,1,1,1

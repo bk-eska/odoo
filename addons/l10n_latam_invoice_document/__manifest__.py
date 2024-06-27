@@ -11,7 +11,7 @@ Functional
 
 In some Latinamerica countries, including Argentina and Chile, some accounting transactions like invoices and vendor bills are classified by a document types defined by the government fiscal authorities (In Argentina case AFIP, Chile case SII).
 
-This module is intended to be extended by localizations in order to manage these document types and is an essential information that needs to be displayed in the printed reports and that needs to be easily identified, within the set of invoices as well of account moves.
+This module is intended to be extended by localizations in order to manage these document types and is an essential information that needs to be displayed in the printed report and that needs to be easily identified, within the set of invoices as well of account moves.
 
 Each document type have their own rules and sequence number, this last one is integrated with the invoice number and journal sequence in order to be easy for the localization user. In order to support or not this document types a Journal has a new option that lets to use document or not.
 
@@ -34,7 +34,7 @@ If your localization needs this logic will then need to add this module as depen
         'views/account_move_view.xml',
         'views/l10n_latam_document_type_view.xml',
         'views/report_templates.xml',
-        'reports/invoice_report_view.xml',
+        'report/invoice_report_view.xml',
         'wizards/account_move_reversal_view.xml',
         'security/ir.model.access.csv',
     ],

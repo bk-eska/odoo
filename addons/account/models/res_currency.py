@@ -40,7 +40,7 @@ class ResCurrency(models.Model):
         ''' Construct the currency table as a mapping company -> rate to convert the amount to the user's company
         currency in a multi-company/multi-currency environment.
         The currency_table is a small postgresql table construct with VALUES.
-        :param options: The reports options.
+        :param options: The report options.
         :return:        The query representing the currency table.
         '''
 

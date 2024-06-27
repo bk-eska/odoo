@@ -157,7 +157,7 @@ class ResCompany(models.Model):
         compute='compute_account_tax_fiscal_country',
         store=True,
         readonly=False,
-        help="The country to use the tax reports from for this company")
+        help="The country to use the tax report from for this company")
 
     account_enabled_tax_country_ids = fields.Many2many(
         string="l10n-used countries",

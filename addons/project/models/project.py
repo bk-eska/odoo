@@ -798,7 +798,7 @@ class Project(models.Model):
         return dict(action, context=action_context)
 
     def action_view_tasks_analysis(self):
-        """ return the action to see the tasks analysis reports of the project """
+        """ return the action to see the tasks analysis report of the project """
         action = self.env['ir.actions.act_window']._for_xml_id('project.action_project_task_user_tree')
         action['display_name'] = _("%(name)s's Tasks Analysis", name=self.name)
         action_context = ast.literal_eval(action['context']) if action['context'] else {}
@@ -875,7 +875,7 @@ class Project(models.Model):
 
     def _get_already_included_profitability_invoice_line_ids(self):
         # To be extended to avoid account.move.line overlap between
-        # profitability reports.
+        # profitability report.
         return []
 
     def _get_user_values(self):

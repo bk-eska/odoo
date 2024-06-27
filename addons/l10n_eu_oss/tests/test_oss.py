@@ -29,7 +29,7 @@ class TestOSSBelgium(OssTemplateTestCase):
 
     def test_country_tag_from_belgium(self):
         """
-        This test ensure that xml_id from `account.tax.reports.line` in the EU_TAG_MAP are processed correctly by the oss
+        This test ensure that xml_id from `account.tax.report.line` in the EU_TAG_MAP are processed correctly by the oss
         tax creation mechanism.
         """
         # get an eu country which isn't the current one:

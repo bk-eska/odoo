@@ -67,7 +67,7 @@ class PosConfig(models.Model):
                     if not gc_program.mail_template_id:
                         raise UserError(_('There is no email template on the gift card program and your pos is set to print them.'))
                     if not gc_program.pos_report_print_id:
-                        raise UserError(_('There is no print reports on the gift card program and your pos is set to print them.'))
+                        raise UserError(_('There is no print report on the gift card program and your pos is set to print them.'))
 
         return super()._check_before_creating_new_session()
 

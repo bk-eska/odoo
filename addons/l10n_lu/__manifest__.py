@@ -41,7 +41,7 @@ Notes:
         'data/account.fiscal.position.template-2011.csv',
         'data/account.fiscal.position.tax.template-2015.csv',
         'data/account_reconcile_model_template_data.xml',
-        # configuration wizard, views, reports...
+        # configuration wizard, views, report...
         'data/account.chart.template.csv',
         'data/account_chart_template_data.xml',
         'data/l10n_lu_chart_template_data.xml',

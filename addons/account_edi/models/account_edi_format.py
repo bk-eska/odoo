@@ -202,7 +202,7 @@ class AccountEdiFormat(models.Model):
 
     def _prepare_invoice_report(self, pdf_writer, edi_document):
         """
-        Prepare invoice reports to be printed.
+        Prepare invoice report to be printed.
         :param pdf_writer: The pdf writer with the invoice pdf content loaded.
         :param edi_document: The edi document to be added to the pdf file.
         """

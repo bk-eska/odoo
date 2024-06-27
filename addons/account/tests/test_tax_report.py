@@ -20,8 +20,8 @@ class TaxReportTest(AccountTestInvoicingCommon):
             'code': 'ZZ',
         })
 
-        cls.tax_report_1 = cls.env['account.reports'].create({
-            'name': "Tax reports 1",
+        cls.tax_report_1 = cls.env['account.report'].create({
+            'name': "Tax report 1",
             'country_id': cls.test_country_1.id,
             'column_ids': [
                 Command.create({
@@ -38,8 +38,8 @@ class TaxReportTest(AccountTestInvoicingCommon):
         cls.tax_report_line_1_55 = cls._create_basic_tax_report_line(cls.tax_report_1, "Line 55", '55')
         cls.tax_report_line_1_6 = cls._create_basic_tax_report_line(cls.tax_report_1, "Line 100", '100')
 
-        cls.tax_report_2 = cls.env['account.reports'].create({
-            'name': "Tax reports 2",
+        cls.tax_report_2 = cls.env['account.report'].create({
+            'name': "Tax report 2",
             'country_id': cls.test_country_1.id,
             'column_ids': [
                 Command.create({
@@ -48,14 +48,14 @@ class TaxReportTest(AccountTestInvoicingCommon):
                 }),
             ],
         })
-        cls.tax_report_line_2_1 = cls._create_basic_tax_report_line(cls.tax_report_2, "Line 01, but in reports 2", '01')
-        cls.tax_report_line_2_2 = cls._create_basic_tax_report_line(cls.tax_report_2, "Line 02, but in reports 2", '02')
+        cls.tax_report_line_2_1 = cls._create_basic_tax_report_line(cls.tax_report_2, "Line 01, but in report 2", '01')
+        cls.tax_report_line_2_2 = cls._create_basic_tax_report_line(cls.tax_report_2, "Line 02, but in report 2", '02')
         cls.tax_report_line_2_42 = cls._create_basic_tax_report_line(cls.tax_report_2, "Line 42", '42')
-        cls.tax_report_line_2_6 = cls._create_basic_tax_report_line(cls.tax_report_2, "Line 100, but in reports 2", '100')
+        cls.tax_report_line_2_6 = cls._create_basic_tax_report_line(cls.tax_report_2, "Line 100, but in report 2", '100')
 
     @classmethod
     def _create_basic_tax_report_line(cls, report, line_name, tag_name):
-        return cls.env['account.reports.line'].create({
+        return cls.env['account.report.line'].create({
             'name': f"[{tag_name}] {line_name}",
             'report_id': report.id,
             'sequence': max(report.mapped('line_ids.sequence') or [0]) + 1,
@@ -75,7 +75,7 @@ class TaxReportTest(AccountTestInvoicingCommon):
         return self.env['account.account.tag'].with_context(active_test=active_test).search(domain)
 
     def test_create_shared_tags(self):
-        self.assertEqual(len(self._get_tax_tags(self.test_country_1, tag_name='01')), 2, "tax_tags expressions created for reports within the same countries using the same formula should create a single pair of tags.")
+        self.assertEqual(len(self._get_tax_tags(self.test_country_1, tag_name='01')), 2, "tax_tags expressions created for report within the same countries using the same formula should create a single pair of tags.")
 
     def test_add_expression(self):
         """ Adding a tax_tags expression creates new tags.
@@ -138,10 +138,10 @@ class TaxReportTest(AccountTestInvoicingCommon):
         self.assertTrue(line_1_1_tags == line_2_2_tags == line_2_42_tags, "The impacted expressions should now all share the same tags.")
 
     def test_tax_report_change_country(self):
-        """ Tests that duplicating and modifying the country of a tax reports works as intended
-        (countries wanting to use the tax reports of another country need that).
+        """ Tests that duplicating and modifying the country of a tax report works as intended
+        (countries wanting to use the tax report of another country need that).
         """
-        # Copy our first reports
+        # Copy our first report
         country_1_tags_before_copy = self._get_tax_tags(self.test_country_1)
         copied_report_1 = self.tax_report_1.copy()
         country_1_tags_after_copy = self._get_tax_tags(self.test_country_1)
@@ -155,7 +155,7 @@ class TaxReportTest(AccountTestInvoicingCommon):
         country_1_tags_after_change = self._get_tax_tags(self.test_country_1)
 
         self.assertEqual(country_1_tags_after_change, country_1_tags_after_copy, "Modifying the country should not have changed the tags in the original country.")
-        self.assertEqual(len(country_2_tags_after_change), len(country_2_tags_before_change) + 2 * len(copied_report_1.line_ids), "Modifying the country should have created a new + and - tag in the new country for each tax_tags expression of the reports.")
+        self.assertEqual(len(country_2_tags_after_change), len(country_2_tags_before_change) + 2 * len(copied_report_1.line_ids), "Modifying the country should have created a new + and - tag in the new country for each tax_tags expression of the report.")
 
         for original, copy in zip(self.tax_report_1.line_ids, copied_report_1.line_ids):
             original_tags = original.expression_ids._get_matching_tags()
@@ -165,23 +165,23 @@ class TaxReportTest(AccountTestInvoicingCommon):
             self.assertEqual(set(original_tags.mapped('name')), set(copy_tags.mapped('name')), "Tags matched by original and copied expression should have the same names.")
             self.assertNotEqual(original_tags.country_id, copy_tags.country_id, "Tags matched by original and copied expression should have different countries.")
 
-        # Directly change the country of a reports without copying it first (some of its tags are shared, but not all)
+        # Directly change the country of a report without copying it first (some of its tags are shared, but not all)
         original_report_2_tags = {line: line.expression_ids._get_matching_tags() for line in self.tax_report_2.line_ids}
         self.tax_report_2.country_id = self.test_country_2
         for line in self.tax_report_2.line_ids:
             line_tags = line.expression_ids._get_matching_tags()
 
             if line == self.tax_report_line_2_42:
-                # This line is the only one of the reports not sharing its tags
-                self.assertEqual(line_tags, original_report_2_tags[line], "The tax_tags expressions not sharing their tags with any other reports should keep the same tags when the country of their reports is changed.")
+                # This line is the only one of the report not sharing its tags
+                self.assertEqual(line_tags, original_report_2_tags[line], "The tax_tags expressions not sharing their tags with any other report should keep the same tags when the country of their report is changed.")
             else:
                 # Tags already exist since 'copied_report_1' belongs to 'test_country_2'
                 for tag in line_tags:
-                    self.assertIn(tag, country_2_tags_after_change, "The tax_tags expressions sharing their tags with other reports should not receive new tags since they already exist.")
+                    self.assertIn(tag, country_2_tags_after_change, "The tax_tags expressions sharing their tags with other report should not receive new tags since they already exist.")
 
     def test_unlink_report_line_tags_used_by_amls(self):
         """
-        Deletion of a reports line whose tags are still referenced by an aml should archive tags and not delete them.
+        Deletion of a report line whose tags are still referenced by an aml should archive tags and not delete them.
         """
         tag_name = "55b"
         tax_report_line = self._create_basic_tax_report_line(self.tax_report_1, "Line 55 bis", tag_name)
@@ -228,7 +228,7 @@ class TaxReportTest(AccountTestInvoicingCommon):
 
     def test_unlink_report_line_tags_used_by_other_expression(self):
         """
-        Deletion of a reports line whose tags are still referenced in other expression should not delete nor archive tags.
+        Deletion of a report line whose tags are still referenced in other expression should not delete nor archive tags.
         """
         tag_name = self.tax_report_line_1_1.expression_ids.formula  # tag "O1" is used in both line 1.1 and line 2.1
         tags_before = self._get_tax_tags(self.test_country_1, tag_name=tag_name, active_test=False)
@@ -236,8 +236,8 @@ class TaxReportTest(AccountTestInvoicingCommon):
         self.tax_report_line_1_1.unlink()
         tags_after = self._get_tax_tags(self.test_country_1, tag_name=tag_name, active_test=False)
         tags_archived_after = tags_after.filtered(lambda tag: not tag.active)
-        self.assertEqual(len(tags_after), len(tags_before), "Unlinking a reports expression whose tags are used by another expression should not delete them.")
-        self.assertEqual(len(tags_archived_after), len(tags_archived_before), "Unlinking a reports expression whose tags are used by another expression should not archive them.")
+        self.assertEqual(len(tags_after), len(tags_before), "Unlinking a report expression whose tags are used by another expression should not delete them.")
+        self.assertEqual(len(tags_archived_after), len(tags_archived_before), "Unlinking a report expression whose tags are used by another expression should not archive them.")
 
     def test_tag_recreation_archived(self):
         """
@@ -251,5 +251,5 @@ class TaxReportTest(AccountTestInvoicingCommon):
         tags_before[1].active = False
         self._create_basic_tax_report_line(self.tax_report_1, "Line 55 bis", tag_name)
         tags_after = self._get_tax_tags(self.test_country_1, tag_name=tag_name, active_test=False)
-        self.assertEqual(len(tags_after), 2, "When creating a tax reports line with an archived tag and it's complement doesn't exist, it should be re-created.")
-        self.assertEqual(tags_after.mapped('name'), ['+' + tag_name, '-' + tag_name], "After creating a tax reports line with an archived tag and when its complement doesn't exist, both a negative and a positive tag should be created.")
+        self.assertEqual(len(tags_after), 2, "When creating a tax report line with an archived tag and it's complement doesn't exist, it should be re-created.")
+        self.assertEqual(tags_after.mapped('name'), ['+' + tag_name, '-' + tag_name], "After creating a tax report line with an archived tag and when its complement doesn't exist, both a negative and a positive tag should be created.")

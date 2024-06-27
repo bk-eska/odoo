@@ -16,7 +16,7 @@ have real delivered quantities in sales orders.
     'depends': ['sale_project', 'hr_timesheet'],
     'data': [
         'data/sale_service_data.xml',
-        'reports/timesheets_analysis_views.xml',
+        'report/timesheets_analysis_views.xml',
         'security/ir.model.access.csv',
         'security/sale_timesheet_security.xml',
         'views/account_invoice_views.xml',
@@ -28,7 +28,7 @@ have real delivered quantities in sales orders.
         'views/res_config_settings_views.xml',
         'views/sale_timesheet_portal_templates.xml',
         'views/project_sharing_views.xml',
-        'reports/report_timesheet_templates.xml',
+        'report/report_timesheet_templates.xml',
         'wizard/project_create_sale_order_views.xml',
         'wizard/project_create_invoice_views.xml',
         'wizard/sale_make_invoice_advance_views.xml',

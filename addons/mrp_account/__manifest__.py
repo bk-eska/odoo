@@ -10,7 +10,7 @@
 Analytic Accounting in MRP
 ==========================
 
-* Cost structure reports
+* Cost structure report
 
 Also, allows to compute the cost of the product based on its BoM, using the costs of its components and work center operations.
 It adds a button on the product itself but also an action in the list view of the products.

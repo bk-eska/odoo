@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- this header can be used on any Chilean reports -->
+    <!-- this header can be used on any Chilean report -->
     <template id="custom_header">
 
         <t t-set="report_date" t-value="o.invoice_date"/>

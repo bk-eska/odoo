@@ -28,7 +28,7 @@ Spanish charts of accounts (PGCE 2008).
     * Defines templates for sale and purchase VAT
     * Defines tax templates
     * Defines fiscal positions for spanish fiscal legislation
-    * Defines tax reports mod 111, 115 and 303
+    * Defines tax report mod 111, 115 and 303
 """,
     "depends" : [
         "account",

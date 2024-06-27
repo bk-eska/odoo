@@ -42,7 +42,7 @@ class TestIrActionsReport(AccountTestInvoicingCommon):
             'res_model': 'account.move',
             'res_id': in_invoice_1.id,
         })
-        test_record_report = self.env['ir.actions.reports'].with_context(force_report_rendering=True)._render_qweb_pdf('account.action_account_original_vendor_bill', res_ids=in_invoice_1.id)
+        test_record_report = self.env['ir.actions.report'].with_context(force_report_rendering=True)._render_qweb_pdf('account.action_account_original_vendor_bill', res_ids=in_invoice_1.id)
         self.assertTrue(test_record_report, "The PDF should have been generated")
 
     def test_download_one_encrypted_pdf(self):
@@ -83,7 +83,7 @@ class TestIrActionsReport(AccountTestInvoicingCommon):
             'res_model': 'account.move',
             'res_id': in_invoice_1.id,
         })
-        test_record_report = self.env['ir.actions.reports'].with_context(force_report_rendering=True)._render_qweb_pdf('account.action_account_original_vendor_bill', res_ids=in_invoice_1.id)
+        test_record_report = self.env['ir.actions.report'].with_context(force_report_rendering=True)._render_qweb_pdf('account.action_account_original_vendor_bill', res_ids=in_invoice_1.id)
         self.assertTrue(test_record_report, "The PDF should have been generated")
 
         in_invoice_2 = in_invoice_1.copy()
@@ -97,12 +97,12 @@ class TestIrActionsReport(AccountTestInvoicingCommon):
         })
         # trying to merge with a corrupted attachment should not work
         with self.assertRaises(UserError):
-            self.env['ir.actions.reports'].with_context(force_report_rendering=True)._render_qweb_pdf('account.action_account_original_vendor_bill', res_ids=[in_invoice_1.id, in_invoice_2.id])
+            self.env['ir.actions.report'].with_context(force_report_rendering=True)._render_qweb_pdf('account.action_account_original_vendor_bill', res_ids=[in_invoice_1.id, in_invoice_2.id])
 
     def test_report_with_some_resources_reloaded_from_attachment(self):
         """
-        Test for opw-3827700, which caused reports generated for multiple invoices to fail if there was an invoice in
-        the middle that had an attachment, and 'Reload from attachment' was enabled for the reports. The misbehavior was
+        Test for opw-3827700, which caused report generated for multiple invoices to fail if there was an invoice in
+        the middle that had an attachment, and 'Reload from attachment' was enabled for the report. The misbehavior was
         caused by an indexing issue.
         """
         first_invoice = self.env['account.move'].create({
@@ -194,16 +194,16 @@ class TestIrActionsReport(AccountTestInvoicingCommon):
 
     def assert_invoice_creation(self, invoices, invoice_to_report):
         self.assertTrue(
-            invoice_to_report.id in [invoice.id for invoice in invoices], "Invoice to reports must be in invoices list")
+            invoice_to_report.id in [invoice.id for invoice in invoices], "Invoice to report must be in invoices list")
 
         # Post invoices to be able to associate attachments.
         for invoice in invoices:
             invoice.action_post()
 
         invoices_report_ref = 'account.report_invoice_with_payments'
-        reports = self.env['ir.actions.reports'].with_context(force_report_rendering=True)
+        reports = self.env['ir.actions.report'].with_context(force_report_rendering=True)
 
-        # Generate reports for second invoice to create an attachment.
+        # Generate report for second invoice to create an attachment.
         second_invoice_report_content, content_type = reports._render_qweb_pdf(invoices_report_ref,
                                                                                res_ids=invoice_to_report.id)
         self.assertEqual(content_type, "pdf", "Report is not a PDF")

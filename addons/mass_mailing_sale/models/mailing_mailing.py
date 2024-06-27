@@ -51,7 +51,7 @@ class MassMailing(models.Model):
                 helper_header, helper_message,
             ),
             'name': _("Sales Analysis"),
-            'res_model': 'sale.reports',
+            'res_model': 'sale.report',
             'type': 'ir.actions.act_window',
             'view_mode': 'graph,pivot,tree,form',
         }
@@ -77,7 +77,7 @@ class MassMailing(models.Model):
                 helper_header, helper_message,
             ),
             'name': _("Invoices Analysis"),
-            'res_model': 'account.invoice.reports',
+            'res_model': 'account.invoice.report',
             'type': 'ir.actions.act_window',
             'view_mode': 'graph,pivot,tree,form',
         }

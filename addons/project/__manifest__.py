@@ -24,8 +24,8 @@
         'security/ir.model.access.csv',
         'security/ir.model.access.xml',
         'data/digest_data.xml',
-        'reports/project_report_views.xml',
-        'reports/project_task_burndown_chart_report_views.xml',
+        'report/project_report_views.xml',
+        'report/project_task_burndown_chart_report_views.xml',
         'views/analytic_views.xml',
         'views/digest_views.xml',
         'views/rating_rating_views.xml',
@@ -120,10 +120,10 @@
             ('remove', 'web/static/src/webclient/clickbot/clickbot.js'), # lazy loaded
             ('remove', 'web/static/src/views/form/button_box/*.scss'),
 
-            # remove the reports code and whitelist only what's needed
-            ('remove', 'web/static/src/webclient/actions/reports/**/*'),
-            'web/static/src/webclient/actions/reports/*.js',
-            'web/static/src/webclient/actions/reports/*.xml',
+            # remove the report code and whitelist only what's needed
+            ('remove', 'web/static/src/webclient/actions/report/**/*'),
+            'web/static/src/webclient/actions/report/*.js',
+            'web/static/src/webclient/actions/report/*.xml',
 
             'web/static/src/env.js',
 

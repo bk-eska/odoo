@@ -196,10 +196,10 @@ This module provides the core of the Odoo Web Client.
             ('remove', 'web/static/src/webclient/clickbot/clickbot.js'), # lazy loaded
             ('remove', 'web/static/src/views/form/button_box/*.scss'),
 
-            # remove the reports code and whitelist only what's needed
-            ('remove', 'web/static/src/webclient/actions/reports/**/*'),
-            'web/static/src/webclient/actions/reports/*.js',
-            'web/static/src/webclient/actions/reports/*.xml',
+            # remove the report code and whitelist only what's needed
+            ('remove', 'web/static/src/webclient/actions/report/**/*'),
+            'web/static/src/webclient/actions/report/*.js',
+            'web/static/src/webclient/actions/report/*.xml',
 
             'web/static/src/env.js',
 
@@ -491,7 +491,7 @@ This module provides the core of the Odoo Web Client.
         'web.report_assets_common': [
             ('include', 'web._assets_helpers'),
 
-            'web/static/src/webclient/actions/reports/bootstrap_overridden_report.scss',
+            'web/static/src/webclient/actions/report/bootstrap_overridden_report.scss',
             'web/static/src/scss/pre_variables.scss',
             'web/static/lib/bootstrap/scss/_variables.scss',
 
@@ -502,21 +502,21 @@ This module provides the core of the Odoo Web Client.
             'web/static/lib/odoo_ui_icons/*',
             'web/static/fonts/fonts.scss',
 
-            'web/static/src/webclient/actions/reports/reports.scss',
-            'web/static/src/webclient/actions/reports/layout_assets/layout_standard.scss',
-            'web/static/src/webclient/actions/reports/layout_assets/layout_background.scss',
-            'web/static/src/webclient/actions/reports/layout_assets/layout_boxed.scss',
-            'web/static/src/webclient/actions/reports/layout_assets/layout_clean.scss',
+            'web/static/src/webclient/actions/report/report.scss',
+            'web/static/src/webclient/actions/report/layout_assets/layout_standard.scss',
+            'web/static/src/webclient/actions/report/layout_assets/layout_background.scss',
+            'web/static/src/webclient/actions/report/layout_assets/layout_boxed.scss',
+            'web/static/src/webclient/actions/report/layout_assets/layout_clean.scss',
             'web/static/asset_styles_company_report.scss',
 
             'web/static/src/legacy/js/services/session.js',
             'web/static/src/legacy/js/public/public_root.js',
             'web/static/src/legacy/js/public/public_root_instance.js',
             'web/static/src/legacy/js/public/public_widget.js',
-            'web/static/src/legacy/js/reports/reports.js',
+            'web/static/src/legacy/js/report/report.js',
         ],
         'web.report_assets_pdf': [
-            'web/static/src/webclient/actions/reports/reset.min.css',
+            'web/static/src/webclient/actions/report/reset.min.css',
         ],
 
         # ---------------------------------------------------------------------

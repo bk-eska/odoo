@@ -39,5 +39,5 @@ class TestProjectReport(TestProjectCommon):
         tasks = [self.task_1, self.task_2, task_3]
         for task in tasks:
             rating_values = task.read(['rating_avg', 'rating_last_value'])[0]
-            task_report = self.env['reports.project.task.user'].search_read([('project_id', '=', self.project_pigs.id), ('task_id', '=', task.id)], ['rating_avg', 'rating_last_value'])[0]
-            self.assertDictEqual(task_report, rating_values, 'The rating average and the last rating value for the task 1 should be the same in the reports and on the task.')
+            task_report = self.env['report.project.task.user'].search_read([('project_id', '=', self.project_pigs.id), ('task_id', '=', task.id)], ['rating_avg', 'rating_last_value'])[0]
+            self.assertDictEqual(task_report, rating_values, 'The rating average and the last rating value for the task 1 should be the same in the report and on the task.')

@@ -36,7 +36,7 @@ except ImportError:
 
 _logger = logging.getLogger(__name__)
 
-# A lock occurs when the user wants to print a reports having multiple barcode while the server is
+# A lock occurs when the user wants to print a report having multiple barcode while the server is
 # started in threaded-mode. The reason is that reportlab has to build a cache of the T1 fonts
 # before rendering a barcode (done in a C extension) and this part is not thread safe. We attempt
 # here to init the T1 fonts cache at the start-up of Odoo so that rendering of barcode in multiple
@@ -59,7 +59,7 @@ try:
         [_get_wkhtmltopdf_bin(), '--version'], stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
 except (OSError, IOError):
-    _logger.info('You need Wkhtmltopdf to print a pdf version of the reports.')
+    _logger.info('You need Wkhtmltopdf to print a pdf version of the report.')
 else:
     _logger.info('Will use the Wkhtmltopdf binary at %s' % _get_wkhtmltopdf_bin())
     out, err = process.communicate()
@@ -75,7 +75,7 @@ else:
             wkhtmltopdf_dpi_zoom_ratio = True
 
         if config['workers'] == 1:
-            _logger.info('You need to start Odoo with at least two workers to print a pdf version of the reports.')
+            _logger.info('You need to start Odoo with at least two workers to print a pdf version of the report.')
             wkhtmltopdf_state = 'workers'
     else:
         _logger.info('Wkhtmltopdf seems to be broken.')
@@ -83,15 +83,15 @@ else:
 
 
 class IrActionsReport(models.Model):
-    _name = 'ir.actions.reports'
+    _name = 'ir.actions.report'
     _description = 'Report Action'
     _inherit = 'ir.actions.actions'
     _table = 'ir_act_report_xml'
     _order = 'name, id'
     _allow_sudo_commands = False
 
-    type = fields.Char(default='ir.actions.reports')
-    binding_type = fields.Selection(default='reports')
+    type = fields.Char(default='ir.actions.report')
+    binding_type = fields.Selection(default='report')
     model = fields.Char(required=True, string='Model Name')
     model_id = fields.Many2one('ir.model', string='Model', compute='_compute_model_id', search='_search_model_id')
 
@@ -100,23 +100,23 @@ class IrActionsReport(models.Model):
         ('qweb-pdf', 'PDF'),
         ('qweb-text', 'Text'),
     ], required=True, default='qweb-pdf',
-    help='The type of the reports that will be rendered, each one having its own'
-        ' rendering method. HTML means the reports will be opened directly in your'
-        ' browser PDF means the reports will be rendered using Wkhtmltopdf and'
+    help='The type of the report that will be rendered, each one having its own'
+        ' rendering method. HTML means the report will be opened directly in your'
+        ' browser PDF means the report will be rendered using Wkhtmltopdf and'
         ' downloaded by the user.')
     report_name = fields.Char(string='Template Name', required=True)
     report_file = fields.Char(string='Report File', required=False, readonly=False, store=True,
-                              help="The path to the main reports file (depending on Report Type) or empty if the content is in another field")
+                              help="The path to the main report file (depending on Report Type) or empty if the content is in another field")
     groups_id = fields.Many2many('res.groups', 'res_groups_report_rel', 'uid', 'gid', string='Groups')
     multi = fields.Boolean(string='On Multiple Doc.', help="If set to true, the action will not be displayed on the right toolbar of a form view.")
 
-    paperformat_id = fields.Many2one('reports.paperformat', 'Paper Format')
+    paperformat_id = fields.Many2one('report.paperformat', 'Paper Format')
     print_report_name = fields.Char('Printed Report Name', translate=True,
-                                    help="This is the filename of the reports going to download. Keep empty to not change the reports filename. You can use a python expression with the 'object' and 'time' variables.")
+                                    help="This is the filename of the report going to download. Keep empty to not change the report filename. You can use a python expression with the 'object' and 'time' variables.")
     attachment_use = fields.Boolean(string='Reload from Attachment',
-                                    help='If enabled, then the second time the user prints with same attachment name, it returns the previous reports.')
+                                    help='If enabled, then the second time the user prints with same attachment name, it returns the previous report.')
     attachment = fields.Char(string='Save as Attachment Prefix',
-                             help='This is the filename of the attachment used to store the printing result. Keep empty to not save the printed reports. You can use a python expression with the object and time variables.')
+                             help='This is the filename of the attachment used to store the printing result. Keep empty to not save the printed report. You can use a python expression with the object and time variables.')
 
     @api.depends('model')
     def _compute_model_id(self):
@@ -147,8 +147,8 @@ class IrActionsReport(models.Model):
     def _get_readable_fields(self):
         return super()._get_readable_fields() | {
             "report_name", "report_type", "target",
-            # these two are not real fields of ir.actions.reports but are
-            # expected in the route /reports/<converter>/<reportname> and must
+            # these two are not real fields of ir.actions.report but are
+            # expected in the route /report/<converter>/<reportname> and must
             # not be removed by clean_action
             "context", "data",
             # and this one is used by the frontend later on.
@@ -156,7 +156,7 @@ class IrActionsReport(models.Model):
         }
 
     def associated_view(self):
-        """Used in the ir.actions.reports form view in order to search naively after the view(s)
+        """Used in the ir.actions.report form view in order to search naively after the view(s)
         used in the rendering.
         """
         self.ensure_one()
@@ -168,20 +168,20 @@ class IrActionsReport(models.Model):
         return action_data
 
     def create_action(self):
-        """ Create a contextual action for each reports. """
+        """ Create a contextual action for each report. """
         for report in self:
             model = self.env['ir.model']._get(report.model)
-            report.write({'binding_model_id': model.id, 'binding_type': 'reports'})
+            report.write({'binding_model_id': model.id, 'binding_type': 'report'})
         return True
 
     def unlink_action(self):
-        """ Remove the contextual actions created for the reports. """
+        """ Remove the contextual actions created for the report. """
         self.check_access_rights('write', raise_exception=True)
         self.filtered('binding_model_id').write({'binding_model_id': False})
         return True
 
     #--------------------------------------------------------------------------
-    # Main reports methods
+    # Main report methods
     #--------------------------------------------------------------------------
 
     def retrieve_attachment(self, record):
@@ -234,14 +234,14 @@ class IrActionsReport(models.Model):
             set_viewport_size=False):
         '''Build arguments understandable by wkhtmltopdf bin.
 
-        :param paperformat_id: A reports.paperformat record.
-        :param landscape: Force the reports orientation to be landscape.
+        :param paperformat_id: A report.paperformat record.
+        :param landscape: Force the report orientation to be landscape.
         :param specific_paperformat_args: A dictionary containing prioritized wkhtmltopdf arguments.
         :param set_viewport_size: Enable a viewport sized '1024x1280' or '1280x1024' depending of landscape arg.
         :return: A list of string representing the wkhtmltopdf process command args.
         '''
-        if landscape is None and specific_paperformat_args and specific_paperformat_args.get('data-reports-landscape'):
-            landscape = specific_paperformat_args.get('data-reports-landscape')
+        if landscape is None and specific_paperformat_args and specific_paperformat_args.get('data-report-landscape'):
+            landscape = specific_paperformat_args.get('data-report-landscape')
 
         command_args = ['--disable-local-file-access']
         if set_viewport_size:
@@ -263,14 +263,14 @@ class IrActionsReport(models.Model):
                 command_args.extend(['--page-width', str(paperformat_id.page_width) + 'mm'])
                 command_args.extend(['--page-height', str(paperformat_id.page_height) + 'mm'])
 
-            if specific_paperformat_args and specific_paperformat_args.get('data-reports-margin-top'):
-                command_args.extend(['--margin-top', str(specific_paperformat_args['data-reports-margin-top'])])
+            if specific_paperformat_args and specific_paperformat_args.get('data-report-margin-top'):
+                command_args.extend(['--margin-top', str(specific_paperformat_args['data-report-margin-top'])])
             else:
                 command_args.extend(['--margin-top', str(paperformat_id.margin_top)])
 
             dpi = None
-            if specific_paperformat_args and specific_paperformat_args.get('data-reports-dpi'):
-                dpi = int(specific_paperformat_args['data-reports-dpi'])
+            if specific_paperformat_args and specific_paperformat_args.get('data-report-dpi'):
+                dpi = int(specific_paperformat_args['data-report-dpi'])
             elif paperformat_id.dpi:
                 if os.name == 'nt' and int(paperformat_id.dpi) <= 95:
                     _logger.info("Generating PDF on Windows platform require DPI >= 96. Using 96 instead.")
@@ -282,15 +282,15 @@ class IrActionsReport(models.Model):
                 if wkhtmltopdf_dpi_zoom_ratio:
                     command_args.extend(['--zoom', str(96.0 / dpi)])
 
-            if specific_paperformat_args and specific_paperformat_args.get('data-reports-header-spacing'):
-                command_args.extend(['--header-spacing', str(specific_paperformat_args['data-reports-header-spacing'])])
+            if specific_paperformat_args and specific_paperformat_args.get('data-report-header-spacing'):
+                command_args.extend(['--header-spacing', str(specific_paperformat_args['data-report-header-spacing'])])
             elif paperformat_id.header_spacing:
                 command_args.extend(['--header-spacing', str(paperformat_id.header_spacing)])
 
             command_args.extend(['--margin-left', str(paperformat_id.margin_left)])
 
-            if specific_paperformat_args and specific_paperformat_args.get('data-reports-margin-bottom'):
-                command_args.extend(['--margin-bottom', str(specific_paperformat_args['data-reports-margin-bottom'])])
+            if specific_paperformat_args and specific_paperformat_args.get('data-report-margin-bottom'):
+                command_args.extend(['--margin-bottom', str(specific_paperformat_args['data-report-margin-bottom'])])
             else:
                 command_args.extend(['--margin-bottom', str(paperformat_id.margin_bottom)])
 
@@ -303,7 +303,7 @@ class IrActionsReport(models.Model):
                 command_args.extend(['--disable-smart-shrinking'])
 
         # Add extra time to allow the page to render
-        delay = self.env['ir.config_parameter'].sudo().get_param('reports.print_delay', '1000')
+        delay = self.env['ir.config_parameter'].sudo().get_param('report.print_delay', '1000')
         command_args.extend(['--javascript-delay', delay])
 
         if landscape:
@@ -316,7 +316,7 @@ class IrActionsReport(models.Model):
         The bodies are extracted and added to a list. Then, extract the specific_paperformat_args.
         The idea is to put all headers/footers together. Then, we will use a javascript trick
         (see minimal_layout template) to set the right header/footer during the processing of wkhtmltopdf.
-        This allows the computation of multiple reports in a single call to wkhtmltopdf.
+        This allows the computation of multiple report in a single call to wkhtmltopdf.
 
         :param html: The html rendered by render_qweb_html.
         :type: bodies: list of string representing each one a html body.
@@ -331,7 +331,7 @@ class IrActionsReport(models.Model):
         layout = self.env.ref('web.minimal_layout', raise_if_not_found=False)
         if not layout:
             return {}
-        base_url = IrConfig.get_param('reports.url') or layout.get_base_url()
+        base_url = IrConfig.get_param('report.url') or layout.get_base_url()
 
         root = lxml.html.fromstring(html, parser=lxml.html.HTMLParser(encoding='utf-8'))
         match_klass = "//div[contains(concat(' ', normalize-space(@class), ' '), ' {} ')]"
@@ -380,7 +380,7 @@ class IrActionsReport(models.Model):
         # paperformat-record arguments.
         specific_paperformat_args = {}
         for attribute in root.items():
-            if attribute[0].startswith('data-reports-'):
+            if attribute[0].startswith('data-report-'):
                 specific_paperformat_args[attribute[0]] = attribute[1]
 
         header = self.env['ir.qweb']._render(layout.id, {
@@ -409,10 +409,10 @@ class IrActionsReport(models.Model):
         '''Execute wkhtmltopdf as a subprocess in order to convert html given in input into a pdf
         document.
 
-        :param list[str] bodies: The html bodies of the reports, one per page.
-        :param report_ref: reports reference that is needed to get reports paperformat.
-        :param str header: The html header of the reports containing all headers.
-        :param str footer: The html footer of the reports containing all footers.
+        :param list[str] bodies: The html bodies of the report, one per page.
+        :param report_ref: report reference that is needed to get report paperformat.
+        :param str header: The html header of the report containing all headers.
+        :param str footer: The html footer of the report containing all footers.
         :param landscape: Force the pdf to be rendered under a landscape format.
         :param specific_paperformat_args: dict of prioritized paperformat arguments.
         :param set_viewport_size: Enable a viewport sized '1024x1280' or '1280x1024' depending of landscape arg.
@@ -431,13 +431,13 @@ class IrActionsReport(models.Model):
         files_command_args = []
         temporary_files = []
         if header:
-            head_file_fd, head_file_path = tempfile.mkstemp(suffix='.html', prefix='reports.header.tmp.')
+            head_file_fd, head_file_path = tempfile.mkstemp(suffix='.html', prefix='report.header.tmp.')
             with closing(os.fdopen(head_file_fd, 'wb')) as head_file:
                 head_file.write(header.encode())
             temporary_files.append(head_file_path)
             files_command_args.extend(['--header-html', head_file_path])
         if footer:
-            foot_file_fd, foot_file_path = tempfile.mkstemp(suffix='.html', prefix='reports.footer.tmp.')
+            foot_file_fd, foot_file_path = tempfile.mkstemp(suffix='.html', prefix='report.footer.tmp.')
             with closing(os.fdopen(foot_file_fd, 'wb')) as foot_file:
                 foot_file.write(footer.encode())
             temporary_files.append(foot_file_path)
@@ -445,14 +445,14 @@ class IrActionsReport(models.Model):
 
         paths = []
         for i, body in enumerate(bodies):
-            prefix = '%s%d.' % ('reports.body.tmp.', i)
+            prefix = '%s%d.' % ('report.body.tmp.', i)
             body_file_fd, body_file_path = tempfile.mkstemp(suffix='.html', prefix=prefix)
             with closing(os.fdopen(body_file_fd, 'wb')) as body_file:
                 body_file.write(body.encode())
             paths.append(body_file_path)
             temporary_files.append(body_file_path)
 
-        pdf_report_fd, pdf_report_path = tempfile.mkstemp(suffix='.pdf', prefix='reports.tmp.')
+        pdf_report_fd, pdf_report_path = tempfile.mkstemp(suffix='.pdf', prefix='report.tmp.')
         os.close(pdf_report_fd)
         temporary_files.append(pdf_report_path)
 
@@ -490,39 +490,39 @@ class IrActionsReport(models.Model):
 
     @api.model
     def _get_report_from_name(self, report_name):
-        """Get the first record of ir.actions.reports having the ``report_name`` as value for
+        """Get the first record of ir.actions.report having the ``report_name`` as value for
         the field report_name.
         """
-        report_obj = self.env['ir.actions.reports']
+        report_obj = self.env['ir.actions.report']
         conditions = [('report_name', '=', report_name)]
         context = self.env['res.users'].context_get()
         return report_obj.with_context(context).sudo().search(conditions, limit=1)
 
     @api.model
     def _get_report(self, report_ref):
-        """Get the reports (with sudo) from a reference
+        """Get the report (with sudo) from a reference
         report_ref: can be one of
-            - ir.actions.reports id
-            - ir.actions.reports record
-            - ir.model.data reference to ir.actions.reports
-            - ir.actions.reports report_name
+            - ir.actions.report id
+            - ir.actions.report record
+            - ir.model.data reference to ir.actions.report
+            - ir.actions.report report_name
         """
-        ReportSudo = self.env['ir.actions.reports'].sudo()
+        ReportSudo = self.env['ir.actions.report'].sudo()
         if isinstance(report_ref, int):
             return ReportSudo.browse(report_ref)
         if isinstance(report_ref, models.Model):
             if report_ref._name != self._name:
-                raise ValueError("Expected reports of type %s, got %s" % (self._name, report_ref._name))
+                raise ValueError("Expected report of type %s, got %s" % (self._name, report_ref._name))
             return report_ref.sudo()
         report = ReportSudo.search([('report_name', '=', report_ref)], limit=1)
         if report:
             return report
         report = self.env.ref(report_ref)
         if report:
-            if report._name != "ir.actions.reports":
-                raise ValueError("Fetching reports %r: type %s, expected ir.actions.reports" % (report_ref, report._name))
+            if report._name != "ir.actions.report":
+                raise ValueError("Fetching report %r: type %s, expected ir.actions.report" % (report_ref, report._name))
             return report.sudo()
-        raise ValueError("Fetching reports %r: reports not found" % report_ref)
+        raise ValueError("Fetching report %r: report not found" % report_ref)
 
     @api.model
     def barcode(self, barcode_type, value, **kwargs):
@@ -562,8 +562,8 @@ class IrActionsReport(models.Model):
 
         if barcode_type in ('EAN8', 'EAN13') and not check_barcode_encoding(value, barcode_type):
             # If the barcode does not respect the encoding specifications, convert its type into Code128.
-            # Otherwise, the reports-lab method may return a barcode different from its value. For instance,
-            # if the barcode type is EAN-8 and the value 11111111, the reports-lab method will take the first
+            # Otherwise, the report-lab method may return a barcode different from its value. For instance,
+            # if the barcode type is EAN-8 and the value 11111111, the report-lab method will take the first
             # seven digits and will compute the check digit, which gives: 11111115 -> the barcode does not
             # match the expected value.
             barcode_type = 'Code128'
@@ -603,7 +603,7 @@ class IrActionsReport(models.Model):
 
     def _render_template(self, template, values=None):
         """Allow to render a QWeb template python-side. This function returns the 'ir.ui.view'
-        render but embellish it with some variables/methods used in reports.
+        render but embellish it with some variables/methods used in report.
         :param values: additional methods/variables used in the rendering
         :returns: html representation of the template
         :rtype: bytes
@@ -642,7 +642,7 @@ class IrActionsReport(models.Model):
             data = {}
         data.setdefault('report_type', 'pdf')
 
-        # access the reports details with sudo() but evaluation context as current user
+        # access the report details with sudo() but evaluation context as current user
         report_sudo = self._get_report(report_ref)
         has_duplicated_ids = res_ids and len(res_ids) != len(set(res_ids))
 
@@ -688,7 +688,7 @@ class IrActionsReport(models.Model):
 
             if self.get_wkhtmltopdf_state() == 'install':
                 # wkhtmltopdf is not installed
-                # the call should be catched before (cf /reports/check_wkhtmltopdf) but
+                # the call should be catched before (cf /report/check_wkhtmltopdf) but
                 # if get_pdf is called manually (email template), the check could be
                 # bypassed
                 raise UserError(_("Unable to find Wkhtmltopdf on this system. The PDF can not be created."))
@@ -696,7 +696,7 @@ class IrActionsReport(models.Model):
             # Disable the debug mode in the PDF rendering in order to not split the assets bundle
             # into separated files to load. This is done because of an issue in wkhtmltopdf
             # failing to load the CSS/Javascript resources in time.
-            # Without this, the header/footer of the reports randomly disappear
+            # Without this, the header/footer of the report randomly disappear
             # because the resources files are not loaded in time.
             # https://github.com/wkhtmltopdf/wkhtmltopdf/issues/2083
             additional_context = {'debug': False}
@@ -706,7 +706,7 @@ class IrActionsReport(models.Model):
             # you make a request to read the assets while the transaction creating them is not done.
             # Indeed, when you make an asset request, the controller has to read the `ir.attachment`
             # table.
-            # This scenario happens when you want to print a PDF reports for the first time, as the
+            # This scenario happens when you want to print a PDF report for the first time, as the
             # assets are not in cache and must be generated. To workaround this issue, we manually
             # commit the writes in the `ir.attachment` table. It is done thanks to a key in the context.
             if not config['test_enable'] and 'commit_assetsbundle' not in self.env.context:
@@ -718,8 +718,8 @@ class IrActionsReport(models.Model):
 
             if not has_duplicated_ids and report_sudo.attachment and set(res_ids_wo_stream) != set(html_ids):
                 raise UserError(_(
-                    "The reports's template %r is wrong, please contact your administrator. \n\n"
-                    "Can not separate file to save as attachment because the reports's template does not contains the"
+                    "The report's template %r is wrong, please contact your administrator. \n\n"
+                    "Can not separate file to save as attachment because the report's template does not contains the"
                     " attributes 'data-oe-model' and 'data-oe-id' on the div with 'article' classname.",
                     report_sudo.name,
                 ))
@@ -735,7 +735,7 @@ class IrActionsReport(models.Model):
             )
             pdf_content_stream = io.BytesIO(pdf_content)
 
-            # Printing a PDF reports without any records. The content could be returned directly.
+            # Printing a PDF report without any records. The content could be returned directly.
             if has_duplicated_ids or not res_ids:
                 return {
                     False: {
@@ -814,10 +814,10 @@ class IrActionsReport(models.Model):
 
     def _prepare_pdf_report_attachment_vals_list(self, report, streams):
         """Hook to prepare attachment values needed for attachments creation
-        during the pdf reports generation.
+        during the pdf report generation.
 
-        :param report: The reports (with sudo) from a reference report_ref.
-        :param streams: Dict of streams for each reports containing the pdf content and existing attachments.
+        :param report: The report (with sudo) from a reference report_ref.
+        :param streams: Dict of streams for each report containing the pdf content and existing attachments.
         :return: attachment values list needed for attachments creation.
         """
         attachment_vals_list = []
@@ -864,7 +864,7 @@ class IrActionsReport(models.Model):
         collected_streams = self._render_qweb_pdf_prepare_streams(report_ref, data, res_ids=res_ids)
         has_duplicated_ids = res_ids and len(res_ids) != len(set(res_ids))
 
-        # access the reports details with sudo() but keep evaluation context as current user
+        # access the report details with sudo() but keep evaluation context as current user
         report_sudo = self._get_report(report_ref)
 
         # Generate the ir.attachment if needed.
@@ -875,7 +875,7 @@ class IrActionsReport(models.Model):
                 try:
                     self.env['ir.attachment'].create(attachment_vals_list)
                 except AccessError:
-                    _logger.info("Cannot save PDF reports %r attachments for user %r", attachment_names, self.env.user.display_name)
+                    _logger.info("Cannot save PDF report %r attachments for user %r", attachment_names, self.env.user.display_name)
                 else:
                     _logger.info("The PDF documents %r are now saved in the database", attachment_names)
 
@@ -891,7 +891,7 @@ class IrActionsReport(models.Model):
             stream.close()
 
         if res_ids:
-            _logger.info("The PDF reports has been generated for model: %s, records %s.", report_sudo.model, str(res_ids))
+            _logger.info("The PDF report has been generated for model: %s, records %s.", report_sudo.model, str(res_ids))
 
         return pdf_content, 'pdf'
 
@@ -914,11 +914,11 @@ class IrActionsReport(models.Model):
         return self._render_template(report.report_name, data), 'html'
 
     def _get_rendering_context_model(self, report):
-        report_model_name = 'reports.%s' % report.report_name
+        report_model_name = 'report.%s' % report.report_name
         return self.env.get(report_model_name)
 
     def _get_rendering_context(self, report, docids, data):
-        # If the reports is using a custom model to render its html, we must use it.
+        # If the report is using a custom model to render its html, we must use it.
         # Otherwise, fallback on the generic html rendering.
         report_model = self._get_rendering_context_model(report)
 
@@ -946,7 +946,7 @@ class IrActionsReport(models.Model):
         return render_func(report_ref, res_ids, data=data)
 
     def report_action(self, docids, data=None, config=True):
-        """Return an action of type ir.actions.reports.
+        """Return an action of type ir.actions.report.
 
         :param docids: id/ids/browse record of the records to print (if not used, pass an empty list)
         :param data:
@@ -966,7 +966,7 @@ class IrActionsReport(models.Model):
         report_action = {
             'context': context,
             'data': data,
-            'type': 'ir.actions.reports',
+            'type': 'ir.actions.report',
             'report_name': self.report_name,
             'report_type': self.report_type,
             'report_file': self.report_file,

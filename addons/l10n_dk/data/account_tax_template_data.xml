@@ -558,7 +558,7 @@
             }),
         ]"/>
     </record>
-    <!--  city gas and oil tax: same than bottled but appears on a different reports line  -->
+    <!--  city gas and oil tax: same than bottled but appears on a different report line  -->
     <!--  92.83% of the tax is deductible  -->
     <!--  https://skat.dk/data.aspx?oid=2246453  -->
     <record id="tax730" model="account.tax.template">
@@ -596,7 +596,7 @@
             }),
         ]"/>
     </record>
-    <!--  Coal tax: percentage is the same as oil and bottled gas but with it ends up in its own reports line  -->
+    <!--  Coal tax: percentage is the same as oil and bottled gas but with it ends up in its own report line  -->
     <record id="tax740" model="account.tax.template">
         <field name="chart_template_id" ref="dk_chart_template"/>
         <field name="sequence">740</field>

@@ -9,7 +9,7 @@ from odoo.tools import float_compare, float_is_zero, format_date, float_round
 
 
 class ReplenishmentReport(models.AbstractModel):
-    _name = 'reports.stock.report_product_product_replenishment'
+    _name = 'report.stock.report_product_product_replenishment'
     _description = "Stock Replenishment Report"
 
     def _product_domain(self, product_template_ids, product_variant_ids):
@@ -67,7 +67,7 @@ class ReplenishmentReport(models.AbstractModel):
 
     def _serialize_docs(self, docs, product_template_ids=False, product_variant_ids=False):
         """
-        Since conversion from reports to owl client_action, adapt/override this method to make records available from js code.
+        Since conversion from report to owl client_action, adapt/override this method to make records available from js code.
         """
         res = copy.copy(docs)
         if product_template_ids:
@@ -314,9 +314,9 @@ class ReplenishmentReport(models.AbstractModel):
 
 
 class ReplenishmentTemplateReport(models.AbstractModel):
-    _name = 'reports.stock.report_product_template_replenishment'
+    _name = 'report.stock.report_product_template_replenishment'
     _description = "Stock Replenishment Report"
-    _inherit = 'reports.stock.report_product_product_replenishment'
+    _inherit = 'report.stock.report_product_product_replenishment'
 
     @api.model
     def get_report_values(self, docids, data=None, serialize=False):

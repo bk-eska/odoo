@@ -1039,7 +1039,7 @@ class MailThread(models.AbstractModel):
         if bounce_alias and any(email == bounce_alias for email in email_to_localparts):
             self._routing_handle_bounce(message, message_dict)
             return []
-        if message.get_content_type() == 'multipart/reports' or email_from_localpart == 'mailer-daemon':
+        if message.get_content_type() == 'multipart/report' or email_from_localpart == 'mailer-daemon':
             self._routing_handle_bounce(message, message_dict)
             return []
         self._routing_reset_bounce(message, message_dict)

@@ -18,14 +18,14 @@ class ProductProduct(models.Model):
         date_from = fields.Datetime.to_string(fields.datetime.combine(fields.datetime.now() - timedelta(days=365),
                                                                       time.min))
 
-        done_states = self.env['sale.reports']._get_done_states()
+        done_states = self.env['sale.report']._get_done_states()
 
         domain = [
             ('state', 'in', done_states),
             ('product_id', 'in', self.ids),
             ('date', '>=', date_from),
         ]
-        for group in self.env['sale.reports']._read_group(domain, ['product_id', 'product_uom_qty'], ['product_id']):
+        for group in self.env['sale.report']._read_group(domain, ['product_id', 'product_uom_qty'], ['product_id']):
             r[group['product_id'][0]] = group['product_uom_qty']
         for product in self:
             if not product.id:
@@ -49,7 +49,7 @@ class ProductProduct(models.Model):
             'pivot_measures': ['product_uom_qty'],
             'active_id': self._context.get('active_id'),
             'search_default_Sales': 1,
-            'active_model': 'sale.reports',
+            'active_model': 'sale.report',
             'search_default_filter_order_date': 1,
         }
         return action

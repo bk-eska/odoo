@@ -21,11 +21,11 @@ class ReportController(http.Controller):
     # Report controllers
     #------------------------------------------------------
     @http.route([
-        '/reports/<converter>/<reportname>',
-        '/reports/<converter>/<reportname>/<docids>',
+        '/report/<converter>/<reportname>',
+        '/report/<converter>/<reportname>/<docids>',
     ], type='http', auth='user', website=True)
     def report_routes(self, reportname, docids=None, converter=None, **data):
-        report = request.env['ir.actions.reports']
+        report = request.env['ir.actions.report']
         context = dict(request.env.context)
 
         if docids:
@@ -52,13 +52,13 @@ class ReportController(http.Controller):
     #------------------------------------------------------
     # Misc. route utils
     #------------------------------------------------------
-    @http.route(['/reports/barcode', '/reports/barcode/<barcode_type>/<path:value>'], type='http', auth="public")
+    @http.route(['/report/barcode', '/report/barcode/<barcode_type>/<path:value>'], type='http', auth="public")
     def report_barcode(self, barcode_type, value, **kwargs):
         """Contoller able to render barcode images thanks to reportlab.
         Samples::
 
-            <img t-att-src="'/reports/barcode/QR/%s' % o.name"/>
-            <img t-att-src="'/reports/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %
+            <img t-att-src="'/report/barcode/QR/%s' % o.name"/>
+            <img t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %
                 ('QR', o.name, 200, 200)"/>
 
         :param barcode_type: Accepted types: 'Codabar', 'Code11', 'Code128', 'EAN13', 'EAN8',
@@ -77,18 +77,18 @@ class ReportController(http.Controller):
         ref: https://hg.reportlab.com/hg-public/reportlab/file/830157489e00/src/reportlab/graphics/barcode/qr.py#l101
         """
         try:
-            barcode = request.env['ir.actions.reports'].barcode(barcode_type, value, **kwargs)
+            barcode = request.env['ir.actions.report'].barcode(barcode_type, value, **kwargs)
         except (ValueError, AttributeError):
             raise werkzeug.exceptions.HTTPException(description='Cannot convert into barcode.')
 
         return request.make_response(barcode, headers=[('Content-Type', 'image/png')])
 
-    @http.route(['/reports/download'], type='http', auth="user")
+    @http.route(['/report/download'], type='http', auth="user")
     def report_download(self, data, context=None, token=None):  # pylint: disable=unused-argument
         """This function is used by 'action_manager_report.js' in order to trigger the download of
-        a pdf/controller reports.
+        a pdf/controller report.
 
-        :param data: a javascript array JSON.stringified containg reports internal url ([0]) and
+        :param data: a javascript array JSON.stringified containg report internal url ([0]) and
         type [1]
         :returns: Response with an attachment header
 
@@ -101,7 +101,7 @@ class ReportController(http.Controller):
                 converter = 'pdf' if type_ == 'qweb-pdf' else 'text'
                 extension = 'pdf' if type_ == 'qweb-pdf' else 'txt'
 
-                pattern = '/reports/pdf/' if type_ == 'qweb-pdf' else '/reports/text/'
+                pattern = '/report/pdf/' if type_ == 'qweb-pdf' else '/report/text/'
                 reportname = url.split(pattern)[1].split('?')[0]
 
                 docids = None
@@ -109,17 +109,17 @@ class ReportController(http.Controller):
                     reportname, docids = reportname.split('/')
 
                 if docids:
-                    # Generic reports:
+                    # Generic report:
                     response = self.report_routes(reportname, docids=docids, converter=converter, context=context)
                 else:
-                    # Particular reports:
+                    # Particular report:
                     data = url_parse(url).decode_query(cls=dict)  # decoding the args represented in JSON
                     if 'context' in data:
                         context, data_context = json.loads(context or '{}'), json.loads(data.pop('context'))
                         context = json.dumps({**context, **data_context})
                     response = self.report_routes(reportname, converter=converter, context=context, **data)
 
-                report = request.env['ir.actions.reports']._get_report_from_name(reportname)
+                report = request.env['ir.actions.report']._get_report_from_name(reportname)
                 filename = "%s.%s" % (report.name, extension)
 
                 if docids:
@@ -133,7 +133,7 @@ class ReportController(http.Controller):
             else:
                 return
         except Exception as e:
-            _logger.exception("Error while generating reports %s", reportname)
+            _logger.exception("Error while generating report %s", reportname)
             se = http.serialize_exception(e)
             error = {
                 'code': 200,
@@ -143,6 +143,6 @@ class ReportController(http.Controller):
             res = request.make_response(html_escape(json.dumps(error)))
             raise werkzeug.exceptions.InternalServerError(response=res) from e
 
-    @http.route(['/reports/check_wkhtmltopdf'], type='json', auth="user")
+    @http.route(['/report/check_wkhtmltopdf'], type='json', auth="user")
     def check_wkhtmltopdf(self):
-        return request.env['ir.actions.reports'].get_wkhtmltopdf_state()
+        return request.env['ir.actions.report'].get_wkhtmltopdf_state()

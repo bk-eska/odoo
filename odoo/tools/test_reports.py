@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-""" Helper functions for reports testing.
+""" Helper functions for report testing.
 
     Please /do not/ import this file by default, but only explicitly call it
     through the code of python tests.
@@ -22,9 +22,9 @@ _test_logger = logging.getLogger('odoo.tests')
 
 
 def try_report(cr, uid, rname, ids, data=None, context=None, our_module=None, report_type=None):
-    """ Try to render a reports <rname> with contents of ids
+    """ Try to render a report <rname> with contents of ids
 
-        This function should also check for common pitfalls of reports.
+        This function should also check for common pitfalls of report.
     """
     if context is None:
         context = {}
@@ -32,12 +32,12 @@ def try_report(cr, uid, rname, ids, data=None, context=None, our_module=None, re
 
     env = api.Environment(cr, uid, context)
 
-    res_data, res_format = env['ir.actions.reports']._render(rname, ids, data=data)
+    res_data, res_format = env['ir.actions.report']._render(rname, ids, data=data)
 
     if not res_data:
         raise ValueError("Report %s produced an empty result!" % rname)
 
-    _logger.debug("Have a %s reports for %s, will examine it", res_format, rname)
+    _logger.debug("Have a %s report for %s, will examine it", res_format, rname)
     if res_format == 'pdf':
         if res_data[:5] != b'%PDF-':
             raise ValueError("Report %s produced a non-pdf header, %r" % (rname, res_data[:10]))
@@ -52,13 +52,13 @@ def try_report(cr, uid, rname, ids, data=None, context=None, our_module=None, re
             res_text = ustr(stdout)
             os.unlink(rfname)
         except Exception:
-            _logger.debug("Unable to parse PDF reports: install pdftotext to perform automated tests.")
+            _logger.debug("Unable to parse PDF report: install pdftotext to perform automated tests.")
 
         if res_text is not False:
             for line in res_text.split('\n'):
                 if ('[[' in line) or ('[ [' in line):
                     _logger.error("Report %s may have bad expression near: \"%s\".", rname, line[80:])
-            # TODO more checks, what else can be a sign of a faulty reports?
+            # TODO more checks, what else can be a sign of a faulty report?
     elif res_format == 'html':
         pass
     else:
@@ -71,7 +71,7 @@ def try_report(cr, uid, rname, ids, data=None, context=None, our_module=None, re
 def try_report_action(cr, uid, action_id, active_model=None, active_ids=None,
                 wiz_data=None, wiz_buttons=None,
                 context=None, our_module=None):
-    """Take an ir.actions.act_window and follow it until a reports is produced
+    """Take an ir.actions.act_window and follow it until a report is produced
 
         :param cr:
         :param uid:
@@ -257,7 +257,7 @@ def try_report_action(cr, uid, action_id, active_model=None, active_ids=None,
                         action_name, b['string'], b['type'])
             return res
 
-        elif action['type']=='ir.actions.reports':
+        elif action['type']=='ir.actions.report':
             if 'window' in datas:
                 del datas['window']
             if not datas:

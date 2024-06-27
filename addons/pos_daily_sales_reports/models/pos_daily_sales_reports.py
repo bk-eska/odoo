@@ -11,7 +11,7 @@ import pytz
 
 class ReportSaleDetails(models.AbstractModel):
 
-    _inherit = 'reports.point_of_sale.report_saledetails'
+    _inherit = 'report.point_of_sale.report_saledetails'
 
     @api.model
     def get_sale_details(self, date_start=False, date_stop=False, config_ids=False, session_ids=False):
@@ -27,7 +27,7 @@ class ReportSaleDetails(models.AbstractModel):
         :returns: dict -- Serialised sales.
         """
         #This function is overriding the get_sale_details function in point_of_sale module
-        #It will be removed soon after the forwardport of the improvment of the X and Z reports.
+        #It will be removed soon after the forwardport of the improvment of the X and Z report.
         domain = [('state', 'in', ['paid', 'invoiced', 'done'])]
         if (session_ids):
             domain = AND([domain, [('session_id', 'in', session_ids)]])

@@ -89,7 +89,7 @@ class StockPicking(models.Model):
                 production_ids_backorder = productions_to_done.filtered(lambda mo: mo.state == "progress").ids
             productions_to_done.with_context(mo_ids_to_backorder=production_ids_backorder).button_mark_done()
             # For concistency, set the date on production move before the date
-            # on picking. (Traceability reports + Product Moves menu item)
+            # on picking. (Traceability report + Product Moves menu item)
             minimum_date = min(picking.move_line_ids.mapped('date'))
             production_moves = productions_to_done.move_raw_ids | productions_to_done.move_finished_ids
             production_moves.write({'date': minimum_date - timedelta(seconds=1)})

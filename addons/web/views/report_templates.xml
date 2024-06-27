@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Private templates used internally by reports -->
+    <!-- Private templates used internally by report -->
 
     <template id="report_layout" name="Report layout">&lt;!DOCTYPE html&gt;
         <html t-att-lang="lang and lang.replace('_', '-')"
@@ -478,7 +478,7 @@
         </div>
     </template>
 
-    <!-- Public api: layout to t-call from reports -->
+    <!-- Public api: layout to t-call from report -->
 
     <template id="external_layout">
         <t t-if="not o" t-set="o" t-value="doc"/>
@@ -548,8 +548,8 @@
         </t>
     </template>
 
-    <!-- Customize the company form view by adding paperformat field as well as demo reports -->
-    <!-- Demo reports definition -->
+    <!-- Customize the company form view by adding paperformat field as well as demo report -->
+    <!-- Demo report definition -->
     <template id="preview_internalreport">
         <t t-set="company" t-value="env.company"/>
         <t t-call="web.html_container">

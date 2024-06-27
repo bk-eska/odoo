@@ -21,7 +21,7 @@ class L10nLatamDocumentType(models.Model):
         'Document Code Prefix', help="Prefix for Documents Codes on Invoices and Account Moves. For eg. 'FA ' will"
         " build 'FA 0001-0000001' Document Number")
     code = fields.Char(help='Code used by different localizations')
-    report_name = fields.Char('Name on Reports', help='Name that will be printed in reports, for example "CREDIT NOTE"')
+    report_name = fields.Char('Name on Reports', help='Name that will be printed in report, for example "CREDIT NOTE"')
     internal_type = fields.Selection(
         [('invoice', 'Invoices'), ('debit_note', 'Debit Notes'), ('credit_note', 'Credit Notes')],
         help='Analog to odoo account.move.move_type but with more options allowing to identify the kind of document we are'

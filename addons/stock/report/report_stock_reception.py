@@ -8,7 +8,7 @@ from odoo.tools import float_compare, float_is_zero, format_date
 
 
 class ReceptionReport(models.AbstractModel):
-    _name = 'reports.stock.report_reception'
+    _name = 'report.stock.report_reception'
     _description = "Stock Reception Report"
 
     @api.model
@@ -23,7 +23,7 @@ class ReceptionReport(models.AbstractModel):
 
     @api.model
     def _get_report_values(self, docids, data=None):
-        ''' This reports is flexibly designed to work with both individual and batch pickings.
+        ''' This report is flexibly designed to work with both individual and batch pickings.
         '''
         docs = self._get_docs(docids)
         doc_states = docs.mapped('state')
@@ -33,7 +33,7 @@ class ReceptionReport(models.AbstractModel):
             msg = _("No %s selected or a delivery order selected", doc_types)
         elif 'done' in doc_states and len(set(doc_states)) > 1:
             docs = False
-            msg = _("This reports cannot be used for done and not done %s at the same time", doc_types)
+            msg = _("This report cannot be used for done and not done %s at the same time", doc_types)
         if not docs:
             return {'pickings': False, 'reason': msg}
 
@@ -144,7 +144,7 @@ class ReceptionReport(models.AbstractModel):
             for out_move in out_moves:
                 if float_is_zero(total_assigned, precision_rounding=out_move.product_id.uom_id.rounding):
                     # it is possible there are different in moves linked to the same out moves due to batch
-                    # => we guess as to which outs correspond to this reports...
+                    # => we guess as to which outs correspond to this report...
                     continue
                 source = (out_move._get_source_document(),)
                 if not source:
@@ -155,7 +155,7 @@ class ReceptionReport(models.AbstractModel):
                 sources_to_lines[source].append(
                     self._prepare_report_line(qty_assigned, product_id, out_move, source[0], is_assigned=True, move_ins=moves_in))
 
-        # dates aren't auto-formatted when printed in reports :(
+        # dates aren't auto-formatted when printed in report :(
         sources_to_formatted_scheduled_date = defaultdict(list)
         for source, dummy in sources_to_lines.items():
             sources_to_formatted_scheduled_date[source] = self._get_formatted_scheduled_date(source[0])

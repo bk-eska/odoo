@@ -45,7 +45,7 @@ class AccountJournal(models.Model):
     _inherit = 'account.journal'
 
     """
-        In order to clear/reports an invoice through the ZATCA API, we need to onboard each journal by following
+        In order to clear/report an invoice through the ZATCA API, we need to onboard each journal by following
         three steps:
 
             STEP 1:

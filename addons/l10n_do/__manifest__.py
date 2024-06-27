@@ -100,7 +100,7 @@ en Odoo):
         'data/l10n_do_res_partner_title.xml',
         # Adds fiscal position
         'data/fiscal_position_template.xml',
-        # configuration wizard, views, reports...
+        # configuration wizard, views, report...
         'data/account_chart_template_configure_data.xml',
     ],
     'demo': [

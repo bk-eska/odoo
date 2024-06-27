@@ -9,7 +9,7 @@
     'author': 'Odoo SA',
     'depends': ['account'],
     'data': [
-        'reports/din5008_report.xml',
+        'report/din5008_report.xml',
         'data/report_layout.xml',
     ],
     'assets': {

@@ -5,7 +5,7 @@ from odoo import api, fields, models
 
 
 class ReportPosHashIntegrity(models.AbstractModel):
-    _name = 'reports.l10n_fr_pos_cert.report_pos_hash_integrity'
+    _name = 'report.l10n_fr_pos_cert.report_pos_hash_integrity'
     _description = 'Get french pos hash integrity result as PDF.'
 
     @api.model

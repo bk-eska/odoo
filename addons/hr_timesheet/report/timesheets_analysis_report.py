@@ -6,7 +6,7 @@ from odoo import api, tools, fields, models
 
 
 class TimesheetsAnalysisReport(models.Model):
-    _name = "timesheets.analysis.reports"
+    _name = "timesheets.analysis.report"
     _description = "Timesheets Analysis Report"
     _auto = False
 

@@ -27,7 +27,7 @@ class Action(Controller):
         base_action = Actions.browse([action_id]).sudo().read(['type'])
         if base_action:
             action_type = base_action[0]['type']
-            if action_type == 'ir.actions.reports':
+            if action_type == 'ir.actions.report':
                 request.update_context(bin_size=True)
             if additional_context:
                 request.update_context(**additional_context)

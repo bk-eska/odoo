@@ -6,7 +6,7 @@ from odoo import fields, models, tools
 from odoo.addons.rating.models.rating_data import RATING_LIMIT_MIN, RATING_TEXT
 
 class ReportProjectTaskUser(models.Model):
-    _name = "reports.project.task.user"
+    _name = "report.project.task.user"
     _description = "Tasks Analysis"
     _order = 'name desc, project_id'
     _auto = False
@@ -50,7 +50,7 @@ class ReportProjectTaskUser(models.Model):
         string='Tags', readonly=True)
     parent_id = fields.Many2one('project.task', string='Parent Task', readonly=True)
     ancestor_id = fields.Many2one('project.task', string="Ancestor Task", readonly=True)
-    # We are explicitly not using a related field in order to prevent the recomputing caused by the depends as the model is a reports.
+    # We are explicitly not using a related field in order to prevent the recomputing caused by the depends as the model is a report.
     rating_last_text = fields.Selection(RATING_TEXT, string="Rating Last Text", compute="_compute_rating_last_text", search="_search_rating_last_text")
     personal_stage_type_ids = fields.Many2many('project.task.type', relation='project_task_user_rel',
         column1='task_id', column2='stage_id',

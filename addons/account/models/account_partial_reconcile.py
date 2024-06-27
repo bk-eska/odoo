@@ -58,7 +58,7 @@ class AccountPartialReconcile(models.Model):
     max_date = fields.Date(
         string="Max Date of Matched Lines", store=True,
         compute='_compute_max_date')
-        # used to determine at which date this reconciliation needs to be shown on the aged receivable/payable reports
+        # used to determine at which date this reconciliation needs to be shown on the aged receivable/payable report
 
     # -------------------------------------------------------------------------
     # CONSTRAINT METHODS

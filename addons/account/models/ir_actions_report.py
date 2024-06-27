@@ -12,7 +12,7 @@ from odoo.tools import pdf
 
 
 class IrActionsReport(models.Model):
-    _inherit = 'ir.actions.reports'
+    _inherit = 'ir.actions.report'
 
     def _render_qweb_pdf_prepare_streams(self, report_ref, data, res_ids=None):
         # Custom behavior for 'account.report_original_vendor_bill'.
@@ -48,7 +48,7 @@ class IrActionsReport(models.Model):
         return self._get_report(report_ref).report_name in ('account.report_invoice_with_payments', 'account.report_invoice')
 
     def _render_qweb_pdf(self, report_ref, res_ids=None, data=None):
-        # Check for reports only available for invoices.
+        # Check for report only available for invoices.
         # + append context data with the display_name_in_footer parameter
         if self._is_invoice_report(report_ref):
             invoices = self.env['account.move'].browse(res_ids)
@@ -74,4 +74,4 @@ class IrActionsReport(models.Model):
         for master_xmlid in master_xmlids:
             master_report = self.env.ref(f"account.{master_xmlid}", raise_if_not_found=False)
             if master_report and master_report in self:
-                raise UserError(_("You cannot delete this reports (%s), it is used by the accounting PDF generation engine.", master_report.name))
+                raise UserError(_("You cannot delete this report (%s), it is used by the accounting PDF generation engine.", master_report.name))

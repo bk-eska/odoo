@@ -8,7 +8,7 @@ from odoo import api, fields, models, _
 from odoo.tools import float_compare, float_round, format_date, float_is_zero
 
 class ReportBomStructure(models.AbstractModel):
-    _name = 'reports.mrp.report_bom_structure'
+    _name = 'report.mrp.report_bom_structure'
     _description = 'BOM Overview Report'
 
     @api.model
@@ -130,7 +130,7 @@ class ReportBomStructure(models.AbstractModel):
     def _get_components_closest_forecasted(self, lines, line_quantities, parent_bom, product_info, ignore_stock=False):
         """
             Returns a dict mapping products to a dict of their corresponding BoM lines,
-            which are mapped to their closest date in the forecast reports where consumed quantity >= forecasted quantity.
+            which are mapped to their closest date in the forecast report where consumed quantity >= forecasted quantity.
 
             E.g. {'product_1_id': {'line_1_id': date_1, line_2_id: date_2}, 'product_2': {line_3_id: date_3}, ...}.
 
@@ -164,7 +164,7 @@ class ReportBomStructure(models.AbstractModel):
         if self.env.context.get('warehouse'):
             domain.append(('warehouse_id', '=', self.env.context.get('warehouse')))
         if remaining_products:
-            res = self.env['reports.stock.quantity']._read_group(
+            res = self.env['report.stock.quantity']._read_group(
                 domain,
                 ['min_date:min(date)', 'product_id', 'product_qty'],
                 ['product_id', 'product_qty'],
@@ -657,9 +657,9 @@ class ReportBomStructure(models.AbstractModel):
             if self.env.context.get('warehouse'):
                 domain.append(('warehouse_id', '=', self.env.context.get('warehouse')))
 
-            # Seek the closest date in the forecast reports where consummed quantity >= forecasted quantity
+            # Seek the closest date in the forecast report where consummed quantity >= forecasted quantity
             if not closest_forecasted:
-                closest_forecasted = self.env['reports.stock.quantity']._read_group(domain, ['min_date:min(date)', 'product_id'], ['product_id'])
+                closest_forecasted = self.env['report.stock.quantity']._read_group(domain, ['min_date:min(date)', 'product_id'], ['product_id'])
                 closest_forecasted = closest_forecasted and closest_forecasted[0]['min_date']
             if closest_forecasted:
                 days_to_forecast = (closest_forecasted - date_today).days

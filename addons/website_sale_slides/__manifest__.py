@@ -11,7 +11,7 @@
     'installable': True,
     'data': [
         'data/product_data.xml',
-        'reports/sale_report_views.xml',
+        'report/sale_report_views.xml',
         'views/website_slides_menu_views.xml',
         'views/slide_channel_views.xml',
         'views/website_sale_templates.xml',
